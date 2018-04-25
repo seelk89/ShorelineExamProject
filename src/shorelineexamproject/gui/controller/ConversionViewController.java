@@ -52,6 +52,38 @@ public class ConversionViewController implements Initializable
     private Window stage;
     @FXML
     private JFXTextField txtJSONName;
+    @FXML
+    private JFXTextField txtType;
+    @FXML
+    private JFXTextField txtUserStatus;
+    @FXML
+    private JFXTextField txtSystemStatus;
+    @FXML
+    private JFXTextField txtExternalWorkOrderid;
+    @FXML
+    private JFXTextField txtassetSerialNumber;
+    @FXML
+    private JFXTextField txtsiteName;
+    @FXML
+    private JFXTextField txtCreatedOn;
+    @FXML
+    private JFXTextField txtCreatedBy;
+    @FXML
+    private JFXTextField txtName;
+    @FXML
+    private JFXTextField txtPriority;
+    @FXML
+    private JFXTextField txtStatus;
+    @FXML
+    private JFXTextField txtPlanning;
+    @FXML
+    private JFXTextField txtEstimatedTime;
+    @FXML
+    private JFXTextField txtLatestFinishDate;
+    @FXML
+    private JFXTextField txtEarliestStartDate;
+    @FXML
+    private JFXTextField txtLatestStartDate;
 
     /**
      * Initializes the controller class.
