@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
@@ -28,6 +29,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  * FXML Controller class
@@ -47,6 +50,8 @@ public class ConversionViewController implements Initializable
     private JFXButton btnGet;
 
     private Window stage;
+    @FXML
+    private JFXTextField txtJSONName;
 
     /**
      * Initializes the controller class.
@@ -143,6 +148,40 @@ public class ConversionViewController implements Initializable
         }
 
         txtTest.setText(absolutePath);
+    }
+
+ /**
+     * This method gets the name of the textfield and creates a new file with this name, 
+     * and then it adds the obj to the file
+     * @param event
+     * @throws IOException 
+     */
+    @FXML
+    private void clickCreateJSONFile(ActionEvent event) throws IOException
+    {
+        //doesn't add .json automatically yet
+        String FileName = txtJSONName.getText() + ".json";
+        File file = new File(FileName);
+
+//        String content = "This is the content to write into a file, can be an object";
+        JSONObject obj = new JSONObject();
+        obj.put("String", "thingy");
+        obj.put("Integer", 1);
+        obj.put("Boolean", "True");
+
+        JSONArray list = new JSONArray();
+        list.add("This is the first object in my object of lists");
+        list.add("This is the second object in my object of lists");
+        list.add("This is the third object in my object of lists");
+        obj.put("myJSONArray list", list);
+
+        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+        fw.write(obj.toJSONString());
+        fw.flush();
+
+        System.out.println("filewriter flushed, JSONfile called: " + FileName + " created");
+   
+        System.out.println(obj);
     }
 
 }

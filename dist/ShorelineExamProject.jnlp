@@ -8,10 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ShorelineExamProject.jar" size="13585" download="eager" />
+    <jar href="ShorelineExamProject.jar" size="13314" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\curvesapi-1.04.jar" size="98365" download="eager" />
     <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib\json-simple-1.1.1.jar" size="23737" download="eager" />
     <jar href="lib\poi-3.17.jar" size="2701171" download="eager" />
     <jar href="lib\poi-ooxml-3.17.jar" size="1479023" download="eager" />
     <jar href="lib\poi-ooxml-schemas-3.17.jar" size="5924600" download="eager" />
