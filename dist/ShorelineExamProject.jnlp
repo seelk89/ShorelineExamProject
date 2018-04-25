@@ -8,7 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ShorelineExamProject.jar" size="2735" download="eager" />
+    <jar href="ShorelineExamProject.jar" size="12339" download="eager" />
+    <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
+    <jar href="lib\sqljdbc42.jar" size="891490" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ShorelineExamProject" >
     <param name="requiredFXVersion" value="8.0+"/>

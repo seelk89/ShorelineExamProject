@@ -1,0 +1,38 @@
+{
+    
+    "siteName": "",
+ 
+   "assetSerialNumber": "asset._id",
+
+    "type": "SAP import field -> 'Order Type'",
+
+    "externalWorkOrderId": "SAP import field -> 'Order'",
+
+    "systemStatus": "SAP import field -> 'System status'", 
+
+    "userStatus": "SAP import field -> 'User status'",
+ 
+   "createdOn": "Datetime Object (Date now)",
+
+    "createdBy": "SAP",
+
+    "name": "SAP import field -> 'Opr. short text' if empty then  'Description2'",
+
+    "priority": "SAP import field -> 'priority' if set else 'Low'",
+
+    "status": "NEW", // If no status is field is selected the default to 'NEW'
+
+    "planning": 
+	{
+        
+		"latestFinishDate": "Datetime Object",
+
+    		"earliestStartDate": "Datetime Object",
+
+        	"latestStartDate": "Datetime Object",
+
+        	"estimatedTime": "" // hours if exist in the input
+    
+	}
+
+}
