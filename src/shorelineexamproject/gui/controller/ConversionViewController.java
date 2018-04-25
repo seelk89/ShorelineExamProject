@@ -63,7 +63,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * 
+     * Gets a XLSX filepath from the txtTest text field and prints out the contents of the file.
      * @param event
      * @throws IOException 
      */
