@@ -78,28 +78,11 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtLatestStartDate;
     @FXML
-
     private JFXTextField txtAssetSerialNumber;
     @FXML
     private JFXTextField txtSiteName;
     //variable that we will need to get the input stuff be become output
 
-//        String varSiteName;
-//        String varAssetSerialNumber;
-//        String varType;
-//        String varExternalWorkOrderId;
-//        String varSystemStatus;
-//        String varUserStatus;
-//        String varCreatedOn;
-//        String varCreatedBy;
-//        String varName;
-//        String varPriority;
-//        String varStatus; //always new
-//       
-//        String varLatestFinishDate ;
-//        String varEarliestStartDate;
-//        String varLatestStartDate;
-//        String varEstimatedTime;
     private String varSiteName = "";
     private String varAssetSerialNumber = "asset.id";
     private String varType = "Order Type";
