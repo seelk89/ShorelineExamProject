@@ -15,21 +15,21 @@
       <JFXButton layoutX="455.0" layoutY="54.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
       <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
       <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
-      <JFXTextField fx:id="txtType" layoutX="438.0" layoutY="167.0" promptText="type" />
-      <JFXTextField fx:id="txtUserStatus" layoutX="437.0" layoutY="243.0" promptText="userStatus" />
-      <JFXTextField fx:id="txtSystemStatus" layoutX="437.0" layoutY="217.0" promptText="systemStatus" />
-      <JFXTextField fx:id="txtExternalWorkOrderid" layoutX="438.0" layoutY="191.0" promptText="externalWorkOrderId" />
-      <JFXTextField fx:id="txtassetSerialNumber" layoutX="437.0" layoutY="141.0" promptText="assetSerialNumber" />
-      <JFXTextField fx:id="txtsiteName" layoutX="438.0" layoutY="115.0" promptText="siteName" />
-      <JFXTextField fx:id="txtCreatedOn" layoutX="437.0" layoutY="269.0" promptText="createdOn" />
-      <JFXTextField fx:id="txtCreatedBy" layoutX="437.0" layoutY="295.0" promptText="createdBy" />
-      <JFXTextField fx:id="txtName" layoutX="437.0" layoutY="321.0" promptText="name" />
-      <JFXTextField fx:id="txtPriority" layoutX="438.0" layoutY="348.0" promptText="priority" />
-      <JFXTextField fx:id="txtStatus" layoutX="437.0" layoutY="374.0" promptText="status" />
-      <JFXTextField fx:id="txtPlanning" layoutX="438.0" layoutY="426.0" promptText="planning" />
-      <JFXTextField fx:id="txtEstimatedTime" layoutX="438.0" layoutY="556.0" promptText="estimatedTime" />
-      <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" />
-      <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" />
-      <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" />
+      <JFXTextField fx:id="txtType" layoutX="438.0" layoutY="167.0" promptText="type" text="type" />
+      <JFXTextField fx:id="txtUserStatus" layoutX="437.0" layoutY="243.0" promptText="userStatus" text="userStatus" />
+      <JFXTextField fx:id="txtSystemStatus" layoutX="437.0" layoutY="217.0" promptText="systemStatus" text="systemStatus" />
+      <JFXTextField fx:id="txtExternalWorkOrderid" layoutX="438.0" layoutY="191.0" promptText="externalWorkOrderId" text="externalWorkOrderId" />
+      <JFXTextField fx:id="txtAssetSerialNumber" layoutX="437.0" layoutY="141.0" promptText="assetSerialNumber" text="assetSerialNumber" />
+      <JFXTextField fx:id="txtSiteName" layoutX="438.0" layoutY="115.0" promptText="siteName" text="siteName" />
+      <JFXTextField fx:id="txtCreatedOn" layoutX="437.0" layoutY="269.0" promptText="createdOn" text="createdOn" />
+      <JFXTextField fx:id="txtCreatedBy" layoutX="437.0" layoutY="295.0" promptText="createdBy" text="createdBy" />
+      <JFXTextField fx:id="txtName" layoutX="437.0" layoutY="321.0" promptText="name" text="name" />
+      <JFXTextField fx:id="txtPriority" layoutX="438.0" layoutY="348.0" promptText="priority" text="priority" />
+      <JFXTextField fx:id="txtStatus" layoutX="437.0" layoutY="374.0" promptText="status" text="status" />
+      <JFXTextField fx:id="txtPlanning" layoutX="438.0" layoutY="426.0" promptText="planning" text="planning" />
+      <JFXTextField fx:id="txtEstimatedTime" layoutX="438.0" layoutY="556.0" promptText="estimatedTime" text="estimatedTime" />
+      <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" text="latestFinishDate" />
+      <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" text="earliestStartDate" />
+      <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" text="latestStartDate" />
    </children>
 </AnchorPane>
