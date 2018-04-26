@@ -91,6 +91,7 @@ public class ConversionViewController implements Initializable
     private ListView<ListViewObject> lstHeaders;
        
     //variable that we will need to get the input stuff be become output
+<<<<<<< HEAD
 //        String varSiteName;
 //        String varAssetSerialNumber;
 //        String varType;
@@ -107,6 +108,9 @@ public class ConversionViewController implements Initializable
 //        String varEarliestStartDate;
 //        String varLatestStartDate;
 //        String varEstimatedTime;
+=======
+
+>>>>>>> 2d610b01c8dca1411a163e10350b3f52b825ca54
     private String varSiteName = "";
     private String varAssetSerialNumber = "asset.id";
     private String varType = "Order Type";

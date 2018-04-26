@@ -3,8 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Jesper/Desktop/NetbeansProjects/ShorelineExamProject/src/shorelineexamproject/ShorelineExamProject.java</file>
             <file>file:/C:/Users/Jesper/Desktop/NetbeansProjects/ShorelineExamProject/src/shorelineexamproject/gui/controller/ConversionViewController.java</file>
+=======
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/gui/controller/ConversionViewController.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/gui/controller/LoginViewController.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/gui/view/ConversionView.fxml</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/ShorelineExamProject.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/database/connection/ConnectionPool.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/database/connection/DBConnector.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/database/connection/ObjectPool.java</file>
+>>>>>>> 2d610b01c8dca1411a163e10350b3f52b825ca54
         </group>
     </open-files>
 </project-private>
