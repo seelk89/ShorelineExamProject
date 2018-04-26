@@ -80,12 +80,17 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtLatestStartDate;
     @FXML
-
     private JFXTextField txtAssetSerialNumber;
     @FXML
     private JFXTextField txtSiteName;
+    @FXML
+    private JFXTextField txtassetSerialNumber;
+    @FXML
+    private JFXTextField txtsiteName;
+    @FXML
+    private ListView<ListViewObject> lstHeaders;
+       
     //variable that we will need to get the input stuff be become output
-
 //        String varSiteName;
 //        String varAssetSerialNumber;
 //        String varType;
@@ -113,18 +118,13 @@ public class ConversionViewController implements Initializable
     private String varName = "Opr.short text, if empty then Description 2";
     private String varPriority = "priority, if not set, Low";
     private String varStatus = "New"; //always new
-
     private String varLatestFinishDate = "find Datetime Object";
     private String varEarliestStartDate = "find Datetime Object";
     private String varLatestStartDate = "find Datetime Object";
     private String varEstimatedTime = "Hours if exist in the input, else null(?)";
 
-    @FXML
-    private ListView<ListViewObject> lstHeaders;
-
     private Window stage;
     private String listViewObjectString;
-
 
     /**
      * Initializes the controller class.
@@ -132,8 +132,6 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        
-
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -163,9 +161,6 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     *
-     * @param event
-     * @throws IOException
      * Takes the String filepath of a xlsx file and finds the headers before
      * putting them into a ListView Jesper
      *
@@ -173,10 +168,6 @@ public class ConversionViewController implements Initializable
      */
     private void readXLSXHeaders(String filepath)
     {
-//HULLO, VAR NØDT TIL AT UDKOMMENTERE DEN NEDENUNDER OG DIT DRAG AND DROP VIRKER IKKE MERE, SORRY!
-//        String filepath = txtTest.getText();
-
-
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
@@ -239,6 +230,7 @@ public class ConversionViewController implements Initializable
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
+        
         //Adds a file filter that will only allow xlsx files (excel output files)
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
         fileChooser.getExtensionFilters().add(extFilter);
@@ -257,11 +249,10 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-
-     * Anni This method gets the name of the textfield and creates a new file
+     * This method gets the name of the textfield and creates a new file
      * with this name, and then it adds the obj to the file
      * This method gets the name of the textfield and creates a new file with
-     * this name, and then it adds the obj to the file
+     * this name, and then it adds the obj to the file Anni
      *
      * @param event
      * @throws IOException
@@ -331,11 +322,9 @@ public class ConversionViewController implements Initializable
     @FXML
     private void dragHeaders(MouseEvent event)
     {
-        
         String s = getListViewObject();
         listViewObjectString = s;
-        System.out.println(s);
-        
+        System.out.println(s);  
     }
 
 }
