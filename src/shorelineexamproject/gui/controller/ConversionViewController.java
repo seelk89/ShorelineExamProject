@@ -45,11 +45,6 @@ import shorelineexamproject.be.ListViewObject;
 public class ConversionViewController implements Initializable
 {
 
-    @FXML
-    private JFXButton btnTest;
-    @FXML
-    private JFXTextField txtTest;
-    @FXML
     private JFXButton btnGet;
     @FXML
     private JFXTextField txtJSONName;
@@ -110,20 +105,6 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-
-//        for (int i = 0; i < 10; i++)
-//        {
-//            ListViewObject number = new ListViewObject();
-//            number.setStringObject(String.valueOf(i));
-//            lstHeaders.getItems().add(number);
-//        }
-    }
-
-    @FXML
-    private void clickTest(ActionEvent event)
-    {
-        String filepath = txtTest.getText();
-        readXLSXHeaders(filepath);
     }
 
     /**
@@ -200,18 +181,21 @@ public class ConversionViewController implements Initializable
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
-        //Adds a file filter that will only allow xlsx files (excel output files).
+        //Adds a file filter that will only allow xlsx files (excel output files)
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        //Opens a window based on setting set above.
-        File xlxsFile = fileChooser.showOpenDialog(stage);
-        if (xlxsFile != null)
+        //Opens a window based on settings set above
+        File xlsxFile = fileChooser.showOpenDialog(stage);
+
+        if (xlsxFile != null)
         {
-            absolutePath = xlxsFile.getAbsolutePath();
+            absolutePath = xlsxFile.getAbsolutePath();
         }
 
-        txtTest.setText(absolutePath);
+        //Clears the ListView and adds headers from xlsx file
+        lstHeaders.getItems().clear();
+        readXLSXHeaders(absolutePath);
     }
 
     /**
@@ -228,7 +212,7 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-//        String content = "This is the content to write into a file, can be an object";
+        //String content = "This is the content to write into a file, can be an object";
         JSONObject obj = new JSONObject();
         obj.put("String", "thingy");
         obj.put("Integer", 1);
