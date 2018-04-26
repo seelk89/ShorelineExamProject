@@ -60,10 +60,6 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtExternalWorkOrderid;
     @FXML
-    private JFXTextField txtassetSerialNumber;
-    @FXML
-    private JFXTextField txtsiteName;
-    @FXML
     private JFXTextField txtCreatedOn;
     @FXML
     private JFXTextField txtCreatedBy;
@@ -84,10 +80,51 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtLatestStartDate;
     @FXML
+
+    private JFXTextField txtAssetSerialNumber;
+    @FXML
+    private JFXTextField txtSiteName;
+    //variable that we will need to get the input stuff be become output
+
+//        String varSiteName;
+//        String varAssetSerialNumber;
+//        String varType;
+//        String varExternalWorkOrderId;
+//        String varSystemStatus;
+//        String varUserStatus;
+//        String varCreatedOn;
+//        String varCreatedBy;
+//        String varName;
+//        String varPriority;
+//        String varStatus; //always new
+//       
+//        String varLatestFinishDate ;
+//        String varEarliestStartDate;
+//        String varLatestStartDate;
+//        String varEstimatedTime;
+    private String varSiteName = "";
+    private String varAssetSerialNumber = "asset.id";
+    private String varType = "Order Type";
+    private String varExternalWorkOrderId = "Order";
+    private String varSystemStatus = "System Status";
+    private String varUserStatus = "User Status";
+    private String varCreatedOn = "Datetime Object(Date now)";
+    private String varCreatedBy = "SAP";
+    private String varName = "Opr.short text, if empty then Description 2";
+    private String varPriority = "priority, if not set, Low";
+    private String varStatus = "New"; //always new
+
+    private String varLatestFinishDate = "find Datetime Object";
+    private String varEarliestStartDate = "find Datetime Object";
+    private String varLatestStartDate = "find Datetime Object";
+    private String varEstimatedTime = "Hours if exist in the input, else null(?)";
+
+    @FXML
     private ListView<ListViewObject> lstHeaders;
 
     private Window stage;
     private String listViewObjectString;
+
 
     /**
      * Initializes the controller class.
@@ -126,6 +163,9 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+     *
+     * @param event
+     * @throws IOException
      * Takes the String filepath of a xlsx file and finds the headers before
      * putting them into a ListView Jesper
      *
@@ -133,6 +173,10 @@ public class ConversionViewController implements Initializable
      */
     private void readXLSXHeaders(String filepath)
     {
+//HULLO, VAR NØDT TIL AT UDKOMMENTERE DEN NEDENUNDER OG DIT DRAG AND DROP VIRKER IKKE MERE, SORRY!
+//        String filepath = txtTest.getText();
+
+
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
@@ -213,6 +257,9 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+
+     * Anni This method gets the name of the textfield and creates a new file
+     * with this name, and then it adds the obj to the file
      * This method gets the name of the textfield and creates a new file with
      * this name, and then it adds the obj to the file
      *
@@ -222,29 +269,63 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
     {
-        //doesn't add .json automatically yet
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
+
         //String content = "This is the content to write into a file, can be an object";
+
         JSONObject obj = new JSONObject();
-        obj.put("String", "thingy");
-        obj.put("Integer", 1);
-        obj.put("Boolean", "True");
+        obj.put(txtSiteName.getText(), varSiteName);
+        obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
+        obj.put(txtType.getText(), varType);
+        obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
+        obj.put(txtSystemStatus.getText(), varSystemStatus);
+        obj.put(txtUserStatus.getText(), varUserStatus);
+        obj.put(txtCreatedOn.getText(), varCreatedOn);
+        obj.put(txtCreatedBy.getText(), varCreatedBy);
+        obj.put(txtName.getText(), varName);
+        obj.put(txtPriority.getText(), varPriority);
+        obj.put(txtStatus.getText(), varStatus);
 
         JSONArray list = new JSONArray();
-        list.add("This is the first object in my object of lists");
-        list.add("This is the second object in my object of lists");
-        list.add("This is the third object in my object of lists");
-        obj.put("myJSONArray list", list);
+        list.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
+        list.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
+        list.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
+        list.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
 
+        obj.put("planning", list);
+
+        JSONObject obj1 = new JSONObject();
+        obj1.put(txtSiteName.getText(), varSiteName);
+        obj1.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
+        obj1.put(txtType.getText(), varType);
+        obj1.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
+        obj1.put(txtSystemStatus.getText(), varSystemStatus);
+        obj1.put(txtUserStatus.getText(), varUserStatus);
+        obj1.put(txtCreatedOn.getText(), varCreatedOn);
+        obj1.put(txtCreatedBy.getText(), varCreatedBy);
+        obj1.put(txtName.getText(), varName);
+        obj1.put(txtPriority.getText(), varPriority);
+        obj1.put(txtStatus.getText(), varStatus);
+
+        JSONArray list1 = new JSONArray();
+        list1.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
+        list1.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
+        list1.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
+        list1.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
+
+        obj1.put("planning1", list1);
+
+        //the above will be moved to another method
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
+        fw.write(obj.toJSONString()); //to be deleted
         fw.write(obj.toJSONString());
         fw.flush();
 
-        System.out.println("filewriter flushed, JSONfile called: " + FileName + " created");
+        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
 
-        System.out.println(obj);
+        System.out.println(obj1 + "/n" + obj);
     }
 
     @FXML
