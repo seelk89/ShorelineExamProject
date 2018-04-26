@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -31,6 +35,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import shorelineexamproject.be.ListViewObject;
 
 /**
  * FXML Controller class
@@ -41,15 +46,7 @@ public class ConversionViewController implements Initializable
 {
 
     @FXML
-    private JFXButton btnTest;
-    @FXML
-    private JFXTextField txtTest;
-    @FXML
-    private JFXListView<?> lstTest;
-    @FXML
     private JFXButton btnGet;
-
-    private Window stage;
     @FXML
     private JFXTextField txtJSONName;
     @FXML
@@ -81,6 +78,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtLatestStartDate;
     @FXML
+
     private JFXTextField txtAssetSerialNumber;
     @FXML
     private JFXTextField txtSiteName;
@@ -119,63 +117,89 @@ public class ConversionViewController implements Initializable
     private String varLatestStartDate = "find Datetime Object";
     private String varEstimatedTime = "Hours if exist in the input, else null(?)";
 
+    @FXML
+    private ListView<ListViewObject> lstHeaders;
+
+    private Window stage;
+
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
+        {
+            @Override
+            protected void updateItem(ListViewObject item, boolean empty)
+            {
+                super.updateItem(item, empty);
+                if (item != null)
+                {
+                    Text t = new Text(item.getStringObject());
+
+                    setGraphic(t);
+                }
+            }
+        });
     }
 
     /**
      *
      * @param event
      * @throws IOException
+     * Takes the String filepath of a xlsx file and finds the headers before
+     * putting them into a ListView Jesper
+     *
+     * @param filepath
      */
-    @FXML
-    private void clickTest(ActionEvent event) throws IOException
+    private void readXLSXHeaders(String filepath)
     {
-        String filepath = txtTest.getText();
+//HULLO, VAR NØDT TIL AT UDKOMMENTERE DEN NEDENUNDER OG DIT DRAG AND DROP VIRKER IKKE MERE, SORRY!
+//        String filepath = txtTest.getText();
+
 
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
 
-            //Get the workbook instance for XLS file 
+            //Get the workbook instance for XLSX file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             //Get first sheet from the workbook
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            //Iterate through each rows from first sheet
+            //Gets the first row from the first sheet
             Iterator<Row> rowIterator = sheet.iterator();
-            while (rowIterator.hasNext())
+            Row row = rowIterator.next();
+
+            //Iterate through the cells of the first row
+            Iterator<Cell> cellIterator = row.cellIterator();
+            while (cellIterator.hasNext())
             {
-                Row row = rowIterator.next();
+                //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
+                ListViewObject listViewObject = new ListViewObject();
 
-                //For each row, iterate through each columns
-                Iterator<Cell> cellIterator = row.cellIterator();
-                while (cellIterator.hasNext())
+                Cell cell = cellIterator.next();
+
+                switch (cell.getCellType())
                 {
+                    //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
+                    case Cell.CELL_TYPE_NUMERIC:
+                        listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
+                        lstHeaders.getItems().add(listViewObject);
 
-                    Cell cell = cellIterator.next();
+                        break;
+                    //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
+                    case Cell.CELL_TYPE_STRING:
+                        listViewObject.setStringObject(cell.getStringCellValue());
+                        lstHeaders.getItems().add(listViewObject);
 
-                    switch (cell.getCellType())
-                    {
-                        case Cell.CELL_TYPE_BOOLEAN:
-                            System.out.print(cell.getBooleanCellValue() + "\t\t");
-                            break;
-                        case Cell.CELL_TYPE_NUMERIC:
-                            System.out.print(cell.getNumericCellValue() + "\t\t");
-                            break;
-                        case Cell.CELL_TYPE_STRING:
-                            System.out.print(cell.getStringCellValue() + "\t\t");
-                            break;
-                    }
+                        break;
                 }
-                System.out.println("");
             }
+
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
@@ -202,23 +226,29 @@ public class ConversionViewController implements Initializable
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
-        //Adds a file filter that will only allow xlsx files (excel output files).
+        //Adds a file filter that will only allow xlsx files (excel output files)
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        //Opens a window based on setting set above.
-        File xlxsFile = fileChooser.showOpenDialog(stage);
-        if (xlxsFile != null)
+        //Opens a window based on settings set above
+        File xlsxFile = fileChooser.showOpenDialog(stage);
+
+        if (xlsxFile != null)
         {
-            absolutePath = xlxsFile.getAbsolutePath();
+            absolutePath = xlsxFile.getAbsolutePath();
         }
 
-        txtTest.setText(absolutePath);
+        //Clears the ListView and adds headers from xlsx file
+        lstHeaders.getItems().clear();
+        readXLSXHeaders(absolutePath);
     }
 
     /**
+
      * Anni This method gets the name of the textfield and creates a new file
      * with this name, and then it adds the obj to the file
+     * This method gets the name of the textfield and creates a new file with
+     * this name, and then it adds the obj to the file
      *
      * @param event
      * @throws IOException
@@ -228,6 +258,9 @@ public class ConversionViewController implements Initializable
     {
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
+
+
+        //String content = "This is the content to write into a file, can be an object";
 
         JSONObject obj = new JSONObject();
         obj.put(txtSiteName.getText(), varSiteName);
