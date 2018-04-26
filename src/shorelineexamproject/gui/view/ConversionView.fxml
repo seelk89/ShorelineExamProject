@@ -28,6 +28,6 @@
       <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" />
       <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" />
       <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" />
-      <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" prefHeight="301.0" prefWidth="200.0" />
+      <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragHeaders" prefHeight="301.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

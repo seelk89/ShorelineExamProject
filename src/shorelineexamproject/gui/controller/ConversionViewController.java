@@ -23,6 +23,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -45,6 +47,7 @@ import shorelineexamproject.be.ListViewObject;
 public class ConversionViewController implements Initializable
 {
 
+    @FXML
     private JFXButton btnGet;
     @FXML
     private JFXTextField txtJSONName;
@@ -84,6 +87,7 @@ public class ConversionViewController implements Initializable
     private ListView<ListViewObject> lstHeaders;
 
     private Window stage;
+    private String listViewObjectString;
 
     /**
      * Initializes the controller class.
@@ -91,6 +95,8 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        
+
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -105,6 +111,18 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
+        
+        lstHeaders.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+
+    /**
+     * Gets the selected ListViewObject Jesper
+     *
+     * @return
+     */
+    private String getListViewObject()
+    {
+        return lstHeaders.getSelectionModel().getSelectedItem().getStringObject();
     }
 
     /**
@@ -119,7 +137,7 @@ public class ConversionViewController implements Initializable
         {
             FileInputStream file = new FileInputStream(new File(filepath));
 
-            //Get the workbook instance for XLSX file 
+            //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             //Get first sheet from the workbook
@@ -133,7 +151,7 @@ public class ConversionViewController implements Initializable
             Iterator<Cell> cellIterator = row.cellIterator();
             while (cellIterator.hasNext())
             {
-                //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
+                //Creates a ListViewObject Where the Headers of the xlsx file can be put as objects for the listView
                 ListViewObject listViewObject = new ListViewObject();
 
                 Cell cell = cellIterator.next();
@@ -156,10 +174,6 @@ public class ConversionViewController implements Initializable
             }
 
             file.close();
-            FileOutputStream out = new FileOutputStream(new File(filepath));
-            workbook.write(out);
-            out.close();
-
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -231,6 +245,16 @@ public class ConversionViewController implements Initializable
         System.out.println("filewriter flushed, JSONfile called: " + FileName + " created");
 
         System.out.println(obj);
+    }
+
+    @FXML
+    private void dragHeaders(MouseEvent event)
+    {
+        
+        String s = getListViewObject();
+        listViewObjectString = s;
+        System.out.println(s);
+        
     }
 
 }
