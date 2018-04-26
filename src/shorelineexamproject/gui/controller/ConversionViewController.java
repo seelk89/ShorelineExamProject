@@ -21,6 +21,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -31,6 +35,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import shorelineexamproject.be.ListViewObject;
 
 /**
  * FXML Controller class
@@ -45,11 +50,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtTest;
     @FXML
-    private JFXListView<?> lstTest;
-    @FXML
     private JFXButton btnGet;
-
-    private Window stage;
     @FXML
     private JFXTextField txtJSONName;
     @FXML
@@ -84,6 +85,10 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtEarliestStartDate;
     @FXML
     private JFXTextField txtLatestStartDate;
+    @FXML
+    private ListView<ListViewObject> lstHeaders;
+
+    private Window stage;
 
     /**
      * Initializes the controller class.
@@ -91,57 +96,84 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
+        {
+            @Override
+            protected void updateItem(ListViewObject item, boolean empty)
+            {
+                super.updateItem(item, empty);
+                if (item != null)
+                {
+                    Text t = new Text(item.getStringObject());
+
+                    setGraphic(t);
+                }
+            }
+        });
+
+//        for (int i = 0; i < 10; i++)
+//        {
+//            ListViewObject number = new ListViewObject();
+//            number.setStringObject(String.valueOf(i));
+//            lstHeaders.getItems().add(number);
+//        }
+    }
+
+    @FXML
+    private void clickTest(ActionEvent event)
+    {
+        String filepath = txtTest.getText();
+        readXLSXHeaders(filepath);
     }
 
     /**
-     * Gets a XLSX filepath from the txtTest text field and prints out the contents of the file.
-     * @param event
-     * @throws IOException 
+     * Takes the String filepath of a xlsx file and finds the headers before
+     * putting them into a ListView Jesper
+     *
+     * @param filepath
      */
-    @FXML
-    private void clickTest(ActionEvent event) throws IOException
+    private void readXLSXHeaders(String filepath)
     {
-        String filepath = txtTest.getText();
-        
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
 
-            //Get the workbook instance for XLS file 
+            //Get the workbook instance for XLSX file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             //Get first sheet from the workbook
             XSSFSheet sheet = workbook.getSheetAt(0);
 
-            //Iterate through each rows from first sheet
+            //Gets the first row from the first sheet
             Iterator<Row> rowIterator = sheet.iterator();
-            while (rowIterator.hasNext())
+            Row row = rowIterator.next();
+
+            //Iterate through the cells of the first row
+            Iterator<Cell> cellIterator = row.cellIterator();
+            while (cellIterator.hasNext())
             {
-                Row row = rowIterator.next();
+                //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
+                ListViewObject listViewObject = new ListViewObject();
 
-                //For each row, iterate through each columns
-                Iterator<Cell> cellIterator = row.cellIterator();
-                while (cellIterator.hasNext())
+                Cell cell = cellIterator.next();
+
+                switch (cell.getCellType())
                 {
+                    //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
+                    case Cell.CELL_TYPE_NUMERIC:
+                        listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
+                        lstHeaders.getItems().add(listViewObject);
 
-                    Cell cell = cellIterator.next();
+                        break;
+                    //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
+                    case Cell.CELL_TYPE_STRING:
+                        listViewObject.setStringObject(cell.getStringCellValue());
+                        lstHeaders.getItems().add(listViewObject);
 
-                    switch (cell.getCellType())
-                    {
-                        case Cell.CELL_TYPE_BOOLEAN:
-                            System.out.print(cell.getBooleanCellValue() + "\t\t");
-                            break;
-                        case Cell.CELL_TYPE_NUMERIC:
-                            System.out.print(cell.getNumericCellValue() + "\t\t");
-                            break;
-                        case Cell.CELL_TYPE_STRING:
-                            System.out.print(cell.getStringCellValue() + "\t\t");
-                            break;
-                    }
+                        break;
                 }
-                System.out.println("");
             }
+
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
@@ -182,11 +214,12 @@ public class ConversionViewController implements Initializable
         txtTest.setText(absolutePath);
     }
 
- /**
-     * This method gets the name of the textfield and creates a new file with this name, 
-     * and then it adds the obj to the file
+    /**
+     * This method gets the name of the textfield and creates a new file with
+     * this name, and then it adds the obj to the file
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
@@ -212,7 +245,7 @@ public class ConversionViewController implements Initializable
         fw.flush();
 
         System.out.println("filewriter flushed, JSONfile called: " + FileName + " created");
-   
+
         System.out.println(obj);
     }
 

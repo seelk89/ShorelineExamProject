@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnTest" layoutX="14.0" layoutY="361.0" onAction="#clickTest" text="Test" />
       <JFXTextField fx:id="txtTest" layoutX="14.0" layoutY="328.0" />
-      <JFXListView fx:id="lstTest" layoutX="14.0" layoutY="14.0" prefHeight="280.0" prefWidth="248.0" />
       <JFXButton fx:id="btnGet" layoutX="162.0" layoutY="328.0" onAction="#clickGet" text="Get" />
-      <JFXButton layoutX="433.0" layoutY="97.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
-      <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="46.0" />
-      <Label layoutX="438.0" layoutY="22.0" text="Name of JSONFile" />
+      <JFXButton layoutX="455.0" layoutY="54.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
+      <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
+      <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
+      <JFXTextField fx:id="txtType" layoutX="438.0" layoutY="167.0" promptText="type" />
+      <JFXTextField fx:id="txtUserStatus" layoutX="437.0" layoutY="243.0" promptText="userStatus" />
+      <JFXTextField fx:id="txtSystemStatus" layoutX="437.0" layoutY="217.0" promptText="systemStatus" />
+      <JFXTextField fx:id="txtExternalWorkOrderid" layoutX="438.0" layoutY="191.0" promptText="externalWorkOrderId" />
+      <JFXTextField fx:id="txtassetSerialNumber" layoutX="437.0" layoutY="141.0" promptText="assetSerialNumber" />
+      <JFXTextField fx:id="txtsiteName" layoutX="438.0" layoutY="115.0" promptText="siteName" />
+      <JFXTextField fx:id="txtCreatedOn" layoutX="437.0" layoutY="269.0" promptText="createdOn" />
+      <JFXTextField fx:id="txtCreatedBy" layoutX="437.0" layoutY="295.0" promptText="createdBy" />
+      <JFXTextField fx:id="txtName" layoutX="437.0" layoutY="321.0" promptText="name" />
+      <JFXTextField fx:id="txtPriority" layoutX="438.0" layoutY="348.0" promptText="priority" />
+      <JFXTextField fx:id="txtStatus" layoutX="437.0" layoutY="374.0" promptText="status" />
+      <JFXTextField fx:id="txtPlanning" layoutX="438.0" layoutY="426.0" promptText="planning" />
+      <JFXTextField fx:id="txtEstimatedTime" layoutX="438.0" layoutY="556.0" promptText="estimatedTime" />
+      <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" />
+      <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" />
+      <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" />
+      <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" prefHeight="301.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
