@@ -6,8 +6,8 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,21 +16,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
-import static java.util.Locale.filter;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import static jdk.nashorn.internal.objects.NativeRegExp.source;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -70,8 +70,6 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtStatus;
     @FXML
-    private JFXTextField txtPlanning;
-    @FXML
     private JFXTextField txtEstimatedTime;
     @FXML
     private JFXTextField txtLatestFinishDate;
@@ -84,33 +82,15 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtSiteName;
     @FXML
-    private JFXTextField txtassetSerialNumber;
-    @FXML
-    private JFXTextField txtsiteName;
-    @FXML
     private ListView<ListViewObject> lstHeaders;
-       
-    //variable that we will need to get the input stuff be become output
-<<<<<<< HEAD
-//        String varSiteName;
-//        String varAssetSerialNumber;
-//        String varType;
-//        String varExternalWorkOrderId;
-//        String varSystemStatus;
-//        String varUserStatus;
-//        String varCreatedOn;
-//        String varCreatedBy;
-//        String varName;
-//        String varPriority;
-//        String varStatus; //always new
-//       
-//        String varLatestFinishDate ;
-//        String varEarliestStartDate;
-//        String varLatestStartDate;
-//        String varEstimatedTime;
-=======
+    @FXML
+    private JFXTextField txtPlanning;
+    @FXML
+    private JFXTextField txtTest;
+    @FXML
+    private JFXButton btnTest;
 
->>>>>>> 2d610b01c8dca1411a163e10350b3f52b825ca54
+    //variable that we will need to get the input stuff be become output
     private String varSiteName = "";
     private String varAssetSerialNumber = "asset.id";
     private String varType = "Order Type";
@@ -150,8 +130,67 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-        
-        lstHeaders.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+    }
+
+    @FXML
+    private void dragHeaders(javafx.scene.input.MouseEvent event)
+    {
+        //Drag was detected, start drag-and-drop gesture
+        System.out.println("onDragDetected");
+
+        //Allow any transfer mode
+        Dragboard db = lstHeaders.startDragAndDrop(TransferMode.COPY);
+
+        //Put a string on dragboard
+        ClipboardContent content = new ClipboardContent();
+        content.putString(getListViewObject());
+        db.setContent(content);
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropHeader(DragEvent event)
+    {
+        //Data dropped
+        System.out.println("onDragDropped");
+
+        //If there is a string data on dragboard, read it and use it
+        Dragboard db = event.getDragboard();
+        boolean success = false;
+        if (db.hasString())
+        {
+            txtTest.setText(db.getString());
+            success = true;
+        }
+
+        //let the source know whether the string was successfully transferred and used
+        event.setDropCompleted(success);
+
+        event.consume();
+    }
+
+    @FXML
+    private void overHeader(DragEvent event)
+    {
+        //Data is dragged over the target
+        System.out.println("onDragOver");
+
+        //Accept it only if it is  not dragged from the same node and if it has a string data
+        if (event.getGestureSource() != txtTest
+                && event.getDragboard().hasString())
+        {
+            //Allow for both copying and moving, whatever user chooses
+            event.acceptTransferModes(TransferMode.COPY);
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void clickTest(ActionEvent event)
+    {
     }
 
     /**
@@ -165,8 +204,10 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Takes the String filepath of a xlsx file and finds the headers before
-     * putting them into a ListView Jesper
+     *
+     * @param event
+     * @throws IOException Takes the String filepath of a xlsx file and finds
+     * the headers before putting them into a ListView Jesper
      *
      * @param filepath
      */
@@ -176,7 +217,7 @@ public class ConversionViewController implements Initializable
         {
             FileInputStream file = new FileInputStream(new File(filepath));
 
-            //Get the workbook instance for xlsx file 
+            //Get the workbook instance for XLSX file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             //Get first sheet from the workbook
@@ -190,7 +231,7 @@ public class ConversionViewController implements Initializable
             Iterator<Cell> cellIterator = row.cellIterator();
             while (cellIterator.hasNext())
             {
-                //Creates a ListViewObject Where the Headers of the xlsx file can be put as objects for the listView
+                //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
                 ListViewObject listViewObject = new ListViewObject();
 
                 Cell cell = cellIterator.next();
@@ -213,6 +254,10 @@ public class ConversionViewController implements Initializable
             }
 
             file.close();
+            FileOutputStream out = new FileOutputStream(new File(filepath));
+            workbook.write(out);
+            out.close();
+
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -234,7 +279,6 @@ public class ConversionViewController implements Initializable
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
-        
         //Adds a file filter that will only allow xlsx files (excel output files)
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
         fileChooser.getExtensionFilters().add(extFilter);
@@ -253,10 +297,11 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * This method gets the name of the textfield and creates a new file
-     * with this name, and then it adds the obj to the file
-     * This method gets the name of the textfield and creates a new file with
-     * this name, and then it adds the obj to the file Anni
+     *
+     * Anni This method gets the name of the textfield and creates a new file
+     * with this name, and then it adds the obj to the file This method gets the
+     * name of the textfield and creates a new file with this name, and then it
+     * adds the obj to the file
      *
      * @param event
      * @throws IOException
@@ -267,9 +312,7 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-
         //String content = "This is the content to write into a file, can be an object";
-
         JSONObject obj = new JSONObject();
         obj.put(txtSiteName.getText(), varSiteName);
         obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
@@ -322,13 +365,4 @@ public class ConversionViewController implements Initializable
 
         System.out.println(obj1 + "/n" + obj);
     }
-
-    @FXML
-    private void dragHeaders(MouseEvent event)
-    {
-        String s = getListViewObject();
-        listViewObjectString = s;
-        System.out.println(s);  
-    }
-
 }
