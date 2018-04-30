@@ -30,8 +30,8 @@
       <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" text="earliestStartDate" />
       <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" text="latestStartDate" />
 
-           <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragHeaders" prefHeight="301.0" prefWidth="200.0" />
+           <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="301.0" prefWidth="200.0" />
       <JFXButton fx:id="btnTest" layoutX="226.0" layoutY="90.0" onAction="#clickTest" text="Test" />
-      <JFXTextField fx:id="txtTest" layoutX="226.0" layoutY="54.0" onDragDropped="#dropHeader" onDragOver="#overHeader" />
+      <JFXTextField fx:id="txtTest" layoutX="226.0" layoutY="54.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
    </children>
 </AnchorPane>

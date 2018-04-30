@@ -22,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -108,7 +109,7 @@ public class ConversionViewController implements Initializable
     private String varEstimatedTime = "Hours if exist in the input, else null(?)";
 
     private Window stage;
-    private String listViewObjectString;
+    private String absolutePath = null;
 
     /**
      * Initializes the controller class.
@@ -133,35 +134,62 @@ public class ConversionViewController implements Initializable
 
     }
 
+    /**
+     * Allows dragging from the ListView
+     *
+     * @param event
+     * @throws FileNotFoundException
+     */
     @FXML
-    private void dragHeaders(javafx.scene.input.MouseEvent event)
+    private void dragLstHeaders(javafx.scene.input.MouseEvent event) throws FileNotFoundException
     {
-        //Drag was detected, start drag-and-drop gesture
-        System.out.println("onDragDetected");
-
         //Allow any transfer mode
-        Dragboard db = lstHeaders.startDragAndDrop(TransferMode.COPY);
+        Dragboard dragBoard = lstHeaders.startDragAndDrop(TransferMode.COPY);
 
+        //For fun code (might be of some use in regards to useability)
+//        FileInputStream inputstream = new FileInputStream("ShorelineExamProject/images/SLLogo.png");
+//        Image image = new Image(inputstream);
+//        dragBoard.setDragView(image);
         //Put a string on dragboard
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
-        db.setContent(content);
+        dragBoard.setContent(content);
 
         event.consume();
     }
 
+    /**
+     * Activates upon hovering the dragged object over a legitimate input field
+     *
+     * @param event
+     */
     @FXML
-    private void dropHeader(DragEvent event)
+    private void overTxtTest(DragEvent event)
     {
-        //Data dropped
-        System.out.println("onDragDropped");
-
-        //If there is a string data on dragboard, read it and use it
-        Dragboard db = event.getDragboard();
-        boolean success = false;
-        if (db.hasString())
+        //Accept it only if it is  not dragged from the same node and if it has a string data
+        if (event.getGestureSource() != txtTest && event.getDragboard().hasString())
         {
-            txtTest.setText(db.getString());
+            //Allow for both copying and moving, whatever user chooses
+            event.acceptTransferModes(TransferMode.COPY);
+        }
+
+        event.consume();
+    }
+
+    /**
+     * Put the dragged String into the field that it is dropped over
+     *
+     * @param event
+     */
+    @FXML
+    private void dropTxtTest(DragEvent event)
+    {
+        //If there is a string on the dragboard, read it and use it
+        Dragboard dragBoard = event.getDragboard();
+        boolean success = false;
+        if (dragBoard.hasString())
+        {
+            txtTest.setText(dragBoard.getString());
             success = true;
         }
 
@@ -172,25 +200,10 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void overHeader(DragEvent event)
-    {
-        //Data is dragged over the target
-        System.out.println("onDragOver");
-
-        //Accept it only if it is  not dragged from the same node and if it has a string data
-        if (event.getGestureSource() != txtTest
-                && event.getDragboard().hasString())
-        {
-            //Allow for both copying and moving, whatever user chooses
-            event.acceptTransferModes(TransferMode.COPY);
-        }
-
-        event.consume();
-    }
-
-    @FXML
     private void clickTest(ActionEvent event)
     {
+        String header = txtTest.getText();
+        getXLSXHeaderValues(absolutePath, header);
     }
 
     /**
@@ -204,7 +217,6 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     *
      * @param event
      * @throws IOException Takes the String filepath of a xlsx file and finds
      * the headers before putting them into a ListView Jesper
@@ -217,7 +229,7 @@ public class ConversionViewController implements Initializable
         {
             FileInputStream file = new FileInputStream(new File(filepath));
 
-            //Get the workbook instance for XLSX file 
+            //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
             //Get first sheet from the workbook
@@ -268,6 +280,96 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+     * Takes a filepath as a String, a String representation of a header in the
+     * currently selected xlsx file and gets values from the rows below the
+     * selected header in the currently selected xlsx file. Jesper
+     *
+     * @param filepath
+     * @param header
+     */
+    private void getXLSXHeaderValues(String filepath, String header)
+    {
+        try
+        {
+            FileInputStream file = new FileInputStream(new File(filepath));
+            String cellData = null;
+            int colIndex = 0;
+            int rowIndex = 0;
+
+            //Get the workbook instance for xlsx file 
+            XSSFWorkbook workbook = new XSSFWorkbook(file);
+
+            //Get first sheet from the workbook
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            //Gets the first row from the first sheet
+            Iterator<Row> rowIterator = sheet.iterator();
+            Row row = rowIterator.next();
+
+            //Iterate through the cells of the first row
+            Iterator<Cell> cellIterator = row.cellIterator();
+            while (cellIterator.hasNext())
+            {
+                Cell cell = cellIterator.next();
+
+                switch (cell.getCellType())
+                {
+                    //Case the cells value is of type double it will be parsed as String and used to compare to the header
+                    case Cell.CELL_TYPE_NUMERIC:
+
+                        cellData = String.valueOf(cell.getNumericCellValue());
+
+                        if (cellData.equals(header))
+                        {
+                            colIndex = cell.getColumnIndex();
+
+                            //runs down the rows and prints out the values
+                            while (rowIterator.hasNext())
+                            {
+                                rowIndex = rowIndex + 1;
+
+                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                            }
+                        }
+
+                        break;
+                    //Case the cells value is of type String it will be compared to the header
+                    case Cell.CELL_TYPE_STRING:
+
+                        cellData = cell.getStringCellValue();
+
+                        if (cellData.equals(header))
+                        {
+                            colIndex = cell.getColumnIndex();
+
+                            //runs down the rows and prints out the values
+                            while (rowIterator.hasNext())
+                            {
+                                rowIndex = rowIndex + 1;
+
+                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                            }
+                        }
+
+                        break;
+                }
+            }
+
+            file.close();
+            FileOutputStream out = new FileOutputStream(new File(filepath));
+            workbook.write(out);
+            out.close();
+
+        } catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Opens a FileChooser that is only able to get xlsx files. Jesper
      *
      * @param event
@@ -275,10 +377,9 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickGet(ActionEvent event)
     {
-        String absolutePath = null;
-
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
+
         //Adds a file filter that will only allow xlsx files (excel output files)
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
         fileChooser.getExtensionFilters().add(extFilter);
