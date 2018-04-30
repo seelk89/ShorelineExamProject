@@ -7,39 +7,42 @@ package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-import static jdk.nashorn.internal.objects.NativeRegExp.source;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
 import shorelineexamproject.be.ListViewObject;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+//import org.apache.sling.commons.json.JSONException;
+//import org.apache.sling.commons.json.JSONcellValuesect;
+//import com.PojoClassName;
 /**
  * FXML Controller class
  *
@@ -413,57 +416,86 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-        //String content = "This is the content to write into a file, can be an object";
-        JSONObject obj = new JSONObject();
-        obj.put(txtSiteName.getText(), varSiteName);
-        obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-        obj.put(txtType.getText(), varType);
-        obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-        obj.put(txtSystemStatus.getText(), varSystemStatus);
-        obj.put(txtUserStatus.getText(), varUserStatus);
-        obj.put(txtCreatedOn.getText(), varCreatedOn);
-        obj.put(txtCreatedBy.getText(), varCreatedBy);
-        obj.put(txtName.getText(), varName);
-        obj.put(txtPriority.getText(), varPriority);
-        obj.put(txtStatus.getText(), varStatus);
+        JSONArray jarray = getJsonObjects(objectilist); 
 
-        JSONArray list = new JSONArray();
-        list.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
-        list.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
-        list.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
-        list.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
-
-        obj.put("planning", list);
-
-        JSONObject obj1 = new JSONObject();
-        obj1.put(txtSiteName.getText(), varSiteName);
-        obj1.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-        obj1.put(txtType.getText(), varType);
-        obj1.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-        obj1.put(txtSystemStatus.getText(), varSystemStatus);
-        obj1.put(txtUserStatus.getText(), varUserStatus);
-        obj1.put(txtCreatedOn.getText(), varCreatedOn);
-        obj1.put(txtCreatedBy.getText(), varCreatedBy);
-        obj1.put(txtName.getText(), varName);
-        obj1.put(txtPriority.getText(), varPriority);
-        obj1.put(txtStatus.getText(), varStatus);
-
-        JSONArray list1 = new JSONArray();
-        list1.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
-        list1.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
-        list1.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
-        list1.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
-
-        obj1.put("planning1", list1);
-
+//        JSONObject obj = new JSONObject();
+//        obj.put(txtSiteName.getText(), varSiteName);
+//        obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
+//        obj.put(txtType.getText(), varType);
+//        obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
+//        obj.put(txtSystemStatus.getText(), varSystemStatus);
+//        obj.put(txtUserStatus.getText(), varUserStatus);
+//        obj.put(txtCreatedOn.getText(), varCreatedOn);
+//        obj.put(txtCreatedBy.getText(), varCreatedBy);
+//        obj.put(txtName.getText(), varName);
+//        obj.put(txtPriority.getText(), varPriority);
+//        obj.put(txtStatus.getText(), varStatus);
+////        obj.put("getkey", obj.get(i).getvalue);
+//
+//        JSONArray list = new JSONArray();
+//        list.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
+//        list.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
+//        list.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
+//        list.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
+//
+//        obj.put("planning", list);
+//
+//    
         //the above will be moved to another method
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
-        fw.write(obj.toJSONString()); //to be deleted
-        fw.write(obj.toJSONString());
+        fw.write(jarray.toString(4));
         fw.flush();
-
         System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
 
-        System.out.println(obj1 + "/n" + obj);
+        System.out.println(jarray);
+
+    }
+
+    private List<Object> objectilist = new ArrayList();
+
+
+    /** Anni
+     *     //method below converts to json (for now just loops through a list
+    //throws JSONException?, public static string
+     * @param objectilist
+     * @return 
+     */
+    public JSONArray getJsonObjects(List<Object> objectilist)
+    {
+        
+        JSONArray mainjsonArray = new JSONArray();
+        //This will be used to loop through the excel
+
+        //for (Object objectilist1 : objectilist) //need to enter code here??
+        for (int i = 0; i < 10; i++)
+
+        //  int i = 0; i < objectilist.size(); i++
+        {
+            JSONObject obj = new JSONObject();
+            obj.put(txtSiteName.getText(), varSiteName);
+            obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
+            obj.put(txtType.getText(), varType);
+            obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
+            obj.put(txtSystemStatus.getText(), varSystemStatus);
+            obj.put(txtUserStatus.getText(), varUserStatus);
+            obj.put(txtCreatedOn.getText(), varCreatedOn);
+            obj.put(txtCreatedBy.getText(), varCreatedBy);
+            obj.put(txtName.getText(), varName);
+            obj.put(txtPriority.getText(), varPriority);
+            obj.put(txtStatus.getText(), varStatus);
+
+            JSONObject obj2 = new JSONObject();
+            obj2.put(txtLatestFinishDate.getText(), varLatestFinishDate);
+            obj2.put(txtEarliestStartDate.getText(),varEarliestStartDate);
+            obj2.put(txtLatestStartDate.getText(), varLatestStartDate);
+            obj2.put(txtEstimatedTime.getText(), varEstimatedTime);
+
+           obj.put("planning", obj2);
+
+            
+            System.out.println(mainjsonArray);
+           mainjsonArray.put(obj);
+        }
+        return mainjsonArray;
     }
 }

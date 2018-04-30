@@ -1,0 +1,192 @@
+[
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    },
+    {
+        "assetSerialNumber": "asset.id",
+        "userStatus": "User Status",
+        "createdBy": "SAP",
+        "systemStatus": "System Status",
+        "name": "Opr.short text, if empty then Description 2",
+        "siteName": "",
+        "externalWorkOrderId": "Order",
+        "Planning": {
+            "estimatedTime": "Hours if exist in the input, else null(?)",
+            "latestFinishDate": "find Datetime Object",
+            "earliestStartDate": "find Datetime Object",
+            "latestStartDate": "find Datetime Object"
+        },
+        "type": "Order Type",
+        "priority": "priority, if not set, Low",
+        "createdOn": "Datetime Object(Date now)",
+        "status": "New"
+    }
+]
