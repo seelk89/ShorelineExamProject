@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -110,6 +112,12 @@ public class ConversionViewController implements Initializable
 
     private Window stage;
     private String absolutePath = null;
+    @FXML
+    private JFXButton btnTask;
+    @FXML
+    private JFXButton btnCancelTask;
+
+
 
     /**
      * Initializes the controller class.
@@ -133,6 +141,50 @@ public class ConversionViewController implements Initializable
         });
 
     }
+    //Experimentation
+    TaskRunner taskRunner;
+    
+    private Runnable task = new Runnable()
+    {
+        @Override
+        public void run()
+        {
+            for (int i = 0; i < 5000; i++)
+            {
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex)
+                {
+                    Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                System.out.println("Hello");
+            }
+        }
+
+    };
+
+    @FXML
+    private void clickTask(ActionEvent event) throws InterruptedException
+    {
+        if (btnTask.getText().equals("Task"))
+        {   
+            this.taskRunner = new TaskRunner(task);
+            taskRunner.start();
+            btnTask.setText("Pause");
+        } else if (btnTask.getText().equals("Pause"))
+        {
+            taskRunner.pause();
+            btnTask.setText("Task");
+        }
+    }
+
+    @FXML
+    private void clickCancelTask(ActionEvent event) throws InterruptedException
+    {
+        taskRunner.interrupt();
+    }
+    //End of experimentation
 
     /**
      * Allows dragging from the ListView
@@ -143,13 +195,9 @@ public class ConversionViewController implements Initializable
     @FXML
     private void dragLstHeaders(javafx.scene.input.MouseEvent event) throws FileNotFoundException
     {
-        //Allow any transfer mode
+        //Allow copy transfer mode
         Dragboard dragBoard = lstHeaders.startDragAndDrop(TransferMode.COPY);
 
-        //For fun code (might be of some use in regards to useability)
-//        FileInputStream inputstream = new FileInputStream("ShorelineExamProject/images/SLLogo.png");
-//        Image image = new Image(inputstream);
-//        dragBoard.setDragView(image);
         //Put a string on dragboard
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
@@ -199,6 +247,7 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+    //Placeholder method
     @FXML
     private void clickTest(ActionEvent event)
     {
