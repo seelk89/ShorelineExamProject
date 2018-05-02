@@ -142,7 +142,7 @@ public class ConversionViewController implements Initializable
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
-    {  
+    {
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -178,14 +178,11 @@ public class ConversionViewController implements Initializable
     /**
      * Pauses the task
      */
-    public void pause()
+    public void pause() throws InterruptedException
     {
-        try
+        synchronized (thread)
         {
-            task.wait();
-        } catch (InterruptedException ex)
-        {
-            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+            thread.wait();
         }
     }
 
@@ -223,24 +220,24 @@ public class ConversionViewController implements Initializable
         @Override
         protected Object call() throws Exception
         {
-                for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 30; i++)
+            {
+                if (isCancelled())
                 {
-                    if (isCancelled())
-                    {
-                        break;
-                    }
-                    
-                    //Task goes here
-                    try
-                    {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex)
-                    {
-                        Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
-                    }
-                    System.out.println("Hello");
-                    //Task ends here
-                }            
+                    break;
+                }
+
+                //Task goes here
+                try
+                {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex)
+                {
+                    Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
+                }
+                System.out.println("Hello");
+                //Task ends here
+            }
             return null;
         }
     };
