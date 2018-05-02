@@ -40,7 +40,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -122,18 +127,22 @@ public class ConversionViewController implements Initializable
 
     //AbsolutePath for the file being read
     private String absolutePath = null;
-
     //Variables for use with threads
-    private final ExecutorService executor = Executors.newSingleThreadExecutor();
-    private final AtomicBoolean running = new AtomicBoolean(true);
+    private Thread thread;
+    private final AtomicBoolean running = new AtomicBoolean(false);
     private final AtomicBoolean suspend = new AtomicBoolean(false);
+
+    public ConversionViewController()
+    {
+        this.thread = new Thread(task);
+    }
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
-    {
+    {  
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -155,7 +164,7 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
-        executor.execute(task);
+        thread.start();
     }
 
     /**
@@ -163,8 +172,7 @@ public class ConversionViewController implements Initializable
      */
     public void stop()
     {
-        running.set(false);
-        executor.shutdownNow();
+        task.cancel();
     }
 
     /**
@@ -172,10 +180,9 @@ public class ConversionViewController implements Initializable
      */
     public void pause()
     {
-        suspend.set(true);
         try
         {
-            executor.wait();
+            task.wait();
         } catch (InterruptedException ex)
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
@@ -187,8 +194,7 @@ public class ConversionViewController implements Initializable
      */
     public void resume()
     {
-        suspend.set(false);
-        executor.notify();
+        task.notify();
     }
 
     /**
@@ -212,24 +218,31 @@ public class ConversionViewController implements Initializable
     }
 
     //Placeholder task
-    private Runnable task = new Runnable()
+    private Task task = new Task()
     {
         @Override
-        public void run()
+        protected Object call() throws Exception
         {
-            for (int i = 0; i < 30; i++)
-            {
-                try
+                for (int i = 0; i < 30; i++)
                 {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex)
-                {
-                    Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                System.out.println("Hello");
-            }
+                    if (isCancelled())
+                    {
+                        break;
+                    }
+                    
+                    //Task goes here
+                    try
+                    {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex)
+                    {
+                        Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
+                    }
+                    System.out.println("Hello");
+                    //Task ends here
+                }            
+            return null;
         }
-
     };
 
     //Placeholde start/stop button
@@ -346,9 +359,8 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * @param event
-     * @throws IOException Takes the String filepath of a xlsx file and finds
-     * the headers before putting them into a ListView Jesper
+     * Takes the String filepath of a xlsx file and finds the headers before
+     * putting them into a ListView Jesper
      *
      * @param filepath
      */
@@ -357,6 +369,11 @@ public class ConversionViewController implements Initializable
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
+
+            ObservableList<ListViewObject> headersInFile = FXCollections.observableArrayList();
+
+            //Number used incase there are more than one header with the same name
+            int number = 2;
 
             //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -382,17 +399,46 @@ public class ConversionViewController implements Initializable
                     //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_NUMERIC:
                         listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
-                        lstHeaders.getItems().add(listViewObject);
+
+                        //Checks if a header in the list already has an identical name
+                        for (int i = 0; i < headersInFile.size(); i++)
+                        {
+                            if (headersInFile.get(i).getStringObject().equals(listViewObject.getStringObject()))
+                            {
+                                listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue() + " " + number));
+
+                                number = number + 1;
+                                break;
+                            }
+                        }
+
+                        headersInFile.add(listViewObject);
 
                         break;
                     //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_STRING:
                         listViewObject.setStringObject(cell.getStringCellValue());
-                        lstHeaders.getItems().add(listViewObject);
+
+                        //Checks if a header in the list already has an identical name
+                        for (int i = 0; i < headersInFile.size(); i++)
+                        {
+                            if (headersInFile.get(i).getStringObject().equals(listViewObject.getStringObject()))
+                            {
+                                listViewObject.setStringObject(cell.getStringCellValue() + " " + number);
+
+                                number = number + 1;
+                                break;
+                            }
+                        }
+
+                        headersInFile.add(listViewObject);
 
                         break;
                 }
             }
+
+            //Adds the items of headersInFile to the listView
+            lstHeaders.setItems(headersInFile);
 
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
