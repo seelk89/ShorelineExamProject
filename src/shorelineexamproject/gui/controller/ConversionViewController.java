@@ -6,6 +6,7 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,19 +33,17 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import shorelineexamproject.be.ListViewObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-//import org.apache.sling.commons.json.JSONException;
-//import org.apache.sling.commons.json.JSONcellValuesect;
-//import com.PojoClassName;
 /**
  * FXML Controller class
  *
@@ -95,6 +94,12 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtTest;
     @FXML
     private JFXButton btnTest;
+    @FXML
+    private JFXButton btnTask;
+    @FXML
+    private JFXProgressBar prgBar;
+    @FXML
+    private JFXButton btnPauseTask;
 
     //variable that we will need to get the input stuff be become output
     private String varSiteName = "";
@@ -114,13 +119,14 @@ public class ConversionViewController implements Initializable
     private String varEstimatedTime = "Hours if exist in the input, else null(?)";
 
     private Window stage;
+
+    //AbsolutePath for the file being read
     private String absolutePath = null;
-    @FXML
-    private JFXButton btnTask;
-    @FXML
-    private JFXButton btnCancelTask;
 
-
+    //Variables for use with threads
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+    private final AtomicBoolean running = new AtomicBoolean(true);
+    private final AtomicBoolean suspend = new AtomicBoolean(false);
 
     /**
      * Initializes the controller class.
@@ -142,17 +148,76 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-
     }
-    //Experimentation
-    TaskRunner taskRunner;
-    
+
+    /**
+     * Starts a task
+     */
+    public void start()
+    {
+        executor.execute(task);
+    }
+
+    /**
+     * Stops a task
+     */
+    public void stop()
+    {
+        running.set(false);
+        executor.shutdownNow();
+    }
+
+    /**
+     * Pauses the task
+     */
+    public void pause()
+    {
+        suspend.set(true);
+        try
+        {
+            executor.wait();
+        } catch (InterruptedException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Resumes a paused task
+     */
+    public void resume()
+    {
+        suspend.set(false);
+        executor.notify();
+    }
+
+    /**
+     * Checks if the task is running
+     *
+     * @return
+     */
+    boolean isRunning()
+    {
+        return running.get();
+    }
+
+    /**
+     * Checks if the task has been suspended
+     *
+     * @return
+     */
+    boolean isSuspended()
+    {
+        return suspend.get();
+    }
+
+    //Placeholder task
     private Runnable task = new Runnable()
     {
         @Override
         public void run()
         {
-            for (int i = 0; i < 5000; i++)
+            for (int i = 0; i < 30; i++)
             {
                 try
                 {
@@ -167,27 +232,39 @@ public class ConversionViewController implements Initializable
 
     };
 
+    //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
     {
-        if (btnTask.getText().equals("Task"))
-        {   
-            this.taskRunner = new TaskRunner(task);
-            taskRunner.start();
-            btnTask.setText("Pause");
-        } else if (btnTask.getText().equals("Pause"))
+        if (btnTask.getText().equals("Start"))
         {
-            taskRunner.pause();
-            btnTask.setText("Task");
+            start();
+
+            btnTask.setText("Stop");
+        } else if (btnTask.getText().equals("Stop"))
+        {
+            stop();
+
+            btnTask.setText("Start");
         }
     }
 
+    //Placeholder pause/resume button
     @FXML
-    private void clickCancelTask(ActionEvent event) throws InterruptedException
+    private void clickPauseTask(ActionEvent event) throws InterruptedException
     {
-        taskRunner.interrupt();
+        if (btnPauseTask.getText().equals("Pause"))
+        {
+            pause();
+
+            btnPauseTask.setText("Resume");
+        } else if (btnPauseTask.getText().equals("Resume"))
+        {
+            resume();
+
+            btnPauseTask.setText("Pause");
+        }
     }
-    //End of experimentation
 
     /**
      * Allows dragging from the ListView
@@ -465,7 +542,7 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-        JSONArray jarray = getJsonObjects(objectilist); 
+        JSONArray jarray = getJsonObjects(objectilist);
 
 //        JSONObject obj = new JSONObject();
 //        obj.put(txtSiteName.getText(), varSiteName);
@@ -502,16 +579,16 @@ public class ConversionViewController implements Initializable
 
     private List<Object> objectilist = new ArrayList();
 
-
-    /** Anni
-     *     //method below converts to json (for now just loops through a list
-    //throws JSONException?, public static string
+    /**
+     * Anni //method below converts to json (for now just loops through a list
+     * //throws JSONException?, public static string
+     *
      * @param objectilist
-     * @return 
+     * @return
      */
     public JSONArray getJsonObjects(List<Object> objectilist)
     {
-        
+
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
 
@@ -535,16 +612,16 @@ public class ConversionViewController implements Initializable
 
             JSONObject obj2 = new JSONObject();
             obj2.put(txtLatestFinishDate.getText(), varLatestFinishDate);
-            obj2.put(txtEarliestStartDate.getText(),varEarliestStartDate);
+            obj2.put(txtEarliestStartDate.getText(), varEarliestStartDate);
             obj2.put(txtLatestStartDate.getText(), varLatestStartDate);
             obj2.put(txtEstimatedTime.getText(), varEstimatedTime);
 
-           obj.put("planning", obj2);
+            obj.put("planning", obj2);
 
-            
             System.out.println(mainjsonArray);
-           mainjsonArray.put(obj);
+            mainjsonArray.put(obj);
         }
         return mainjsonArray;
     }
+
 }

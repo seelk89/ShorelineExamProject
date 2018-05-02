@@ -34,8 +34,8 @@
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="301.0" prefWidth="200.0" />
       <JFXButton fx:id="btnTest" layoutX="226.0" layoutY="90.0" onAction="#clickTest" text="Test" />
       <JFXTextField fx:id="txtTest" layoutX="226.0" layoutY="54.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
-      <JFXButton fx:id="btnTask" layoutX="219.0" layoutY="141.0" onAction="#clickTask" text="Task" />
-      <JFXButton fx:id="btnCancelTask" layoutX="268.0" layoutY="141.0" onAction="#clickCancelTask" text="CancelTask" />
+      <JFXButton fx:id="btnTask" layoutX="219.0" layoutY="141.0" onAction="#clickTask" text="Start" />
+      <JFXButton fx:id="btnPauseTask" layoutX="268.0" layoutY="141.0" onAction="#clickPauseTask" text="Pause" />
       <JFXProgressBar fx:id="prgBar" layoutX="219.0" layoutY="128.0" prefHeight="5.0" prefWidth="127.0" />
    </children>
 </AnchorPane>

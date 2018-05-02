@@ -20,10 +20,10 @@ public class TaskRunner implements Runnable
     private final AtomicBoolean running = new AtomicBoolean(false);
     private Runnable task;
 
-    TaskRunner(Runnable run)
+    TaskRunner(Runnable runnable)
     {
-        task = run;
-        thread = new Thread(this);
+        task = runnable;
+        thread = new Thread(task);
     }
 
     public void start()
