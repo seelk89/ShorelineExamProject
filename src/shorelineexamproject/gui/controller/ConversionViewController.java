@@ -6,6 +6,7 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,6 +16,8 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,17 +34,29 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import shorelineexamproject.be.Values;
 
-import shorelineexamproject.be.ListViewObject;
 
+import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -96,9 +111,6 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtTest;
     @FXML
     private JFXButton btnTest;
-    
-    private Window stage;
-    private String absolutePath = null;
     @FXML
     private JFXTextField txtVarSiteName;
     @FXML
@@ -132,31 +144,54 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtVarEstimatedTime;
 
-    //variables that we will need to get the input stuff to become the output
-    private String varSiteName = ""; //is okay if it's always empty
-    private String varAssetSerialNumber = "asset.id";
-    private String varType = "Order Type";
-    private String varExternalWorkOrderId = "Order";
-    private String varSystemStatus = "System Status";
-    private String varUserStatus = "User Status";
-    private String varCreatedOn = "Datetime Object(Date now)";
-    private String varCreatedBy = "SAP";
-    private String varName = "Opr.short text, if empty then Description 2";
-    private String varPriority = "Priority, if not set, Low";
-    private String varStatus = "New"; //always new
-    private String varLatestFinishDate = "Datetime Object";
-    private String varEarliestStartDate = "Datetime Object";
-    private String varLatestStartDate = "Datetime Object";
-    private String varEstimatedTime = ""; //Hours if exist in the input, else null(?)
+    @FXML
+    private JFXButton btnTask;
+    @FXML
+    private JFXProgressBar prgBar;
+    @FXML
+    private JFXButton btnPauseTask;
+
+   private ArrayList<String> lstVarSiteName = new ArrayList<String>();
+    private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
+    private ArrayList<String> lstVarType = new ArrayList<String>();
+    private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
+    private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarCreatedOn = new ArrayList<String>();
+    private ArrayList<String> lstVarCreatedBy = new ArrayList<String>();
+    private ArrayList<String> lstVarName = new ArrayList<String>();
+    private ArrayList<String> lstVarPriority = new ArrayList<String>();
+    private ArrayList<String> lstVarStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarLatestFinishDate = new ArrayList<String>();
+    private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
+    private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
+    private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
+
+
 
     private ArrayList<String> lstHeader1 = new ArrayList<String>();
+
+    private Window stage;
+
+    //AbsolutePath for the file being read
+    private String absolutePath = null;
+    //Variables for use with threads
+    private Thread thread;
+    private final AtomicBoolean running = new AtomicBoolean(false);
+    private final AtomicBoolean suspend = new AtomicBoolean(false);
+
+    public ConversionViewController()
+    {
+        this.thread = new Thread(task);
+    }
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
-    {
+    {  
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -171,10 +206,129 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-        
+
     }
 
     /**
+     * Starts a task
+     */
+    public void start()
+    {
+        thread.start();
+    }
+
+    /**
+     * Stops a task
+     */
+    public void stop()
+    {
+        task.cancel();
+    }
+
+    /**
+     * Pauses the task
+     */
+    public void pause()
+    {
+        try
+        {
+            task.wait();
+        } catch (InterruptedException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Resumes a paused task
+     */
+    public void resume()
+    {
+        task.notify();
+    }
+
+    /**
+     * Checks if the task is running
+     *
+     * @return
+     */
+    boolean isRunning()
+    {
+        return running.get();
+    }
+
+    /**
+     * Checks if the task has been suspended
+     *
+     * @return
+     */
+    boolean isSuspended()
+    {
+        return suspend.get();
+    }
+
+    //Placeholder task
+    private Task task = new Task()
+    {
+        @Override
+        protected Object call() throws Exception
+        {
+                for (int i = 0; i < 30; i++)
+                {
+                    if (isCancelled())
+                    {
+                        break;
+                    }
+                    
+                    //Task goes here
+                    try
+                    {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex)
+                    {
+                        Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
+                    }
+                    System.out.println("Hello");
+                    //Task ends here
+                }            
+            return null;
+        }
+    };
+
+    //Placeholde start/stop button
+    @FXML
+    private void clickTask(ActionEvent event) throws InterruptedException
+    {
+        if (btnTask.getText().equals("Start"))
+        {
+            start();
+
+            btnTask.setText("Stop");
+        } else if (btnTask.getText().equals("Stop"))
+        {
+            stop();
+
+            btnTask.setText("Start");
+        }
+    }
+
+    //Placeholder pause/resume button
+    @FXML
+    private void clickPauseTask(ActionEvent event) throws InterruptedException
+    {
+        if (btnPauseTask.getText().equals("Pause"))
+        {
+            pause();
+
+            btnPauseTask.setText("Resume");
+        } else if (btnPauseTask.getText().equals("Resume"))
+        {
+            resume();
+
+            btnPauseTask.setText("Pause");
+        }
+    }
+  /**
      * Allows dragging from the ListView
      *
      * @param event
@@ -194,7 +348,7 @@ public class ConversionViewController implements Initializable
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
         dragBoard.setContent(content);
-        
+
         event.consume();
     }
 
@@ -212,7 +366,7 @@ public class ConversionViewController implements Initializable
             //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
         }
-        
+
         event.consume();
     }
 
@@ -235,16 +389,34 @@ public class ConversionViewController implements Initializable
 
         //let the source know whether the string was successfully transferred and used
         event.setDropCompleted(success);
-        
+
         event.consume();
     }
-    
+
     @FXML
     private void clickTest(ActionEvent event)
     {
         String header1 = txtTest.getText();
-        getXLSXHeaderValues(absolutePath, header1); //??
-        System.out.println(lstHeader1);
+        String header2 = txtTest.getText();
+        String header3 = txtTest.getText();
+        String header4 = txtTest.getText();
+        String header5 = txtTest.getText();
+        String header6 = txtTest.getText();
+        String header7 = txtTest.getText();
+        String header8 = txtTest.getText();
+        String header9 = txtTest.getText();
+        String header10 = txtTest.getText();
+        String header11 = txtTest.getText();
+        String header12 = txtTest.getText();
+        String header13 = txtTest.getText();
+        String header14 = txtTest.getText();
+        String header15 = txtTest.getText();
+
+        getXLSXHeaderValues(absolutePath, header1, header2,
+                header3, header4, header5, header6, header7,
+                header8, header9, header10, header11, header12,
+                header13, header14, header15); //??
+        //   System.out.println(lstVarSiteName);
     }
 
     /**
@@ -286,31 +458,31 @@ public class ConversionViewController implements Initializable
             {
                 //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
                 ListViewObject listViewObject = new ListViewObject();
-                
+
                 Cell cell = cellIterator.next();
-                
+
                 switch (cell.getCellType())
                 {
                     //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_NUMERIC:
                         listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
                         lstHeaders.getItems().add(listViewObject);
-                        
+
                         break;
                     //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_STRING:
                         listViewObject.setStringObject(cell.getStringCellValue());
                         lstHeaders.getItems().add(listViewObject);
-                        
+
                         break;
                 }
             }
-            
+
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
             out.close();
-            
+
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -329,13 +501,10 @@ public class ConversionViewController implements Initializable
      * @param header
      */
     private void getXLSXHeaderValues(String filepath,
-            String header1)
-    /**
-     * , String header2, String header3, String header4, String header5, String
-     * header6, String header7, String header8, String header9, String header10,
-     * String header11, String header12,String header13, String header14, String
-     * header15)
-     */
+            String header1, String header2, String header3, String header4, String header5,
+            String header6, String header7, String header8, String header9, String header10,
+            String header11, String header12, String header13, String header14, String header15)
+
     {
         try
         {
@@ -359,14 +528,14 @@ public class ConversionViewController implements Initializable
             while (cellIterator.hasNext())
             {
                 Cell cell = cellIterator.next();
-                
+
                 switch (cell.getCellType())
                 {
                     //Case the cells value is of type double it will be parsed as String and used to compare to the header
                     case Cell.CELL_TYPE_NUMERIC:
-                        
+
                         cellData = String.valueOf(cell.getNumericCellValue());
-                        
+
                         if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
@@ -377,21 +546,19 @@ public class ConversionViewController implements Initializable
                                 Row r = rowIterator.next();
                                 if (r != null)
                                 {
-                                     lstHeader1.add(r.getCell(colIndex).toString());
-                                // System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
-                               // System.out.println(lstHeader1);
+                                    lstVarSiteName.add(r.getCell(colIndex).toString());
+
                                 }
-                               
-                                
+
                             }
                         }
-                        
+
                         break;
 //                    //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
-                        
+
                         cellData = cell.getStringCellValue();
-                        
+
                         if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
@@ -400,29 +567,39 @@ public class ConversionViewController implements Initializable
                             while (rowIterator.hasNext())
                             {
                                 rowIndex = rowIndex + 1;
-                                 Row r = rowIterator.next();
-                                 if (r != null)
+                                Row r = rowIterator.next();
+                                if (r != null)
                                 {
-                                     lstHeader1.add(r.getCell(colIndex).toString());
-                                // System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
-                               // System.out.println(lstHeader1);
+                                    lstVarSiteName.add(r.getCell(colIndex).toString());
+                                    lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
+                                    lstVarType.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarSystemStatus.add(r.getCell(colIndex).toString());
+                                    lstVarUserStatus.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedOn.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedBy.add(r.getCell(colIndex).toString());
+                                    lstVarName.add(r.getCell(colIndex).toString());
+                                    lstVarPriority.add(r.getCell(colIndex).toString());
+                                    lstVarStatus.add(r.getCell(colIndex).toString());
+                                    lstVarLatestFinishDate.add(r.getCell(colIndex).toString());
+                                    lstVarEarliestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarLatestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarEstimatedTime.add(r.getCell(colIndex).toString());
+
                                 }
-//                                 lstHeader1.add(String.valueOf(sheet.getRow(rowIndex).getCell(colIndex)));
-//                                 
-//                              //  System.out.println(sheet.getRow(rowIndex).getCell(colIndex)); //??
-//                                System.out.println(lstHeader1);
+//                               
                             }
                         }
-                        
+
                         break;
                 }
             }
-            
+
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
             out.close();
-            
+
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -449,7 +626,7 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         File xlsxFile = fileChooser.showOpenDialog(stage);
-        
+
         if (xlsxFile != null)
         {
             absolutePath = xlsxFile.getAbsolutePath();
@@ -478,16 +655,16 @@ public class ConversionViewController implements Initializable
 
         //metodekald/metode
         JSONArray jarray = CreateJsonObjects(objectilist);
-        
+
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
         fw.write(jarray.toString(4));
         fw.flush();
         System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-        
+
         System.out.println(jarray);
-        
+
     }
-    
+
     private List<Object> objectilist = new ArrayList();
 
     /**
@@ -503,38 +680,34 @@ public class ConversionViewController implements Initializable
         //This will be used to loop through the excel
 
         //for (Object objectilist1 : objectilist) //need to enter code here??
-        for (int i = 0; i < lstHeader1.size(); i++)
+        for (int i = 0; i < lstVarSiteName.size(); i++)
         {
             JSONObject obj = new JSONObject();
-            
-            obj.put(txtSiteName.getText(), varSiteName);
 
-            String varAssetSerialNumber = lstHeader1.get(i);
-           // System.out.println(lstHeader1.get(1));
-            obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-            
-            obj.put(txtType.getText(), varType);
-            obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-            obj.put(txtSystemStatus.getText(), varSystemStatus);
-            obj.put(txtUserStatus.getText(), varUserStatus);
-            obj.put(txtCreatedOn.getText(), varCreatedOn);
-            obj.put(txtCreatedBy.getText(), varCreatedBy);
-            obj.put(txtName.getText(), varName);
-            obj.put(txtPriority.getText(), varPriority);
-            obj.put(txtStatus.getText(), varStatus);
-            
+            obj.put(txtSiteName.getText(), lstVarSiteName.get(i));
+            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
+            obj.put(txtType.getText(), lstVarType.get(i));
+            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderId.get(i));
+            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
+            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
+            obj.put(txtCreatedOn.getText(), lstVarCreatedOn.get(i));
+            obj.put(txtCreatedBy.getText(), lstVarCreatedBy.get(i));
+            obj.put(txtName.getText(), lstVarName.get(i));
+            obj.put(txtPriority.getText(), lstVarPriority.get(i));
+            obj.put(txtStatus.getText(), lstVarStatus.get(i));
+
             JSONObject obj2 = new JSONObject();
-            obj2.put(txtLatestFinishDate.getText(), varLatestFinishDate);
-            obj2.put(txtEarliestStartDate.getText(), varEarliestStartDate);
-            obj2.put(txtLatestStartDate.getText(), varLatestStartDate);
-            obj2.put(txtEstimatedTime.getText(), varEstimatedTime);
-            
+            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
+            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
+            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
+            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
+
             obj.put("planning", obj2);
-            
-            System.out.println(mainjsonArray);
+
             mainjsonArray.put(obj);
         }
+        System.out.println(mainjsonArray);
         return mainjsonArray;
     }
-    
+
 }
