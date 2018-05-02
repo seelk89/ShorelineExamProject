@@ -8,6 +8,7 @@ package shorelineexamproject.gui.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,11 +34,20 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import shorelineexamproject.be.Values;
+
+
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -46,7 +56,9 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -56,7 +68,7 @@ import org.json.JSONObject;
  */
 public class ConversionViewController implements Initializable
 {
-
+    
     @FXML
     private JFXButton btnGet;
     @FXML
@@ -100,28 +112,64 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnTest;
     @FXML
+    private JFXTextField txtVarSiteName;
+    @FXML
+    private JFXTextField txtVarAssetSerialNumber;
+    @FXML
+    private JFXTextField txtVarType;
+    @FXML
+    private JFXTextField txtVarExternalWorkOrderid;
+    @FXML
+    private JFXTextField txtVarCreatedOn;
+    @FXML
+    private JFXTextField txtVarUserStatus;
+    @FXML
+    private JFXTextField txtVarSystemStatus;
+    @FXML
+    private JFXTextField txtVarCreatedBy;
+    @FXML
+    private JFXTextField txtVarName;
+    @FXML
+    private JFXTextField txtVarPriority;
+    @FXML
+    private JFXTextField txtVarStatus;
+    @FXML
+    private JFXTextField txtVarPlanning;
+    @FXML
+    private JFXTextField txtVarLatestFinishDate;
+    @FXML
+    private JFXTextField txtVarEarliestStartDate;
+    @FXML
+    private JFXTextField txtVarLatestStartDate;
+    @FXML
+    private JFXTextField txtVarEstimatedTime;
+
+    @FXML
     private JFXButton btnTask;
     @FXML
     private JFXProgressBar prgBar;
     @FXML
     private JFXButton btnPauseTask;
 
-    //variable that we will need to get the input stuff be become output
-    private String varSiteName = "";
-    private String varAssetSerialNumber = "asset.id";
-    private String varType = "Order Type";
-    private String varExternalWorkOrderId = "Order";
-    private String varSystemStatus = "System Status";
-    private String varUserStatus = "User Status";
-    private String varCreatedOn = "Datetime Object(Date now)";
-    private String varCreatedBy = "SAP";
-    private String varName = "Opr.short text, if empty then Description 2";
-    private String varPriority = "priority, if not set, Low";
-    private String varStatus = "New"; //always new
-    private String varLatestFinishDate = "find Datetime Object";
-    private String varEarliestStartDate = "find Datetime Object";
-    private String varLatestStartDate = "find Datetime Object";
-    private String varEstimatedTime = "Hours if exist in the input, else null(?)";
+   private ArrayList<String> lstVarSiteName = new ArrayList<String>();
+    private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
+    private ArrayList<String> lstVarType = new ArrayList<String>();
+    private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
+    private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarCreatedOn = new ArrayList<String>();
+    private ArrayList<String> lstVarCreatedBy = new ArrayList<String>();
+    private ArrayList<String> lstVarName = new ArrayList<String>();
+    private ArrayList<String> lstVarPriority = new ArrayList<String>();
+    private ArrayList<String> lstVarStatus = new ArrayList<String>();
+    private ArrayList<String> lstVarLatestFinishDate = new ArrayList<String>();
+    private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
+    private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
+    private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
+
+
+
+    private ArrayList<String> lstHeader1 = new ArrayList<String>();
 
     private Window stage;
 
@@ -136,6 +184,7 @@ public class ConversionViewController implements Initializable
     {
         this.thread = new Thread(task);
     }
+
 
     /**
      * Initializes the controller class.
@@ -152,11 +201,12 @@ public class ConversionViewController implements Initializable
                 if (item != null)
                 {
                     Text t = new Text(item.getStringObject());
-
+                    
                     setGraphic(t);
                 }
             }
         });
+
     }
 
     /**
@@ -275,8 +325,7 @@ public class ConversionViewController implements Initializable
             btnPauseTask.setText("Pause");
         }
     }
-
-    /**
+  /**
      * Allows dragging from the ListView
      *
      * @param event
@@ -285,9 +334,13 @@ public class ConversionViewController implements Initializable
     @FXML
     private void dragLstHeaders(javafx.scene.input.MouseEvent event) throws FileNotFoundException
     {
-        //Allow copy transfer mode
+        //Allow any transfer mode
         Dragboard dragBoard = lstHeaders.startDragAndDrop(TransferMode.COPY);
 
+        //For fun code (might be of some use in regards to useability)
+//        FileInputStream inputstream = new FileInputStream("ShorelineExamProject/images/SLLogo.png");
+//        Image image = new Image(inputstream);
+//        dragBoard.setDragView(image);
         //Put a string on dragboard
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
@@ -337,12 +390,30 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
-    //Placeholder method
     @FXML
     private void clickTest(ActionEvent event)
     {
-        String header = txtTest.getText();
-        getXLSXHeaderValues(absolutePath, header);
+        String header1 = txtTest.getText();
+        String header2 = txtTest.getText();
+        String header3 = txtTest.getText();
+        String header4 = txtTest.getText();
+        String header5 = txtTest.getText();
+        String header6 = txtTest.getText();
+        String header7 = txtTest.getText();
+        String header8 = txtTest.getText();
+        String header9 = txtTest.getText();
+        String header10 = txtTest.getText();
+        String header11 = txtTest.getText();
+        String header12 = txtTest.getText();
+        String header13 = txtTest.getText();
+        String header14 = txtTest.getText();
+        String header15 = txtTest.getText();
+
+        getXLSXHeaderValues(absolutePath, header1, header2,
+                header3, header4, header5, header6, header7,
+                header8, header9, header10, header11, header12,
+                header13, header14, header15); //??
+        //   System.out.println(lstVarSiteName);
     }
 
     /**
@@ -356,8 +427,9 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Takes the String filepath of a xlsx file and finds the headers before
-     * putting them into a ListView Jesper
+     * @param event
+     * @throws IOException Takes the String filepath of a xlsx file and finds
+     * the headers before putting them into a ListView Jesper
      *
      * @param filepath
      */
@@ -366,11 +438,6 @@ public class ConversionViewController implements Initializable
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
-
-            ObservableList<ListViewObject> headersInFile = FXCollections.observableArrayList();
-
-            //Number used incase there are more than one header with the same name
-            int number = 2;
 
             //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -396,46 +463,17 @@ public class ConversionViewController implements Initializable
                     //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_NUMERIC:
                         listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
-
-                        //Checks if a header in the list already has an identical name
-                        for (int i = 0; i < headersInFile.size(); i++)
-                        {
-                            if (headersInFile.get(i).getStringObject().equals(listViewObject.getStringObject()))
-                            {
-                                listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue() + " " + number));
-
-                                number = number + 1;
-                                break;
-                            }
-                        }
-
-                        headersInFile.add(listViewObject);
+                        lstHeaders.getItems().add(listViewObject);
 
                         break;
                     //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_STRING:
                         listViewObject.setStringObject(cell.getStringCellValue());
-
-                        //Checks if a header in the list already has an identical name
-                        for (int i = 0; i < headersInFile.size(); i++)
-                        {
-                            if (headersInFile.get(i).getStringObject().equals(listViewObject.getStringObject()))
-                            {
-                                listViewObject.setStringObject(cell.getStringCellValue() + " " + number);
-
-                                number = number + 1;
-                                break;
-                            }
-                        }
-
-                        headersInFile.add(listViewObject);
+                        lstHeaders.getItems().add(listViewObject);
 
                         break;
                 }
             }
-
-            //Adds the items of headersInFile to the listView
-            lstHeaders.setItems(headersInFile);
 
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
@@ -459,7 +497,11 @@ public class ConversionViewController implements Initializable
      * @param filepath
      * @param header
      */
-    private void getXLSXHeaderValues(String filepath, String header)
+    private void getXLSXHeaderValues(String filepath,
+            String header1, String header2, String header3, String header4, String header5,
+            String header6, String header7, String header8, String header9, String header10,
+            String header11, String header12, String header13, String header14, String header15)
+
     {
         try
         {
@@ -491,26 +533,30 @@ public class ConversionViewController implements Initializable
 
                         cellData = String.valueOf(cell.getNumericCellValue());
 
-                        if (cellData.equals(header))
+                        if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
 
                             //runs down the rows and prints out the values
                             while (rowIterator.hasNext())
                             {
-                                rowIndex = rowIndex + 1;
+                                Row r = rowIterator.next();
+                                if (r != null)
+                                {
+                                    lstVarSiteName.add(r.getCell(colIndex).toString());
 
-                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                                }
+
                             }
                         }
 
                         break;
-                    //Case the cells value is of type String it will be compared to the header
+//                    //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
 
                         cellData = cell.getStringCellValue();
 
-                        if (cellData.equals(header))
+                        if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
 
@@ -518,8 +564,27 @@ public class ConversionViewController implements Initializable
                             while (rowIterator.hasNext())
                             {
                                 rowIndex = rowIndex + 1;
+                                Row r = rowIterator.next();
+                                if (r != null)
+                                {
+                                    lstVarSiteName.add(r.getCell(colIndex).toString());
+                                    lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
+                                    lstVarType.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarSystemStatus.add(r.getCell(colIndex).toString());
+                                    lstVarUserStatus.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedOn.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedBy.add(r.getCell(colIndex).toString());
+                                    lstVarName.add(r.getCell(colIndex).toString());
+                                    lstVarPriority.add(r.getCell(colIndex).toString());
+                                    lstVarStatus.add(r.getCell(colIndex).toString());
+                                    lstVarLatestFinishDate.add(r.getCell(colIndex).toString());
+                                    lstVarEarliestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarLatestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarEstimatedTime.add(r.getCell(colIndex).toString());
 
-                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                                }
+//                               
                             }
                         }
 
@@ -585,32 +650,9 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-        JSONArray jarray = getJsonObjects(objectilist);
+        //metodekald/metode
+        JSONArray jarray = CreateJsonObjects(objectilist);
 
-//        JSONObject obj = new JSONObject();
-//        obj.put(txtSiteName.getText(), varSiteName);
-//        obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-//        obj.put(txtType.getText(), varType);
-//        obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-//        obj.put(txtSystemStatus.getText(), varSystemStatus);
-//        obj.put(txtUserStatus.getText(), varUserStatus);
-//        obj.put(txtCreatedOn.getText(), varCreatedOn);
-//        obj.put(txtCreatedBy.getText(), varCreatedBy);
-//        obj.put(txtName.getText(), varName);
-//        obj.put(txtPriority.getText(), varPriority);
-//        obj.put(txtStatus.getText(), varStatus);
-////        obj.put("getkey", obj.get(i).getvalue);
-//
-//        JSONArray list = new JSONArray();
-//        list.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
-//        list.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
-//        list.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
-//        list.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
-//
-//        obj.put("planning", list);
-//
-//    
-        //the above will be moved to another method
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
         fw.write(jarray.toString(4));
         fw.flush();
@@ -629,41 +671,39 @@ public class ConversionViewController implements Initializable
      * @param objectilist
      * @return
      */
-    public JSONArray getJsonObjects(List<Object> objectilist)
+    public JSONArray CreateJsonObjects(List<Object> objectilist)
     {
-
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
 
         //for (Object objectilist1 : objectilist) //need to enter code here??
-        for (int i = 0; i < 10; i++)
-
-        //  int i = 0; i < objectilist.size(); i++
+        for (int i = 0; i < lstVarSiteName.size(); i++)
         {
             JSONObject obj = new JSONObject();
-            obj.put(txtSiteName.getText(), varSiteName);
-            obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-            obj.put(txtType.getText(), varType);
-            obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-            obj.put(txtSystemStatus.getText(), varSystemStatus);
-            obj.put(txtUserStatus.getText(), varUserStatus);
-            obj.put(txtCreatedOn.getText(), varCreatedOn);
-            obj.put(txtCreatedBy.getText(), varCreatedBy);
-            obj.put(txtName.getText(), varName);
-            obj.put(txtPriority.getText(), varPriority);
-            obj.put(txtStatus.getText(), varStatus);
+
+            obj.put(txtSiteName.getText(), lstVarSiteName.get(i));
+            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
+            obj.put(txtType.getText(), lstVarType.get(i));
+            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderId.get(i));
+            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
+            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
+            obj.put(txtCreatedOn.getText(), lstVarCreatedOn.get(i));
+            obj.put(txtCreatedBy.getText(), lstVarCreatedBy.get(i));
+            obj.put(txtName.getText(), lstVarName.get(i));
+            obj.put(txtPriority.getText(), lstVarPriority.get(i));
+            obj.put(txtStatus.getText(), lstVarStatus.get(i));
 
             JSONObject obj2 = new JSONObject();
-            obj2.put(txtLatestFinishDate.getText(), varLatestFinishDate);
-            obj2.put(txtEarliestStartDate.getText(), varEarliestStartDate);
-            obj2.put(txtLatestStartDate.getText(), varLatestStartDate);
-            obj2.put(txtEstimatedTime.getText(), varEstimatedTime);
+            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
+            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
+            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
+            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
 
             obj.put("planning", obj2);
 
-            System.out.println(mainjsonArray);
             mainjsonArray.put(obj);
         }
+        System.out.println(mainjsonArray);
         return mainjsonArray;
     }
 
