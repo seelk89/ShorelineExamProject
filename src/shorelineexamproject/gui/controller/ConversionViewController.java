@@ -142,7 +142,6 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtVarLatestStartDate;
     @FXML
     private JFXTextField txtVarEstimatedTime;
-
     @FXML
     private JFXButton btnTask;
     @FXML
@@ -173,14 +172,9 @@ public class ConversionViewController implements Initializable
     //AbsolutePath for the file being read
     private String absolutePath = null;
     //Variables for use with threads
-    private Thread thread;
+    private Thread thread = null;
     private final AtomicBoolean running = new AtomicBoolean(false);
     private final AtomicBoolean suspend = new AtomicBoolean(false);
-
-    public ConversionViewController()
-    {
-        this.thread = new Thread(task);
-    }
 
     /**
      * Initializes the controller class.
@@ -210,6 +204,7 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
+        thread = new Thread(task);
         thread.start();
     }
 
@@ -562,7 +557,7 @@ public class ConversionViewController implements Initializable
                         }
 
                         break;
-//                    //Case the cells value is of type String it will be compared to the header
+                    //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
 
                         cellData = cell.getStringCellValue();
@@ -595,10 +590,8 @@ public class ConversionViewController implements Initializable
                                     lstVarEstimatedTime.add(r.getCell(colIndex).toString());
 
                                 }
-//                               
                             }
                         }
-
                         break;
                 }
             }
