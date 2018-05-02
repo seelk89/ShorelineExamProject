@@ -37,7 +37,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import shorelineexamproject.be.Values;
 
-
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
 import java.io.InputStream;
@@ -68,7 +67,7 @@ import org.json.JSONObject;
  */
 public class ConversionViewController implements Initializable
 {
-    
+
     @FXML
     private JFXButton btnGet;
     @FXML
@@ -151,7 +150,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnPauseTask;
 
-   private ArrayList<String> lstVarSiteName = new ArrayList<String>();
+    private ArrayList<String> lstVarSiteName = new ArrayList<String>();
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
     private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
@@ -166,8 +165,6 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
-
-
 
     private ArrayList<String> lstHeader1 = new ArrayList<String>();
 
@@ -185,7 +182,6 @@ public class ConversionViewController implements Initializable
         this.thread = new Thread(task);
     }
 
-
     /**
      * Initializes the controller class.
      */
@@ -201,7 +197,7 @@ public class ConversionViewController implements Initializable
                 if (item != null)
                 {
                     Text t = new Text(item.getStringObject());
-                    
+
                     setGraphic(t);
                 }
             }
@@ -325,7 +321,8 @@ public class ConversionViewController implements Initializable
             btnPauseTask.setText("Pause");
         }
     }
-  /**
+
+    /**
      * Allows dragging from the ListView
      *
      * @param event
@@ -544,6 +541,20 @@ public class ConversionViewController implements Initializable
                                 if (r != null)
                                 {
                                     lstVarSiteName.add(r.getCell(colIndex).toString());
+                                    lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
+                                    lstVarType.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarSystemStatus.add(r.getCell(colIndex).toString());
+                                    lstVarUserStatus.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedOn.add(r.getCell(colIndex).toString());
+                                    lstVarCreatedBy.add(r.getCell(colIndex).toString());
+                                    lstVarName.add(r.getCell(colIndex).toString());
+                                    lstVarPriority.add(r.getCell(colIndex).toString());
+                                    lstVarStatus.add(r.getCell(colIndex).toString());
+                                    lstVarLatestFinishDate.add(r.getCell(colIndex).toString());
+                                    lstVarEarliestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarLatestStartDate.add(r.getCell(colIndex).toString());
+                                    lstVarEstimatedTime.add(r.getCell(colIndex).toString());
 
                                 }
 
