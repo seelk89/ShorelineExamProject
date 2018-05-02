@@ -7,6 +7,7 @@ package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -30,19 +31,21 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import shorelineexamproject.be.Values;
 
 import shorelineexamproject.be.ListViewObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
-//import org.apache.sling.commons.json.JSONException;
-//import org.apache.sling.commons.json.JSONcellValuesect;
-//import com.PojoClassName;
 /**
  * FXML Controller class
  *
@@ -50,7 +53,7 @@ import org.json.JSONObject;
  */
 public class ConversionViewController implements Initializable
 {
-
+    
     @FXML
     private JFXButton btnGet;
     @FXML
@@ -93,9 +96,44 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtTest;
     @FXML
     private JFXButton btnTest;
+    
+    private Window stage;
+    private String absolutePath = null;
+    @FXML
+    private JFXTextField txtVarSiteName;
+    @FXML
+    private JFXTextField txtVarAssetSerialNumber;
+    @FXML
+    private JFXTextField txtVarType;
+    @FXML
+    private JFXTextField txtVarExternalWorkOrderid;
+    @FXML
+    private JFXTextField txtVarCreatedOn;
+    @FXML
+    private JFXTextField txtVarUserStatus;
+    @FXML
+    private JFXTextField txtVarSystemStatus;
+    @FXML
+    private JFXTextField txtVarCreatedBy;
+    @FXML
+    private JFXTextField txtVarName;
+    @FXML
+    private JFXTextField txtVarPriority;
+    @FXML
+    private JFXTextField txtVarStatus;
+    @FXML
+    private JFXTextField txtVarPlanning;
+    @FXML
+    private JFXTextField txtVarLatestFinishDate;
+    @FXML
+    private JFXTextField txtVarEarliestStartDate;
+    @FXML
+    private JFXTextField txtVarLatestStartDate;
+    @FXML
+    private JFXTextField txtVarEstimatedTime;
 
-    //variable that we will need to get the input stuff be become output
-    private String varSiteName = "";
+    //variables that we will need to get the input stuff to become the output
+    private String varSiteName = ""; //is okay if it's always empty
     private String varAssetSerialNumber = "asset.id";
     private String varType = "Order Type";
     private String varExternalWorkOrderId = "Order";
@@ -104,15 +142,14 @@ public class ConversionViewController implements Initializable
     private String varCreatedOn = "Datetime Object(Date now)";
     private String varCreatedBy = "SAP";
     private String varName = "Opr.short text, if empty then Description 2";
-    private String varPriority = "priority, if not set, Low";
+    private String varPriority = "Priority, if not set, Low";
     private String varStatus = "New"; //always new
-    private String varLatestFinishDate = "find Datetime Object";
-    private String varEarliestStartDate = "find Datetime Object";
-    private String varLatestStartDate = "find Datetime Object";
-    private String varEstimatedTime = "Hours if exist in the input, else null(?)";
+    private String varLatestFinishDate = "Datetime Object";
+    private String varEarliestStartDate = "Datetime Object";
+    private String varLatestStartDate = "Datetime Object";
+    private String varEstimatedTime = ""; //Hours if exist in the input, else null(?)
 
-    private Window stage;
-    private String absolutePath = null;
+    private ArrayList<String> lstHeader1 = new ArrayList<String>();
 
     /**
      * Initializes the controller class.
@@ -129,12 +166,12 @@ public class ConversionViewController implements Initializable
                 if (item != null)
                 {
                     Text t = new Text(item.getStringObject());
-
+                    
                     setGraphic(t);
                 }
             }
         });
-
+        
     }
 
     /**
@@ -157,7 +194,7 @@ public class ConversionViewController implements Initializable
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
         dragBoard.setContent(content);
-
+        
         event.consume();
     }
 
@@ -175,7 +212,7 @@ public class ConversionViewController implements Initializable
             //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
         }
-
+        
         event.consume();
     }
 
@@ -198,15 +235,16 @@ public class ConversionViewController implements Initializable
 
         //let the source know whether the string was successfully transferred and used
         event.setDropCompleted(success);
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void clickTest(ActionEvent event)
     {
-        String header = txtTest.getText();
-        getXLSXHeaderValues(absolutePath, header);
+        String header1 = txtTest.getText();
+        getXLSXHeaderValues(absolutePath, header1); //??
+        System.out.println(lstHeader1);
     }
 
     /**
@@ -248,31 +286,31 @@ public class ConversionViewController implements Initializable
             {
                 //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
                 ListViewObject listViewObject = new ListViewObject();
-
+                
                 Cell cell = cellIterator.next();
-
+                
                 switch (cell.getCellType())
                 {
                     //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_NUMERIC:
                         listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
                         lstHeaders.getItems().add(listViewObject);
-
+                        
                         break;
                     //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_STRING:
                         listViewObject.setStringObject(cell.getStringCellValue());
                         lstHeaders.getItems().add(listViewObject);
-
+                        
                         break;
                 }
             }
-
+            
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
             out.close();
-
+            
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -290,7 +328,14 @@ public class ConversionViewController implements Initializable
      * @param filepath
      * @param header
      */
-    private void getXLSXHeaderValues(String filepath, String header)
+    private void getXLSXHeaderValues(String filepath,
+            String header1)
+    /**
+     * , String header2, String header3, String header4, String header5, String
+     * header6, String header7, String header8, String header9, String header10,
+     * String header11, String header12,String header13, String header14, String
+     * header15)
+     */
     {
         try
         {
@@ -314,34 +359,40 @@ public class ConversionViewController implements Initializable
             while (cellIterator.hasNext())
             {
                 Cell cell = cellIterator.next();
-
+                
                 switch (cell.getCellType())
                 {
                     //Case the cells value is of type double it will be parsed as String and used to compare to the header
                     case Cell.CELL_TYPE_NUMERIC:
-
+                        
                         cellData = String.valueOf(cell.getNumericCellValue());
-
-                        if (cellData.equals(header))
+                        
+                        if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
 
                             //runs down the rows and prints out the values
                             while (rowIterator.hasNext())
                             {
-                                rowIndex = rowIndex + 1;
-
-                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                                Row r = rowIterator.next();
+                                if (r != null)
+                                {
+                                     lstHeader1.add(r.getCell(colIndex).toString());
+                                // System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                               // System.out.println(lstHeader1);
+                                }
+                               
+                                
                             }
                         }
-
+                        
                         break;
-                    //Case the cells value is of type String it will be compared to the header
+//                    //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
-
+                        
                         cellData = cell.getStringCellValue();
-
-                        if (cellData.equals(header))
+                        
+                        if (cellData.equals(header1))
                         {
                             colIndex = cell.getColumnIndex();
 
@@ -349,20 +400,29 @@ public class ConversionViewController implements Initializable
                             while (rowIterator.hasNext())
                             {
                                 rowIndex = rowIndex + 1;
-
-                                System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                                 Row r = rowIterator.next();
+                                 if (r != null)
+                                {
+                                     lstHeader1.add(r.getCell(colIndex).toString());
+                                // System.out.println(sheet.getRow(rowIndex).getCell(colIndex));
+                               // System.out.println(lstHeader1);
+                                }
+//                                 lstHeader1.add(String.valueOf(sheet.getRow(rowIndex).getCell(colIndex)));
+//                                 
+//                              //  System.out.println(sheet.getRow(rowIndex).getCell(colIndex)); //??
+//                                System.out.println(lstHeader1);
                             }
                         }
-
+                        
                         break;
                 }
             }
-
+            
             file.close();
             FileOutputStream out = new FileOutputStream(new File(filepath));
             workbook.write(out);
             out.close();
-
+            
         } catch (FileNotFoundException e)
         {
             e.printStackTrace();
@@ -389,7 +449,7 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         File xlsxFile = fileChooser.showOpenDialog(stage);
-
+        
         if (xlsxFile != null)
         {
             absolutePath = xlsxFile.getAbsolutePath();
@@ -416,64 +476,43 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-        JSONArray jarray = getJsonObjects(objectilist); 
-
-//        JSONObject obj = new JSONObject();
-//        obj.put(txtSiteName.getText(), varSiteName);
-//        obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
-//        obj.put(txtType.getText(), varType);
-//        obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
-//        obj.put(txtSystemStatus.getText(), varSystemStatus);
-//        obj.put(txtUserStatus.getText(), varUserStatus);
-//        obj.put(txtCreatedOn.getText(), varCreatedOn);
-//        obj.put(txtCreatedBy.getText(), varCreatedBy);
-//        obj.put(txtName.getText(), varName);
-//        obj.put(txtPriority.getText(), varPriority);
-//        obj.put(txtStatus.getText(), varStatus);
-////        obj.put("getkey", obj.get(i).getvalue);
-//
-//        JSONArray list = new JSONArray();
-//        list.add(txtLatestFinishDate.getText() + "," + varLatestFinishDate);
-//        list.add(txtEarliestStartDate.getText() + "," + varEarliestStartDate);
-//        list.add(txtLatestStartDate.getText() + "," + varLatestStartDate);
-//        list.add(txtEstimatedTime.getText() + "," + varEstimatedTime);
-//
-//        obj.put("planning", list);
-//
-//    
-        //the above will be moved to another method
+        //metodekald/metode
+        JSONArray jarray = CreateJsonObjects(objectilist);
+        
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
         fw.write(jarray.toString(4));
         fw.flush();
         System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-
+        
         System.out.println(jarray);
-
+        
     }
-
+    
     private List<Object> objectilist = new ArrayList();
 
-
-    /** Anni
-     *     //method below converts to json (for now just loops through a list
-    //throws JSONException?, public static string
+    /**
+     * Anni //method below converts to json (for now just loops through a list
+     * //throws JSONException?, public static string
+     *
      * @param objectilist
-     * @return 
+     * @return
      */
-    public JSONArray getJsonObjects(List<Object> objectilist)
+    public JSONArray CreateJsonObjects(List<Object> objectilist)
     {
-        
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
 
         //for (Object objectilist1 : objectilist) //need to enter code here??
-        for (int i = 0; i < 10; i++)
-
-        //  int i = 0; i < objectilist.size(); i++
+        for (int i = 0; i < lstHeader1.size(); i++)
         {
             JSONObject obj = new JSONObject();
+            
             obj.put(txtSiteName.getText(), varSiteName);
+
+            String varAssetSerialNumber = lstHeader1.get(i);
+           // System.out.println(lstHeader1.get(1));
             obj.put(txtAssetSerialNumber.getText(), varAssetSerialNumber);
+            
             obj.put(txtType.getText(), varType);
             obj.put(txtExternalWorkOrderid.getText(), varExternalWorkOrderId);
             obj.put(txtSystemStatus.getText(), varSystemStatus);
@@ -483,19 +522,19 @@ public class ConversionViewController implements Initializable
             obj.put(txtName.getText(), varName);
             obj.put(txtPriority.getText(), varPriority);
             obj.put(txtStatus.getText(), varStatus);
-
+            
             JSONObject obj2 = new JSONObject();
             obj2.put(txtLatestFinishDate.getText(), varLatestFinishDate);
-            obj2.put(txtEarliestStartDate.getText(),varEarliestStartDate);
+            obj2.put(txtEarliestStartDate.getText(), varEarliestStartDate);
             obj2.put(txtLatestStartDate.getText(), varLatestStartDate);
             obj2.put(txtEstimatedTime.getText(), varEstimatedTime);
-
-           obj.put("planning", obj2);
-
+            
+            obj.put("planning", obj2);
             
             System.out.println(mainjsonArray);
-           mainjsonArray.put(obj);
+            mainjsonArray.put(obj);
         }
         return mainjsonArray;
     }
+    
 }

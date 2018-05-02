@@ -6,7 +6,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnGet" layoutX="162.0" layoutY="328.0" onAction="#clickGet" text="Get" />
       <JFXButton layoutX="455.0" layoutY="54.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
@@ -33,5 +33,21 @@
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="301.0" prefWidth="200.0" />
       <JFXButton fx:id="btnTest" layoutX="226.0" layoutY="90.0" onAction="#clickTest" text="Test" />
       <JFXTextField fx:id="txtTest" layoutX="226.0" layoutY="54.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarSiteName" layoutX="264.0" layoutY="115.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="264.0" layoutY="141.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarType" layoutX="264.0" layoutY="167.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="264.0" layoutY="191.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarCreatedOn" layoutX="264.0" layoutY="269.0" />
+      <JFXTextField fx:id="txtVarUserStatus" layoutX="264.0" layoutY="243.0" />
+      <JFXTextField fx:id="txtVarSystemStatus" layoutX="264.0" layoutY="217.0" onDragOver="#overTxtTest" />
+      <JFXTextField fx:id="txtVarCreatedBy" layoutX="264.0" layoutY="295.0" />
+      <JFXTextField fx:id="txtVarName" layoutX="264.0" layoutY="321.0" />
+      <JFXTextField fx:id="txtVarPriority" layoutX="264.0" layoutY="348.0" prefHeight="26.0" prefWidth="135.0" />
+      <JFXTextField fx:id="txtVarStatus" layoutX="264.0" layoutY="374.0" />
+      <JFXTextField fx:id="txtVarPlanning" layoutX="264.0" layoutY="426.0" />
+      <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="264.0" layoutY="478.0" />
+      <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="264.0" layoutY="504.0" />
+      <JFXTextField fx:id="txtVarLatestStartDate" layoutX="264.0" layoutY="530.0" />
+      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="264.0" layoutY="556.0" />
    </children>
 </AnchorPane>
