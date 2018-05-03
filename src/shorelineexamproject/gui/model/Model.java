@@ -5,11 +5,27 @@
  */
 package shorelineexamproject.gui.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import shorelineexamproject.be.ListViewObject;
+import shorelineexamproject.bll.BLL;
+
 /**
  *
  * @author Jesper
  */
 public class Model
 {
+    private BLL bll = new BLL();
     
+    public List<ListViewObject> readXLSXHeaders(String filepath)
+    {
+        return bll.readXLSXHeaders(filepath);
+    }
+    
+    public void getXLSXHeaderValues(String filepath,
+            String header, ArrayList<String> headerList)
+    {
+        bll.getXLSXHeaderValues(filepath, header, headerList);
+    }
 }

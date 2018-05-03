@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-okt.-2017"
+        },
+        "userStatus": "DB0388-029",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "CRTD MANC NMAT NTUP PRC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "14-jun.-2017"
+        },
+        "userStatus": "DB0388-056",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "CRTD MANC NMAT NTUP PRC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "14-jun.-2017"
+        },
+        "userStatus": "DB0388-035",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "03-jul.-2017"
+        },
+        "userStatus": "DB0411-018",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  PCNF CCOK NMAT PRC  RESA SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "07-jul.-2017"
+        },
+        "userStatus": "DB0411-062",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "14-jul.-2017"
+        },
+        "userStatus": "DB0411-072",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "14-jul.-2017"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "21-jul.-2017"
+        },
+        "userStatus": "DB0411-056",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "25-jul.-2017"
+        },
+        "userStatus": "DB0411-054",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "31-jul.-2017"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK MSPT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "30-maj-2017"
+        },
+        "userStatus": "DB0411-043",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "14-jul.-2017"
+        },
+        "userStatus": "DB0411-071",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK GMPS NMAT PRC  RESA SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "15-aug.-2017"
+        },
+        "userStatus": "DB0411-015",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "24-aug.-2017"
+        },
+        "userStatus": "DB0411-038",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS3",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "030",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK MACM PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-011",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "28-jun.-2017"
+        },
+        "userStatus": "DB0411-060",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "29-aug.-2017"
+        },
+        "userStatus": "DB0411-001",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "30-jun.-2017"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS3",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "030",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "30-jun.-2017"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS3",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "030",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "1",
+            "latestStartDate": "29-maj-2016"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "29-maj-2016"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "LIFT",
+            "earliestStartDate": "1",
+            "latestStartDate": "04-sep.-2016"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "04-sep.-2016"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "1",
+            "latestStartDate": "04-sep.-2016"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "04-sep.-2016"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK GMPS MACM PRC  RESA SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK GMPS NMAT PRC  RESA SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "24-jul.-2017"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "28-jul.-2017"
+        },
+        "userStatus": "DB0411-027",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "DB0411-029",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS3",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "030",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "DB0411-066",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "04-sep.-2017"
+        },
+        "userStatus": "DB0411-023",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK MACM PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-075",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "19-sep.-2017"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "1",
+            "latestStartDate": "08-maj-2016"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "08-maj-2016"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "TMSE",
+            "earliestStartDate": "1",
+            "latestStartDate": "08-maj-2016"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "08-maj-2016"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "1",
+            "latestStartDate": "02-okt.-2016"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "02-okt.-2016"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK MACM PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK GMPS MACM PRC  RESA SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "10-nov.-2017"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK MACM PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "17-jul.-2017"
+        },
+        "userStatus": "DB0411-031",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "29-aug.-2017"
+        },
+        "userStatus": "DB0411-026",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  CCOK NMAT PRC  SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "29-aug.-2017"
+        },
+        "userStatus": "DB0411-065",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS5",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "040",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "CRTD MANC NTUP SETC",
+            "latestFinishDate": "G4MK3R16",
+            "earliestStartDate": "1",
+            "latestStartDate": "21-mar.-2017"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFSB",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "CRTD MANC NTUP SETC",
+            "latestFinishDate": "G4MK3R16",
+            "earliestStartDate": "1",
+            "latestStartDate": "21-mar.-2017"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFSB",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "REL  NMAT SETC",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": "06-sep.-2017"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "ZCS1",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "020",
+        "createdOn": "Datetime Object",
+        "status": "NEW"
+    }
+]

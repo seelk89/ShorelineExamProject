@@ -43,6 +43,7 @@ import javafx.concurrent.Task;
 import javafx.scene.control.ProgressBar;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import shorelineexamproject.gui.model.Model;
 
 /**
  * FXML Controller class
@@ -132,7 +133,7 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
 
     private List<Object> objectilist = new ArrayList();
-    
+
     private Window stage;
 
     //AbsolutePath for the file being read
@@ -140,8 +141,11 @@ public class ConversionViewController implements Initializable
 
     //Variables for use with threads
     private Thread thread = null;
+    private Task task = null;
     private final AtomicBoolean suspend = new AtomicBoolean(true);
     private final AtomicBoolean done = new AtomicBoolean(true);
+
+    private Model model = new Model();
 
     /**
      * Initializes the controller class.
@@ -170,6 +174,7 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
+        task = createNewTask();
         thread = new Thread(task);
         thread.setDaemon(true);
         done.set(false);
@@ -228,35 +233,51 @@ public class ConversionViewController implements Initializable
     }
 
     //Placeholder task
-    private Task task = new Task()
+    private Task createNewTask()
     {
-        @Override
-        protected Object call() throws Exception
+        return new Task()
         {
-            for (int i = 0; i < 30; i++)
+            boolean wait = true;
+
+            @Override
+            protected Object call() throws Exception
             {
-                if (isCancelled())
+                if (wait == true)
                 {
-                    break;
-                }
+                    for (int i = 0; i < 30; i++)
+                    {
+                        if (isCancelled())
+                        {
+                            break;
+                        }
 
-                //Task goes here
-                try
+                        //Task goes here
+                        try
+                        {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException ex)
+                        {
+                            Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
+                        }
+                        System.out.println("Hello " + i);
+                        //Task ends here
+                    }
+                } else
                 {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex)
-                {
-                    Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
+
                 }
-                System.out.println("Hello " + i);
-                //Task ends here
-                prgBar.setProgress(task.getProgress());
-                prgBar1.setProgress(task.getProgress());
+                return null;
             }
-            return null;
-        }
-    };
+        };
+    }
 
+    ;
+    
+                //platform run later for progress bar
+//                prgBar.setProgress(task.getProgress());
+//                prgBar1.setProgress(task.getProgress());
+                
+    
     //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
@@ -292,6 +313,147 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+     * @param event
+     * @throws IOException Takes the String filepath of a xlsx file and finds
+     * the headers before putting them into a ListView Jesper
+     *
+     * @param filepath
+     */
+    private void readXLSXHeaders(String filepath)
+    {
+        lstHeaders.getItems().addAll(model.readXLSXHeaders(filepath));
+    }
+
+    /**
+     * Opens a FileChooser that is only able to get xlsx files. Jesper
+     *
+     * @param event
+     */
+    @FXML
+    private void clickGet(ActionEvent event)
+    {
+        final FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Choose a file");
+
+        //Adds a file filter that will only allow xlsx files (excel output files)
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Opens a window based on settings set above
+        File xlsxFile = fileChooser.showOpenDialog(stage);
+
+        if (xlsxFile != null)
+        {
+            absolutePath = xlsxFile.getAbsolutePath();
+        }
+
+        //Clears the ListView and adds headers from xlsx file
+        lstHeaders.getItems().clear();
+        readXLSXHeaders(absolutePath);
+    }
+
+    /**
+     *
+     * Anni This method gets the name of the textfield and creates a new file
+     * with this name, and then it adds the obj to the file This method gets the
+     * name of the textfield and creates a new file with this name, and then it
+     * adds the obj to the file
+     *
+     * @param event
+     * @throws IOException
+     */
+    @FXML
+    private void clickCreateJSONFile(ActionEvent event) throws IOException
+    {
+        String FileName = txtJSONName.getText() + ".json";
+        File file = new File(FileName);
+
+        String header1 = txtVarAssetSerialNumber.getText();
+        String header2 = txtVarType.getText();
+        String header3 = txtVarExternalWorkOrderid.getText();
+        String header4 = txtVarSystemStatus.getText();
+        String header5 = txtVarUserStatus.getText();
+        String header6 = txtVarName.getText();
+        String header7 = txtVarPriority.getText();
+        String header8 = txtVarLatestFinishDate.getText();
+        String header9 = txtVarEarliestStartDate.getText();
+        String header10 = txtVarLatestStartDate.getText();
+        String header11 = txtVarEstimatedTime.getText();
+
+        model.getXLSXHeaderValues(absolutePath, header1, lstVarAssetSerialNumber);
+        model.getXLSXHeaderValues(absolutePath, header2, lstVarType);
+        model.getXLSXHeaderValues(absolutePath, header3, lstVarExternalWorkOrderid);
+        model.getXLSXHeaderValues(absolutePath, header4, lstVarSystemStatus);
+        model.getXLSXHeaderValues(absolutePath, header5, lstVarUserStatus);
+        model.getXLSXHeaderValues(absolutePath, header6, lstVarName);
+        model.getXLSXHeaderValues(absolutePath, header7, lstVarPriority);
+        model.getXLSXHeaderValues(absolutePath, header8, lstVarLatestFinishDate);
+        model.getXLSXHeaderValues(absolutePath, header9, lstVarEarliestStartDate);
+        model.getXLSXHeaderValues(absolutePath, header10, lstVarLatestStartDate);
+        model.getXLSXHeaderValues(absolutePath, header11, lstVarEstimatedTime);
+
+        JSONArray jarray = CreateJsonObjects(objectilist);
+
+        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+        fw.write(jarray.toString(4));
+        fw.flush();
+        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
+
+        System.out.println(jarray);
+    }
+
+    /**
+     * Anni method below converts to json (for now just loops through a list
+     *
+     * @param objectilist
+     * @return
+     */
+    public JSONArray CreateJsonObjects(List<Object> objectilist)
+    {
+        JSONArray mainjsonArray = new JSONArray();
+        //This will be used to loop through the excel
+
+        for (int i = 0; i < lstVarType.size(); i++)
+        {
+            JSONObject obj = new JSONObject();
+
+            obj.put(txtSiteName.getText(), ""); //get from middle of description if possible
+            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
+            obj.put(txtType.getText(), lstVarType.get(i));
+            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
+            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
+            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
+            obj.put(txtCreatedOn.getText(), "Datetime Object"); //get datetime object
+            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login)
+            obj.put(txtName.getText(), lstVarName.get(i));  //2 different ones
+            obj.put(txtPriority.getText(), lstVarPriority.get(i)); //priority, if empty set low
+            obj.put(txtStatus.getText(), "NEW"); //weird thing
+
+            JSONObject obj2 = new JSONObject();
+            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
+            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
+            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
+            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
+
+            obj.put("planning", obj2);
+
+            mainjsonArray.put(obj);
+        }
+        System.out.println(mainjsonArray);
+        return mainjsonArray;
+    }
+
+    /**
+     * Gets the selected ListViewObject Jesper
+     *
+     * @return
+     */
+    private String getListViewObject()
+    {
+        return lstHeaders.getSelectionModel().getSelectedItem().getStringObject();
+    }
+    
+     /**
      * Allows dragging from the ListView
      *
      * @param event
@@ -311,18 +473,11 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
-    /**
-     * Activates upon hovering the dragged object over a legitimate input field
-     *
-     * @param event
-     */
     @FXML
     private void overTxtTest(DragEvent event)
     {
-        //Accept it only if it is  not dragged from the same node and if it has a string data
         if (event.getDragboard().hasString())
         {
-            //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
         }
 
@@ -332,7 +487,6 @@ public class ConversionViewController implements Initializable
     @FXML
     private void dropTxtVarAssetSerialNumber(DragEvent event)
     {
-        //If there is a string on the dragboard, read it and use it
         Dragboard dragBoard = event.getDragboard();
         if (dragBoard.hasString())
         {
@@ -461,295 +615,4 @@ public class ConversionViewController implements Initializable
 
         event.consume();
     }
-
-    /**
-     * Gets the selected ListViewObject Jesper
-     *
-     * @return
-     */
-    private String getListViewObject()
-    {
-        return lstHeaders.getSelectionModel().getSelectedItem().getStringObject();
-    }
-
-    /**
-     * @param event
-     * @throws IOException Takes the String filepath of a xlsx file and finds
-     * the headers before putting them into a ListView Jesper
-     *
-     * @param filepath
-     */
-    private void readXLSXHeaders(String filepath)
-    {
-        try
-        {
-            FileInputStream file = new FileInputStream(new File(filepath));
-
-            //Get the workbook instance for xlsx file 
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-
-            //Get first sheet from the workbook
-            XSSFSheet sheet = workbook.getSheetAt(0);
-
-            //Gets the first row from the first sheet
-            Iterator<Row> rowIterator = sheet.iterator();
-            Row row = rowIterator.next();
-
-            //Iterate through the cells of the first row
-            Iterator<Cell> cellIterator = row.cellIterator();
-            while (cellIterator.hasNext())
-            {
-                //Creates a ListViewObject Where the Headers of the XLSX file can be put as objects for the listView
-                ListViewObject listViewObject = new ListViewObject();
-
-                Cell cell = cellIterator.next();
-
-                switch (cell.getCellType())
-                {
-                    //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
-                    case Cell.CELL_TYPE_NUMERIC:
-                        listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
-                        lstHeaders.getItems().add(listViewObject);
-
-                        break;
-                    //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
-                    case Cell.CELL_TYPE_STRING:
-                        listViewObject.setStringObject(cell.getStringCellValue());
-                        lstHeaders.getItems().add(listViewObject);
-
-                        break;
-                }
-            }
-
-            file.close();
-            FileOutputStream out = new FileOutputStream(new File(filepath));
-            workbook.write(out);
-            out.close();
-
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Takes a filepath as a String, a String representation of a header in the
-     * currently selected xlsx file and gets values from the rows below the
-     * selected header in the currently selected xlsx file. Jesper
-     *
-     * @param filepath
-     * @param header
-     */
-    private void getXLSXHeaderValues(String filepath,
-            String header, ArrayList<String> headerList)
-    {
-        try
-        {
-            FileInputStream file = new FileInputStream(new File(filepath));
-            String cellData = null;
-            int colIndex = 0;
-            int rowIndex = 0;
-
-            //Get the workbook instance for xlsx file 
-            XSSFWorkbook workbook = new XSSFWorkbook(file);
-
-            //Get first sheet from the workbook
-            XSSFSheet sheet = workbook.getSheetAt(0);
-
-            //Gets the first row from the first sheet
-            Iterator<Row> rowIterator = sheet.iterator();
-            Row row = rowIterator.next();
-
-            //Iterate through the cells of the first row
-            Iterator<Cell> cellIterator = row.cellIterator();
-            while (cellIterator.hasNext())
-            {
-                Cell cell = cellIterator.next();
-
-                switch (cell.getCellType())
-                {
-                    //Case the cells value is of type double it will be parsed as String and used to compare to the header
-                    case Cell.CELL_TYPE_NUMERIC:
-
-                        cellData = String.valueOf(cell.getNumericCellValue());
-
-                        if (cellData.equals(header))
-                        {
-                            colIndex = cell.getColumnIndex();
-
-                            //runs down the rows and prints out the values
-                            while (rowIterator.hasNext())
-                            {
-                                rowIndex = rowIndex + 1;
-                                Row r = rowIterator.next();
-                                if (r != null)
-                                {
-                                    headerList.add(r.getCell(colIndex).toString());
-                                }
-
-                            }
-                        }
-
-                        break;
-                    //Case the cells value is of type String it will be compared to the header
-                    case Cell.CELL_TYPE_STRING:
-
-                        cellData = cell.getStringCellValue();
-
-                        if (cellData.equals(header))
-                        {
-                            colIndex = cell.getColumnIndex();
-
-                            //runs down the rows and prints out the values
-                            while (rowIterator.hasNext())
-                            {
-                                rowIndex = rowIndex + 1;
-                                Row r = rowIterator.next();
-                                if (r != null)
-                                {
-                                    headerList.add(r.getCell(colIndex).toString());
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-
-            file.close();
-            FileOutputStream out = new FileOutputStream(new File(filepath));
-            workbook.write(out);
-            out.close();
-
-        } catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Opens a FileChooser that is only able to get xlsx files. Jesper
-     *
-     * @param event
-     */
-    @FXML
-    private void clickGet(ActionEvent event)
-    {
-        final FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Choose a file");
-
-        //Adds a file filter that will only allow xlsx files (excel output files)
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
-        fileChooser.getExtensionFilters().add(extFilter);
-
-        //Opens a window based on settings set above
-        File xlsxFile = fileChooser.showOpenDialog(stage);
-
-        if (xlsxFile != null)
-        {
-            absolutePath = xlsxFile.getAbsolutePath();
-        }
-
-        //Clears the ListView and adds headers from xlsx file
-        lstHeaders.getItems().clear();
-        readXLSXHeaders(absolutePath);
-    }
-
-    /**
-     *
-     * Anni This method gets the name of the textfield and creates a new file
-     * with this name, and then it adds the obj to the file This method gets the
-     * name of the textfield and creates a new file with this name, and then it
-     * adds the obj to the file
-     *
-     * @param event
-     * @throws IOException
-     */
-    @FXML
-    private void clickCreateJSONFile(ActionEvent event) throws IOException
-    {
-        String FileName = txtJSONName.getText() + ".json";
-        File file = new File(FileName);
-
-        String header1 = txtVarAssetSerialNumber.getText();
-        String header2 = txtVarType.getText();
-        String header3 = txtVarExternalWorkOrderid.getText();
-        String header4 = txtVarSystemStatus.getText();
-        String header5 = txtVarUserStatus.getText();
-        String header6 = txtVarName.getText();
-        String header7 = txtVarPriority.getText();
-        String header8 = txtVarLatestFinishDate.getText();
-        String header9 = txtVarEarliestStartDate.getText();
-        String header10 = txtVarLatestStartDate.getText();
-        String header11 = txtVarEstimatedTime.getText();
-
-        getXLSXHeaderValues(absolutePath, header1, lstVarAssetSerialNumber);
-        getXLSXHeaderValues(absolutePath, header2, lstVarType);
-        getXLSXHeaderValues(absolutePath, header3, lstVarExternalWorkOrderid);
-        getXLSXHeaderValues(absolutePath, header4, lstVarSystemStatus);
-        getXLSXHeaderValues(absolutePath, header5, lstVarUserStatus);
-        getXLSXHeaderValues(absolutePath, header6, lstVarName);
-        getXLSXHeaderValues(absolutePath, header7, lstVarPriority);
-        getXLSXHeaderValues(absolutePath, header8, lstVarLatestFinishDate);
-        getXLSXHeaderValues(absolutePath, header9, lstVarEarliestStartDate);
-        getXLSXHeaderValues(absolutePath, header10, lstVarLatestStartDate);
-        getXLSXHeaderValues(absolutePath, header11, lstVarEstimatedTime);
-
-        JSONArray jarray = CreateJsonObjects(objectilist);
-
-        FileWriter fw = new FileWriter(file.getAbsoluteFile());
-        fw.write(jarray.toString(4));
-        fw.flush();
-        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-
-        System.out.println(jarray);
-
-    }
-
-    /**
-     * Anni //method below converts to json (for now just loops through a list
-     *
-     * @param objectilist
-     * @return
-     */
-    public JSONArray CreateJsonObjects(List<Object> objectilist)
-    {
-        JSONArray mainjsonArray = new JSONArray();
-        //This will be used to loop through the excel
-
-        for (int i = 0; i < lstVarType.size(); i++)
-        {
-            JSONObject obj = new JSONObject();
-
-            obj.put(txtSiteName.getText(), ""); //get from middle of description if possible
-            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
-            obj.put(txtType.getText(), lstVarType.get(i));
-            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
-            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
-            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
-            obj.put(txtCreatedOn.getText(), "Datetime Object"); //get datetime object
-            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login)
-            obj.put(txtName.getText(), lstVarName.get(i));  //2 different ones
-            obj.put(txtPriority.getText(), lstVarPriority.get(i)); //priority, if empty set low
-            obj.put(txtStatus.getText(), "NEW"); //weird thing
-
-            JSONObject obj2 = new JSONObject();
-            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
-            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
-            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
-            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
-
-            obj.put("planning", obj2);
-
-            mainjsonArray.put(obj);
-        }
-        System.out.println(mainjsonArray);
-        return mainjsonArray;
-    }
-
 }

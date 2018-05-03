@@ -51,8 +51,8 @@
       <JFXTextField fx:id="txtVarLatestStartDate" layoutX="275.0" layoutY="529.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" promptText="latestStartDate" />
       <Label layoutX="441.0" layoutY="80.0" text="Keys:" />
       <Label layoutX="275.0" layoutY="80.0" text="Values:" />
-      <Label fx:id="txtVarPlanning" layoutX="276.0" layoutY="429.0" text="planning" />
-      <Label fx:id="txtPlanning" layoutX="437.0" layoutY="429.0" text="planning" />
+      <Label layoutX="276.0" layoutY="429.0" text="planning" />
+      <Label layoutX="437.0" layoutY="429.0" text="planning" />
 
    </children>
 </AnchorPane>
