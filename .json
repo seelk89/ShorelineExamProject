@@ -1,0 +1,1864 @@
+[
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196358 Retrofit non-phys Fix earth"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0388-029",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-okt.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "DT56: UPS battery exchange"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-056",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "DT35: UPS battery exchange"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-035",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-018",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "03-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB64 TS Outlet socket in tower"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-062",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "07-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-072",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-069",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Water Ingress Tower Ligth"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-056",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "21-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB56: broke plugs on Hiab Crane"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-054",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "25-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-069",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "31-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Boom Extension on Hiab Crane"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-043",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "30-maj-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-071",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "10000 : No connection"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-015",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "15-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB39 Remote stop - Owner"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-038",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "24-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-011",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-060",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "28-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "HIAB Crane: Troubleshooting"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-001",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Krima-2439613: Sabik UPS battery replace"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-022",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "30-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Krima-2439613: UPS batteries replacement"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "030",
+        "systemStatus": "DB0411-059",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "30-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-078",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "29-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601259 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-078",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "29-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Lift inspection"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "LIFT",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601221 Yearly Lift Inspect"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601221 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10170721 Retrofit Power Supply G4"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-007",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196140  Retrofit, sign f dehumidifi"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-007",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "0 : Damaged fiber optic cable"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-059",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "24-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "0 : Hiab Crane Slow"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-027",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "28-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Switching support Vattenfall"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-029",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-061",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-066",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-023",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "04-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-075",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "No Connection"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-061",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "19-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601245 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Turbine mounted safety equipment"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "TMSE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601245 TMSE"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-020",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "02-okt.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601201 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-020",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "02-okt.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-012",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196140  Retrofit, sign f dehumidifi"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-012",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A# Broken hose holder on pitch stat.tank"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-031",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "17-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "TMSE: Exchange Fire Extinguishers"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0411-026",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "PT100 sensors possible swapped"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-065",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_S_ALL",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Jährlich"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0411-068",
+        "name": "G4MK3R16",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFSB",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "21-mar.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0070",
+            "latestFinishDate": "DE_OFFSB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "12 Monate (nur zur ersten jahreswartung)"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0411-068",
+        "name": "G4MK3R16",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFSB",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "21-mar.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "TMSE: Echange Fire extinguisher"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0411-022",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "06-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196358 Retrofit non-phys Fix earth"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0388-029",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-okt.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "DT56: UPS battery exchange"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-056",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "DT35: UPS battery exchange"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-035",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-018",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "03-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB64 TS Outlet socket in tower"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-062",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "07-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-072",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-069",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Water Ingress Tower Ligth"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-056",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "21-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB56: broke plugs on Hiab Crane"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-054",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "25-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-069",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "31-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Boom Extension on Hiab Crane"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-043",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "30-maj-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Exchange Rubber Bellow"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-071",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "14-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "10000 : No connection"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-015",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "15-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "SB39 Remote stop - Owner"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-038",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "24-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-011",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "exchange rubber bellows"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-060",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "28-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "HIAB Crane: Troubleshooting"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-001",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Krima-2439613: Sabik UPS battery replace"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-022",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "30-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Krima-2439613: UPS batteries replacement"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "030",
+        "systemStatus": "DB0411-059",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "30-jun.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-078",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "29-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601259 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-078",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "29-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Lift inspection"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "LIFT",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601221 Yearly Lift Inspect"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601221 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-040",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "04-sep.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10170721 Retrofit Power Supply G4"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-007",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196140  Retrofit, sign f dehumidifi"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-007",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "0 : Damaged fiber optic cable"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-059",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "24-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "0 : Hiab Crane Slow"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-027",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "28-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Switching support Vattenfall"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "030",
+        "systemStatus": "DB0411-029",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS3",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-061",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-066",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "01-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Inspection on Water Ingress"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "040",
+        "systemStatus": "DB0411-023",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "04-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-075",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "No Connection"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0411-061",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "19-sep.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601245 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Turbine mounted safety equipment"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "TMSE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601245 TMSE"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0388-064",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "08-maj-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "Crane inspection"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0388-020",
+        "name": "CRANE",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "02-okt.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "3,00_WT-BS01 3601201 Yearly Crane Inspec"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0388-020",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "02-okt.-2016"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10191123 - Retrofit, yaw software 201"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0388-012",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_OFFDT",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A9B10196140  Retrofit, sign f dehumidifi"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "040",
+        "systemStatus": "DB0388-012",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFDT",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "10-nov.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "A# Broken hose holder on pitch stat.tank"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "040",
+        "systemStatus": "DB0411-031",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "17-jul.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "TMSE: Exchange Fire Extinguishers"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0411-026",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "PT100 sensors possible swapped"
+        },
+        "userStatus": "012345678912",
+        "createdBy": "040",
+        "systemStatus": "DB0411-065",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS5",
+        "status": "29-aug.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_S_ALL",
+            "earliestStartDate": "ZSMC",
+            "latestStartDate": "Jährlich"
+        },
+        "userStatus": "012345678913",
+        "createdBy": "020",
+        "systemStatus": "DB0411-068",
+        "name": "G4MK3R16",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFSB",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "21-mar.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0070",
+            "latestFinishDate": "DE_OFFSB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "12 Monate (nur zur ersten jahreswartung)"
+        },
+        "userStatus": "012345678914",
+        "createdBy": "020",
+        "systemStatus": "DB0411-068",
+        "name": "G4MK3R16",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_OFFSB",
+        "type": "BS01",
+        "priority": "1",
+        "createdOn": "ZCS1",
+        "status": "21-mar.-2017"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "DE_SANDB",
+            "earliestStartDate": "ZMR1",
+            "latestStartDate": "TMSE: Echange Fire extinguisher"
+        },
+        "userStatus": "012345678911",
+        "createdBy": "020",
+        "systemStatus": "DB0411-022",
+        "name": "",
+        "siteName": "DE",
+        "externalWorkOrderId": "DE_SANDB",
+        "type": "BS01",
+        "priority": "",
+        "createdOn": "ZCS1",
+        "status": "06-sep.-2017"
+    }
+]

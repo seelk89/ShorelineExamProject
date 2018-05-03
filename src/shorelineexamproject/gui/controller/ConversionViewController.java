@@ -248,12 +248,10 @@ public class ConversionViewController implements Initializable
     //Placeholder task
     private Task task = new Task()
     {
-        int limit = 30;
-
         @Override
         protected Object call() throws Exception
         {
-            for (float i = 0; i <= limit; i++)
+            for (int i = 0; i < 30; i++)
             {
                 if (isCancelled())
                 {
@@ -270,8 +268,8 @@ public class ConversionViewController implements Initializable
                 }
                 System.out.println("Hello " + i);
                 //Task ends here
-                prgBar.setProgress(i);
-                prgBar1.setProgress(i);
+                prgBar.setProgress(task.getProgress());
+                prgBar1.setProgress(task.getProgress());
             }
             return null;
         }
@@ -362,13 +360,6 @@ public class ConversionViewController implements Initializable
         if (dragBoard.hasString())
         {
             txtTest.setText(dragBoard.getString());
-<<<<<<< HEAD
-            // success = true;
-        }
-
-        //let the source know whether the string was successfully transferred and used
-        //event.setDropCompleted(success);
-=======
         }
 
         event.consume();
@@ -553,7 +544,6 @@ public class ConversionViewController implements Initializable
             txtVarLatestStartDate.setText(dragBoard.getString());
         }
 
->>>>>>> ba4b52a55d8ca3069fb9181e8f9bbc820726647e
         event.consume();
     }
 
@@ -575,8 +565,7 @@ public class ConversionViewController implements Initializable
         String header13 = txtVarEarliestStartDate.getText();
         String header14 = txtVarLatestStartDate.getText();
         String header15 = txtVarEstimatedTime.getText();
-<<<<<<< HEAD
-        
+
         getXLSXHeaderValues(absolutePath, header1, lstVarSiteName);
         getXLSXHeaderValues(absolutePath, header2, lstVarAssetSerialNumber);
         getXLSXHeaderValues(absolutePath, header3, lstVarType);
@@ -592,14 +581,6 @@ public class ConversionViewController implements Initializable
         getXLSXHeaderValues(absolutePath, header13, lstVarEarliestStartDate);
         getXLSXHeaderValues(absolutePath, header14, lstVarLatestStartDate);
         getXLSXHeaderValues(absolutePath, header15, lstVarEstimatedTime);
-=======
-
-        getXLSXHeaderValues(absolutePath, header1, header2,
-                header3, header4, header5, header6, header7,
-                header8, header9, header10, header11, header12,
-                header13, header14, header15);
-        //   System.out.println(lstVarSiteName);
->>>>>>> ba4b52a55d8ca3069fb9181e8f9bbc820726647e
     }
 
     /**
@@ -714,30 +695,9 @@ public class ConversionViewController implements Initializable
                     //Case the cells value is of type double it will be parsed as String and used to compare to the header
                     case Cell.CELL_TYPE_NUMERIC:
 
-                        ArrayList<String> headerList = new ArrayList<>();
-                        headerList.add(header1);
-                        headerList.add(header2);
-                        headerList.add(header3);
-                        headerList.add(header4);
-                        headerList.add(header5);
-                        headerList.add(header6);
-                        headerList.add(header7);
-                        headerList.add(header8);
-                        headerList.add(header9);
-                        headerList.add(header10);
-                        headerList.add(header11);
-                        headerList.add(header12);
-                        headerList.add(header13);
-                        headerList.add(header14);
-                        headerList.add(header15);
-                        
                         cellData = String.valueOf(cell.getNumericCellValue());
 
-<<<<<<< HEAD
                         if (cellData.equals(header))
-=======
-                        if (cellData.equals(headerList))
->>>>>>> ba4b52a55d8ca3069fb9181e8f9bbc820726647e
                         {
                             colIndex = cell.getColumnIndex();
 
@@ -771,28 +731,8 @@ public class ConversionViewController implements Initializable
                                 Row r = rowIterator.next();
                                 if (r != null)
                                 {
-<<<<<<< HEAD
                                     headerList.add(r.getCell(colIndex).toString());
                                 }
-=======
-                                    lstVarSiteName.add(r.getCell(colIndex).toString());
-                                    lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
-                                    lstVarType.add(r.getCell(colIndex).toString());
-                                    lstVarExternalWorkOrderid.add(r.getCell(colIndex).toString());
-                                    lstVarSystemStatus.add(r.getCell(colIndex).toString());
-                                    lstVarUserStatus.add(r.getCell(colIndex).toString());
-                                    lstVarCreatedOn.add(r.getCell(colIndex).toString());
-                                    lstVarCreatedBy.add(r.getCell(colIndex).toString());
-                                    lstVarName.add(r.getCell(colIndex).toString());
-                                    lstVarPriority.add(r.getCell(colIndex).toString());
-                                    lstVarStatus.add(r.getCell(colIndex).toString());
-                                    lstVarLatestFinishDate.add(r.getCell(colIndex).toString());
-                                    lstVarEarliestStartDate.add(r.getCell(colIndex).toString());
-                                    lstVarLatestStartDate.add(r.getCell(colIndex).toString());
-                                    lstVarEstimatedTime.add(r.getCell(colIndex).toString());
-
-                               }
->>>>>>> ba4b52a55d8ca3069fb9181e8f9bbc820726647e
                             }
                         }
                         break;
@@ -873,11 +813,22 @@ public class ConversionViewController implements Initializable
         String header14 = txtVarLatestStartDate.getText();
         String header15 = txtVarEstimatedTime.getText();
 
-        getXLSXHeaderValues(absolutePath, header1, header2,
-                header3, header4, header5, header6, header7,
-                header8, header9, header10, header11, header12,
-                header13, header14, header15);
-        //metodekald/metode
+        getXLSXHeaderValues(absolutePath, header1, lstVarSiteName);
+        getXLSXHeaderValues(absolutePath, header2, lstVarAssetSerialNumber);
+        getXLSXHeaderValues(absolutePath, header3, lstVarType);
+        getXLSXHeaderValues(absolutePath, header4, lstVarExternalWorkOrderid);
+        getXLSXHeaderValues(absolutePath, header5, lstVarSystemStatus);
+        getXLSXHeaderValues(absolutePath, header6, lstVarUserStatus);
+        getXLSXHeaderValues(absolutePath, header7, lstVarCreatedOn);
+        getXLSXHeaderValues(absolutePath, header8, lstVarCreatedBy);
+        getXLSXHeaderValues(absolutePath, header9, lstVarName);
+        getXLSXHeaderValues(absolutePath, header10, lstVarPriority);
+        getXLSXHeaderValues(absolutePath, header11, lstVarStatus);
+        getXLSXHeaderValues(absolutePath, header12, lstVarLatestFinishDate);
+        getXLSXHeaderValues(absolutePath, header13, lstVarEarliestStartDate);
+        getXLSXHeaderValues(absolutePath, header14, lstVarLatestStartDate);
+        getXLSXHeaderValues(absolutePath, header15, lstVarEstimatedTime);
+        
         JSONArray jarray = CreateJsonObjects(objectilist);
 
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
