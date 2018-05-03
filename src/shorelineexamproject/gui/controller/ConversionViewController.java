@@ -8,7 +8,6 @@ package shorelineexamproject.gui.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -34,31 +33,15 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import shorelineexamproject.be.Values;
-
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicBoolean;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.scene.control.ProgressBar;
-
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -116,12 +99,46 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXProgressBar prgBar;
     @FXML
+    private ProgressBar prgBar1;
+    @FXML
     private JFXButton btnPauseTask;
+    @FXML
+    private JFXTextField txtVarType;
+    @FXML
+    private JFXTextField txtVarUserStatus;
+    @FXML
+    private JFXTextField txtVarSystemStatus;
+    @FXML
+    private JFXTextField txtVarExternalWorkOrderid;
+    @FXML
+    private JFXTextField txtVarAssetSerialNumber;
+    @FXML
+    private JFXTextField txtVarSiteName;
+    @FXML
+    private JFXTextField txtVarCreatedOn;
+    @FXML
+    private JFXTextField txtVarCreatedBy;
+    @FXML
+    private JFXTextField txtVarName;
+    @FXML
+    private JFXTextField txtVarPriority;
+    @FXML
+    private JFXTextField txtVarStatus;
+    @FXML
+    private JFXTextField txtVarPlanning;
+    @FXML
+    private JFXTextField txtVarEstimatedTime;
+    @FXML
+    private JFXTextField txtVarLatestFinishDate;
+    @FXML
+    private JFXTextField txtVarEarliestStartDate;
+    @FXML
+    private JFXTextField txtVarLatestStartDate;
 
     private ArrayList<String> lstVarSiteName = new ArrayList<String>();
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
-    private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
+    private ArrayList<String> lstVarExternalWorkOrderid = new ArrayList<String>();
     private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
     private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
     private ArrayList<String> lstVarCreatedOn = new ArrayList<String>();
@@ -134,18 +151,15 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
 
-    private ArrayList<String> lstHeader1 = new ArrayList<String>();
-
     private Window stage;
 
     //AbsolutePath for the file being read
     private String absolutePath = null;
+    
     //Variables for use with threads
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(true);
     private final AtomicBoolean done = new AtomicBoolean(true);
-    @FXML
-    private ProgressBar prgBar1;
 
     /**
      * Initializes the controller class.
@@ -167,7 +181,6 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-
     }
 
     /**
@@ -308,10 +321,6 @@ public class ConversionViewController implements Initializable
         //Allow any transfer mode
         Dragboard dragBoard = lstHeaders.startDragAndDrop(TransferMode.COPY);
 
-        //For fun code (might be of some use in regards to useability)
-//        FileInputStream inputstream = new FileInputStream("ShorelineExamProject/images/SLLogo.png");
-//        Image image = new Image(inputstream);
-//        dragBoard.setDragView(image);
         //Put a string on dragboard
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
@@ -329,7 +338,7 @@ public class ConversionViewController implements Initializable
     private void overTxtTest(DragEvent event)
     {
         //Accept it only if it is  not dragged from the same node and if it has a string data
-        if (event.getGestureSource() != txtTest && event.getDragboard().hasString())
+        if ( event.getDragboard().hasString())
         {
             //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
@@ -348,37 +357,40 @@ public class ConversionViewController implements Initializable
     {
         //If there is a string on the dragboard, read it and use it
         Dragboard dragBoard = event.getDragboard();
-        boolean success = false;
+        //boolean success = false;
         if (dragBoard.hasString())
         {
             txtTest.setText(dragBoard.getString());
-            success = true;
+           // success = true;
         }
 
         //let the source know whether the string was successfully transferred and used
-        event.setDropCompleted(success);
+        //event.setDropCompleted(success);
 
         event.consume();
     }
 
+    
+    
+    
     @FXML
     private void clickTest(ActionEvent event)
     {
-        String header1 = txtTest.getText();
-        String header2 = txtTest.getText();
-        String header3 = txtTest.getText();
-        String header4 = txtTest.getText();
-        String header5 = txtTest.getText();
-        String header6 = txtTest.getText();
-        String header7 = txtTest.getText();
-        String header8 = txtTest.getText();
-        String header9 = txtTest.getText();
-        String header10 = txtTest.getText();
-        String header11 = txtTest.getText();
-        String header12 = txtTest.getText();
-        String header13 = txtTest.getText();
-        String header14 = txtTest.getText();
-        String header15 = txtTest.getText();
+        String header1 = txtVarSiteName.getText();
+        String header2 = txtVarAssetSerialNumber.getText();
+        String header3 = txtVarType.getText();
+        String header4 = txtVarExternalWorkOrderid.getText();
+        String header5 = txtVarSystemStatus.getText();
+        String header6 = txtVarUserStatus.getText();
+        String header7 = txtVarCreatedOn.getText();
+        String header8 = txtVarCreatedBy.getText();
+        String header9 = txtVarName.getText();
+        String header10 = txtVarPriority.getText();
+        String header11 = txtVarStatus.getText();
+        String header12 = txtVarLatestFinishDate.getText();
+        String header13 = txtVarEarliestStartDate.getText();
+        String header14 = txtVarLatestStartDate.getText();
+        String header15 = txtVarEstimatedTime.getText();
 
         getXLSXHeaderValues(absolutePath, header1, header2,
                 header3, header4, header5, header6, header7,
@@ -517,7 +529,7 @@ public class ConversionViewController implements Initializable
                                     lstVarSiteName.add(r.getCell(colIndex).toString());
                                     lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
                                     lstVarType.add(r.getCell(colIndex).toString());
-                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderid.add(r.getCell(colIndex).toString());
                                     lstVarSystemStatus.add(r.getCell(colIndex).toString());
                                     lstVarUserStatus.add(r.getCell(colIndex).toString());
                                     lstVarCreatedOn.add(r.getCell(colIndex).toString());
@@ -555,7 +567,7 @@ public class ConversionViewController implements Initializable
                                     lstVarSiteName.add(r.getCell(colIndex).toString());
                                     lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
                                     lstVarType.add(r.getCell(colIndex).toString());
-                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderid.add(r.getCell(colIndex).toString());
                                     lstVarSystemStatus.add(r.getCell(colIndex).toString());
                                     lstVarUserStatus.add(r.getCell(colIndex).toString());
                                     lstVarCreatedOn.add(r.getCell(colIndex).toString());
@@ -667,7 +679,7 @@ public class ConversionViewController implements Initializable
             obj.put(txtSiteName.getText(), lstVarSiteName.get(i));
             obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
             obj.put(txtType.getText(), lstVarType.get(i));
-            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderId.get(i));
+            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
             obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
             obj.put(txtCreatedOn.getText(), lstVarCreatedOn.get(i));
