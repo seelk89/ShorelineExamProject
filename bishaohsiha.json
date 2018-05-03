@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "10-okt.-2016",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10196358 Retrofit non-phys Fix earth",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345678",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "13-jun.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "DT56: UPS battery exchange",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "CRTD",
+        "siteName": "",
+        "externalWorkOrderId": "12345679",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "13-jun.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "DT35: UPS battery exchange",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "CRTD",
+        "siteName": "",
+        "externalWorkOrderId": "12345680",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "03-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "exchange rubber bellows",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345681",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "07-jul.-2017",
+            "earliestStartDate": "07-jul.-2017",
+            "latestStartDate": "07-jul.-2017"
+        },
+        "userStatus": "SB64 TS Outlet socket in tower",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "PCNF REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345682",
+        "type": "ZCS5",
+        "priority": "07-jul.-2017",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "15-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Exchange Rubber Bellow",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345683",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "15-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Exchange Rubber Bellow",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345684",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "21-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Water Ingress Tower Ligth",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345685",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "25-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "SB56: broke plugs on Hiab Crane",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345686",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-jul.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "exchange rubber bellows",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345687",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "07-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Boom Extension on Hiab Crane",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345688",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "15-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Exchange Rubber Bellow",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345689",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "15-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "10000 : No connection",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345690",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "24-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "SB39 Remote stop - Owner",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345691",
+        "type": "ZCS3",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345692",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "28-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "exchange rubber bellows",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345693",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "29-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "HIAB Crane: Troubleshooting",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345694",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Krima-2439613: Sabik UPS battery replace",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345695",
+        "type": "ZCS3",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Krima-2439613: UPS batteries replacement",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345696",
+        "type": "ZCS3",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Crane inspection",
+        "createdBy": "SAP",
+        "systemStatus": "ZSMC",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345697",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345698",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Lift inspection",
+        "createdBy": "SAP",
+        "systemStatus": "ZSMC",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345699",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345700",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Crane inspection",
+        "createdBy": "SAP",
+        "systemStatus": "ZSMC",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345701",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345702",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10170721 Retrofit Power Supply G4",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345703",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10196140  Retrofit, sign f dehumidifi",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345704",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "0 : Damaged fiber optic cable",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345705",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "0 : Hiab Crane Slow",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345706",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Switching support Vattenfall",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345707",
+        "type": "ZCS3",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Inspection on Water Ingress",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345708",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Inspection on Water Ingress",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345709",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "04-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Inspection on Water Ingress",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345710",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "18-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345711",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "19-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "No Connection",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345712",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Crane inspection",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345713",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345714",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Turbine mounted safety equipment",
+        "createdBy": "SAP",
+        "systemStatus": "ZSMC",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345715",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601245 TMSE",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345716",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Crane inspection",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345717",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345718",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345719",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A9B10196140  Retrofit, sign f dehumidifi",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345720",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "15-okt.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "A# Broken hose holder on pitch stat.tank",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345721",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "25-okt.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "TMSE: Exchange Fire Extinguishers",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345722",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "25-okt.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "PT100 sensors possible swapped",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345723",
+        "type": "ZCS5",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "27-okt.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Jährlich",
+        "createdBy": "SAP",
+        "systemStatus": "ZSMC",
+        "name": "CRTD",
+        "siteName": "",
+        "externalWorkOrderId": "12345724",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "27-okt.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "12 Monate (nur zur ersten jahreswartung)",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "CRTD",
+        "siteName": "",
+        "externalWorkOrderId": "12345725",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "06-nov.-2017",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "TMSE: Echange Fire extinguisher",
+        "createdBy": "SAP",
+        "systemStatus": "ZMR1",
+        "name": "REL",
+        "siteName": "",
+        "externalWorkOrderId": "12345726",
+        "type": "ZCS1",
+        "priority": "",
+        "createdOn": "03-05-2018",
+        "status": "NEW"
+    }
+]

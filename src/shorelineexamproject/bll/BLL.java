@@ -5,6 +5,8 @@
  */
 package shorelineexamproject.bll;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import shorelineexamproject.be.ListViewObject;
@@ -28,5 +30,16 @@ public class BLL
             String header, ArrayList<String> headerList)
     {
         daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
+    }
+    
+    public String date()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDateTime dateTime = LocalDateTime.now();
+        String formattedDate = dateTime.format(formatter);
+        System.out.println(formattedDate);
+        
+        return formattedDate;
+        
     }
 }

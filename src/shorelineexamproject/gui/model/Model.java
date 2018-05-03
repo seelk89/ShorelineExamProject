@@ -28,4 +28,9 @@ public class Model
     {
         bll.getXLSXHeaderValues(filepath, header, headerList);
     }
+    
+    public String getDate()
+    {
+        return bll.date();
+    }
 }
