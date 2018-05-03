@@ -55,6 +55,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import javafx.scene.control.ProgressBar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -111,38 +112,6 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnTest;
     @FXML
-    private JFXTextField txtVarSiteName;
-    @FXML
-    private JFXTextField txtVarAssetSerialNumber;
-    @FXML
-    private JFXTextField txtVarType;
-    @FXML
-    private JFXTextField txtVarExternalWorkOrderid;
-    @FXML
-    private JFXTextField txtVarCreatedOn;
-    @FXML
-    private JFXTextField txtVarUserStatus;
-    @FXML
-    private JFXTextField txtVarSystemStatus;
-    @FXML
-    private JFXTextField txtVarCreatedBy;
-    @FXML
-    private JFXTextField txtVarName;
-    @FXML
-    private JFXTextField txtVarPriority;
-    @FXML
-    private JFXTextField txtVarStatus;
-    @FXML
-    private JFXTextField txtVarPlanning;
-    @FXML
-    private JFXTextField txtVarLatestFinishDate;
-    @FXML
-    private JFXTextField txtVarEarliestStartDate;
-    @FXML
-    private JFXTextField txtVarLatestStartDate;
-    @FXML
-    private JFXTextField txtVarEstimatedTime;
-    @FXML
     private JFXButton btnTask;
     @FXML
     private JFXProgressBar prgBar;
@@ -173,8 +142,10 @@ public class ConversionViewController implements Initializable
     private String absolutePath = null;
     //Variables for use with threads
     private Thread thread = null;
-    private final AtomicBoolean running = new AtomicBoolean(false);
-    private final AtomicBoolean suspend = new AtomicBoolean(false);
+    private final AtomicBoolean suspend = new AtomicBoolean(true);
+    private final AtomicBoolean done = new AtomicBoolean(true);
+    @FXML
+    private ProgressBar prgBar1;
 
     /**
      * Initializes the controller class.
@@ -205,6 +176,9 @@ public class ConversionViewController implements Initializable
     public void start()
     {
         thread = new Thread(task);
+        thread.setDaemon(true);
+        done.set(false);
+        suspend.set(false);
         thread.start();
     }
 
@@ -213,6 +187,7 @@ public class ConversionViewController implements Initializable
      */
     public void stop()
     {
+        done.set(true);
         task.cancel();
     }
 
@@ -221,10 +196,8 @@ public class ConversionViewController implements Initializable
      */
     public void pause() throws InterruptedException
     {
-        synchronized (thread)
-        {
-            thread.wait();
-        }
+        suspend.set(true);
+        task.wait();
     }
 
     /**
@@ -232,17 +205,11 @@ public class ConversionViewController implements Initializable
      */
     public void resume()
     {
-        task.notify();
-    }
-
-    /**
-     * Checks if the task is running
-     *
-     * @return
-     */
-    boolean isRunning()
-    {
-        return running.get();
+        suspend.set(false);
+        synchronized (thread)
+        {
+            task.notify();
+        }
     }
 
     /**
@@ -253,6 +220,16 @@ public class ConversionViewController implements Initializable
     boolean isSuspended()
     {
         return suspend.get();
+    }
+    
+    /**
+     * Checks if the task has been done
+     *
+     * @return
+     */
+    boolean isDone()
+    {
+        return done.get();
     }
 
     //Placeholder task
@@ -267,7 +244,7 @@ public class ConversionViewController implements Initializable
                 {
                     break;
                 }
-
+                    
                 //Task goes here
                 try
                 {
@@ -276,8 +253,10 @@ public class ConversionViewController implements Initializable
                 {
                     Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
                 }
-                System.out.println("Hello");
+                System.out.println("Hello " + i);
                 //Task ends here
+                prgBar.setProgress(task.getProgress());
+                prgBar1.setProgress(task.getProgress());
             }
             return null;
         }
@@ -287,12 +266,12 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
     {
-        if (btnTask.getText().equals("Start"))
+        if (done.get() == true)
         {
             start();
 
             btnTask.setText("Stop");
-        } else if (btnTask.getText().equals("Stop"))
+        } else if (done.get() == false)
         {
             stop();
 
@@ -304,12 +283,12 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickPauseTask(ActionEvent event) throws InterruptedException
     {
-        if (btnPauseTask.getText().equals("Pause"))
+        if (suspend.get() == true)
         {
             pause();
 
             btnPauseTask.setText("Resume");
-        } else if (btnPauseTask.getText().equals("Resume"))
+        } else if (suspend.get() == false)
         {
             resume();
 
