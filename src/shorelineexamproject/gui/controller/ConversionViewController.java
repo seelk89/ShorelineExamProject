@@ -424,8 +424,8 @@ public class ConversionViewController implements Initializable
             obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
             obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
-            obj.put(txtCreatedOn.getText(), model.getDate()); //get datetime object
-            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login)
+            obj.put(txtCreatedOn.getText(), model.getDate());
+            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login, ask po)
             obj.put(txtName.getText(), lstVarName.get(i));  //2 different ones
             obj.put(txtPriority.getText(), lstVarPriority.get(i)); //priority, if empty set low
             obj.put(txtStatus.getText(), "NEW"); //weird thing

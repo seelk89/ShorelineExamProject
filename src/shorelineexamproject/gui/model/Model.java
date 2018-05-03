@@ -31,6 +31,6 @@ public class Model
     
     public String getDate()
     {
-        return bll.date();
+        return bll.getDate();
     }
 }

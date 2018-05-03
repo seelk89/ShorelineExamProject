@@ -32,12 +32,12 @@ public class BLL
         daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
     }
     
-    public String date()
+    public String getDate()
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDateTime dateTime = LocalDateTime.now();
         String formattedDate = dateTime.format(formatter);
-        System.out.println(formattedDate);
+      //  System.out.println(formattedDate);
         
         return formattedDate;
         
