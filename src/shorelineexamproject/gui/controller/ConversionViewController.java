@@ -142,7 +142,6 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtVarLatestStartDate;
     @FXML
     private JFXTextField txtVarEstimatedTime;
-
     @FXML
     private JFXButton btnTask;
     @FXML
@@ -153,7 +152,7 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarSiteName = new ArrayList<String>();
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
-    private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
+    private ArrayList<String> lstVarExternalWorkOrderid = new ArrayList<String>();
     private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
     private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
     private ArrayList<String> lstVarCreatedOn = new ArrayList<String>();
@@ -173,14 +172,9 @@ public class ConversionViewController implements Initializable
     //AbsolutePath for the file being read
     private String absolutePath = null;
     //Variables for use with threads
-    private Thread thread;
+    private Thread thread = null;
     private final AtomicBoolean running = new AtomicBoolean(false);
     private final AtomicBoolean suspend = new AtomicBoolean(false);
-
-    public ConversionViewController()
-    {
-        this.thread = new Thread(task);
-    }
 
     /**
      * Initializes the controller class.
@@ -210,6 +204,7 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
+        thread = new Thread(task);
         thread.start();
     }
 
@@ -224,14 +219,11 @@ public class ConversionViewController implements Initializable
     /**
      * Pauses the task
      */
-    public void pause()
+    public void pause() throws InterruptedException
     {
-        try
+        synchronized (thread)
         {
-            task.wait();
-        } catch (InterruptedException ex)
-        {
-            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+            thread.wait();
         }
     }
 
@@ -358,7 +350,7 @@ public class ConversionViewController implements Initializable
     private void overTxtTest(DragEvent event)
     {
         //Accept it only if it is  not dragged from the same node and if it has a string data
-        if (event.getGestureSource() != txtTest && event.getDragboard().hasString())
+        if ( event.getDragboard().hasString())
         {
             //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
@@ -390,24 +382,27 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+    
+    
+    
     @FXML
     private void clickTest(ActionEvent event)
     {
-        String header1 = txtTest.getText();
-        String header2 = txtTest.getText();
-        String header3 = txtTest.getText();
-        String header4 = txtTest.getText();
-        String header5 = txtTest.getText();
-        String header6 = txtTest.getText();
-        String header7 = txtTest.getText();
-        String header8 = txtTest.getText();
-        String header9 = txtTest.getText();
-        String header10 = txtTest.getText();
-        String header11 = txtTest.getText();
-        String header12 = txtTest.getText();
-        String header13 = txtTest.getText();
-        String header14 = txtTest.getText();
-        String header15 = txtTest.getText();
+        String header1 = txtVarSiteName.getText();
+        String header2 = txtVarAssetSerialNumber.getText();
+        String header3 = txtVarType.getText();
+        String header4 = txtVarExternalWorkOrderid.getText();
+        String header5 = txtVarSystemStatus.getText();
+        String header6 = txtVarUserStatus.getText();
+        String header7 = txtVarCreatedOn.getText();
+        String header8 = txtVarCreatedBy.getText();
+        String header9 = txtVarName.getText();
+        String header10 = txtVarPriority.getText();
+        String header11 = txtVarStatus.getText();
+        String header12 = txtVarLatestFinishDate.getText();
+        String header13 = txtVarEarliestStartDate.getText();
+        String header14 = txtVarLatestStartDate.getText();
+        String header15 = txtVarEstimatedTime.getText();
 
         getXLSXHeaderValues(absolutePath, header1, header2,
                 header3, header4, header5, header6, header7,
@@ -546,7 +541,7 @@ public class ConversionViewController implements Initializable
                                     lstVarSiteName.add(r.getCell(colIndex).toString());
                                     lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
                                     lstVarType.add(r.getCell(colIndex).toString());
-                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderid.add(r.getCell(colIndex).toString());
                                     lstVarSystemStatus.add(r.getCell(colIndex).toString());
                                     lstVarUserStatus.add(r.getCell(colIndex).toString());
                                     lstVarCreatedOn.add(r.getCell(colIndex).toString());
@@ -565,7 +560,7 @@ public class ConversionViewController implements Initializable
                         }
 
                         break;
-//                    //Case the cells value is of type String it will be compared to the header
+                    //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
 
                         cellData = cell.getStringCellValue();
@@ -584,7 +579,7 @@ public class ConversionViewController implements Initializable
                                     lstVarSiteName.add(r.getCell(colIndex).toString());
                                     lstVarAssetSerialNumber.add(r.getCell(colIndex).toString());
                                     lstVarType.add(r.getCell(colIndex).toString());
-                                    lstVarExternalWorkOrderId.add(r.getCell(colIndex).toString());
+                                    lstVarExternalWorkOrderid.add(r.getCell(colIndex).toString());
                                     lstVarSystemStatus.add(r.getCell(colIndex).toString());
                                     lstVarUserStatus.add(r.getCell(colIndex).toString());
                                     lstVarCreatedOn.add(r.getCell(colIndex).toString());
@@ -598,10 +593,8 @@ public class ConversionViewController implements Initializable
                                     lstVarEstimatedTime.add(r.getCell(colIndex).toString());
 
                                 }
-//                               
                             }
                         }
-
                         break;
                 }
             }
@@ -698,7 +691,7 @@ public class ConversionViewController implements Initializable
             obj.put(txtSiteName.getText(), lstVarSiteName.get(i));
             obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
             obj.put(txtType.getText(), lstVarType.get(i));
-            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderId.get(i));
+            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
             obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
             obj.put(txtCreatedOn.getText(), lstVarCreatedOn.get(i));

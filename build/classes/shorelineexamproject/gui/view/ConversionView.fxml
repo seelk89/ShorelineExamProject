@@ -9,8 +9,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
-      <JFXButton fx:id="btnGet" layoutX="162.0" layoutY="328.0" onAction="#clickGet" text="Get" />
-      <JFXButton layoutX="455.0" layoutY="54.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
+      <JFXButton fx:id="btnGet" layoutX="177.0" layoutY="321.0" onAction="#clickGet" text="Get" />
+      <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
       <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
       <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
 
@@ -32,13 +32,31 @@
       <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" text="latestStartDate" />
 
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="301.0" prefWidth="200.0" />
-      <JFXButton fx:id="btnTest" layoutX="226.0" layoutY="90.0" onAction="#clickTest" text="Test" />
-      <JFXTextField fx:id="txtTest" layoutX="226.0" layoutY="54.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
+      <JFXButton fx:id="btnTest" layoutX="95.0" layoutY="412.0" onAction="#clickTest" text="Test" />
+      <JFXTextField fx:id="txtTest" layoutX="46.0" layoutY="373.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
 
 
-      <JFXButton fx:id="btnTask" layoutX="219.0" layoutY="141.0" onAction="#clickTask" text="Start" />
-      <JFXButton fx:id="btnPauseTask" layoutX="268.0" layoutY="141.0" onAction="#clickPauseTask" text="Pause" />
-      <JFXProgressBar fx:id="prgBar" layoutX="219.0" layoutY="128.0" prefHeight="5.0" prefWidth="127.0" />
+      <JFXButton fx:id="btnTask" layoutX="46.0" layoutY="503.0" onAction="#clickTask" text="Start" />
+      <JFXButton fx:id="btnPauseTask" layoutX="90.0" layoutY="503.0" onAction="#clickPauseTask" text="Pause" />
+      <JFXProgressBar fx:id="prgBar" layoutX="50.0" layoutY="474.0" prefHeight="5.0" prefWidth="127.0" />
+      <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragOver="#overTxtTest" promptText="type" />
+      <JFXTextField fx:id="txtVarUserStatus" layoutX="275.0" layoutY="242.0" promptText="userStatus" />
+      <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" promptText="systemStatus" />
+      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="276.0" layoutY="190.0" promptText="externalWorkOrderId" />
+      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="275.0" layoutY="141.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" promptText="assetSerialNumber" />
+      <JFXTextField fx:id="txtVarSiteName" layoutX="276.0" layoutY="114.0" onDragDropped="#dropTxtTest" promptText="siteName" />
+      <JFXTextField fx:id="txtVarCreatedOn" layoutX="275.0" layoutY="268.0" promptText="createdOn" />
+      <JFXTextField fx:id="txtVarCreatedBy" layoutX="275.0" layoutY="294.0" promptText="createdBy" />
+      <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" promptText="name" />
+      <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" promptText="priority" />
+      <JFXTextField fx:id="txtVarStatus" layoutX="275.0" layoutY="373.0" promptText="status" />
+      <JFXTextField fx:id="txtVarPlanning" layoutX="276.0" layoutY="425.0" promptText="planning" />
+      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" promptText="estimatedTime" />
+      <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="275.0" layoutY="477.0" promptText="latestFinishDate" />
+      <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="275.0" layoutY="503.0" promptText="earliestStartDate" />
+      <JFXTextField fx:id="txtVarLatestStartDate" layoutX="275.0" layoutY="529.0" promptText="latestStartDate" />
+      <Label layoutX="441.0" layoutY="80.0" text="Keys:" />
+      <Label layoutX="275.0" layoutY="80.0" text="Values:" />
 
    </children>
 </AnchorPane>
