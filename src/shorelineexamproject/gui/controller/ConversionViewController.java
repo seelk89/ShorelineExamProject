@@ -155,7 +155,7 @@ public class ConversionViewController implements Initializable
 
     //AbsolutePath for the file being read
     private String absolutePath = null;
-    
+
     //Variables for use with threads
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(true);
@@ -234,7 +234,7 @@ public class ConversionViewController implements Initializable
     {
         return suspend.get();
     }
-    
+
     /**
      * Checks if the task has been done
      *
@@ -257,7 +257,7 @@ public class ConversionViewController implements Initializable
                 {
                     break;
                 }
-                    
+
                 //Task goes here
                 try
                 {
@@ -338,7 +338,7 @@ public class ConversionViewController implements Initializable
     private void overTxtTest(DragEvent event)
     {
         //Accept it only if it is  not dragged from the same node and if it has a string data
-        if ( event.getDragboard().hasString())
+        if (event.getDragboard().hasString())
         {
             //Allow for both copying and moving, whatever user chooses
             event.acceptTransferModes(TransferMode.COPY);
@@ -357,22 +357,196 @@ public class ConversionViewController implements Initializable
     {
         //If there is a string on the dragboard, read it and use it
         Dragboard dragBoard = event.getDragboard();
-        //boolean success = false;
         if (dragBoard.hasString())
         {
             txtTest.setText(dragBoard.getString());
-           // success = true;
         }
-
-        //let the source know whether the string was successfully transferred and used
-        //event.setDropCompleted(success);
 
         event.consume();
     }
 
-    
-    
-    
+    @FXML
+    private void dropTxtVarAssetSerialNumber(DragEvent event)
+    {
+        //If there is a string on the dragboard, read it and use it
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarAssetSerialNumber.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarSiteName(DragEvent event)
+    {
+        //If there is a string on the dragboard, read it and use it
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarSiteName.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarType(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarType.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarUserStatus(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarUserStatus.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarSystemStatus(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarSystemStatus.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarExternalWorkOrderid(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarExternalWorkOrderid.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarCreatedOn(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarCreatedOn.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarCreatedBy(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarCreatedBy.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarName(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarName.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarPriority(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarPriority.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarStatus(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarStatus.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarEstimatedTime(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarEstimatedTime.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarLatestFinishDate(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarLatestFinishDate.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarEarliestStartDate(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarEarliestStartDate.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
+    @FXML
+    private void dropTxtVarLatestStartDate(DragEvent event)
+    {
+        Dragboard dragBoard = event.getDragboard();
+        if (dragBoard.hasString())
+        {
+            txtVarLatestStartDate.setText(dragBoard.getString());
+        }
+
+        event.consume();
+    }
+
     @FXML
     private void clickTest(ActionEvent event)
     {
@@ -395,7 +569,7 @@ public class ConversionViewController implements Initializable
         getXLSXHeaderValues(absolutePath, header1, header2,
                 header3, header4, header5, header6, header7,
                 header8, header9, header10, header11, header12,
-                header13, header14, header15); //??
+                header13, header14, header15);
         //   System.out.println(lstVarSiteName);
     }
 
@@ -514,9 +688,26 @@ public class ConversionViewController implements Initializable
                     //Case the cells value is of type double it will be parsed as String and used to compare to the header
                     case Cell.CELL_TYPE_NUMERIC:
 
+                        ArrayList<String> headerList = new ArrayList<>();
+                        headerList.add(header1);
+                        headerList.add(header2);
+                        headerList.add(header3);
+                        headerList.add(header4);
+                        headerList.add(header5);
+                        headerList.add(header6);
+                        headerList.add(header7);
+                        headerList.add(header8);
+                        headerList.add(header9);
+                        headerList.add(header10);
+                        headerList.add(header11);
+                        headerList.add(header12);
+                        headerList.add(header13);
+                        headerList.add(header14);
+                        headerList.add(header15);
+                        
                         cellData = String.valueOf(cell.getNumericCellValue());
 
-                        if (cellData.equals(header1))
+                        if (cellData.equals(headerList))
                         {
                             colIndex = cell.getColumnIndex();
 
@@ -580,7 +771,7 @@ public class ConversionViewController implements Initializable
                                     lstVarLatestStartDate.add(r.getCell(colIndex).toString());
                                     lstVarEstimatedTime.add(r.getCell(colIndex).toString());
 
-                                }
+                               }
                             }
                         }
                         break;
@@ -645,6 +836,26 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
+        String header1 = txtVarSiteName.getText();
+        String header2 = txtVarAssetSerialNumber.getText();
+        String header3 = txtVarType.getText();
+        String header4 = txtVarExternalWorkOrderid.getText();
+        String header5 = txtVarSystemStatus.getText();
+        String header6 = txtVarUserStatus.getText();
+        String header7 = txtVarCreatedOn.getText();
+        String header8 = txtVarCreatedBy.getText();
+        String header9 = txtVarName.getText();
+        String header10 = txtVarPriority.getText();
+        String header11 = txtVarStatus.getText();
+        String header12 = txtVarLatestFinishDate.getText();
+        String header13 = txtVarEarliestStartDate.getText();
+        String header14 = txtVarLatestStartDate.getText();
+        String header15 = txtVarEstimatedTime.getText();
+
+        getXLSXHeaderValues(absolutePath, header1, header2,
+                header3, header4, header5, header6, header7,
+                header8, header9, header10, header11, header12,
+                header13, header14, header15);
         //metodekald/metode
         JSONArray jarray = CreateJsonObjects(objectilist);
 
