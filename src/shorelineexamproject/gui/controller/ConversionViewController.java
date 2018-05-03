@@ -89,12 +89,6 @@ public class ConversionViewController implements Initializable
     @FXML
     private ListView<ListViewObject> lstHeaders;
     @FXML
-    private JFXTextField txtPlanning;
-    @FXML
-    private JFXTextField txtTest;
-    @FXML
-    private JFXButton btnTest;
-    @FXML
     private JFXButton btnTask;
     @FXML
     private JFXProgressBar prgBar;
@@ -113,19 +107,9 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtVarAssetSerialNumber;
     @FXML
-    private JFXTextField txtVarSiteName;
-    @FXML
-    private JFXTextField txtVarCreatedOn;
-    @FXML
-    private JFXTextField txtVarCreatedBy;
-    @FXML
     private JFXTextField txtVarName;
     @FXML
     private JFXTextField txtVarPriority;
-    @FXML
-    private JFXTextField txtVarStatus;
-    @FXML
-    private JFXTextField txtVarPlanning;
     @FXML
     private JFXTextField txtVarEstimatedTime;
     @FXML
@@ -135,22 +119,20 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtVarLatestStartDate;
 
-    private ArrayList<String> lstVarSiteName = new ArrayList<String>();
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
     private ArrayList<String> lstVarExternalWorkOrderid = new ArrayList<String>();
     private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
     private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
-    private ArrayList<String> lstVarCreatedOn = new ArrayList<String>();
-    private ArrayList<String> lstVarCreatedBy = new ArrayList<String>();
     private ArrayList<String> lstVarName = new ArrayList<String>();
     private ArrayList<String> lstVarPriority = new ArrayList<String>();
-    private ArrayList<String> lstVarStatus = new ArrayList<String>();
     private ArrayList<String> lstVarLatestFinishDate = new ArrayList<String>();
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
 
+    private List<Object> objectilist = new ArrayList();
+    
     private Window stage;
 
     //AbsolutePath for the file being read
@@ -347,24 +329,6 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
-    /**
-     * Put the dragged String into the field that it is dropped over
-     *
-     * @param event
-     */
-    @FXML
-    private void dropTxtTest(DragEvent event)
-    {
-        //If there is a string on the dragboard, read it and use it
-        Dragboard dragBoard = event.getDragboard();
-        if (dragBoard.hasString())
-        {
-            txtTest.setText(dragBoard.getString());
-        }
-
-        event.consume();
-    }
-
     @FXML
     private void dropTxtVarAssetSerialNumber(DragEvent event)
     {
@@ -373,19 +337,6 @@ public class ConversionViewController implements Initializable
         if (dragBoard.hasString())
         {
             txtVarAssetSerialNumber.setText(dragBoard.getString());
-        }
-
-        event.consume();
-    }
-
-    @FXML
-    private void dropTxtVarSiteName(DragEvent event)
-    {
-        //If there is a string on the dragboard, read it and use it
-        Dragboard dragBoard = event.getDragboard();
-        if (dragBoard.hasString())
-        {
-            txtVarSiteName.setText(dragBoard.getString());
         }
 
         event.consume();
@@ -440,30 +391,6 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void dropTxtVarCreatedOn(DragEvent event)
-    {
-        Dragboard dragBoard = event.getDragboard();
-        if (dragBoard.hasString())
-        {
-            txtVarCreatedOn.setText(dragBoard.getString());
-        }
-
-        event.consume();
-    }
-
-    @FXML
-    private void dropTxtVarCreatedBy(DragEvent event)
-    {
-        Dragboard dragBoard = event.getDragboard();
-        if (dragBoard.hasString())
-        {
-            txtVarCreatedBy.setText(dragBoard.getString());
-        }
-
-        event.consume();
-    }
-
-    @FXML
     private void dropTxtVarName(DragEvent event)
     {
         Dragboard dragBoard = event.getDragboard();
@@ -482,18 +409,6 @@ public class ConversionViewController implements Initializable
         if (dragBoard.hasString())
         {
             txtVarPriority.setText(dragBoard.getString());
-        }
-
-        event.consume();
-    }
-
-    @FXML
-    private void dropTxtVarStatus(DragEvent event)
-    {
-        Dragboard dragBoard = event.getDragboard();
-        if (dragBoard.hasString())
-        {
-            txtVarStatus.setText(dragBoard.getString());
         }
 
         event.consume();
@@ -545,42 +460,6 @@ public class ConversionViewController implements Initializable
         }
 
         event.consume();
-    }
-
-    @FXML
-    private void clickTest(ActionEvent event)
-    {
-        String header1 = txtVarSiteName.getText();
-        String header2 = txtVarAssetSerialNumber.getText();
-        String header3 = txtVarType.getText();
-        String header4 = txtVarExternalWorkOrderid.getText();
-        String header5 = txtVarSystemStatus.getText();
-        String header6 = txtVarUserStatus.getText();
-        String header7 = txtVarCreatedOn.getText();
-        String header8 = txtVarCreatedBy.getText();
-        String header9 = txtVarName.getText();
-        String header10 = txtVarPriority.getText();
-        String header11 = txtVarStatus.getText();
-        String header12 = txtVarLatestFinishDate.getText();
-        String header13 = txtVarEarliestStartDate.getText();
-        String header14 = txtVarLatestStartDate.getText();
-        String header15 = txtVarEstimatedTime.getText();
-
-        getXLSXHeaderValues(absolutePath, header1, lstVarSiteName);
-        getXLSXHeaderValues(absolutePath, header2, lstVarAssetSerialNumber);
-        getXLSXHeaderValues(absolutePath, header3, lstVarType);
-        getXLSXHeaderValues(absolutePath, header4, lstVarExternalWorkOrderid);
-        getXLSXHeaderValues(absolutePath, header5, lstVarSystemStatus);
-        getXLSXHeaderValues(absolutePath, header6, lstVarUserStatus);
-        getXLSXHeaderValues(absolutePath, header7, lstVarCreatedOn);
-        getXLSXHeaderValues(absolutePath, header8, lstVarCreatedBy);
-        getXLSXHeaderValues(absolutePath, header9, lstVarName);
-        getXLSXHeaderValues(absolutePath, header10, lstVarPriority);
-        getXLSXHeaderValues(absolutePath, header11, lstVarStatus);
-        getXLSXHeaderValues(absolutePath, header12, lstVarLatestFinishDate);
-        getXLSXHeaderValues(absolutePath, header13, lstVarEarliestStartDate);
-        getXLSXHeaderValues(absolutePath, header14, lstVarLatestStartDate);
-        getXLSXHeaderValues(absolutePath, header15, lstVarEstimatedTime);
     }
 
     /**
@@ -797,38 +676,30 @@ public class ConversionViewController implements Initializable
         String FileName = txtJSONName.getText() + ".json";
         File file = new File(FileName);
 
-        String header1 = txtVarSiteName.getText();
-        String header2 = txtVarAssetSerialNumber.getText();
-        String header3 = txtVarType.getText();
-        String header4 = txtVarExternalWorkOrderid.getText();
-        String header5 = txtVarSystemStatus.getText();
-        String header6 = txtVarUserStatus.getText();
-        String header7 = txtVarCreatedOn.getText();
-        String header8 = txtVarCreatedBy.getText();
-        String header9 = txtVarName.getText();
-        String header10 = txtVarPriority.getText();
-        String header11 = txtVarStatus.getText();
-        String header12 = txtVarLatestFinishDate.getText();
-        String header13 = txtVarEarliestStartDate.getText();
-        String header14 = txtVarLatestStartDate.getText();
-        String header15 = txtVarEstimatedTime.getText();
+        String header1 = txtVarAssetSerialNumber.getText();
+        String header2 = txtVarType.getText();
+        String header3 = txtVarExternalWorkOrderid.getText();
+        String header4 = txtVarSystemStatus.getText();
+        String header5 = txtVarUserStatus.getText();
+        String header6 = txtVarName.getText();
+        String header7 = txtVarPriority.getText();
+        String header8 = txtVarLatestFinishDate.getText();
+        String header9 = txtVarEarliestStartDate.getText();
+        String header10 = txtVarLatestStartDate.getText();
+        String header11 = txtVarEstimatedTime.getText();
 
-        getXLSXHeaderValues(absolutePath, header1, lstVarSiteName);
-        getXLSXHeaderValues(absolutePath, header2, lstVarAssetSerialNumber);
-        getXLSXHeaderValues(absolutePath, header3, lstVarType);
-        getXLSXHeaderValues(absolutePath, header4, lstVarExternalWorkOrderid);
-        getXLSXHeaderValues(absolutePath, header5, lstVarSystemStatus);
-        getXLSXHeaderValues(absolutePath, header6, lstVarUserStatus);
-        getXLSXHeaderValues(absolutePath, header7, lstVarCreatedOn);
-        getXLSXHeaderValues(absolutePath, header8, lstVarCreatedBy);
-        getXLSXHeaderValues(absolutePath, header9, lstVarName);
-        getXLSXHeaderValues(absolutePath, header10, lstVarPriority);
-        getXLSXHeaderValues(absolutePath, header11, lstVarStatus);
-        getXLSXHeaderValues(absolutePath, header12, lstVarLatestFinishDate);
-        getXLSXHeaderValues(absolutePath, header13, lstVarEarliestStartDate);
-        getXLSXHeaderValues(absolutePath, header14, lstVarLatestStartDate);
-        getXLSXHeaderValues(absolutePath, header15, lstVarEstimatedTime);
-        
+        getXLSXHeaderValues(absolutePath, header1, lstVarAssetSerialNumber);
+        getXLSXHeaderValues(absolutePath, header2, lstVarType);
+        getXLSXHeaderValues(absolutePath, header3, lstVarExternalWorkOrderid);
+        getXLSXHeaderValues(absolutePath, header4, lstVarSystemStatus);
+        getXLSXHeaderValues(absolutePath, header5, lstVarUserStatus);
+        getXLSXHeaderValues(absolutePath, header6, lstVarName);
+        getXLSXHeaderValues(absolutePath, header7, lstVarPriority);
+        getXLSXHeaderValues(absolutePath, header8, lstVarLatestFinishDate);
+        getXLSXHeaderValues(absolutePath, header9, lstVarEarliestStartDate);
+        getXLSXHeaderValues(absolutePath, header10, lstVarLatestStartDate);
+        getXLSXHeaderValues(absolutePath, header11, lstVarEstimatedTime);
+
         JSONArray jarray = CreateJsonObjects(objectilist);
 
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
@@ -840,11 +711,8 @@ public class ConversionViewController implements Initializable
 
     }
 
-    private List<Object> objectilist = new ArrayList();
-
     /**
      * Anni //method below converts to json (for now just loops through a list
-     * //throws JSONException?, public static string
      *
      * @param objectilist
      * @return
@@ -854,22 +722,21 @@ public class ConversionViewController implements Initializable
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
 
-        //for (Object objectilist1 : objectilist) //need to enter code here??
-        for (int i = 0; i < lstVarSiteName.size(); i++)
+        for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();
 
-            obj.put(txtSiteName.getText(), lstVarSiteName.get(i));
+            obj.put(txtSiteName.getText(), ""); //get from middle of description if possible
             obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
             obj.put(txtType.getText(), lstVarType.get(i));
             obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
             obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
-            obj.put(txtCreatedOn.getText(), lstVarCreatedOn.get(i));
-            obj.put(txtCreatedBy.getText(), lstVarCreatedBy.get(i));
-            obj.put(txtName.getText(), lstVarName.get(i));
-            obj.put(txtPriority.getText(), lstVarPriority.get(i));
-            obj.put(txtStatus.getText(), lstVarStatus.get(i));
+            obj.put(txtCreatedOn.getText(), "Datetime Object"); //get datetime object
+            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login)
+            obj.put(txtName.getText(), lstVarName.get(i));  //2 different ones
+            obj.put(txtPriority.getText(), lstVarPriority.get(i)); //priority, if empty set low
+            obj.put(txtStatus.getText(), "NEW"); //weird thing
 
             JSONObject obj2 = new JSONObject();
             obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
