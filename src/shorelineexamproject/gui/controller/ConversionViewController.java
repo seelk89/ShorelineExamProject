@@ -660,12 +660,10 @@ public class ConversionViewController implements Initializable
         readXLSXHeaders(absolutePath);
     }
 
-    /**
-     *
-     * Anni This method gets the name of the textfield and creates a new file
-     * with this name, and then it adds the obj to the file This method gets the
-     * name of the textfield and creates a new file with this name, and then it
-     * adds the obj to the file
+    /** Anni
+     * This method gets the name of the txtJSONName textfield and creates a new file
+     * with this name + .json.
+     * Then it adds the jsonarray we make in the method below to the file we just created.
      *
      * @param event
      * @throws IOException
@@ -706,13 +704,14 @@ public class ConversionViewController implements Initializable
         fw.write(jarray.toString(4));
         fw.flush();
         System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-
         System.out.println(jarray);
 
     }
 
-    /**
-     * Anni //method below converts to json (for now just loops through a list
+    /** Anni
+     *  This method is a list of JSONObjects and creates a JSONArray.
+     * It then has a for loop that creates JSONObjects, it gets the information from an input file
+     * that are then put into the JSONArray.
      *
      * @param objectilist
      * @return
@@ -748,7 +747,6 @@ public class ConversionViewController implements Initializable
 
             mainjsonArray.put(obj);
         }
-        System.out.println(mainjsonArray);
         return mainjsonArray;
     }
 
