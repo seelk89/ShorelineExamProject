@@ -369,15 +369,15 @@ public class ConversionViewController implements Initializable
     {
         //If there is a string on the dragboard, read it and use it
         Dragboard dragBoard = event.getDragboard();
-        boolean success = false;
+       // boolean success = false;
         if (dragBoard.hasString())
         {
             txtTest.setText(dragBoard.getString());
-            success = true;
+           // success = true;
         }
 
         //let the source know whether the string was successfully transferred and used
-        event.setDropCompleted(success);
+  //      event.setDropCompleted(success);
 
         event.consume();
     }
