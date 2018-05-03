@@ -26,15 +26,12 @@
       <JFXTextField fx:id="txtName" layoutX="437.0" layoutY="321.0" promptText="name" text="name" />
       <JFXTextField fx:id="txtPriority" layoutX="438.0" layoutY="348.0" promptText="priority" text="priority" />
       <JFXTextField fx:id="txtStatus" layoutX="437.0" layoutY="374.0" promptText="status" text="status" />
-      <JFXTextField fx:id="txtPlanning" layoutX="438.0" layoutY="426.0" promptText="planning" text="planning" />
       <JFXTextField fx:id="txtEstimatedTime" layoutX="438.0" layoutY="556.0" promptText="estimatedTime" text="estimatedTime" />
       <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" text="latestFinishDate" />
       <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" text="earliestStartDate" />
       <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" text="latestStartDate" />
 
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="301.0" prefWidth="200.0" />
-      <JFXButton fx:id="btnTest" layoutX="95.0" layoutY="412.0" onAction="#clickTest" text="Test" />
-      <JFXTextField fx:id="txtTest" layoutX="46.0" layoutY="373.0" onDragDropped="#dropTxtTest" onDragOver="#overTxtTest" />
 
 
       <JFXButton fx:id="btnTask" layoutX="38.0" layoutY="490.0" onAction="#clickTask" text="Start" />
@@ -46,19 +43,16 @@
       <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="systemStatus" />
       <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="276.0" layoutY="190.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" promptText="externalWorkOrderId" />
       <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="275.0" layoutY="141.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" promptText="assetSerialNumber" />
-      <JFXTextField fx:id="txtVarSiteName" layoutX="276.0" layoutY="114.0" onDragDropped="#dropTxtVarSiteName" onDragOver="#overTxtTest" promptText="siteName" />
-      <JFXTextField fx:id="txtVarCreatedOn" layoutX="275.0" layoutY="268.0" onDragDropped="#dropTxtVarCreatedOn" onDragOver="#overTxtTest" promptText="createdOn" />
-      <JFXTextField fx:id="txtVarCreatedBy" layoutX="275.0" layoutY="294.0" onDragDropped="#dropTxtVarCreatedBy" onDragOver="#overTxtTest" promptText="createdBy" />
       <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="name" />
       <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="priority" />
-      <JFXTextField fx:id="txtVarStatus" layoutX="275.0" layoutY="373.0" onDragDropped="#dropTxtVarStatus" onDragOver="#overTxtTest" promptText="status" />
-      <JFXTextField fx:id="txtVarPlanning" layoutX="276.0" layoutY="425.0" onDragOver="#overTxtTest" promptText="planning" />
       <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime" />
       <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="275.0" layoutY="477.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" promptText="latestFinishDate" />
       <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="275.0" layoutY="503.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" promptText="earliestStartDate" />
       <JFXTextField fx:id="txtVarLatestStartDate" layoutX="275.0" layoutY="529.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" promptText="latestStartDate" />
       <Label layoutX="441.0" layoutY="80.0" text="Keys:" />
       <Label layoutX="275.0" layoutY="80.0" text="Values:" />
+      <Label layoutX="276.0" layoutY="429.0" text="planning" />
+      <Label layoutX="437.0" layoutY="429.0" text="planning" />
 
    </children>
 </AnchorPane>
