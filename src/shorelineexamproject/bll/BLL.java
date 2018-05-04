@@ -5,11 +5,14 @@
  */
 package shorelineexamproject.bll;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONArray;
 import shorelineexamproject.be.ListViewObject;
+import shorelineexamproject.dal.DAOJSONWriter;
 import shorelineexamproject.dal.DAOXLSXReader;
 
 /**
@@ -20,6 +23,7 @@ public class BLL
 {
 
     private DAOXLSXReader daoXLSXReader = new DAOXLSXReader();
+    private DAOJSONWriter daoJSONWriter = new DAOJSONWriter();
 
     public List<ListViewObject> readXLSXHeaders(String filepath)
     {
@@ -39,7 +43,28 @@ public class BLL
         String formattedDate = dateTime.format(formatter);
 
         
-        return formattedDate;
-        
+        return formattedDate;    
+    }
+    
+    /**
+     * 
+     * @param FileName
+     * @param objectilist
+     * @throws IOException 
+     */
+    public void CreateJSONFile(String FileName, List objectilist) throws IOException
+    {
+        daoJSONWriter.CreateJSONFile(FileName, objectilist);
+    }
+    
+    /**
+     * 
+     * @param objectilist
+     * @return 
+     */
+        public JSONArray CreateJsonObjects(List<Object> objectilist)
+    {
+        daoJSONWriter.CreateJsonObjects(objectilist);
+        return null;
     }
 }

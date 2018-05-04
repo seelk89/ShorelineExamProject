@@ -261,7 +261,7 @@ public class ConversionViewController implements Initializable
                     if (suspend.get() == true)
                     {
                         suspendTask();
-                    } 
+                    }
 
                     try
                     {
@@ -363,7 +363,6 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     *
      * Anni This method gets the name of the textfield and creates a new file
      * with this name, and then it adds the obj to the file This method gets the
      * name of the textfield and creates a new file with this name, and then it
@@ -375,33 +374,12 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
     {
+        fillListsWithExcel();
+
         String FileName = txtJSONName.getText() + ".json";
+//        model.CreateJSONFile(FileName, objectilist);
+
         File file = new File(FileName);
-
-        String header1 = txtVarAssetSerialNumber.getText();
-        String header2 = txtVarType.getText();
-        String header3 = txtVarExternalWorkOrderid.getText();
-        String header4 = txtVarSystemStatus.getText();
-        String header5 = txtVarUserStatus.getText();
-        String header6 = txtVarName.getText();
-        String header7 = txtVarPriority.getText();
-        String header8 = txtVarLatestFinishDate.getText();
-        String header9 = txtVarEarliestStartDate.getText();
-        String header10 = txtVarLatestStartDate.getText();
-        String header11 = txtVarEstimatedTime.getText();
-
-        model.getXLSXHeaderValues(absolutePath, header1, lstVarAssetSerialNumber);
-        model.getXLSXHeaderValues(absolutePath, header2, lstVarType);
-        model.getXLSXHeaderValues(absolutePath, header3, lstVarExternalWorkOrderid);
-        model.getXLSXHeaderValues(absolutePath, header4, lstVarSystemStatus);
-        model.getXLSXHeaderValues(absolutePath, header5, lstVarUserStatus);
-        model.getXLSXHeaderValues(absolutePath, header6, lstVarName);
-        model.getXLSXHeaderValues(absolutePath, header7, lstVarPriority);
-        model.getXLSXHeaderValues(absolutePath, header8, lstVarLatestFinishDate);
-        model.getXLSXHeaderValues(absolutePath, header9, lstVarEarliestStartDate);
-        model.getXLSXHeaderValues(absolutePath, header10, lstVarLatestStartDate);
-        model.getXLSXHeaderValues(absolutePath, header11, lstVarEstimatedTime);
-
         JSONArray jarray = CreateJsonObjects(objectilist);
 
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
@@ -412,8 +390,25 @@ public class ConversionViewController implements Initializable
         System.out.println(jarray);
     }
 
+    private void fillListsWithExcel()
+    {
+        model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
+        model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
+        model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderid);
+        model.getXLSXHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
+        model.getXLSXHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
+        model.getXLSXHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
+        model.getXLSXHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
+        model.getXLSXHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
+        model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
+        model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
+        model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+
+    }
+
     /**
-     * Anni method below converts to json (for now just loops through a list
+     * Anni method below converts excel to json by looping through a list that
+     * adds objects to an array.
      *
      * @param objectilist
      * @return
