@@ -6,12 +6,9 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXProgressBar;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,18 +26,12 @@ import javafx.scene.input.TransferMode;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Window;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javafx.concurrent.Task;
-import javafx.scene.control.ProgressBar;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.gui.model.Model;
@@ -377,17 +368,19 @@ public class ConversionViewController implements Initializable
         fillListsWithExcel();
 
         String FileName = txtJSONName.getText() + ".json";
-//        model.CreateJSONFile(FileName, objectilist);
 
-        File file = new File(FileName);
-        JSONArray jarray = CreateJsonObjects(objectilist);
-
-        FileWriter fw = new FileWriter(file.getAbsoluteFile());
-        fw.write(jarray.toString(4));
-        fw.flush();
-        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-
-        System.out.println(jarray);
+        
+        JSONArray jarray = CreateJsonObjects();
+        model.CreateJSONFile(FileName, jarray);
+        
+        
+//File file = new File(FileName);
+//        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+//        fw.write(jarray.toString(4));
+//        fw.flush();
+//        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
+//
+//        System.out.println(jarray);
     }
 
     private void fillListsWithExcel()
@@ -413,11 +406,11 @@ public class ConversionViewController implements Initializable
      * @param objectilist
      * @return
      */
-    public JSONArray CreateJsonObjects(List<Object> objectilist)
+    public JSONArray CreateJsonObjects()
     {
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
-
+//what can we use instead of lstVarType? objectilist? then it gets empty
         for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();

@@ -52,9 +52,9 @@ public class BLL
      * @param objectilist
      * @throws IOException 
      */
-    public void CreateJSONFile(String FileName, List objectilist) throws IOException
+    public void CreateJSONFile(String FileName, JSONArray jarray ) throws IOException
     {
-        daoJSONWriter.CreateJSONFile(FileName, objectilist);
+        daoJSONWriter.CreateJSONFile(FileName, jarray );
     }
     
     /**
@@ -62,9 +62,9 @@ public class BLL
      * @param objectilist
      * @return 
      */
-        public JSONArray CreateJsonObjects(List<Object> objectilist)
+        public JSONArray CreateJsonObjects()
     {
-        daoJSONWriter.CreateJsonObjects(objectilist);
+        daoJSONWriter.CreateJsonObjects();
         return null;
     }
 }

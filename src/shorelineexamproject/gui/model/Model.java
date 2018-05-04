@@ -42,9 +42,9 @@ public class Model
      * @param objectilist
      * @throws IOException 
      */
-    public void CreateJSONFile(String FileName, List objectilist) throws IOException
+    public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
     {
-        bll.CreateJSONFile(FileName, objectilist);
+        bll.CreateJSONFile(FileName, jarray);
     }
 
     /**
@@ -52,9 +52,9 @@ public class Model
      * @param objectilist
      * @return 
      */
-    public JSONArray CreateJsonObjects(List<Object> objectilist)
+    public JSONArray CreateJsonObjects()
     {
-        bll.CreateJsonObjects(objectilist);
+        bll.CreateJsonObjects();
         return null;
     }
 }
