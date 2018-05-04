@@ -10,8 +10,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
+<<<<<<< HEAD
       <JFXButton fx:id="btnGet" layoutX="179.0" layoutY="44.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get" AnchorPane.leftAnchor="179.0" AnchorPane.topAnchor="44.0" />
       <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" ripplerFill="#0c8bb8" text="Create JSONFile" />
+=======
+      <JFXButton fx:id="btnGet" layoutX="179.0" layoutY="44.0" onAction="#clickGet" text="Get" AnchorPane.bottomAnchor="551.0" AnchorPane.leftAnchor="179.0" AnchorPane.topAnchor="44.0" />
+      <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
+>>>>>>> 59bf40ea377f2312b65828278c94f1c576de4877
       <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
       <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
 
@@ -34,6 +39,7 @@
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="512.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="75.0" />
 
 
+<<<<<<< HEAD
       <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" />
       <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" ripplerFill="#0c8bb8" text="Pause" />
       <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="type" />
@@ -44,6 +50,18 @@
       <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="name" />
       <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="priority" />
       <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime" />
+=======
+      <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" text="Start" />
+      <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" text="Pause" />
+      <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="Order Type" />
+      <JFXTextField fx:id="txtVarUserStatus" layoutX="275.0" layoutY="242.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" promptText="User Status" />
+      <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="System Status" />
+      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="276.0" layoutY="190.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" promptText="Order" />
+      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="275.0" layoutY="141.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" promptText="asset.id" />
+      <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="opr. short text" />
+      <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="Priority" />
+      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime?" />
+>>>>>>> 59bf40ea377f2312b65828278c94f1c576de4877
       <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="275.0" layoutY="477.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" promptText="latestFinishDate" />
       <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="275.0" layoutY="503.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" promptText="earliestStartDate" />
       <JFXTextField fx:id="txtVarLatestStartDate" layoutX="275.0" layoutY="529.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" promptText="latestStartDate" />
