@@ -10,8 +10,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
-      <JFXButton fx:id="btnGet" layoutX="179.0" layoutY="44.0" onAction="#clickGet" text="Get" AnchorPane.bottomAnchor="551.0" AnchorPane.leftAnchor="179.0" AnchorPane.topAnchor="44.0" />
-      <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" text="Create JSONFile" />
+      <JFXButton fx:id="btnGet" layoutX="179.0" layoutY="44.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get" AnchorPane.leftAnchor="179.0" AnchorPane.topAnchor="44.0" />
+      <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" ripplerFill="#0c8bb8" text="Create JSONFile" />
       <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
       <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
 
@@ -34,8 +34,8 @@
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="512.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="75.0" />
 
 
-      <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" text="Start" />
-      <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" text="Pause" />
+      <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" />
+      <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" ripplerFill="#0c8bb8" text="Pause" />
       <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="type" />
       <JFXTextField fx:id="txtVarUserStatus" layoutX="275.0" layoutY="242.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" promptText="userStatus" />
       <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="systemStatus" />
