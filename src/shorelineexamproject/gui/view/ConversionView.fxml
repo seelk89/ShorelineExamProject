@@ -8,65 +8,51 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="600.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="693.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnGet" layoutX="179.0" layoutY="44.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get" AnchorPane.leftAnchor="179.0" AnchorPane.topAnchor="44.0" />
-      <JFXButton layoutX="455.0" layoutY="43.0" onAction="#clickCreateJSONFile" ripplerFill="#0c8bb8" text="Create JSONFile" />
-      <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" />
-      <Label layoutX="316.0" layoutY="14.0" text="Name of JSONFile :" />
+      <JFXButton layoutX="559.0" layoutY="27.0" onAction="#clickCreateJSONFile" ripplerFill="#0c8bb8" text="Create JSONFile" AnchorPane.bottomAnchor="675.0" AnchorPane.rightAnchor="28.0" />
+      <JFXTextField fx:id="txtJSONName" layoutX="438.0" layoutY="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="173.0" />
+      <Label layoutX="266.0" layoutY="692.0" text="Name of JSONFile :" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="318.0" />
 
-      <JFXTextField fx:id="txtType" layoutX="438.0" layoutY="167.0" promptText="type" text="type" />
-      <JFXTextField fx:id="txtUserStatus" layoutX="437.0" layoutY="243.0" promptText="userStatus" text="userStatus" />
-      <JFXTextField fx:id="txtSystemStatus" layoutX="437.0" layoutY="217.0" promptText="systemStatus" text="systemStatus" />
-      <JFXTextField fx:id="txtExternalWorkOrderid" layoutX="438.0" layoutY="191.0" promptText="externalWorkOrderId" text="externalWorkOrderId" />
-      <JFXTextField fx:id="txtAssetSerialNumber" layoutX="437.0" layoutY="141.0" promptText="assetSerialNumber" text="assetSerialNumber" />
-      <JFXTextField fx:id="txtSiteName" layoutX="438.0" layoutY="115.0" promptText="siteName" text="siteName" />
-      <JFXTextField fx:id="txtCreatedOn" layoutX="437.0" layoutY="269.0" promptText="createdOn" text="createdOn" />
-      <JFXTextField fx:id="txtCreatedBy" layoutX="437.0" layoutY="295.0" promptText="createdBy" text="createdBy" />
-      <JFXTextField fx:id="txtName" layoutX="437.0" layoutY="321.0" promptText="name" text="name" />
-      <JFXTextField fx:id="txtPriority" layoutX="438.0" layoutY="348.0" promptText="priority" text="priority" />
-      <JFXTextField fx:id="txtStatus" layoutX="437.0" layoutY="374.0" promptText="status" text="status" />
-      <JFXTextField fx:id="txtEstimatedTime" layoutX="438.0" layoutY="556.0" promptText="estimatedTime" text="estimatedTime" />
-      <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" text="latestFinishDate" />
-      <JFXTextField fx:id="txtEarliestStartDate" layoutX="437.0" layoutY="504.0" promptText="earliestStartDate" text="earliestStartDate" />
-      <JFXTextField fx:id="txtLatestStartDate" layoutX="437.0" layoutY="530.0" promptText="latestStartDate" text="latestStartDate" />
+      <JFXTextField fx:id="txtType" layoutX="537.0" layoutY="166.0" promptText="type" text="type" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="166.0" />
+      <JFXTextField fx:id="txtUserStatus" layoutX="437.0" layoutY="243.0" promptText="userStatus" text="userStatus" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtSystemStatus" layoutX="437.0" layoutY="217.0" promptText="systemStatus" text="systemStatus" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="232.0" />
+      <JFXTextField fx:id="txtExternalWorkOrderid" layoutX="530.0" layoutY="205.0" promptText="externalWorkOrderId" text="externalWorkOrderId" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="199.0" />
+      <JFXTextField fx:id="txtAssetSerialNumber" layoutX="522.0" layoutY="146.0" promptText="assetSerialNumber" text="assetSerialNumber" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="133.0" />
+      <JFXTextField fx:id="txtSiteName" layoutX="544.0" layoutY="116.0" promptText="siteName" text="siteName" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="100.0" />
+      <JFXTextField fx:id="txtCreatedOn" layoutX="530.0" layoutY="296.0" promptText="createdOn" text="createdOn" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="298.0" />
+      <JFXTextField fx:id="txtCreatedBy" layoutX="530.0" layoutY="347.0" promptText="createdBy" text="createdBy" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="331.0" />
+      <JFXTextField fx:id="txtName" layoutX="530.0" layoutY="404.0" promptText="name" text="name" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="364.0" />
+      <JFXTextField fx:id="txtPriority" layoutX="530.0" layoutY="446.0" promptText="priority" text="priority" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="397.0" />
+      <JFXTextField fx:id="txtStatus" layoutX="530.0" layoutY="434.0" promptText="status" text="status" AnchorPane.rightAnchor="28.0" />
+      <JFXTextField fx:id="txtEstimatedTime" layoutX="544.0" layoutY="627.0" promptText="estimatedTime" text="estimatedTime" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="610.0" />
+      <JFXTextField fx:id="txtLatestFinishDate" layoutX="437.0" layoutY="478.0" promptText="latestFinishDate" text="latestFinishDate" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="511.0" />
+      <JFXTextField fx:id="txtEarliestStartDate" layoutX="544.0" layoutY="577.0" promptText="earliestStartDate" text="earliestStartDate" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="544.0" />
+      <JFXTextField fx:id="txtLatestStartDate" layoutX="455.0" layoutY="524.0" promptText="latestStartDate" text="latestStartDate" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="577.0" />
 
            <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="512.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="75.0" />
 
 
-<<<<<<< HEAD
-      <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" />
-      <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" ripplerFill="#0c8bb8" text="Pause" />
-      <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="type" />
-      <JFXTextField fx:id="txtVarUserStatus" layoutX="275.0" layoutY="242.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" promptText="userStatus" />
-      <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="systemStatus" />
-      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="276.0" layoutY="190.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" promptText="externalWorkOrderId" />
-      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="275.0" layoutY="141.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" promptText="assetSerialNumber" />
-      <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="name" />
-      <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="priority" />
-      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime" />
-=======
-      <JFXButton fx:id="btnTask" layoutX="224.0" layoutY="31.0" onAction="#clickTask" text="Start" />
-      <JFXButton fx:id="btnPauseTask" layoutX="271.0" layoutY="31.0" onAction="#clickPauseTask" text="Pause" />
-      <JFXTextField fx:id="txtVarType" layoutX="276.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="Order Type" />
-      <JFXTextField fx:id="txtVarUserStatus" layoutX="275.0" layoutY="242.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" promptText="User Status" />
-      <JFXTextField fx:id="txtVarSystemStatus" layoutX="275.0" layoutY="216.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="System Status" />
-      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="276.0" layoutY="190.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" promptText="Order" />
-      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="275.0" layoutY="141.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" promptText="asset.id" />
-      <JFXTextField fx:id="txtVarName" layoutX="275.0" layoutY="320.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="opr. short text" />
-      <JFXTextField fx:id="txtVarPriority" layoutX="276.0" layoutY="347.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="Priority" />
-      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="276.0" layoutY="555.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime?" />
->>>>>>> 59bf40ea377f2312b65828278c94f1c576de4877
-      <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="275.0" layoutY="477.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" promptText="latestFinishDate" />
-      <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="275.0" layoutY="503.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" promptText="earliestStartDate" />
-      <JFXTextField fx:id="txtVarLatestStartDate" layoutX="275.0" layoutY="529.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" promptText="latestStartDate" />
-      <Label layoutX="441.0" layoutY="80.0" text="Keys:" />
-      <Label layoutX="275.0" layoutY="80.0" text="Values:" />
-      <Label layoutX="276.0" layoutY="429.0" text="planning" />
-      <Label layoutX="437.0" layoutY="429.0" text="planning" />
+      <JFXButton fx:id="btnTask" layoutX="521.0" layoutY="688.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="128.0" />
+      <JFXButton fx:id="btnPauseTask" layoutX="565.0" layoutY="688.0" onAction="#clickPauseTask" ripplerFill="#0c8bb8" text="Pause" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="78.0" />
+      <JFXTextField fx:id="txtVarType" layoutX="371.0" layoutY="166.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" promptText="type" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="166.0" />
+      <JFXTextField fx:id="txtVarUserStatus" layoutX="371.0" layoutY="265.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" promptText="userStatus" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtVarSystemStatus" layoutX="373.0" layoutY="232.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" promptText="systemStatus" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="232.0" />
+      <JFXTextField fx:id="txtVarExternalWorkOrderid" layoutX="371.0" layoutY="199.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" promptText="externalWorkOrderId" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="199.0" />
+      <JFXTextField fx:id="txtVarAssetSerialNumber" layoutX="371.0" layoutY="133.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" promptText="assetSerialNumber" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="133.0" />
+      <JFXTextField fx:id="txtVarName" layoutX="371.0" layoutY="364.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" promptText="name" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="364.0" />
+      <JFXTextField fx:id="txtVarPriority" layoutX="371.0" layoutY="397.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" promptText="priority" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="397.0" />
+      <JFXTextField fx:id="txtVarEstimatedTime" layoutX="395.0" layoutY="610.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" promptText="estimatedTime" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="610.0" />
+      <JFXTextField fx:id="txtVarLatestFinishDate" layoutX="388.0" layoutY="511.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" promptText="latestFinishDate" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="511.0" />
+      <JFXTextField fx:id="txtVarEarliestStartDate" layoutX="388.0" layoutY="544.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" promptText="earliestStartDate" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="544.0" />
+      <JFXTextField fx:id="txtVarLatestStartDate" layoutX="395.0" layoutY="577.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" promptText="latestStartDate" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="577.0" />
+      <Label layoutX="530.0" layoutY="80.0" text="Keys:" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="75.0" />
+      <Label layoutX="371.0" layoutY="75.0" text="Values:" AnchorPane.rightAnchor="278.0" AnchorPane.topAnchor="75.0" />
+      <Label layoutX="370.0" layoutY="482.0" text="Planning" AnchorPane.rightAnchor="259.0" AnchorPane.topAnchor="482.0" />
       <ImageView fitHeight="66.0" fitWidth="73.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="555.8379898071289" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <image>
-            <Image url="@../../../../images/SLLogo.PNG" />
+            <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
 
