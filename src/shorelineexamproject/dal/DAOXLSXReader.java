@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import org.apache.poi.ss.usermodel.Cell;
@@ -27,14 +28,16 @@ public class DAOXLSXReader
 {
 
     /**
-     * Takes the String filepath of a xlsx file and finds
-     * the headers before putting them into a ListView Jesper
-     * 
+     * Takes the String filepath of a xlsx file and finds the headers before
+     * putting them into a ListView Jesper
+     *
      * @param filepath
      */
     public List<ListViewObject> readXLSXHeaders(String filepath)
     {
         List<ListViewObject> lstHeaders = new ArrayList();
+        Hashtable<String, Integer> headerDuplicates = new Hashtable<String, Integer>();
+
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
@@ -62,14 +65,36 @@ public class DAOXLSXReader
                 {
                     //Case the cells value is of type double it will be parsed as String before the value is stored in a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_NUMERIC:
-                        listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
-                        lstHeaders.add(listViewObject);
+
+                        Integer countN = headerDuplicates.get(cell.getStringCellValue());
+                        if (countN == null)
+                        {
+                            headerDuplicates.put(cell.getStringCellValue(), 1);
+                            listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()));
+                            lstHeaders.add(listViewObject);
+                        } else
+                        {
+                            headerDuplicates.put(cell.getStringCellValue(), ++countN);
+                            listViewObject.setStringObject(String.valueOf(cell.getNumericCellValue()) + " " + countN);
+                            lstHeaders.add(listViewObject);
+                        }
 
                         break;
                     //Case the cells value is of type String it will be put into a ListViewObject and then added to the ListView
                     case Cell.CELL_TYPE_STRING:
-                        listViewObject.setStringObject(cell.getStringCellValue());
-                        lstHeaders.add(listViewObject);
+
+                        Integer countS = headerDuplicates.get(cell.getStringCellValue());
+                        if (countS == null)
+                        {
+                            headerDuplicates.put(cell.getStringCellValue(), 1);
+                            listViewObject.setStringObject(cell.getStringCellValue());
+                            lstHeaders.add(listViewObject);
+                        } else
+                        {
+                            headerDuplicates.put(cell.getStringCellValue(), ++countS);
+                            listViewObject.setStringObject(cell.getStringCellValue() + " " + countS);
+                            lstHeaders.add(listViewObject);
+                        }
 
                         break;
                 }
@@ -94,7 +119,8 @@ public class DAOXLSXReader
     /**
      * Takes a filepath as a String, a String representation of a header in the
      * currently selected xlsx file and gets values from the rows below the
-     * selected header in the currently selected xlsx file and puts them in an assigned list. Jesper
+     * selected header in the currently selected xlsx file and puts them in an
+     * assigned list. Jesper
      *
      * @param filepath
      * @param header
