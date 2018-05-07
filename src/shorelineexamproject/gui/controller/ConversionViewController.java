@@ -133,8 +133,8 @@ public class ConversionViewController implements Initializable
     private final AtomicBoolean suspend = new AtomicBoolean(false);
     private final AtomicBoolean done = new AtomicBoolean(false);
 
-    private Model model = new Model();
-
+    Model model = Model.getInstance();
+    
     /**
      * Initializes the controller class.
      */
