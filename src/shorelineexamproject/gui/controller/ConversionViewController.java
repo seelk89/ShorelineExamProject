@@ -121,6 +121,8 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
+    
+    private ArrayList<String> lstVarDescription2 = new ArrayList<String>();
 
     private Window stage;
 
@@ -397,6 +399,8 @@ public class ConversionViewController implements Initializable
         model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+        
+        model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
     }
 
     /**
@@ -423,8 +427,24 @@ public class ConversionViewController implements Initializable
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
             obj.put(txtCreatedOn.getText(), model.getDate());
             obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login, ask po)
-            obj.put(txtName.getText(), lstVarName.get(i));  //2 different ones
-            obj.put(txtPriority.getText(), lstVarPriority.get(i)); //priority, if empty set low
+            
+            if("".equals(lstVarName.get(i)))
+            {
+                obj.put(txtName.getText(), lstVarDescription2.get(i));  //2 different ones
+            } else
+            {
+                obj.put(txtName.getText(), lstVarName.get(i));
+            }
+            
+            if("".equals(lstVarPriority.get(i)))
+            {
+                String priority = "Low";
+                obj.put(txtPriority.getText(), priority); //priority, if empty set low
+            } else
+            {
+                obj.put(txtPriority.getText(), lstVarPriority.get(i));
+            }
+            
             obj.put(txtStatus.getText(), "NEW"); //weird thing
 
             JSONObject obj2 = new JSONObject();
