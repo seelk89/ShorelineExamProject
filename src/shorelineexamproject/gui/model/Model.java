@@ -18,6 +18,23 @@ import shorelineexamproject.bll.BLL;
  */
 public class Model
 {
+    //start of singleton setup
+    private static Model firstInstance = null;
+
+    private Model()
+    {
+    }
+
+    public synchronized static Model getInstance()
+    {
+        if (firstInstance == null)
+        {
+            firstInstance = new Model();
+        }
+        return firstInstance;
+    }
+    //end of singleton setup
+    
     private BLL bll = new BLL();
 
     public List<ListViewObject> readXLSXHeaders(String filepath)
@@ -39,7 +56,6 @@ public class Model
     /**
      * 
      * @param FileName
-     * @param objectilist
      * @throws IOException 
      */
     public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
@@ -49,7 +65,6 @@ public class Model
 
     /**
      * 
-     * @param objectilist
      * @return 
      */
     public JSONArray CreateJsonObjects()
