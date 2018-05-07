@@ -133,8 +133,23 @@ public class DAOXLSXReader
         {
             FileInputStream file = new FileInputStream(new File(filepath));
             String cellData = null;
+
             int colIndex = 0;
             int rowIndex = 0;
+            int number = 1;
+            int numberCount = 0;
+            String headerWithoutNumeration = header;
+
+            //Divides the header by whitespace
+            String[] stringPart;
+            stringPart = header.trim().split("\\s+");
+
+            //Sets number = to the number behind a header, for example, if the header is description 3, it will be set to 3
+            if (isInteger(stringPart[stringPart.length - 1]) == true)
+            {
+                number = Integer.parseInt(stringPart[stringPart.length - 1]);
+                headerWithoutNumeration = header.substring(0, header.lastIndexOf(" "));
+            }
 
             //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -159,20 +174,24 @@ public class DAOXLSXReader
 
                         cellData = String.valueOf(cell.getNumericCellValue());
 
-                        if (cellData.equals(header))
+                        if (cellData.equals(headerWithoutNumeration))
                         {
-                            colIndex = cell.getColumnIndex();
-
-                            //runs down the rows and prints out the values
-                            while (rowIterator.hasNext())
+                            numberCount = numberCount + 1;
+                            if (number == numberCount)
                             {
-                                rowIndex = rowIndex + 1;
-                                Row r = rowIterator.next();
-                                if (r != null)
-                                {
-                                    headerList.add(r.getCell(colIndex).toString());
-                                }
+                                colIndex = cell.getColumnIndex();
 
+                                //runs down the rows and prints out the values
+                                while (rowIterator.hasNext())
+                                {
+                                    rowIndex = rowIndex + 1;
+                                    Row r = rowIterator.next();
+                                    if (r != null)
+                                    {
+                                        headerList.add(r.getCell(colIndex).toString());
+                                    }
+
+                                }
                             }
                         }
 
@@ -182,18 +201,22 @@ public class DAOXLSXReader
 
                         cellData = cell.getStringCellValue();
 
-                        if (cellData.equals(header))
+                        if (cellData.equals(headerWithoutNumeration))
                         {
-                            colIndex = cell.getColumnIndex();
-
-                            //runs down the rows and prints out the values
-                            while (rowIterator.hasNext())
+                            numberCount = numberCount + 1;
+                            if (number == numberCount)
                             {
-                                rowIndex = rowIndex + 1;
-                                Row r = rowIterator.next();
-                                if (r != null)
+                                colIndex = cell.getColumnIndex();
+
+                                //runs down the rows and prints out the values
+                                while (rowIterator.hasNext())
                                 {
-                                    headerList.add(r.getCell(colIndex).toString());
+                                    rowIndex = rowIndex + 1;
+                                    Row r = rowIterator.next();
+                                    if (r != null)
+                                    {
+                                        headerList.add(r.getCell(colIndex).toString());
+                                    }
                                 }
                             }
                         }
@@ -212,6 +235,24 @@ public class DAOXLSXReader
         } catch (IOException e)
         {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Returns true if a string is an Integer
+     *
+     * @param input
+     * @return
+     */
+    private boolean isInteger(String input)
+    {
+        try
+        {
+            Integer.parseInt(input);
+            return true;
+        } catch (Exception exception)
+        {
+            return false;
         }
     }
 

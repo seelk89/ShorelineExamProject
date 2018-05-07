@@ -55,6 +55,7 @@
             <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
+      <JFXButton fx:id="btnTest" layoutX="260.0" layoutY="245.0" onAction="#clickTest" text="Test" />
 
    </children>
 </AnchorPane>

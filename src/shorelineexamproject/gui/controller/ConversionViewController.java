@@ -6,10 +6,10 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -29,7 +29,6 @@ import javafx.stage.Window;
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javafx.concurrent.Task;
 import org.json.JSONArray;
@@ -106,6 +105,10 @@ public class ConversionViewController implements Initializable
     private JFXTextField txtVarEarliestStartDate;
     @FXML
     private JFXTextField txtVarLatestStartDate;
+    @FXML
+    private JFXComboBox<?> cbxUser;
+    @FXML
+    private JFXComboBox<?> cbxCustomization;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -118,8 +121,6 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
-
-    private List<Object> objectilist = new ArrayList();
 
     private Window stage;
 
@@ -209,7 +210,7 @@ public class ConversionViewController implements Initializable
         suspend.set(false);
         synchronized (thread)
         {
-            thread.notify();
+            thread.notifyAll();
         }
     }
 
@@ -396,7 +397,6 @@ public class ConversionViewController implements Initializable
         model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
-
     }
 
     /**
