@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "DB0388-029",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-okt.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT DT29 DanTysk (3601210)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT29 DanTysk (3601210)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-056",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jun.-2017",
+            "latestStartDate": "CRTD MANC NMAT NTUP PRC"
+        },
+        "userStatus": "WT DT56 DanTysk (3601237)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT56 DanTysk (3601237)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-035",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jun.-2017",
+            "latestStartDate": "CRTD MANC NMAT NTUP PRC"
+        },
+        "userStatus": "WT DT35 DanTysk (3601216)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT35 DanTysk (3601216)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-018",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "03-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB18 Sandbank (4000349)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB18 Sandbank (4000349)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-062",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "07-jul.-2017",
+            "latestStartDate": "REL  PCNF CCOK NMAT PRC  RESA SETC"
+        },
+        "userStatus": "WT SB64 Sandbank (4000393)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB64 Sandbank (4000393)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-072",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB80 Sandbank (4000403)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB80 Sandbank (4000403)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-069",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB77 Sandbank (4000400)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB77 Sandbank (4000400)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-056",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "21-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB58 Sandbank (4000387)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB58 Sandbank (4000387)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-054",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "25-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB56 Sandbank (4000385)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB56 Sandbank (4000385)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-069",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "31-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB77 Sandbank (4000400)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB77 Sandbank (4000400)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-043",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "30-maj-2017",
+            "latestStartDate": "REL  CCOK MSPT PRC  SETC"
+        },
+        "userStatus": "WT SB44 Sandbank (4000374)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB44 Sandbank (4000374)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-071",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB79 Sandbank (4000402)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB79 Sandbank (4000402)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-015",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "15-aug.-2017",
+            "latestStartDate": "REL  CCOK GMPS NMAT PRC  RESA SETC"
+        },
+        "userStatus": "WT SB15 Sandbank (4000346)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB15 Sandbank (4000346)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-038",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "24-aug.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB39 Sandbank (4000369)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "030",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB39 Sandbank (4000369)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-011",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK MACM PRC  SETC"
+        },
+        "userStatus": "WT DT11 DanTysk (3601192)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT11 DanTysk (3601192)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-060",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "28-jun.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB62 Sandbank (4000391)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB62 Sandbank (4000391)",
+        "type": "DE_SANDB",
+        "priority": "1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-001",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB01 Sandbank (4000332)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB01 Sandbank (4000332)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-022",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "30-jun.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB22 Sandbank (4000353)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "030",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB22 Sandbank (4000353)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-059",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "30-jun.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB61 Sandbank (4000390)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "030",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB61 Sandbank (4000390)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-078",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "29-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT78 DanTysk (3601259)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT78 DanTysk (3601259)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-078",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT78 DanTysk (3601259)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT78 DanTysk (3601259)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-040",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "LIFT",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT40 DanTysk (3601221)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-040",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT40 DanTysk (3601221)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-040",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT40 DanTysk (3601221)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-040",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT40 DanTysk (3601221)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT40 DanTysk (3601221)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-007",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK GMPS MACM PRC  RESA SETC"
+        },
+        "userStatus": "WT DT07 DanTysk (3601188)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT07 DanTysk (3601188)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-007",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK GMPS NMAT PRC  RESA SETC"
+        },
+        "userStatus": "WT DT07 DanTysk (3601188)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT07 DanTysk (3601188)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-059",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "24-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB61 Sandbank (4000390)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB61 Sandbank (4000390)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-027",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "28-jul.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB27 Sandbank (4000358)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB27 Sandbank (4000358)",
+        "type": "DE_SANDB",
+        "priority": "3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-029",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB29 Sandbank (4000360)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "030",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB29 Sandbank (4000360)",
+        "type": "DE_SANDB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-061",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB63 Sandbank (4000392)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB63 Sandbank (4000392)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-066",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB68 Sandbank (4000397)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB68 Sandbank (4000397)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-023",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB23 Sandbank (4000354)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB23 Sandbank (4000354)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-075",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK MACM PRC  SETC"
+        },
+        "userStatus": "WT DT75 DanTysk (3601256)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT75 DanTysk (3601256)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-061",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "19-sep.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB63 Sandbank (4000392)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB63 Sandbank (4000392)",
+        "type": "DE_SANDB",
+        "priority": "3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-064",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT64 DanTysk (3601245)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-064",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT64 DanTysk (3601245)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-064",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "TMSE",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT64 DanTysk (3601245)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-064",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT64 DanTysk (3601245)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT64 DanTysk (3601245)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-020",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "CRANE",
+            "earliestStartDate": "02-okt.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT20 DanTysk (3601201)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT20 DanTysk (3601201)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-020",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "02-okt.-2016",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT DT20 DanTysk (3601201)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT20 DanTysk (3601201)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-012",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK MACM PRC  SETC"
+        },
+        "userStatus": "WT DT12 DanTysk (3601193)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT12 DanTysk (3601193)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0388-012",
+        "planning": {
+            "estimatedTime": "DE_OFFDT",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "REL  CCOK GMPS MACM PRC  RESA SETC"
+        },
+        "userStatus": "WT DT12 DanTysk (3601193)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT DT12 DanTysk (3601193)",
+        "type": "DE_OFFDT",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-031",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "17-jul.-2017",
+            "latestStartDate": "REL  CCOK MACM PRC  SETC"
+        },
+        "userStatus": "WT SB32 Sandbank (4000362)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB32 Sandbank (4000362)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-026",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT SB26 Sandbank (4000357)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB26 Sandbank (4000357)",
+        "type": "DE_SANDB",
+        "priority": "3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-065",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "REL  CCOK NMAT PRC  SETC"
+        },
+        "userStatus": "WT SB67 Sandbank (4000396)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678912",
+        "name": "040",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB67 Sandbank (4000396)",
+        "type": "DE_SANDB",
+        "priority": "2",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-068",
+        "planning": {
+            "estimatedTime": "DE_S_ALL",
+            "latestFinishDate": "G4MK3R16",
+            "earliestStartDate": "21-mar.-2017",
+            "latestStartDate": "CRTD MANC NTUP SETC"
+        },
+        "userStatus": "WT SB76 Sandbank (4000399)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678913",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB76 Sandbank (4000399)",
+        "type": "DE_OFFSB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-068",
+        "planning": {
+            "estimatedTime": "DE_OFFSB",
+            "latestFinishDate": "G4MK3R16",
+            "earliestStartDate": "21-mar.-2017",
+            "latestStartDate": "CRTD MANC NTUP SETC"
+        },
+        "userStatus": "WT SB76 Sandbank (4000399)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678914",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB76 Sandbank (4000399)",
+        "type": "DE_OFFSB",
+        "priority": "Low",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DB0411-022",
+        "planning": {
+            "estimatedTime": "DE_SANDB",
+            "latestFinishDate": "",
+            "earliestStartDate": "06-sep.-2017",
+            "latestStartDate": "REL  NMAT SETC"
+        },
+        "userStatus": "WT SB22 Sandbank (4000353)",
+        "createdBy": "SAP",
+        "systemStatus": "012345678911",
+        "name": "020",
+        "siteName": "",
+        "externalWorkOrderId": "WT SB22 Sandbank (4000353)",
+        "type": "DE_SANDB",
+        "priority": "3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    }
+]

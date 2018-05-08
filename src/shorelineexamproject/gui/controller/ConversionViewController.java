@@ -184,6 +184,7 @@ public class ConversionViewController implements Initializable
                 String FileName = txtJSONName.getText() + ".json";
                 JSONArray jarray = CreateJsonObjects();
                 model.CreateJSONFile(FileName, jarray);
+                stop();
             }
             return null;
         }
