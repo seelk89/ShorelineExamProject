@@ -184,43 +184,11 @@ public class ConversionViewController implements Initializable
                 String FileName = txtJSONName.getText() + ".json";
                 JSONArray jarray = CreateJsonObjects();
                 model.CreateJSONFile(FileName, jarray);
-//                System.out.println("working");
             }
             return null;
         }
     };
 
-    //Placeholder task
-//    private Task createNewTask()
-//    {
-//        return new Task()
-//        {
-//
-//            @Override
-//            protected synchronized Object call() throws Exception
-//            {
-//                while (done.get() == false)
-//                {
-//
-//                    if (isCancelled())
-//                    {
-//                        break;
-//                    }
-//
-//                    while (suspend.get() == true)
-//                    {
-//                        wait();
-//                    }
-//
-//                    fillListsWithExcel();
-//                    String FileName = txtJSONName.getText() + ".json";
-//                    JSONArray jarray = CreateJsonObjects();
-//                    model.CreateJSONFile(FileName, jarray);
-//                }
-//                return null;
-//            }
-//        };
-//    };
     //platform run later for progress bar
 //                prgBar.setProgress(task.getProgress());
 //                prgBar1.setProgress(task.getProgress());
@@ -235,13 +203,10 @@ public class ConversionViewController implements Initializable
         {
              thread = new Thread(task);
         }
-        //task = createNewTask();
        
         thread.setDaemon(true);
         thread.start();
 
-     //   done.set(false);
-        
     }
 
     /**
@@ -249,9 +214,7 @@ public class ConversionViewController implements Initializable
      */
     public void stop()
     {
-       // done.set(true);
         stopped = true;
-      //  task.cancel();
     }
 
     /**
@@ -300,16 +263,6 @@ public class ConversionViewController implements Initializable
         return suspend.get();
     }
 
-    /**
-     * Checks if the task has been done
-     *
-     * @return
-     */
-    boolean isDone()
-    {
-        return done.get();
-    }
-
     //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
@@ -341,7 +294,6 @@ public class ConversionViewController implements Initializable
             synchronized (task)
             {
                 task.notify();
-                System.err.println("task.notify");
                
             }
  
@@ -351,22 +303,6 @@ public class ConversionViewController implements Initializable
         {
              btnPauseTask.setText("Resume");
         }
-//    }
-
-//        if ("Pause".equals(btnPauseTask.getText()))
-//        {
-//            pause();
-//
-//            btnPauseTask.setText("Resume");
-//
-//            System.out.println("Should be true" + suspend.get());
-//        } else if ("Resume".equals(btnPauseTask.getText()))
-//        {
-//            resume();
-//
-//            btnPauseTask.setText("Pause");
-//            System.out.println(suspend.get() + "Should be False");
-//        }
     }
 
     /**
