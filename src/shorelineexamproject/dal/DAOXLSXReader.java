@@ -101,9 +101,9 @@ public class DAOXLSXReader
             }
 
             file.close();
-            FileOutputStream out = new FileOutputStream(new File(filepath));
-            workbook.write(out);
-            out.close();
+//            FileOutputStream out = new FileOutputStream(new File(filepath));
+//            workbook.write(out);
+//            out.close();
 
         } catch (FileNotFoundException e)
         {
@@ -225,9 +225,9 @@ public class DAOXLSXReader
             }
 
             file.close();
-            FileOutputStream out = new FileOutputStream(new File(filepath));
-            workbook.write(out);
-            out.close();
+//            FileOutputStream out = new FileOutputStream(new File(filepath));
+//            workbook.write(out);
+//            out.close();
 
         } catch (FileNotFoundException e)
         {
