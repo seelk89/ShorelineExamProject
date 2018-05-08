@@ -131,18 +131,23 @@ public class ConversionViewController implements Initializable
 
     //Variables for use with threads
     private Thread thread = null;
-    private Task task = null;
+//    private Task task = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
     private final AtomicBoolean done = new AtomicBoolean(false);
 
+    //doing jeppes stuff
+    private boolean stopped = false;
+    private boolean paused = false;
+
     Model model = Model.getInstance();
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -157,19 +162,51 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-    }
 
+    }
+//jeppes stuff
+    private final Task task = new Task()
+    {
+        @Override
+        protected Object call() throws Exception
+        {
+
+            while (!stopped)
+            {
+                synchronized (this)
+                {
+                    while (paused)
+                    {
+                        wait();
+                    }
+                }
+                fillListsWithExcel();
+                String FileName = txtJSONName.getText() + ".json";
+                JSONArray jarray = CreateJsonObjects();
+                model.CreateJSONFile(FileName, jarray);
+            }
+            return null;
+        }
+    };
+
+    //platform run later for progress bar
+//                prgBar.setProgress(task.getProgress());
+//                prgBar1.setProgress(task.getProgress());
     /**
      * Starts a task
      */
     public void start()
     {
-        task = createNewTask();
-        thread = new Thread(task);
+        stopped = false;
+        paused = false;
+        if (thread == null)
+        {
+             thread = new Thread(task);
+        }
+       
         thread.setDaemon(true);
         thread.start();
 
-        done.set(false);
     }
 
     /**
@@ -177,8 +214,7 @@ public class ConversionViewController implements Initializable
      */
     public void stop()
     {
-        done.set(true);
-        task.cancel();
+        stopped = true;
     }
 
     /**
@@ -197,11 +233,12 @@ public class ConversionViewController implements Initializable
 
     /**
      * Pauses the task
+     *
+     * @throws java.lang.InterruptedException
      */
-    public void pause() throws InterruptedException
+    public synchronized void pause() throws InterruptedException
     {
         suspend.set(true);
-        thread.interrupt();
     }
 
     /**
@@ -226,62 +263,6 @@ public class ConversionViewController implements Initializable
         return suspend.get();
     }
 
-    /**
-     * Checks if the task has been done
-     *
-     * @return
-     */
-    boolean isDone()
-    {
-        return done.get();
-    }
-
-    //Placeholder task
-    private Task createNewTask()
-    {
-        return new Task()
-        {
-            @Override
-            protected Object call() throws Exception
-            {
-                while (done.get() == false)
-                {
-
-                    if (isCancelled())
-                    {
-                        break;
-                    }
-
-                    if (suspend.get() == true)
-                    {
-                        suspendTask();
-                    }
-
-                    try
-                    {
-                        for (int i = 0; i < 30; i++)
-                        {
-                            System.out.println(i);
-                            Thread.sleep(1000);
-                        }
-                    } catch (InterruptedException ex)
-                    {
-                        Logger.getLogger(ConversionViewController.class.getName()).log(Level.INFO, "Thread stopped");
-                    }
-                }
-
-                return null;
-            }
-        };
-    }
-
-    ;
-    
-                //platform run later for progress bar
-//                prgBar.setProgress(task.getProgress());
-//                prgBar1.setProgress(task.getProgress());
-                
-    
     //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
@@ -294,25 +275,33 @@ public class ConversionViewController implements Initializable
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
+            thread = null;
 
+            
             btnTask.setText("Start");
+            System.out.println("stopped");
         }
     }
 
     //Placeholder pause/resume button
+    //jeppes stuff
     @FXML
     private void clickPauseTask(ActionEvent event) throws InterruptedException
     {
-        if ("Pause".equals(btnPauseTask.getText()))
+        paused = !paused;
+        if (!paused)
         {
-            pause();
-
-            btnPauseTask.setText("Resume");
-        } else if ("Resume".equals(btnPauseTask.getText()))
-        {
-            resume();
-
+            synchronized (task)
+            {
+                task.notify();
+               
+            }
+ 
             btnPauseTask.setText("Pause");
+        }
+        else
+        {
+             btnPauseTask.setText("Resume");
         }
     }
 
@@ -372,18 +361,8 @@ public class ConversionViewController implements Initializable
 
         String FileName = txtJSONName.getText() + ".json";
 
-        
         JSONArray jarray = CreateJsonObjects();
         model.CreateJSONFile(FileName, jarray);
-        
-        
-//File file = new File(FileName);
-//        FileWriter fw = new FileWriter(file.getAbsoluteFile());
-//        fw.write(jarray.toString(4));
-//        fw.flush();
-//        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
-//
-//        System.out.println(jarray);
     }
 
     private void fillListsWithExcel()
