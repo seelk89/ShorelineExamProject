@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RECV ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-029",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10196358 Retrofit non-phys Fix earth",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-056",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "DT56: UPS battery exchange",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-035",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "DT35: UPS battery exchange",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-018",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "exchange rubber bellows",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ CLAR PERF ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-062",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "SB64 TS Outlet socket in tower",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-072",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Exchange Rubber Bellow",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Exchange Rubber Bellow",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-056",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Water Ingress Tower Ligth",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ CLAR PERF",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-054",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "SB56: broke plugs on Hiab Crane",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "exchange rubber bellows",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ CLAR PERF ZBA1 ZBPO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-043",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Boom Extension on Hiab Crane",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "3",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-071",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Exchange Rubber Bellow",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-015",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "10000 : No connection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-038",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "SB39 Remote stop - Owner",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RECV RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-011",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10191123 - Retrofit, yaw software 201",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-060",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "exchange rubber bellows",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "High",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-001",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "HIAB Crane: Troubleshooting",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Krima-2439613: Sabik UPS battery replace",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Krima-2439613: UPS batteries replacement",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Crane inspection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Lift inspection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Crane inspection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RECV RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10170721 Retrofit Power Supply G4",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10196140  Retrofit, sign f dehumidifi",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "0 : Damaged fiber optic cable",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ CLAR PERF RFCO ZBCC ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-027",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "0 : Hiab Crane Slow",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-029",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Switching support Vattenfall",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Inspection on Water Ingress",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ RFCO ZBCC ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-066",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Inspection on Water Ingress",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-023",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "Inspection on Water Ingress",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RECV ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-075",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10191123 - Retrofit, yaw software 201",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBMC",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "No Connection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Crane inspection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Turbine mounted safety equipment",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601245 TMSE",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RECV RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "Crane inspection",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ PERF RECV RFCO",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0020"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RECV ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10191123 - Retrofit, yaw software 201",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ PERF RFCO ZBCC",
+            "earliestStartDate": "DE_OFFDT",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "A9B10196140  Retrofit, sign f dehumidifi",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF ZBA1 ZBPO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-031",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "A# Broken hose holder on pitch stat.tank",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-026",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "TMSE: Exchange Fire Extinguishers",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ PERF RFCO",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-065",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "PT100 sensors possible swapped",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Normal",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "2",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_S_ALL",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFSB",
+        "name": "Jährlich",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "0",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_OFFSB",
+            "latestStartDate": "0070"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFSB",
+        "name": "12 Monate (nur zur ersten jahreswartung)",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE",
+        "planning": {
+            "estimatedTime": "1",
+            "latestFinishDate": "ZBNQ",
+            "earliestStartDate": "DE_SANDB",
+            "latestStartDate": "0010"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "TMSE: Echange Fire extinguisher",
+        "siteName": "",
+        "externalWorkOrderId": "BS01",
+        "type": "465C",
+        "priority": "Low",
+        "createdOn": "07-05-2018",
+        "status": "NEW"
+    }
+]

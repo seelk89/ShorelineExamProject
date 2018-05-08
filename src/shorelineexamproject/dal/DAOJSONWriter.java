@@ -26,7 +26,7 @@ public class DAOJSONWriter
     /**
      * 
      * @param FileName
-     * @param objectilist
+     * @param jarray
      * @throws IOException 
      */
     public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
