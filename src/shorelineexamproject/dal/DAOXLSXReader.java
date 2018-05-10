@@ -128,6 +128,7 @@ public class DAOXLSXReader
         try
         {
             FileInputStream file = new FileInputStream(new File(filepath));
+            
             String cellData = null;
 
             int colIndex = 0;

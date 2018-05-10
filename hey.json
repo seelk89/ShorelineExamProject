@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "10-okt.-2016",
+            "latestFinishDate": "10-okt.-2016",
+            "earliestStartDate": "10-okt.-2016",
+            "latestStartDate": "10-okt.-2016"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT29 DanTysk (3601210)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "13-jun.-2017",
+            "latestFinishDate": "14-jun.-2018",
+            "earliestStartDate": "14-jun.-2018",
+            "latestStartDate": ""
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT56 DanTysk (3601237)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "13-jun.-2017",
+            "latestFinishDate": "14-jun.-2018",
+            "earliestStartDate": "14-jun.-2018",
+            "latestStartDate": ""
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT35 DanTysk (3601216)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "03-jul.-2017",
+            "latestFinishDate": "03-jul.-2017",
+            "earliestStartDate": "03-jul.-2017",
+            "latestStartDate": "03-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB18 Sandbank (4000349)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "07-jul.-2017",
+            "latestFinishDate": "07-jul.-2017",
+            "earliestStartDate": "07-jul.-2017",
+            "latestStartDate": "07-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB64 Sandbank (4000393)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "14-jul.-2017",
+            "earliestStartDate": "15-jul.-2017",
+            "latestStartDate": "15-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB80 Sandbank (4000403)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "14-jul.-2017",
+            "earliestStartDate": "15-jul.-2017",
+            "latestStartDate": "15-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "21-jul.-2017",
+            "latestFinishDate": "21-jul.-2017",
+            "earliestStartDate": "21-jul.-2017",
+            "latestStartDate": "21-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB58 Sandbank (4000387)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-jul.-2017",
+            "latestFinishDate": "25-jul.-2017",
+            "earliestStartDate": "25-jul.-2017",
+            "latestStartDate": "25-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB56 Sandbank (4000385)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "31-jul.-2017",
+            "latestFinishDate": "31-jul.-2017",
+            "earliestStartDate": "31-jul.-2017",
+            "latestStartDate": "31-jul.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "20-jun.-2017",
+            "latestFinishDate": "20-jun.-2017",
+            "earliestStartDate": "07-aug.-2017",
+            "latestStartDate": "07-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB44 Sandbank (4000374)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "14-jul.-2017",
+            "earliestStartDate": "15-aug.-2017",
+            "latestStartDate": "15-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "6.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB79 Sandbank (4000402)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "15-aug.-2017",
+            "latestFinishDate": "15-aug.-2017",
+            "earliestStartDate": "15-aug.-2017",
+            "latestStartDate": "15-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB15 Sandbank (4000346)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "24-aug.-2017",
+            "latestFinishDate": "24-aug.-2017",
+            "earliestStartDate": "24-aug.-2017",
+            "latestStartDate": "24-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "1.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB39 Sandbank (4000369)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "25-aug.-2017",
+            "latestStartDate": "25-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT11 DanTysk (3601192)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "28-jun.-2017",
+            "latestFinishDate": "28-jun.-2017",
+            "earliestStartDate": "28-aug.-2017",
+            "latestStartDate": "28-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB62 Sandbank (4000391)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "29-aug.-2017",
+            "latestFinishDate": "29-aug.-2017",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "29-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "2.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB01 Sandbank (4000332)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "30-jun.-2017",
+            "latestFinishDate": "30-jun.-2017",
+            "earliestStartDate": "30-aug.-2017",
+            "latestStartDate": "30-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "30-jun.-2017",
+            "latestFinishDate": "30-jun.-2017",
+            "earliestStartDate": "30-aug.-2017",
+            "latestStartDate": "30-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "19-aug.-2017",
+            "latestFinishDate": "19-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "19-aug.-2017",
+            "latestFinishDate": "19-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "18-aug.-2017",
+            "latestFinishDate": "18-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "18-aug.-2017",
+            "latestFinishDate": "18-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "18-aug.-2017",
+            "latestFinishDate": "18-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "18-aug.-2017",
+            "latestFinishDate": "18-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "31-aug.-2017",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "31-aug.-2017",
+            "latestFinishDate": "31-aug.-2017",
+            "earliestStartDate": "31-aug.-2017",
+            "latestStartDate": "31-aug.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "24-jul.-2017",
+            "latestFinishDate": "24-jul.-2017",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "27-jul.-2017",
+            "latestFinishDate": "27-jul.-2017",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "2.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB27 Sandbank (4000358)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "2.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB29 Sandbank (4000360)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "1.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "01-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "1.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB68 Sandbank (4000397)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "04-sep.-2017",
+            "latestFinishDate": "04-sep.-2017",
+            "earliestStartDate": "04-sep.-2017",
+            "latestStartDate": "04-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "2.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB23 Sandbank (4000354)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "18-sep.-2017",
+            "latestFinishDate": "18-sep.-2017",
+            "earliestStartDate": "18-sep.-2017",
+            "latestStartDate": "18-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT75 DanTysk (3601256)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "19-sep.-2017",
+            "latestFinishDate": "19-sep.-2017",
+            "earliestStartDate": "19-sep.-2017",
+            "latestStartDate": "19-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "2.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "01-sep.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0020",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "3.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "30-sep.-2017",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "30-sep.-2017",
+            "latestFinishDate": "30-sep.-2017",
+            "earliestStartDate": "30-sep.-2017",
+            "latestStartDate": "30-sep.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFDT",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "17-jul.-2017",
+            "latestFinishDate": "17-jul.-2017",
+            "earliestStartDate": "15-okt.-2017",
+            "latestStartDate": "15-okt.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB32 Sandbank (4000362)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "25-okt.-2017",
+            "latestStartDate": "25-okt.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "0.5",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB26 Sandbank (4000357)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "25-aug.-2017",
+            "latestFinishDate": "25-aug.-2017",
+            "earliestStartDate": "25-okt.-2017",
+            "latestStartDate": "25-okt.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "4.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB67 Sandbank (4000396)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "27-okt.-2017",
+            "latestFinishDate": "27-okt.-2017",
+            "earliestStartDate": "27-okt.-2017",
+            "latestStartDate": ""
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_S_ALL",
+        "name": "118.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "27-okt.-2017",
+            "latestFinishDate": "27-okt.-2017",
+            "earliestStartDate": "27-okt.-2017",
+            "latestStartDate": ""
+        },
+        "userStatus": "0070",
+        "createdBy": "SAP",
+        "systemStatus": "DE_OFFSB",
+        "name": "0.0",
+        "siteName": "",
+        "externalWorkOrderId": "1",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "Low",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "06-sep.-2017",
+            "latestFinishDate": "06-sep.-2017",
+            "earliestStartDate": "06-nov.-2017",
+            "latestStartDate": "06-nov.-2017"
+        },
+        "userStatus": "0010",
+        "createdBy": "SAP",
+        "systemStatus": "DE_SANDB",
+        "name": "1.0",
+        "siteName": "",
+        "externalWorkOrderId": "",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "H",
+        "createdOn": "09-05-2018",
+        "status": "NEW"
+    }
+]

@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-okt.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-029",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT29 (3601210)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jun.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-056",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT56 (3601237)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jun.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-035",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT35 (3601216)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "03-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-018",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB18 (4000349)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "07-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-062",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB64 (4000393)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-072",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB80 (4000403)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB77 (4000400)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "21-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-056",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB58 (4000387)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "25-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-054",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB56 (4000385)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "31-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-069",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB77 (4000400)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "30-maj-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-043",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB44 (4000374)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "14-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-071",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB79 (4000402)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "15-aug.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-015",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB15 (4000346)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "24-aug.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-038",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS3",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "030",
+        "type": "WT Sandbank ,SB39 (4000369)",
+        "priority": "ZCS3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-011",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT11 (3601192)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "High",
+            "earliestStartDate": "28-jun.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-060",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB62 (4000391)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-001",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB01 (4000332)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "30-jun.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS3",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "030",
+        "type": "WT Sandbank ,SB22 (4000353)",
+        "priority": "ZCS3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "30-jun.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS3",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "030",
+        "type": "WT Sandbank ,SB61 (4000390)",
+        "priority": "ZCS3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT78 (3601259)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "29-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-078",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT78 (3601259)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT40 (3601221)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT40 (3601221)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT40 (3601221)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "04-sep.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-040",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT40 (3601221)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT07 (3601188)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-007",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT07 (3601188)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "24-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-059",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB61 (4000390)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Low",
+            "earliestStartDate": "28-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-027",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB27 (4000358)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-029",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS3",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "030",
+        "type": "WT Sandbank ,SB29 (4000360)",
+        "priority": "ZCS3",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB63 (4000392)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "01-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-066",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB68 (4000397)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "04-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-023",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB23 (4000354)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-075",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT75 (3601256)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Low",
+            "earliestStartDate": "19-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-061",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB63 (4000392)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT64 (3601245)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT64 (3601245)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT64 (3601245)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "08-maj-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-064",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT64 (3601245)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "02-okt.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT20 (3601201)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0020",
+            "latestFinishDate": "",
+            "earliestStartDate": "02-okt.-2016",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-020",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Dan Tysk ,DT20 (3601201)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT12 (3601193)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "10-nov.-2017",
+            "latestStartDate": "DE_OFFDT"
+        },
+        "userStatus": "DB0388-012",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Dan Tysk ,DT12 (3601193)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "17-jul.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-031",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB32 (4000362)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Low",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-026",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Sandbank ,SB26 (4000357)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Normal",
+            "earliestStartDate": "29-aug.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-065",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS5",
+        "name": "012345678912",
+        "siteName": "",
+        "externalWorkOrderId": "040",
+        "type": "WT Sandbank ,SB67 (4000396)",
+        "priority": "ZCS5",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "",
+            "earliestStartDate": "21-mar.-2017",
+            "latestStartDate": "DE_S_ALL"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678913",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Sandbank ,SB76 (4000399)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0070",
+            "latestFinishDate": "",
+            "earliestStartDate": "21-mar.-2017",
+            "latestStartDate": "DE_OFFSB"
+        },
+        "userStatus": "DB0411-068",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678914",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Sandbank ,SB76 (4000399)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "465C",
+        "planning": {
+            "estimatedTime": "0010",
+            "latestFinishDate": "Low",
+            "earliestStartDate": "06-sep.-2017",
+            "latestStartDate": "DE_SANDB"
+        },
+        "userStatus": "DB0411-022",
+        "createdBy": "SAP",
+        "systemStatus": "ZCS1",
+        "name": "012345678911",
+        "siteName": "",
+        "externalWorkOrderId": "020",
+        "type": "WT Sandbank ,SB22 (4000353)",
+        "priority": "ZCS1",
+        "createdOn": "08-05-2018",
+        "status": "NEW"
+    }
+]

@@ -29,8 +29,10 @@ import javafx.stage.Window;
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javafx.concurrent.Task;
+import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.gui.model.Model;
@@ -109,6 +111,8 @@ public class ConversionViewController implements Initializable
     private JFXComboBox<?> cbxUser;
     @FXML
     private JFXComboBox<?> cbxCustomization;
+    @FXML
+    private JFXButton btnCreateJson;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -121,17 +125,16 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
-    
+
     private ArrayList<String> lstVarDescription2 = new ArrayList<String>();
 
     private Window stage;
 
     //AbsolutePath for the file being read
-    private String absolutePath = null;
+    private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
     //Variables for use with threads
     private Thread thread = null;
-//    private Task task = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
     private final AtomicBoolean done = new AtomicBoolean(false);
 
@@ -164,6 +167,7 @@ public class ConversionViewController implements Initializable
         });
 
     }
+
 //jeppes stuff
     private final Task task = new Task()
     {
@@ -180,10 +184,28 @@ public class ConversionViewController implements Initializable
                         wait();
                     }
                 }
-                fillListsWithExcel();
-                String FileName = txtJSONName.getText() + ".json";
-                JSONArray jarray = CreateJsonObjects();
-                model.CreateJSONFile(FileName, jarray);
+
+                for (int i = 0; i < lstAbsolutePaths.size(); i++)
+                {
+                    fillListsWithExcel(lstAbsolutePaths.get(i));
+                    String FileName = txtJSONName.getText() + "_" + i + ".json";
+                    JSONArray jarray = CreateJsonObjects();
+                    model.CreateJSONFile(FileName, jarray);
+
+                    lstVarAssetSerialNumber.clear();
+                    lstVarType.clear();
+                    lstVarExternalWorkOrderid.clear();
+                    lstVarSystemStatus.clear();
+                    lstVarUserStatus.clear();
+                    lstVarName.clear();
+                    lstVarPriority.clear();
+                    lstVarLatestFinishDate.clear();
+                    lstVarEarliestStartDate.clear();
+                    lstVarLatestStartDate.clear();
+                    lstVarEstimatedTime.clear();
+
+                    lstVarDescription2.clear();
+                }
                 stop();
             }
             return null;
@@ -202,9 +224,9 @@ public class ConversionViewController implements Initializable
         paused = false;
         if (thread == null)
         {
-             thread = new Thread(task);
+            thread = new Thread(task);
         }
-       
+
         thread.setDaemon(true);
         thread.start();
 
@@ -278,7 +300,6 @@ public class ConversionViewController implements Initializable
             stop();
             thread = null;
 
-            
             btnTask.setText("Start");
             System.out.println("stopped");
         }
@@ -295,14 +316,13 @@ public class ConversionViewController implements Initializable
             synchronized (task)
             {
                 task.notify();
-               
+
             }
- 
+
             btnPauseTask.setText("Pause");
-        }
-        else
+        } else
         {
-             btnPauseTask.setText("Resume");
+            btnPauseTask.setText("Resume");
         }
     }
 
@@ -334,16 +354,18 @@ public class ConversionViewController implements Initializable
         fileChooser.getExtensionFilters().add(extFilter);
 
         //Opens a window based on settings set above
-        File xlsxFile = fileChooser.showOpenDialog(stage);
-
-        if (xlsxFile != null)
+        List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
+        if (files.size() > 0)
         {
-            absolutePath = xlsxFile.getAbsolutePath();
+            files.forEach((File file) ->
+            {
+                lstAbsolutePaths.add(file.getAbsolutePath());
+            });
         }
 
         //Clears the ListView and adds headers from xlsx file
         lstHeaders.getItems().clear();
-        readXLSXHeaders(absolutePath);
+        readXLSXHeaders(lstAbsolutePaths.get(0));
     }
 
     /**
@@ -358,7 +380,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
     {
-        fillListsWithExcel();
+        //fillListsWithExcel();
 
         String FileName = txtJSONName.getText() + ".json";
 
@@ -366,7 +388,7 @@ public class ConversionViewController implements Initializable
         model.CreateJSONFile(FileName, jarray);
     }
 
-    private void fillListsWithExcel()
+    private void fillListsWithExcel(String absolutePath)
     {
         model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
         model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
@@ -379,7 +401,7 @@ public class ConversionViewController implements Initializable
         model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
-        
+
         model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
     }
 
@@ -407,16 +429,16 @@ public class ConversionViewController implements Initializable
             obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
             obj.put(txtCreatedOn.getText(), model.getDate());
             obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login, ask po)
-            
-            if("".equals(lstVarName.get(i)))
+
+            if ("".equals(lstVarName.get(i)))
             {
                 obj.put(txtName.getText(), lstVarDescription2.get(i));  //2 different ones
             } else
             {
                 obj.put(txtName.getText(), lstVarName.get(i));
             }
-            
-            if("".equals(lstVarPriority.get(i)))
+
+            if ("".equals(lstVarPriority.get(i)))
             {
                 String priority = "Low";
                 obj.put(txtPriority.getText(), priority); //priority, if empty set low
@@ -424,7 +446,7 @@ public class ConversionViewController implements Initializable
             {
                 obj.put(txtPriority.getText(), lstVarPriority.get(i));
             }
-            
+
             obj.put(txtStatus.getText(), "NEW"); //weird thing
 
             JSONObject obj2 = new JSONObject();
