@@ -32,6 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javafx.concurrent.Task;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressIndicator;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -113,6 +115,10 @@ public class ConversionViewController implements Initializable
     private JFXComboBox<?> cbxCustomization;
     @FXML
     private JFXButton btnCreateJson;
+    @FXML
+    private ProgressIndicator prgConversion;
+    @FXML
+    private Label lblConversionComplete;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -137,6 +143,10 @@ public class ConversionViewController implements Initializable
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
     private final AtomicBoolean done = new AtomicBoolean(false);
+    
+    //Indicates progress of a given task
+    double progress = 1;
+    int filesDone = 0;
 
     //doing jeppes stuff
     private boolean stopped = false;
@@ -184,13 +194,27 @@ public class ConversionViewController implements Initializable
                         wait();
                     }
                 }
-
+                
+                String fileName = null;
+                
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
+                    //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
-                    String FileName = txtJSONName.getText() + "_" + i + ".json";
+                    
+                    if(i > 0)
+                    {
+                        fileName = txtJSONName.getText() + "_" + (i + 1) + ".json";
+                    } else
+                    {
+                        fileName = txtJSONName.getText() + ".json";
+                    }
+                    
                     JSONArray jarray = CreateJsonObjects();
-                    model.CreateJSONFile(FileName, jarray);
+                    model.CreateJSONFile(fileName, jarray);
+                    
+                    filesDone = i + 1;
+                    System.out.println(filesDone);
 
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
@@ -206,6 +230,7 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
+                stopped = true;
                 stop();
             }
             return null;
@@ -222,6 +247,7 @@ public class ConversionViewController implements Initializable
     {
         stopped = false;
         paused = false;
+        
         if (thread == null)
         {
             thread = new Thread(task);
@@ -230,6 +256,11 @@ public class ConversionViewController implements Initializable
         thread.setDaemon(true);
         thread.start();
 
+        while(!stopped)
+        {
+            prgConversion.setProgress(progress);
+            lblConversionComplete.setText(filesDone + " Files done");
+        }
     }
 
     /**
@@ -417,6 +448,11 @@ public class ConversionViewController implements Initializable
         JSONArray mainjsonArray = new JSONArray();
         //This will be used to loop through the excel
 //what can we use instead of lstVarType? objectilist? then it gets empty
+
+        //For indicating progress
+        progress = progress / lstVarType.size();
+        System.out.println(progress);
+        
         for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();
@@ -458,6 +494,9 @@ public class ConversionViewController implements Initializable
             obj.put("planning", obj2);
 
             mainjsonArray.put(obj);
+            
+            progress = progress + progress;
+            
         }
         System.out.println(mainjsonArray);
         return mainjsonArray;
