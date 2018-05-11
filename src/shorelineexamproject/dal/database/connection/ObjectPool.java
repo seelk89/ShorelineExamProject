@@ -7,7 +7,7 @@ package shorelineexamproject.dal.database.connection;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
-import mechachatapp.dal.exceptions.DalException;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *

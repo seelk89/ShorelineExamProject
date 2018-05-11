@@ -37,6 +37,7 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -152,7 +153,12 @@ public class ConversionViewController implements Initializable
     private boolean stopped = false;
     private boolean paused = false;
 
-    Model model = Model.getInstance();
+    Model model;
+    
+     public ConversionViewController() throws IOException
+    {
+        this.model = new Model();
+    } 
 
     /**
      * Initializes the controller class.
