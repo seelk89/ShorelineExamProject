@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
+import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
 import shorelineexamproject.bll.BLL;
 
@@ -19,14 +20,21 @@ import shorelineexamproject.bll.BLL;
  */
 public class Model
 {
+
     //start of singleton setup
     private static Model firstInstance = null;
+    private BLL bll;
 
-    private Model()
+    public Model() throws IOException
     {
+        this.bll = new BLL();
     }
 
-    public synchronized static Model getInstance()
+//    private Model()
+//    {
+//    }
+
+    public synchronized static Model getInstance() throws IOException
     {
         if (firstInstance == null)
         {
@@ -35,8 +43,6 @@ public class Model
         return firstInstance;
     }
     //end of singleton setup
-    
-    private BLL bll = new BLL();
 
     public List<ListViewObject> readXLSXHeaders(String filepath)
     {
@@ -55,9 +61,9 @@ public class Model
     }
 
     /**
-     * 
+     *
      * @param FileName
-     * @throws IOException 
+     * @throws IOException
      */
     public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
     {
@@ -65,12 +71,27 @@ public class Model
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public JSONArray CreateJsonObjects()
     {
         bll.CreateJsonObjects();
         return null;
+    }
+
+    public List<Customization> getAllCustomizations()
+    {
+        return bll.getAllCustomizations();
+    }
+
+    public void addCustomizationToDB(Customization c)
+    {
+        bll.addCustomizationToDB(c);
+    }
+
+    public void removeCustomizationFromDb(Customization selectedCustomization)
+    {
+        bll.removeCustomizationFromDb(selectedCustomization);
     }
 }

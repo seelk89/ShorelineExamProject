@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mechachatapp.dal.exceptions;
+package shorelineexamproject.dal.exceptions;
 
 /**
  *
- * @author pgn
+ * @author //dunno what this class is going to do yet
  */
 public class DalException extends Exception
 {
