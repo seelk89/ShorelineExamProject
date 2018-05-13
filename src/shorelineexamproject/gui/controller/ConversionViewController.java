@@ -31,10 +31,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import shorelineexamproject.be.Customization;
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.gui.model.Model;
 
@@ -111,7 +115,8 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXComboBox<?> cbxUser;
     @FXML
-    private JFXComboBox<?> cbxCustomization;
+    private JFXComboBox<Customization> cbxCustomization;
+    //final ComboBox comboBox = new ComboBox(options);
     @FXML
     private JFXButton btnCreateJson;
 
@@ -144,11 +149,11 @@ public class ConversionViewController implements Initializable
     private boolean paused = false;
 
     Model model;
-    
-     public ConversionViewController() throws IOException
+
+    public ConversionViewController() throws IOException
     {
         this.model = new Model();
-    } 
+    }
 
     /**
      * Initializes the controller class.
@@ -156,7 +161,12 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        cbxCustomizationInitialize();
+        lstHeadersInitialize();
+    }
 
+    private void lstHeadersInitialize()
+    {
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -171,10 +181,30 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-
     }
 
-//jeppes stuff
+    private void cbxCustomizationInitialize()
+    {
+        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations())); //doesn't work
+
+        cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
+        {
+            txtVarAssetSerialNumber.setText(cbxCustomization.getSelectionModel().getSelectedItem().getAssetSerialNumber());
+            txtVarType.setText(cbxCustomization.getSelectionModel().getSelectedItem().getType());
+            txtVarExternalWorkOrderid.setText(cbxCustomization.getSelectionModel().getSelectedItem().getExternalWorkOrderId());
+            txtVarSystemStatus.setText(cbxCustomization.getSelectionModel().getSelectedItem().getSystemStatus());
+            txtVarUserStatus.setText(cbxCustomization.getSelectionModel().getSelectedItem().getUserStatus());
+            txtVarName.setText(cbxCustomization.getSelectionModel().getSelectedItem().getName());
+            txtVarPriority.setText(cbxCustomization.getSelectionModel().getSelectedItem().getPriority());
+            txtVarLatestFinishDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getLatestFinishDate());
+            txtVarEarliestStartDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEarliestStartDate());
+            txtVarLatestStartDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getLatestStartDate());
+            txtVarEstimatedTime.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEstimatedTime());
+        });
+    }
+    /**
+     * task w. jeppes help
+     */
     private final Task task = new Task()
     {
         @Override
@@ -213,6 +243,11 @@ public class ConversionViewController implements Initializable
                     lstVarDescription2.clear();
                 }
                 stop();
+//                if (btnTask.getText().equals("Stop"))
+//                {
+//                    btnTask.setText("Start");
+//                }
+                
             }
             return null;
         }
@@ -361,7 +396,7 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files.size() > 0)
+        if (files.size() > 0)  //we need to catch the exception
         {
             files.forEach((File file) ->
             {

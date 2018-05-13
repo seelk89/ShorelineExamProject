@@ -25,7 +25,7 @@ public class DBConnector
     {
 
         ds = new SQLServerDataSource();
-        ds.setDatabaseName("CS2017B_Exam1");
+        ds.setDatabaseName("DBShorelineExamProject");
         ds.setUser("CS2017B_1");
         ds.setPassword("9kolol9A");
         ds.setPortNumber(1433);

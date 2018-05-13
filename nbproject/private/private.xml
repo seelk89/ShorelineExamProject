@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/DAOXLSXReader.java</file>
-            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/gui/controller/ConversionViewController.java</file>
-            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/bll/BLL.java</file>
-            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/DAOJSONWriter.java</file>
+            <file>file:/C:/Users/Elisabeth/Documents/NetBeansProjects/ShorelineExamProject/src/shorelineexamproject/dal/database/connection/DBConnector.java</file>
         </group>
     </open-files>
 </project-private>
