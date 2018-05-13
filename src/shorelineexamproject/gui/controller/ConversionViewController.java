@@ -31,12 +31,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-<<<<<<< HEAD
 import java.util.concurrent.atomic.AtomicInteger;
-=======
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
->>>>>>> 61b8f93c3e367480d9ce1464ed2c8893a327c094
 import javafx.concurrent.Task;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
