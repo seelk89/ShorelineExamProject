@@ -31,8 +31,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+<<<<<<< HEAD
 import java.util.concurrent.atomic.AtomicInteger;
+=======
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+>>>>>>> 61b8f93c3e367480d9ce1464ed2c8893a327c094
 import javafx.concurrent.Task;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -40,6 +46,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import shorelineexamproject.be.Customization;
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.gui.model.Model;
 
@@ -116,7 +123,8 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXComboBox<?> cbxUser;
     @FXML
-    private JFXComboBox<?> cbxCustomization;
+    private JFXComboBox<Customization> cbxCustomization;
+    //final ComboBox comboBox = new ComboBox(options);
     @FXML
     private JFXButton btnCreateJson;
     @FXML
@@ -177,7 +185,12 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        cbxCustomizationInitialize();
+        lstHeadersInitialize();
+    }
 
+    private void lstHeadersInitialize()
+    {
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
         {
             @Override
@@ -192,10 +205,30 @@ public class ConversionViewController implements Initializable
                 }
             }
         });
-
     }
 
-//jeppes stuff
+    private void cbxCustomizationInitialize()
+    {
+        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations())); //doesn't work
+
+        cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
+        {
+            txtVarAssetSerialNumber.setText(cbxCustomization.getSelectionModel().getSelectedItem().getAssetSerialNumber());
+            txtVarType.setText(cbxCustomization.getSelectionModel().getSelectedItem().getType());
+            txtVarExternalWorkOrderid.setText(cbxCustomization.getSelectionModel().getSelectedItem().getExternalWorkOrderId());
+            txtVarSystemStatus.setText(cbxCustomization.getSelectionModel().getSelectedItem().getSystemStatus());
+            txtVarUserStatus.setText(cbxCustomization.getSelectionModel().getSelectedItem().getUserStatus());
+            txtVarName.setText(cbxCustomization.getSelectionModel().getSelectedItem().getName());
+            txtVarPriority.setText(cbxCustomization.getSelectionModel().getSelectedItem().getPriority());
+            txtVarLatestFinishDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getLatestFinishDate());
+            txtVarEarliestStartDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEarliestStartDate());
+            txtVarLatestStartDate.setText(cbxCustomization.getSelectionModel().getSelectedItem().getLatestStartDate());
+            txtVarEstimatedTime.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEstimatedTime());
+        });
+    }
+    /**
+     * task w. jeppes help
+     */
     private final Task task = new Task()
     {
         @Override
@@ -252,6 +285,11 @@ public class ConversionViewController implements Initializable
                 progress = 1;
                 stopped = true;
                 stop();
+//                if (btnTask.getText().equals("Stop"))
+//                {
+//                    btnTask.setText("Start");
+//                }
+                
             }
             return null;
         }
@@ -408,7 +446,7 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files.size() > 0)
+        if (files.size() > 0)  //we need to catch the exception
         {
             files.forEach((File file) ->
             {

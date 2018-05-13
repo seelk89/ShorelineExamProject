@@ -277,5 +277,10 @@ public class Customization
     {
         return id;
     }
-    
+
+    @Override
+    public String toString()
+    {
+        return  nameOfCustomization.getValue();
+    }   
 }

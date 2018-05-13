@@ -9,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
@@ -33,6 +35,9 @@ public class Model
 //    private Model()
 //    {
 //    }
+    
+    //not sure if method below is needed
+public ObservableList<Customization> cList = FXCollections.observableArrayList();
 
     public synchronized static Model getInstance() throws IOException
     {
