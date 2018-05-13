@@ -29,15 +29,15 @@ public class DAOJSONWriter
      * @param jarray
      * @throws IOException 
      */
-    public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
+    public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {    
-        File file = new File(FileName);
+        File file = new File(directory + "\\" + fileName);
         //JSONArray jarray = CreateJsonObjects();
 
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
         fw.write(jarray.toString(4));
         fw.flush();
-        System.out.println("JSONfile called: " + FileName + " created in" + file.getAbsolutePath());
+        System.out.println("JSONfile called: " + fileName + " created in" + file.getAbsolutePath());
 
 //        System.out.println(jarray);
     }

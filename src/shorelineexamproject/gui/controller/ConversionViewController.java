@@ -31,9 +31,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import javafx.concurrent.Task;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.control.Tooltip;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -120,6 +123,10 @@ public class ConversionViewController implements Initializable
     private ProgressIndicator prgConversion;
     @FXML
     private Label lblConversionComplete;
+    @FXML
+    private JFXButton btnFileLocation;
+    
+    Tooltip tooltip = new Tooltip();
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -137,6 +144,10 @@ public class ConversionViewController implements Initializable
 
     private Window stage;
 
+    //Variables for folder selection
+    boolean directoryChosen = false;
+    String directory = null;
+
     //AbsolutePath for the file being read
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
@@ -144,21 +155,21 @@ public class ConversionViewController implements Initializable
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
     private final AtomicBoolean done = new AtomicBoolean(false);
-    
+
     //Indicates progress of a given task
     double progress = 1;
-    int filesDone = 0;
+    AtomicInteger filesDone = new AtomicInteger();
 
     //doing jeppes stuff
     private boolean stopped = false;
     private boolean paused = false;
 
     Model model;
-    
-     public ConversionViewController() throws IOException
+
+    public ConversionViewController() throws IOException
     {
         this.model = new Model();
-    } 
+    }
 
     /**
      * Initializes the controller class.
@@ -200,27 +211,29 @@ public class ConversionViewController implements Initializable
                         wait();
                     }
                 }
-                
+
                 String fileName = null;
-                
+
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
-                    
-                    if(i > 0)
+
+                    if (i > 0)
                     {
                         fileName = txtJSONName.getText() + "_" + (i + 1) + ".json";
                     } else
                     {
                         fileName = txtJSONName.getText() + ".json";
                     }
-                    
+
                     JSONArray jarray = CreateJsonObjects();
-                    model.CreateJSONFile(fileName, jarray);
-                    
-                    filesDone = i + 1;
+                    model.CreateJSONFile(directory, fileName, jarray);
+
+                    filesDone.set(i + 1);
                     System.out.println(filesDone);
+
+                    updateProgress(i, lstAbsolutePaths.size());
 
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
@@ -236,6 +249,7 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
+                progress = 1;
                 stopped = true;
                 stop();
             }
@@ -246,6 +260,7 @@ public class ConversionViewController implements Initializable
     //platform run later for progress bar
 //                prgBar.setProgress(task.getProgress());
 //                prgBar1.setProgress(task.getProgress());
+    
     /**
      * Starts a task
      */
@@ -253,7 +268,7 @@ public class ConversionViewController implements Initializable
     {
         stopped = false;
         paused = false;
-        
+
         if (thread == null)
         {
             thread = new Thread(task);
@@ -262,9 +277,10 @@ public class ConversionViewController implements Initializable
         thread.setDaemon(true);
         thread.start();
 
-        while(!stopped)
+        while (!stopped)
         {
-            prgConversion.setProgress(progress);
+            double tp = task.getProgress();
+            prgConversion.setProgress(tp);
             lblConversionComplete.setText(filesDone + " Files done");
         }
     }
@@ -419,12 +435,16 @@ public class ConversionViewController implements Initializable
     {
         //fillListsWithExcel();
 
-        String FileName = txtJSONName.getText() + ".json";
+        String fileName = txtJSONName.getText() + ".json";
 
         JSONArray jarray = CreateJsonObjects();
-        model.CreateJSONFile(FileName, jarray);
+        model.CreateJSONFile(directory, fileName, jarray);
     }
 
+    /**
+     * Fills the list fields with the items gotten from the file
+     * @param absolutePath 
+     */
     private void fillListsWithExcel(String absolutePath)
     {
         model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
@@ -458,7 +478,7 @@ public class ConversionViewController implements Initializable
         //For indicating progress
         progress = progress / lstVarType.size();
         System.out.println(progress);
-        
+
         for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();
@@ -500,12 +520,44 @@ public class ConversionViewController implements Initializable
             obj.put("planning", obj2);
 
             mainjsonArray.put(obj);
-            
+
+            //for measuring progress
             progress = progress + progress;
-            
+
         }
         System.out.println(mainjsonArray);
         return mainjsonArray;
+    }
+
+    @FXML
+    private void clickFileLocation(ActionEvent event)
+    {
+        if (directoryChosen == false)
+        {
+            DirectoryChooser chooser = new DirectoryChooser();
+            chooser.setTitle("File output location");
+            File defaultDirectory = new File("c:/");
+            chooser.setInitialDirectory(defaultDirectory);
+            File selectedDirectory = chooser.showDialog(stage);
+            
+            directory = selectedDirectory.getAbsolutePath();
+            System.out.println(directory);
+            btnFileLocation.setText("File location");
+            
+            tooltip.setText(directory);
+            btnFileLocation.setTooltip(tooltip);
+            
+            directoryChosen = true;
+        } else
+        {
+            try
+            {
+                Runtime.getRuntime().exec("explorer.exe /select," + directory);
+            } catch (IOException ex)
+            {
+                Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     /**

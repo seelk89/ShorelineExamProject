@@ -65,9 +65,9 @@ public class Model
      * @param FileName
      * @throws IOException
      */
-    public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
+    public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
-        bll.CreateJSONFile(FileName, jarray);
+        bll.CreateJSONFile(directory, fileName, jarray);
     }
 
     /**

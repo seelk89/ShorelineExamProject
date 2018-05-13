@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10196358 Retrofit non-phys Fix earth",
+        "name": "WT Dan Tysk ,DT29 (3601210)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT29 (3601210)",
+        "type": "WT DT29 DanTysk (3601210)",
+        "priority": "ZBNQ PERF RECV ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "DT56: UPS battery exchange",
+        "name": "WT Dan Tysk ,DT56 (3601237)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT56 (3601237)",
+        "type": "WT DT56 DanTysk (3601237)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "DT35: UPS battery exchange",
+        "name": "WT Dan Tysk ,DT35 (3601216)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT35 (3601216)",
+        "type": "WT DT35 DanTysk (3601216)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "exchange rubber bellows",
+        "name": "WT Sandbank ,SB18 (4000349)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB18 (4000349)",
+        "type": "WT SB18 Sandbank (4000349)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "SB64 TS Outlet socket in tower",
+        "name": "WT Sandbank ,SB64 (4000393)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB64 (4000393)",
+        "type": "WT SB64 Sandbank (4000393)",
+        "priority": "ZBNQ CLAR PERF ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Exchange Rubber Bellow",
+        "name": "WT Sandbank ,SB80 (4000403)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB80 (4000403)",
+        "type": "WT SB80 Sandbank (4000403)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Exchange Rubber Bellow",
+        "name": "WT Sandbank ,SB77 (4000400)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB77 (4000400)",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Water Ingress Tower Ligth",
+        "name": "WT Sandbank ,SB58 (4000387)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB58 (4000387)",
+        "type": "WT SB58 Sandbank (4000387)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "SB56: broke plugs on Hiab Crane",
+        "name": "WT Sandbank ,SB56 (4000385)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB56 (4000385)",
+        "type": "WT SB56 Sandbank (4000385)",
+        "priority": "ZBNQ CLAR PERF",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "exchange rubber bellows",
+        "name": "WT Sandbank ,SB77 (4000400)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB77 (4000400)",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Boom Extension on Hiab Crane",
+        "name": "WT Sandbank ,SB44 (4000374)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB44 (4000374)",
+        "type": "WT SB44 Sandbank (4000374)",
+        "priority": "ZBNQ CLAR PERF ZBA1 ZBPO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "3",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Exchange Rubber Bellow",
+        "name": "WT Sandbank ,SB79 (4000402)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB79 (4000402)",
+        "type": "WT SB79 Sandbank (4000402)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "10000 : No connection",
+        "name": "WT Sandbank ,SB15 (4000346)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB15 (4000346)",
+        "type": "WT SB15 Sandbank (4000346)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "0.5"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "SB39 Remote stop - Owner",
+        "name": "WT Sandbank ,SB39 (4000369)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB39 (4000369)",
+        "type": "WT SB39 Sandbank (4000369)",
+        "priority": "ZBNQ ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "name": "WT Dan Tysk ,DT11 (3601192)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT11 (3601192)",
+        "type": "WT DT11 DanTysk (3601192)",
+        "priority": "ZBNQ PERF RECV RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "High",
+        "createdBy": "SAP",
+        "systemStatus": "exchange rubber bellows",
+        "name": "WT Sandbank ,SB62 (4000391)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB62 (4000391)",
+        "type": "WT SB62 Sandbank (4000391)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "HIAB Crane: Troubleshooting",
+        "name": "WT Sandbank ,SB01 (4000332)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB01 (4000332)",
+        "type": "WT SB01 Sandbank (4000332)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Krima-2439613: Sabik UPS battery replace",
+        "name": "WT Sandbank ,SB22 (4000353)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB22 (4000353)",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "ZBNQ PERF ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Krima-2439613: UPS batteries replacement",
+        "name": "WT Sandbank ,SB61 (4000390)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB61 (4000390)",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZSMC",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT78 (3601259)",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "name": "WT Dan Tysk ,DT78 (3601259)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT78 (3601259)",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZSMC",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "name": "WT Dan Tysk ,DT40 (3601221)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZSMC",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "name": "WT Dan Tysk ,DT40 (3601221)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10170721 Retrofit Power Supply G4",
+        "name": "WT Dan Tysk ,DT07 (3601188)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT07 (3601188)",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "ZBNQ PERF RECV RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10196140  Retrofit, sign f dehumidifi",
+        "name": "WT Dan Tysk ,DT07 (3601188)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT07 (3601188)",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "0 : Damaged fiber optic cable",
+        "name": "WT Sandbank ,SB61 (4000390)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB61 (4000390)",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "ZBNQ PERF RFCO ZBCC ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "1.0"
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "0 : Hiab Crane Slow",
+        "name": "WT Sandbank ,SB27 (4000358)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB27 (4000358)",
+        "type": "WT SB27 Sandbank (4000358)",
+        "priority": "ZBNQ CLAR PERF RFCO ZBCC ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Switching support Vattenfall",
+        "name": "WT Sandbank ,SB29 (4000360)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB29 (4000360)",
+        "type": "WT SB29 Sandbank (4000360)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "0.5"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Inspection on Water Ingress",
+        "name": "WT Sandbank ,SB63 (4000392)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB63 (4000392)",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "0.5"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Inspection on Water Ingress",
+        "name": "WT Sandbank ,SB68 (4000397)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB68 (4000397)",
+        "type": "WT SB68 Sandbank (4000397)",
+        "priority": "ZBNQ RFCO ZBCC ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "1.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Inspection on Water Ingress",
+        "name": "WT Sandbank ,SB23 (4000354)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB23 (4000354)",
+        "type": "WT SB23 Sandbank (4000354)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "name": "WT Dan Tysk ,DT75 (3601256)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT75 (3601256)",
+        "type": "WT DT75 DanTysk (3601256)",
+        "priority": "ZBNQ PERF RECV ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "1.0"
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "No Connection",
+        "name": "WT Sandbank ,SB63 (4000392)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB63 (4000392)",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "ZBNQ PERF RFCO ZBMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "name": "WT Dan Tysk ,DT64 (3601245)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZSMC",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601245 TMSE",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601245 TMSE",
+        "name": "WT Dan Tysk ,DT64 (3601245)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT20 (3601201)",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "ZBNQ PERF RECV RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "3.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "name": "WT Dan Tysk ,DT20 (3601201)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT20 (3601201)",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "ZBNQ PERF RECV RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10191123 - Retrofit, yaw software 201",
+        "name": "WT Dan Tysk ,DT12 (3601193)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT12 (3601193)",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "ZBNQ PERF RECV ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFDT",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "A9B10196140  Retrofit, sign f dehumidifi",
+        "name": "WT Dan Tysk ,DT12 (3601193)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT12 (3601193)",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "ZBNQ PERF RFCO ZBCC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "Broken hose holder on pitch station tank",
+        "name": "WT Sandbank ,SB32 (4000362)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB32 (4000362)",
+        "type": "WT SB32 Sandbank (4000362)",
+        "priority": "ZBNQ PERF ZBA1 ZBPO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "0.5"
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "TMSE: Exchange Fire Extinguishers",
+        "name": "WT Sandbank ,SB26 (4000357)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB26 (4000357)",
+        "type": "WT SB26 Sandbank (4000357)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "2",
+            "latestStartDate": "2.0"
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "PT100 sensors possible swapped",
+        "name": "WT Sandbank ,SB67 (4000396)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB67 (4000396)",
+        "type": "WT SB67 Sandbank (4000396)",
+        "priority": "ZBNQ PERF RFCO",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFSB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZSMC",
+            "earliestStartDate": "2",
+            "latestStartDate": "59.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "WT-BS01 4000399 Service Maintenance",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB76 (4000399)",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_OFFSB",
+        "planning": {
+            "estimatedTime": "",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "0",
+            "latestStartDate": "0.0"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "WT-BS01 4000399 Service Maintenance",
+        "name": "1",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB76 (4000399)",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DE_SANDB",
+        "planning": {
+            "estimatedTime": "H",
+            "latestFinishDate": "ZMR1",
+            "earliestStartDate": "1",
+            "latestStartDate": "1.0"
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "TMSE: Echange Fire extinguisher",
+        "name": "WT Sandbank ,SB22 (4000353)",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB22 (4000353)",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "ZBNQ",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    }
+]

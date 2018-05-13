@@ -60,9 +60,9 @@ public class BLL
      * @param objectilist
      * @throws IOException
      */
-    public void CreateJSONFile(String FileName, JSONArray jarray) throws IOException
+    public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
-        daoJSONWriter.CreateJSONFile(FileName, jarray);
+        daoJSONWriter.CreateJSONFile(directory, fileName, jarray);
     }
 
     /**

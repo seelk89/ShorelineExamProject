@@ -60,6 +60,7 @@
       <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="96.0" layoutY="51.0" prefHeight="25.0" prefWidth="118.0" promptText="Customization" AnchorPane.bottomAnchor="651.0" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="51.0" />
       <ProgressIndicator fx:id="prgConversion" layoutX="214.0" layoutY="668.0" progress="0.0" stylesheets="@../css/CSS.css" />
       <Label fx:id="lblConversionComplete" layoutX="246.0" layoutY="672.0" text="0 Files done" />
+      <JFXButton fx:id="btnFileLocation" layoutX="224.0" layoutY="319.0" onAction="#clickFileLocation" ripplerFill="#0c8bb8" text="Choose file location" />
 
    </children>
 </AnchorPane>
