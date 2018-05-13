@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "A9B10196358 Retrofit non-phys Fix earth",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10196358 Retrofit non-phys Fix earth",
+        "type": "WT DT29 DanTysk (3601210)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DT56: UPS battery exchange",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "CRTD MANC NMAT NTUP PRC",
+        "siteName": "",
+        "externalWorkOrderId": "DT56: UPS battery exchange",
+        "type": "WT DT56 DanTysk (3601237)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "DT35: UPS battery exchange",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "CRTD MANC NMAT NTUP PRC",
+        "siteName": "",
+        "externalWorkOrderId": "DT35: UPS battery exchange",
+        "type": "WT DT35 DanTysk (3601216)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "exchange rubber bellows",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "exchange rubber bellows",
+        "type": "WT SB18 Sandbank (4000349)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "SB64 TS Outlet socket in tower",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  PCNF CCOK NMAT PRC  RESA SETC",
+        "siteName": "",
+        "externalWorkOrderId": "SB64 TS Outlet socket in tower",
+        "type": "WT SB64 Sandbank (4000393)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Exchange Rubber Bellow",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Exchange Rubber Bellow",
+        "type": "WT SB80 Sandbank (4000403)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Exchange Rubber Bellow",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Exchange Rubber Bellow",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Water Ingress Tower Ligth",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Water Ingress Tower Ligth",
+        "type": "WT SB58 Sandbank (4000387)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "SB56: broke plugs on Hiab Crane",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "SB56: broke plugs on Hiab Crane",
+        "type": "WT SB56 Sandbank (4000385)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "exchange rubber bellows",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "exchange rubber bellows",
+        "type": "WT SB77 Sandbank (4000400)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Boom Extension on Hiab Crane",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK MSPT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Boom Extension on Hiab Crane",
+        "type": "WT SB44 Sandbank (4000374)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Exchange Rubber Bellow",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Exchange Rubber Bellow",
+        "type": "WT SB79 Sandbank (4000402)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "10000 : No connection",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK GMPS NMAT PRC  RESA SETC",
+        "siteName": "",
+        "externalWorkOrderId": "10000 : No connection",
+        "type": "WT SB15 Sandbank (4000346)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "SB39 Remote stop - Owner",
+        "planning": {
+            "estimatedTime": "0.5",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.5",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "SB39 Remote stop - Owner",
+        "type": "WT SB39 Sandbank (4000369)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10191123 - Retrofit, yaw software 201",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK MACM PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10191123 - Retrofit, yaw software 201",
+        "type": "WT DT11 DanTysk (3601192)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "exchange rubber bellows",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "High",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "exchange rubber bellows",
+        "type": "WT SB62 Sandbank (4000391)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "HIAB Crane: Troubleshooting",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "HIAB Crane: Troubleshooting",
+        "type": "WT SB01 Sandbank (4000332)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Krima-2439613: Sabik UPS battery replace",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Krima-2439613: Sabik UPS battery replace",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Krima-2439613: UPS batteries replacement",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Krima-2439613: UPS batteries replacement",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "ZSMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601259 Yearly Crane Inspec",
+        "type": "WT DT78 DanTysk (3601259)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZSMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601221 Yearly Lift Inspect",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZSMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601221 Yearly Crane Inspec",
+        "type": "WT DT40 DanTysk (3601221)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10170721 Retrofit Power Supply G4",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK GMPS MACM PRC  RESA SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10170721 Retrofit Power Supply G4",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10196140  Retrofit, sign f dehumidifi",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK GMPS NMAT PRC  RESA SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10196140  Retrofit, sign f dehumidifi",
+        "type": "WT DT07 DanTysk (3601188)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "0 : Damaged fiber optic cable",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "0 : Damaged fiber optic cable",
+        "type": "WT SB61 Sandbank (4000390)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "0 : Hiab Crane Slow",
+        "planning": {
+            "estimatedTime": "1.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "1.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Low",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "0 : Hiab Crane Slow",
+        "type": "WT SB27 Sandbank (4000358)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Switching support Vattenfall",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Switching support Vattenfall",
+        "type": "WT SB29 Sandbank (4000360)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Inspection on Water Ingress",
+        "planning": {
+            "estimatedTime": "0.5",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.5",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Inspection on Water Ingress",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Inspection on Water Ingress",
+        "planning": {
+            "estimatedTime": "0.5",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.5",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Inspection on Water Ingress",
+        "type": "WT SB68 Sandbank (4000397)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Inspection on Water Ingress",
+        "planning": {
+            "estimatedTime": "1.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "1.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Inspection on Water Ingress",
+        "type": "WT SB23 Sandbank (4000354)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10191123 - Retrofit, yaw software 201",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK MACM PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10191123 - Retrofit, yaw software 201",
+        "type": "WT DT75 DanTysk (3601256)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "No Connection",
+        "planning": {
+            "estimatedTime": "1.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "1.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Low",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "No Connection",
+        "type": "WT SB63 Sandbank (4000392)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601245 Yearly Crane Inspec",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601245 TMSE",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601245 TMSE",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZSMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601245 TMSE",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601245 TMSE",
+        "type": "WT DT64 DanTysk (3601245)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "planning": {
+            "estimatedTime": "3.0",
+            "latestFinishDate": "0020",
+            "earliestStartDate": "3.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "3,00_WT-BS01 3601201 Yearly Crane Inspec",
+        "type": "WT DT20 DanTysk (3601201)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10191123 - Retrofit, yaw software 201",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK MACM PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10191123 - Retrofit, yaw software 201",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "A9B10196140  Retrofit, sign f dehumidifi",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "REL  CCOK GMPS MACM PRC  RESA SETC",
+        "siteName": "",
+        "externalWorkOrderId": "A9B10196140  Retrofit, sign f dehumidifi",
+        "type": "WT DT12 DanTysk (3601193)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "Broken hose holder on pitch station tank",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK MACM PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "Broken hose holder on pitch station tank",
+        "type": "WT SB32 Sandbank (4000362)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "TMSE: Exchange Fire Extinguishers",
+        "planning": {
+            "estimatedTime": "0.5",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "0.5",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Low",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "TMSE: Exchange Fire Extinguishers",
+        "type": "WT SB26 Sandbank (4000357)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "PT100 sensors possible swapped",
+        "planning": {
+            "estimatedTime": "2.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "2.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Normal",
+        "name": "REL  CCOK NMAT PRC  SETC",
+        "siteName": "",
+        "externalWorkOrderId": "PT100 sensors possible swapped",
+        "type": "WT SB67 Sandbank (4000396)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "WT-BS01 4000399 Service Maintenance",
+        "planning": {
+            "estimatedTime": "59.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "59.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "CRTD MANC NTUP SETC",
+        "siteName": "",
+        "externalWorkOrderId": "WT-BS01 4000399 Service Maintenance",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "ZSMC",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "WT-BS01 4000399 Service Maintenance",
+        "planning": {
+            "estimatedTime": "0.0",
+            "latestFinishDate": "0070",
+            "earliestStartDate": "0.0",
+            "latestStartDate": ""
+        },
+        "userStatus": "1",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "CRTD MANC NTUP SETC",
+        "siteName": "",
+        "externalWorkOrderId": "WT-BS01 4000399 Service Maintenance",
+        "type": "WT SB76 Sandbank (4000399)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "TMSE: Echange Fire extinguisher",
+        "planning": {
+            "estimatedTime": "1.0",
+            "latestFinishDate": "0010",
+            "earliestStartDate": "1.0",
+            "latestStartDate": "H"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "Low",
+        "name": "REL  NMAT SETC",
+        "siteName": "",
+        "externalWorkOrderId": "TMSE: Echange Fire extinguisher",
+        "type": "WT SB22 Sandbank (4000353)",
+        "priority": "ZMR1",
+        "createdOn": "11-05-2018",
+        "status": "NEW"
+    }
+]
