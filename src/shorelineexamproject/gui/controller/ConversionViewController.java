@@ -33,12 +33,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -47,7 +48,6 @@ import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
-import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -57,41 +57,11 @@ import shorelineexamproject.gui.model.Model;
  */
 public class ConversionViewController implements Initializable
 {
-
+    
     @FXML
     private JFXButton btnGet;
     @FXML
     private JFXTextField txtJSONName;
-    @FXML
-    private JFXTextField txtType;
-    @FXML
-    private JFXTextField txtUserStatus;
-    @FXML
-    private JFXTextField txtSystemStatus;
-    @FXML
-    private JFXTextField txtExternalWorkOrderid;
-    @FXML
-    private JFXTextField txtCreatedOn;
-    @FXML
-    private JFXTextField txtCreatedBy;
-    @FXML
-    private JFXTextField txtName;
-    @FXML
-    private JFXTextField txtPriority;
-    @FXML
-    private JFXTextField txtStatus;
-    @FXML
-    private JFXTextField txtEstimatedTime;
-    @FXML
-    private JFXTextField txtLatestFinishDate;
-    @FXML
-    private JFXTextField txtEarliestStartDate;
-    @FXML
-    private JFXTextField txtLatestStartDate;
-    @FXML
-    private JFXTextField txtAssetSerialNumber;
-    @FXML
-    private JFXTextField txtSiteName;
     @FXML
     private ListView<ListViewObject> lstHeaders;
     @FXML
@@ -121,12 +91,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtVarLatestStartDate;
     @FXML
-    private JFXComboBox<?> cbxUser;
-    @FXML
     private JFXComboBox<Customization> cbxCustomization;
-    //final ComboBox comboBox = new ComboBox(options);
-    @FXML
-    private JFXButton btnCreateJson;
     @FXML
     private ProgressIndicator prgConversion;
     @FXML
@@ -134,11 +99,31 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnFileLocation;
 
+
     Tooltip tooltip = new Tooltip();
+
+
+    @FXML
+    private Label lblUser;
+    
+    private Tooltip directoryTooltip = new Tooltip();
+    
+    private Tooltip assetSerialNumberTooltip = new Tooltip();
+    private Tooltip typeTooltip = new Tooltip();
+    private Tooltip externalWorkOrderIdTooltip = new Tooltip();
+    private Tooltip systemStatusTooltip = new Tooltip();
+    private Tooltip userStatusTooltip = new Tooltip();
+    private Tooltip nameTooltip = new Tooltip();
+    private Tooltip priorityTooltip = new Tooltip();
+    private Tooltip latestFinishDateTooltip = new Tooltip();
+    private Tooltip earliestStartDateTooltip = new Tooltip();
+    private Tooltip latestStartDateTooltip = new Tooltip();
+    private Tooltip estimatedTimeTooltip = new Tooltip();
+    
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
-    private ArrayList<String> lstVarExternalWorkOrderid = new ArrayList<String>();
+    private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
     private ArrayList<String> lstVarSystemStatus = new ArrayList<String>();
     private ArrayList<String> lstVarUserStatus = new ArrayList<String>();
     private ArrayList<String> lstVarName = new ArrayList<String>();
@@ -147,9 +132,9 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstVarEarliestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarLatestStartDate = new ArrayList<String>();
     private ArrayList<String> lstVarEstimatedTime = new ArrayList<String>();
-
+    
     private ArrayList<String> lstVarDescription2 = new ArrayList<String>();
-
+    
     private Window stage;
 
     //Variables for folder selection
@@ -171,8 +156,9 @@ public class ConversionViewController implements Initializable
     //doing jeppes stuff
     private boolean stopped = false;
     private boolean paused = false;
-
+    
     Model model;
+
     @FXML
     private JFXButton btnSaveCustomization;
     @FXML
@@ -191,10 +177,34 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        //Tooltip setup
+        assetSerialNumberTooltip.setText("Asset id");
+        txtVarAssetSerialNumber.setTooltip(assetSerialNumberTooltip);
+        typeTooltip.setText("Order type");
+        txtVarType.setTooltip(typeTooltip);
+        externalWorkOrderIdTooltip.setText("Order");
+        txtVarExternalWorkOrderid.setTooltip(externalWorkOrderIdTooltip);
+        systemStatusTooltip.setText("System status");
+        txtVarSystemStatus.setTooltip(systemStatusTooltip);
+        userStatusTooltip.setText("User status");
+        txtVarUserStatus.setTooltip(userStatusTooltip);
+        nameTooltip.setText("Opr. short text, if it is empty then it will be set to Description 2");
+        txtVarName.setTooltip(nameTooltip);
+        priorityTooltip.setText("Priority, will be set to Low if there is no value to get");
+        txtVarPriority.setTooltip(priorityTooltip);
+        latestFinishDateTooltip.setText("LatestFinishDate");
+        txtVarLatestFinishDate.setTooltip(latestFinishDateTooltip);
+        earliestStartDateTooltip.setText("EarliestStartDate");
+        txtVarEarliestStartDate.setTooltip(earliestStartDateTooltip);
+        latestStartDateTooltip.setText("LatestStartDate");
+        txtVarLatestStartDate.setTooltip(latestStartDateTooltip);
+        estimatedTimeTooltip.setText("EastimatedTime");
+        txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
+        
         cbxCustomizationInitialize();
         lstHeadersInitialize();
     }
-
+    
     private void lstHeadersInitialize()
     {
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
@@ -206,13 +216,13 @@ public class ConversionViewController implements Initializable
                 if (item != null)
                 {
                     Text t = new Text(item.getStringObject());
-
+                    
                     setGraphic(t);
                 }
             }
         });
     }
-
+    
     private void cbxCustomizationInitialize()
     {
         cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations())); //doesn't work
@@ -240,7 +250,7 @@ public class ConversionViewController implements Initializable
         @Override
         protected Object call() throws Exception
         {
-
+            
             while (!stopped)
             {
                 synchronized (this)
@@ -250,14 +260,14 @@ public class ConversionViewController implements Initializable
                         wait();
                     }
                 }
-
+                
                 String fileName = null;
-
+                
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
-
+                    
                     if (i > 0)
                     {
                         fileName = txtJSONName.getText() + "_" + (i + 1) + ".json";
@@ -265,18 +275,18 @@ public class ConversionViewController implements Initializable
                     {
                         fileName = txtJSONName.getText() + ".json";
                     }
-
+                    
                     JSONArray jarray = CreateJsonObjects();
                     model.CreateJSONFile(directory, fileName, jarray);
-
+                    
                     filesDone.set(i + 1);
                     System.out.println(filesDone);
-
+                    
                     updateProgress(i, lstAbsolutePaths.size());
-
+                    
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
-                    lstVarExternalWorkOrderid.clear();
+                    lstVarExternalWorkOrderId.clear();
                     lstVarSystemStatus.clear();
                     lstVarUserStatus.clear();
                     lstVarName.clear();
@@ -285,7 +295,7 @@ public class ConversionViewController implements Initializable
                     lstVarEarliestStartDate.clear();
                     lstVarLatestStartDate.clear();
                     lstVarEstimatedTime.clear();
-
+                    
                     lstVarDescription2.clear();
                 }
                 progress = 1;
@@ -311,15 +321,15 @@ public class ConversionViewController implements Initializable
     {
         stopped = false;
         paused = false;
-
+        
         if (thread == null)
         {
             thread = new Thread(task);
         }
-
+        
         thread.setDaemon(true);
         thread.start();
-
+        
         while (!stopped)
         {
             double tp = task.getProgress();
@@ -389,13 +399,13 @@ public class ConversionViewController implements Initializable
         if ("Start".equals(btnTask.getText()))
         {
             start();
-
+            
             btnTask.setText("Stop");
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
             thread = null;
-
+            
             btnTask.setText("Start");
             System.out.println("stopped");
         }
@@ -412,9 +422,9 @@ public class ConversionViewController implements Initializable
             synchronized (task)
             {
                 task.notify();
-
+                
             }
-
+            
             btnPauseTask.setText("Pause");
         } else
         {
@@ -473,13 +483,12 @@ public class ConversionViewController implements Initializable
      * @param event
      * @throws IOException
      */
-    @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
     {
         //fillListsWithExcel();
 
         String fileName = txtJSONName.getText() + ".json";
-
+        
         JSONArray jarray = CreateJsonObjects();
         model.CreateJSONFile(directory, fileName, jarray);
     }
@@ -493,7 +502,7 @@ public class ConversionViewController implements Initializable
     {
         model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
         model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
-        model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderid);
+        model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
         model.getXLSXHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
         model.getXLSXHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
         model.getXLSXHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
@@ -502,7 +511,7 @@ public class ConversionViewController implements Initializable
         model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
         model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
-
+        
         model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
     }
 
@@ -522,57 +531,57 @@ public class ConversionViewController implements Initializable
         //For indicating progress
         progress = progress / lstVarType.size();
         System.out.println(progress);
-
+        
         for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();
-
-            obj.put(txtSiteName.getText(), ""); //get from middle of description if possible
-            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
-            obj.put(txtType.getText(), lstVarType.get(i));
-            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
-            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
-            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
-            obj.put(txtCreatedOn.getText(), model.getDate());
-            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login, ask po)
+            
+            obj.put("siteName", ""); //get from middle of description if possible
+            obj.put("assetSerialNumber", lstVarAssetSerialNumber.get(i));
+            obj.put("type", lstVarType.get(i));
+            obj.put("externalWorkOrderId", lstVarExternalWorkOrderId.get(i));
+            obj.put("systemStatus", lstVarSystemStatus.get(i));
+            obj.put("userStatus", lstVarUserStatus.get(i));
+            obj.put("createdOn", model.getDate());
+            obj.put("createdBy", "SAP"); //get sap (or login, ask po)
 
             if ("".equals(lstVarName.get(i)))
             {
-                obj.put(txtName.getText(), lstVarDescription2.get(i));  //2 different ones
+                obj.put("name", lstVarDescription2.get(i));  //2 different ones
             } else
             {
-                obj.put(txtName.getText(), lstVarName.get(i));
+                obj.put("name", lstVarName.get(i));
             }
-
+            
             if ("".equals(lstVarPriority.get(i)))
             {
                 String priority = "Low";
-                obj.put(txtPriority.getText(), priority); //priority, if empty set low
+                obj.put("priority", priority); //priority, if empty set low
             } else
             {
-                obj.put(txtPriority.getText(), lstVarPriority.get(i));
+                obj.put("priority", lstVarPriority.get(i));
             }
-
-            obj.put(txtStatus.getText(), "NEW"); //weird thing
+            
+            obj.put("status", "NEW"); //weird thing
 
             JSONObject obj2 = new JSONObject();
-            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
-            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
-            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
-            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
-
+            obj2.put("latestFinishDate", lstVarLatestFinishDate.get(i));
+            obj2.put("earliestStartDate", lstVarEarliestStartDate.get(i));
+            obj2.put("latestStartDate", lstVarLatestStartDate.get(i));
+            obj2.put("estimatedTime", lstVarEstimatedTime.get(i));
+            
             obj.put("planning", obj2);
-
+            
             mainjsonArray.put(obj);
 
             //for measuring progress
             progress = progress + progress;
-
+            
         }
         System.out.println(mainjsonArray);
         return mainjsonArray;
     }
-
+    
     @FXML
     private void clickFileLocation(ActionEvent event)
     {
@@ -588,8 +597,15 @@ public class ConversionViewController implements Initializable
             System.out.println(directory);
             btnFileLocation.setText("File location");
 
+
             tooltip.setText(directory);
             btnFileLocation.setTooltip(tooltip);
+
+
+            
+            directoryTooltip.setText(directory);
+            btnFileLocation.setTooltip(directoryTooltip);
+            
 
             directoryChosen = true;
         } else
@@ -630,10 +646,10 @@ public class ConversionViewController implements Initializable
         ClipboardContent content = new ClipboardContent();
         content.putString(getListViewObject());
         dragBoard.setContent(content);
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void overTxtTest(DragEvent event)
     {
@@ -641,10 +657,10 @@ public class ConversionViewController implements Initializable
         {
             event.acceptTransferModes(TransferMode.COPY);
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarAssetSerialNumber(DragEvent event)
     {
@@ -653,10 +669,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarAssetSerialNumber.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarType(DragEvent event)
     {
@@ -665,10 +681,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarType.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarUserStatus(DragEvent event)
     {
@@ -677,10 +693,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarUserStatus.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarSystemStatus(DragEvent event)
     {
@@ -689,10 +705,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarSystemStatus.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarExternalWorkOrderid(DragEvent event)
     {
@@ -701,10 +717,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarExternalWorkOrderid.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarName(DragEvent event)
     {
@@ -713,10 +729,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarName.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarPriority(DragEvent event)
     {
@@ -725,10 +741,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarPriority.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarEstimatedTime(DragEvent event)
     {
@@ -737,10 +753,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarEstimatedTime.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarLatestFinishDate(DragEvent event)
     {
@@ -749,10 +765,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarLatestFinishDate.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarEarliestStartDate(DragEvent event)
     {
@@ -761,10 +777,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarEarliestStartDate.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
-
+    
     @FXML
     private void dropTxtVarLatestStartDate(DragEvent event)
     {
@@ -773,9 +789,10 @@ public class ConversionViewController implements Initializable
         {
             txtVarLatestStartDate.setText(dragBoard.getString());
         }
-
+        
         event.consume();
     }
+
 
     @FXML
     private void clickSaveCustomization(ActionEvent event)
@@ -843,4 +860,5 @@ public class ConversionViewController implements Initializable
         Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
         
     }
+
 }
