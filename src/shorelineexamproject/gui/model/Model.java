@@ -35,9 +35,8 @@ public class Model
 //    private Model()
 //    {
 //    }
-    
     //not sure if method below is needed
-public ObservableList<Customization> cList = FXCollections.observableArrayList();
+    public ObservableList<Customization> cList = FXCollections.observableArrayList();
 
     public synchronized static Model getInstance() throws IOException
     {

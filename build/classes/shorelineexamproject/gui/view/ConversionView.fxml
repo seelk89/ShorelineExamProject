@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="625.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="625.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnGet" layoutX="224.0" layoutY="88.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get" AnchorPane.leftAnchor="224.0" AnchorPane.topAnchor="85.0" />
       <JFXButton fx:id="btnCreateJson" layoutX="559.0" layoutY="27.0" onAction="#clickCreateJSONFile" ripplerFill="#0c8bb8" text="Create JSONFile" AnchorPane.bottomAnchor="675.0" AnchorPane.rightAnchor="28.0" />
@@ -61,6 +61,9 @@
       <ProgressIndicator fx:id="prgConversion" layoutX="214.0" layoutY="668.0" progress="0.0" stylesheets="@../css/CSS.css" />
       <Label fx:id="lblConversionComplete" layoutX="246.0" layoutY="672.0" text="0 Files done" />
       <JFXButton fx:id="btnFileLocation" layoutX="224.0" layoutY="319.0" onAction="#clickFileLocation" ripplerFill="#0c8bb8" text="Choose file location" />
+      <JFXButton fx:id="btnSaveCustomization" layoutX="297.0" layoutY="26.0" onAction="#clickSaveCustomization" text="Save Customization" />
+      <JFXButton fx:id="btnDeleteCustomization" layoutX="297.0" layoutY="3.0" onAction="#clickDeleteCustomization" text="Delete Customization" />
+      <JFXButton fx:id="btnOpenTraceLogView" layoutX="490.0" layoutY="3.0" onAction="#clickOpenTraceLogViev" text="TraceLogView" />
 
    </children>
 </AnchorPane>

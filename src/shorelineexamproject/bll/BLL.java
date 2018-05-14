@@ -85,7 +85,7 @@ public class BLL
     {
         daoCustomization.addCustomizationToDB(c);
     }
-    
+
     public void removeCustomizationFromDb(Customization selectedCustomization)
     {
         daoCustomization.removeCustomizationFromDb(selectedCustomization);

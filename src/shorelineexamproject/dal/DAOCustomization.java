@@ -42,7 +42,7 @@ public class DAOCustomization
         System.out.println("Getting all Customizations.");
 
         List<Customization> allCustomizations = new ArrayList();
-
+//might be this we need to change in order to make a connectionpool
         try (Connection con = cm.getConnection())
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM Customization");
@@ -89,7 +89,7 @@ public class DAOCustomization
         {
             String sql
                     = "INSERT INTO Customization"
-                    + "(user, dateOfCreation, nameOfCustomization, assetSerialNumber, type, externalWorkOrderId, systemStatus, userStatus,"
+                    + "([user], dateOfCreation, nameOfCustomization, assetSerialNumber, type, externalWorkOrderId, systemStatus, userStatus,"
                     + " name, priority, status, latestFinishDate, earliestStartDate, latestStartdate, estimatedTime) "
                     + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 

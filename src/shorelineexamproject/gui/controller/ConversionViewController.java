@@ -35,6 +35,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
@@ -130,7 +133,7 @@ public class ConversionViewController implements Initializable
     private Label lblConversionComplete;
     @FXML
     private JFXButton btnFileLocation;
-    
+
     Tooltip tooltip = new Tooltip();
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
@@ -170,7 +173,13 @@ public class ConversionViewController implements Initializable
     private boolean paused = false;
 
     Model model;
-
+    @FXML
+    private JFXButton btnSaveCustomization;
+    @FXML
+    private JFXButton btnDeleteCustomization;
+    private LoginViewController parent;
+    @FXML
+    private JFXButton btnOpenTraceLogView;
     public ConversionViewController() throws IOException
     {
         this.model = new Model();
@@ -286,7 +295,7 @@ public class ConversionViewController implements Initializable
 //                {
 //                    btnTask.setText("Start");
 //                }
-                
+
             }
             return null;
         }
@@ -295,7 +304,6 @@ public class ConversionViewController implements Initializable
     //platform run later for progress bar
 //                prgBar.setProgress(task.getProgress());
 //                prgBar1.setProgress(task.getProgress());
-    
     /**
      * Starts a task
      */
@@ -478,7 +486,8 @@ public class ConversionViewController implements Initializable
 
     /**
      * Fills the list fields with the items gotten from the file
-     * @param absolutePath 
+     *
+     * @param absolutePath
      */
     private void fillListsWithExcel(String absolutePath)
     {
@@ -574,14 +583,14 @@ public class ConversionViewController implements Initializable
             File defaultDirectory = new File("c:/");
             chooser.setInitialDirectory(defaultDirectory);
             File selectedDirectory = chooser.showDialog(stage);
-            
+
             directory = selectedDirectory.getAbsolutePath();
             System.out.println(directory);
             btnFileLocation.setText("File location");
-            
+
             tooltip.setText(directory);
             btnFileLocation.setTooltip(tooltip);
-            
+
             directoryChosen = true;
         } else
         {
@@ -768,4 +777,70 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+    @FXML
+    private void clickSaveCustomization(ActionEvent event)
+    {
+        Customization c = new Customization();
+
+        c.setUser("Sap"); //need to do login, get label
+        c.setDateOfCreation("01-01-2000"); //get date object
+        c.setNameOfCustomization(txtJSONName.getText() + "Customization");
+        c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
+        c.setType(txtVarType.getText());
+        c.setExternalWorkOrderId(txtVarExternalWorkOrderid.getText());
+        c.setSystemStatus(txtVarSystemStatus.getText());
+        c.setUserStatus(txtVarUserStatus.getText());
+        c.setName(txtVarName.getText());
+        c.setPriority(txtVarPriority.getText());
+        c.setStatus(txtVarSystemStatus.getText());
+        c.setLatestFinishDate(txtVarLatestFinishDate.getText());
+        c.setEarliestStartDate(txtVarEarliestStartDate.getText());
+        c.setLatestStartDate(txtVarLatestStartDate.getText());
+        c.setEstimatedTime(txtVarEstimatedTime.getText());
+
+        model.addCustomizationToDB(c);
+        System.out.println("Conversion saved");
+        
+    }
+
+    public Customization getSelectedCustomization()
+    {
+        return cbxCustomization.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    private void clickDeleteCustomization(ActionEvent event)
+    {
+        model.removeCustomizationFromDb(getSelectedCustomization());
+        System.out.println("Customization deleted");
+    }
+    /**
+     * It makes the mainwindow able to open the other windows.
+     * @param parent 
+     */
+    public void setParentWindowController(LoginViewController parent)
+    {
+        this.parent = parent;
+    }
+
+    @FXML
+    private void clickOpenTraceLogViev(ActionEvent event) throws IOException
+    {
+        Stage stage = new Stage();
+
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/LogView.fxml"));
+
+        Parent root = fxLoader.load();
+
+        LogViewController controller = fxLoader.getController();
+        controller.setParentWindowController(parent);
+
+        Scene scene = new Scene(root);
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.show();
+
+        Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
+        
+    }
 }
