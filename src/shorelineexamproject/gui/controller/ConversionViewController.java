@@ -33,9 +33,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -44,7 +42,6 @@ import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
-import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -59,36 +56,6 @@ public class ConversionViewController implements Initializable
     private JFXButton btnGet;
     @FXML
     private JFXTextField txtJSONName;
-    @FXML
-    private JFXTextField txtType;
-    @FXML
-    private JFXTextField txtUserStatus;
-    @FXML
-    private JFXTextField txtSystemStatus;
-    @FXML
-    private JFXTextField txtExternalWorkOrderid;
-    @FXML
-    private JFXTextField txtCreatedOn;
-    @FXML
-    private JFXTextField txtCreatedBy;
-    @FXML
-    private JFXTextField txtName;
-    @FXML
-    private JFXTextField txtPriority;
-    @FXML
-    private JFXTextField txtStatus;
-    @FXML
-    private JFXTextField txtEstimatedTime;
-    @FXML
-    private JFXTextField txtLatestFinishDate;
-    @FXML
-    private JFXTextField txtEarliestStartDate;
-    @FXML
-    private JFXTextField txtLatestStartDate;
-    @FXML
-    private JFXTextField txtAssetSerialNumber;
-    @FXML
-    private JFXTextField txtSiteName;
     @FXML
     private ListView<ListViewObject> lstHeaders;
     @FXML
@@ -118,20 +85,17 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXTextField txtVarLatestStartDate;
     @FXML
-    private JFXComboBox<?> cbxUser;
-    @FXML
     private JFXComboBox<Customization> cbxCustomization;
-    //final ComboBox comboBox = new ComboBox(options);
-    @FXML
-    private JFXButton btnCreateJson;
     @FXML
     private ProgressIndicator prgConversion;
     @FXML
     private Label lblConversionComplete;
     @FXML
     private JFXButton btnFileLocation;
+    @FXML
+    private Label lblUser;
     
-    Tooltip tooltip = new Tooltip();
+    Tooltip directoryTooltip = new Tooltip();
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -465,7 +429,6 @@ public class ConversionViewController implements Initializable
      * @param event
      * @throws IOException
      */
-    @FXML
     private void clickCreateJSONFile(ActionEvent event) throws IOException
     {
         //fillListsWithExcel();
@@ -518,39 +481,39 @@ public class ConversionViewController implements Initializable
         {
             JSONObject obj = new JSONObject();
 
-            obj.put(txtSiteName.getText(), ""); //get from middle of description if possible
-            obj.put(txtAssetSerialNumber.getText(), lstVarAssetSerialNumber.get(i));
-            obj.put(txtType.getText(), lstVarType.get(i));
-            obj.put(txtExternalWorkOrderid.getText(), lstVarExternalWorkOrderid.get(i));
-            obj.put(txtSystemStatus.getText(), lstVarSystemStatus.get(i));
-            obj.put(txtUserStatus.getText(), lstVarUserStatus.get(i));
-            obj.put(txtCreatedOn.getText(), model.getDate());
-            obj.put(txtCreatedBy.getText(), "SAP"); //get sap (or login, ask po)
+            obj.put("siteName", ""); //get from middle of description if possible
+            obj.put("assetSerialNumber", lstVarAssetSerialNumber.get(i));
+            obj.put("type", lstVarType.get(i));
+            obj.put("externalWorkOrderId", lstVarExternalWorkOrderid.get(i));
+            obj.put("systemStatus", lstVarSystemStatus.get(i));
+            obj.put("userStatus", lstVarUserStatus.get(i));
+            obj.put("createdOn", model.getDate());
+            obj.put("createdBy", "SAP"); //get sap (or login, ask po)
 
             if ("".equals(lstVarName.get(i)))
             {
-                obj.put(txtName.getText(), lstVarDescription2.get(i));  //2 different ones
+                obj.put("name", lstVarDescription2.get(i));  //2 different ones
             } else
             {
-                obj.put(txtName.getText(), lstVarName.get(i));
+                obj.put("name", lstVarName.get(i));
             }
 
             if ("".equals(lstVarPriority.get(i)))
             {
                 String priority = "Low";
-                obj.put(txtPriority.getText(), priority); //priority, if empty set low
+                obj.put("priority", priority); //priority, if empty set low
             } else
             {
-                obj.put(txtPriority.getText(), lstVarPriority.get(i));
+                obj.put("priority", lstVarPriority.get(i));
             }
 
-            obj.put(txtStatus.getText(), "NEW"); //weird thing
+            obj.put("status", "NEW"); //weird thing
 
             JSONObject obj2 = new JSONObject();
-            obj2.put(txtLatestFinishDate.getText(), lstVarLatestFinishDate.get(i));
-            obj2.put(txtEarliestStartDate.getText(), lstVarEarliestStartDate.get(i));
-            obj2.put(txtLatestStartDate.getText(), lstVarLatestStartDate.get(i));
-            obj2.put(txtEstimatedTime.getText(), lstVarEstimatedTime.get(i));
+            obj2.put("latestFinishDate", lstVarLatestFinishDate.get(i));
+            obj2.put("earliestStartDate", lstVarEarliestStartDate.get(i));
+            obj2.put("latestStartDate", lstVarLatestStartDate.get(i));
+            obj2.put("estimatedTime", lstVarEstimatedTime.get(i));
 
             obj.put("planning", obj2);
 
@@ -579,8 +542,8 @@ public class ConversionViewController implements Initializable
             System.out.println(directory);
             btnFileLocation.setText("File location");
             
-            tooltip.setText(directory);
-            btnFileLocation.setTooltip(tooltip);
+            directoryTooltip.setText(directory);
+            btnFileLocation.setTooltip(directoryTooltip);
             
             directoryChosen = true;
         } else

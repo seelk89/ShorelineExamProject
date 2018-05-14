@@ -22,3 +22,8 @@ and open the template in the editor.
 {
     -fx-font-weight: bold;
 }
+
+.tooltip
+{
+    -fx-background-color: #0B6074;
+}
