@@ -32,6 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.scene.control.Label;
@@ -95,6 +97,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private Label lblUser;
     
+    //Tooltip creations
     private Tooltip directoryTooltip = new Tooltip();
     
     private Tooltip assetSerialNumberTooltip = new Tooltip();
@@ -260,10 +263,12 @@ public class ConversionViewController implements Initializable
                     JSONArray jarray = CreateJsonObjects();
                     model.CreateJSONFile(directory, fileName, jarray);
                     
-                    filesDone.set(i + 1);
-                    System.out.println(filesDone);
+                    //For progress
+//                    filesDone.set(i + 1);
+//                    System.out.println(filesDone);
                     
-                    updateProgress(i, lstAbsolutePaths.size());
+                    updateProgress(i + 1, lstAbsolutePaths.size());
+                    updateMessage((i + 1) + " Files done");
                     
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
@@ -279,9 +284,13 @@ public class ConversionViewController implements Initializable
                     
                     lstVarDescription2.clear();
                 }
-                progress = 1;
+                
+                //For progress
+//                progress = 1;
+                
                 stopped = true;
                 stop();
+                
 //                if (btnTask.getText().equals("Stop"))
 //                {
 //                    btnTask.setText("Start");
@@ -295,6 +304,7 @@ public class ConversionViewController implements Initializable
     //platform run later for progress bar
 //                prgBar.setProgress(task.getProgress());
 //                prgBar1.setProgress(task.getProgress());
+    
     /**
      * Starts a task
      */
@@ -303,6 +313,15 @@ public class ConversionViewController implements Initializable
         stopped = false;
         paused = false;
         
+        prgConversion.progressProperty().unbind();
+        prgConversion.progressProperty().bind(task.progressProperty());
+        
+        task.messageProperty().addListener(new ChangeListener<String>(){
+                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                        lblConversionComplete.setText(newValue);
+                    }
+        });
+        
         if (thread == null)
         {
             thread = new Thread(task);
@@ -310,13 +329,7 @@ public class ConversionViewController implements Initializable
         
         thread.setDaemon(true);
         thread.start();
-        
-        while (!stopped)
-        {
-            double tp = task.getProgress();
-            prgConversion.setProgress(tp);
-            lblConversionComplete.setText(filesDone + " Files done");
-        }
+ 
     }
 
     /**
@@ -442,7 +455,7 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files.size() > 0)  //we need to catch the exception
+        if (files.size() > 0) 
         {
             files.forEach((File file) ->
             {
@@ -506,12 +519,10 @@ public class ConversionViewController implements Initializable
     public JSONArray CreateJsonObjects()
     {
         JSONArray mainjsonArray = new JSONArray();
-        //This will be used to loop through the excel
-//what can we use instead of lstVarType? objectilist? then it gets empty
 
         //For indicating progress
-        progress = progress / lstVarType.size();
-        System.out.println(progress);
+//        progress = progress / lstVarType.size();
+//        System.out.println(progress);
         
         for (int i = 0; i < lstVarType.size(); i++)
         {
@@ -556,7 +567,7 @@ public class ConversionViewController implements Initializable
             mainjsonArray.put(obj);
 
             //for measuring progress
-            progress = progress + progress;
+//            progress = progress + progress;
             
         }
         System.out.println(mainjsonArray);

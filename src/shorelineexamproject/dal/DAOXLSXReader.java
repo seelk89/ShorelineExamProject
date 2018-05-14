@@ -192,7 +192,7 @@ public class DAOXLSXReader
                             }
                         }
 
-                        break;
+                    break;
                     //Case the cells value is of type String it will be compared to the header
                     case Cell.CELL_TYPE_STRING:
 
