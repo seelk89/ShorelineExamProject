@@ -36,6 +36,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -94,6 +100,11 @@ public class ConversionViewController implements Initializable
     private Label lblConversionComplete;
     @FXML
     private JFXButton btnFileLocation;
+
+
+    Tooltip tooltip = new Tooltip();
+
+
     @FXML
     private Label lblUser;
 
@@ -111,6 +122,10 @@ public class ConversionViewController implements Initializable
     private Tooltip earliestStartDateTooltip = new Tooltip();
     private Tooltip latestStartDateTooltip = new Tooltip();
     private Tooltip estimatedTimeTooltip = new Tooltip();
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -149,6 +164,16 @@ public class ConversionViewController implements Initializable
 
     Model model;
 
+<<<<<<< HEAD
+=======
+    @FXML
+    private JFXButton btnSaveCustomization;
+    @FXML
+    private JFXButton btnDeleteCustomization;
+    private LoginViewController parent;
+    @FXML
+    private JFXButton btnOpenTraceLogView;
+>>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
     public ConversionViewController() throws IOException
     {
         this.model = new Model();
@@ -288,6 +313,10 @@ public class ConversionViewController implements Initializable
 //                {
 //                    btnTask.setText("Start");
 //                }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
             }
             return null;
         }
@@ -572,8 +601,20 @@ public class ConversionViewController implements Initializable
             System.out.println(directory);
             btnFileLocation.setText("File location");
 
+<<<<<<< HEAD
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
+=======
+
+            tooltip.setText(directory);
+            btnFileLocation.setTooltip(tooltip);
+
+
+            
+            directoryTooltip.setText(directory);
+            btnFileLocation.setTooltip(directoryTooltip);
+            
+>>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 
             directoryChosen = true;
         } else
@@ -761,4 +802,75 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+<<<<<<< HEAD
+=======
+
+    @FXML
+    private void clickSaveCustomization(ActionEvent event)
+    {
+        Customization c = new Customization();
+
+        c.setUser("Sap"); //need to do login, get label
+        c.setDateOfCreation("01-01-2000"); //get date object
+        c.setNameOfCustomization(txtJSONName.getText() + "Customization");
+        c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
+        c.setType(txtVarType.getText());
+        c.setExternalWorkOrderId(txtVarExternalWorkOrderid.getText());
+        c.setSystemStatus(txtVarSystemStatus.getText());
+        c.setUserStatus(txtVarUserStatus.getText());
+        c.setName(txtVarName.getText());
+        c.setPriority(txtVarPriority.getText());
+        c.setStatus(txtVarSystemStatus.getText());
+        c.setLatestFinishDate(txtVarLatestFinishDate.getText());
+        c.setEarliestStartDate(txtVarEarliestStartDate.getText());
+        c.setLatestStartDate(txtVarLatestStartDate.getText());
+        c.setEstimatedTime(txtVarEstimatedTime.getText());
+
+        model.addCustomizationToDB(c);
+        System.out.println("Conversion saved");
+        
+    }
+
+    public Customization getSelectedCustomization()
+    {
+        return cbxCustomization.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    private void clickDeleteCustomization(ActionEvent event)
+    {
+        model.removeCustomizationFromDb(getSelectedCustomization());
+        System.out.println("Customization deleted");
+    }
+    /**
+     * It makes the mainwindow able to open the other windows.
+     * @param parent 
+     */
+    public void setParentWindowController(LoginViewController parent)
+    {
+        this.parent = parent;
+    }
+
+    @FXML
+    private void clickOpenTraceLogViev(ActionEvent event) throws IOException
+    {
+        Stage stage = new Stage();
+
+        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/LogView.fxml"));
+
+        Parent root = fxLoader.load();
+
+        LogViewController controller = fxLoader.getController();
+        controller.setParentWindowController(parent);
+
+        Scene scene = new Scene(root);
+        stage.setTitle("Conversion");
+        stage.setScene(scene);
+        stage.show();
+
+        Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
+        
+    }
+
+>>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 }

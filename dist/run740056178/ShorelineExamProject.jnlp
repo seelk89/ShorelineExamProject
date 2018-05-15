@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="ShorelineExamProject.jar" size="42945" download="eager" />
-=======
-    <jar href="ShorelineExamProject.jar" size="44755" download="eager" />
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
+    <jar href="ShorelineExamProject.jar" size="43499" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\curvesapi-1.04.jar" size="98365" download="eager" />
     <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
