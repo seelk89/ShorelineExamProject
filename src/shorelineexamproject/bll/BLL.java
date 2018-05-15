@@ -14,9 +14,14 @@ import java.util.List;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
+import shorelineexamproject.be.LogIn;
+import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.dal.DAOJSONWriter;
+import shorelineexamproject.dal.DAOLogIn;
+import shorelineexamproject.dal.DAOTraceLog;
 import shorelineexamproject.dal.DAOXLSXReader;
+import shorelineexamproject.dal.DAOTraceLog;
 
 /**
  *
@@ -24,14 +29,17 @@ import shorelineexamproject.dal.DAOXLSXReader;
  */
 public class BLL
 {
-
     private DAOXLSXReader daoXLSXReader = new DAOXLSXReader();
     private DAOJSONWriter daoJSONWriter = new DAOJSONWriter();
     private DAOCustomization daoCustomization;
+    private DAOLogIn daoLogIn;
+    private DAOTraceLog daoTraceLog;
 
     public BLL() throws IOException
     {
         this.daoCustomization = new DAOCustomization();
+        this.daoLogIn = new DAOLogIn();
+        this.daoTraceLog = new DAOTraceLog();
     }
 
     public List<ListViewObject> readXLSXHeaders(String filepath)
@@ -89,5 +97,25 @@ public class BLL
     public void removeCustomizationFromDb(Customization selectedCustomization)
     {
         daoCustomization.removeCustomizationFromDb(selectedCustomization);
+    }
+
+    public boolean UserLogin(String userName, String password)
+    {
+        return daoLogIn.UserLogin(userName, password);
+    }
+
+    public void addUserToDB(LogIn l)
+    {
+        daoLogIn.addUserToDB(l);
+    }
+
+    public List<TraceLog> getAllTraceLogs()
+    {
+        return daoTraceLog.getAllTraceLogs();
+    }
+    
+     public void addTraceLogToDB(TraceLog t)
+    {
+        daoTraceLog.addTraceLogToDB(t);
     }
 }

@@ -50,6 +50,7 @@ import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
+import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -105,7 +106,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnDeleteCustomization;
     @FXML
-    private Label lblUser;
+    protected Label lblUser;
     @FXML
     private JFXButton btnOpenTraceLogView;
 
@@ -158,11 +159,12 @@ public class ConversionViewController implements Initializable
     //doing jeppes stuff
     private boolean stopped = false;
     private boolean paused = false;
+    private LoginViewController parent;
 
     private Model model;
-    
-    private LoginViewController parent;
-    
+    @FXML
+    private JFXButton btnSaveTraceLog;
+
     public ConversionViewController() throws IOException
     {
         this.model = new Model();
@@ -173,6 +175,13 @@ public class ConversionViewController implements Initializable
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
+    {
+        tooltiplist();
+        cbxCustomizationInitialize();
+        lstHeadersInitialize();
+    }
+
+    private void tooltiplist()
     {
         //Tooltip setup
         assetSerialNumberTooltip.setText("Asset id");
@@ -197,9 +206,6 @@ public class ConversionViewController implements Initializable
         txtVarLatestStartDate.setTooltip(latestStartDateTooltip);
         estimatedTimeTooltip.setText("EastimatedTime");
         txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
-
-        cbxCustomizationInitialize();
-        lstHeadersInitialize();
     }
 
     private void lstHeadersInitialize()
@@ -222,7 +228,7 @@ public class ConversionViewController implements Initializable
 
     private void cbxCustomizationInitialize()
     {
-        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations())); //doesn't work
+        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations()));
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
         {
@@ -239,7 +245,7 @@ public class ConversionViewController implements Initializable
             txtVarEstimatedTime.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEstimatedTime());
         });
     }
-    
+
     /**
      * task w. jeppes help
      */
@@ -303,7 +309,6 @@ public class ConversionViewController implements Initializable
 //                {
 //                    btnTask.setText("Start");
 //                }
-
             }
             return null;
         }
@@ -786,7 +791,7 @@ public class ConversionViewController implements Initializable
         Customization c = new Customization();
 
         c.setUser("Sap"); //need to do login, get label
-        c.setDateOfCreation("01-01-2000"); //get date object
+        c.setDateOfCreation(model.getDate()); //get date object
         c.setNameOfCustomization(txtJSONName.getText() + "Customization");
         c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
         c.setType(txtVarType.getText());
@@ -803,7 +808,7 @@ public class ConversionViewController implements Initializable
 
         model.addCustomizationToDB(c);
         System.out.println("Conversion saved");
-        
+        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
 
     public Customization getSelectedCustomization()
@@ -816,10 +821,13 @@ public class ConversionViewController implements Initializable
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
         System.out.println("Customization deleted");
+        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
+
     /**
      * It makes the mainwindow able to open the other windows.
-     * @param parent 
+     *
+     * @param parent
      */
     public void setParentWindowController(LoginViewController parent)
     {
@@ -844,7 +852,21 @@ public class ConversionViewController implements Initializable
         stage.show();
 
         Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
-        
+    }
+
+    @FXML
+    private void clickSaveTraceLog(ActionEvent event)
+    {
+        TraceLog t = new TraceLog();
+
+        t.setUser(lblUser.getText()); //need to do login, get label
+        t.setFileName(txtJSONName.getText() + ".json");
+        t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
+        t.setDate(model.getDate());
+        t.setError("Error message");
+
+        model.addTraceLogToDB(t);
+        System.out.println("TraceLog saved");
     }
 
 }
