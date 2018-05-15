@@ -100,13 +100,14 @@ public class ConversionViewController implements Initializable
     private Label lblConversionComplete;
     @FXML
     private JFXButton btnFileLocation;
-
-
-    Tooltip tooltip = new Tooltip();
-
-
+    @FXML
+    private JFXButton btnSaveCustomization;
+    @FXML
+    private JFXButton btnDeleteCustomization;
     @FXML
     private Label lblUser;
+    @FXML
+    private JFXButton btnOpenTraceLogView;
 
     //Tooltip creations
     private Tooltip directoryTooltip = new Tooltip();
@@ -122,10 +123,6 @@ public class ConversionViewController implements Initializable
     private Tooltip earliestStartDateTooltip = new Tooltip();
     private Tooltip latestStartDateTooltip = new Tooltip();
     private Tooltip estimatedTimeTooltip = new Tooltip();
-<<<<<<< HEAD
-=======
-    
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -162,18 +159,10 @@ public class ConversionViewController implements Initializable
     private boolean stopped = false;
     private boolean paused = false;
 
-    Model model;
-
-<<<<<<< HEAD
-=======
-    @FXML
-    private JFXButton btnSaveCustomization;
-    @FXML
-    private JFXButton btnDeleteCustomization;
+    private Model model;
+    
     private LoginViewController parent;
-    @FXML
-    private JFXButton btnOpenTraceLogView;
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
+    
     public ConversionViewController() throws IOException
     {
         this.model = new Model();
@@ -250,6 +239,7 @@ public class ConversionViewController implements Initializable
             txtVarEstimatedTime.setText(cbxCustomization.getSelectionModel().getSelectedItem().getEstimatedTime());
         });
     }
+    
     /**
      * task w. jeppes help
      */
@@ -313,10 +303,7 @@ public class ConversionViewController implements Initializable
 //                {
 //                    btnTask.setText("Start");
 //                }
-<<<<<<< HEAD
-=======
 
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
             }
             return null;
         }
@@ -601,20 +588,11 @@ public class ConversionViewController implements Initializable
             System.out.println(directory);
             btnFileLocation.setText("File location");
 
-<<<<<<< HEAD
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
-=======
 
-            tooltip.setText(directory);
-            btnFileLocation.setTooltip(tooltip);
-
-
-            
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
-            
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 
             directoryChosen = true;
         } else
@@ -802,9 +780,6 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
-<<<<<<< HEAD
-=======
-
     @FXML
     private void clickSaveCustomization(ActionEvent event)
     {
@@ -872,5 +847,4 @@ public class ConversionViewController implements Initializable
         
     }
 
->>>>>>> ea819ef79801e1a4b5d1768378cb86a831e94c0d
 }
