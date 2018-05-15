@@ -138,7 +138,6 @@ public class ConversionViewController implements Initializable
     //Variables for use with threads
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
-    private final AtomicBoolean done = new AtomicBoolean(false);
 
     //Indicates progress of a given task
     double progress = 1;
@@ -264,8 +263,6 @@ public class ConversionViewController implements Initializable
                     model.CreateJSONFile(directory, fileName, jarray);
 
                     //For progress
-//                    filesDone.set(i + 1);
-//                    System.out.println(filesDone);
                     updateProgress(i + 1, lstAbsolutePaths.size());
                     updateMessage((i + 1) + " Files done");
 
@@ -284,8 +281,6 @@ public class ConversionViewController implements Initializable
                     lstVarDescription2.clear();
                 }
 
-                //For progress
-//                progress = 1;
                 stopped = true;
                 stop();
 
@@ -298,9 +293,6 @@ public class ConversionViewController implements Initializable
         }
     };
 
-    //platform run later for progress bar
-//                prgBar.setProgress(task.getProgress());
-//                prgBar1.setProgress(task.getProgress());
     /**
      * Starts a task
      */
@@ -518,9 +510,6 @@ public class ConversionViewController implements Initializable
     {
         JSONArray mainjsonArray = new JSONArray();
 
-        //For indicating progress
-//        progress = progress / lstVarType.size();
-//        System.out.println(progress);
         for (int i = 0; i < lstVarType.size(); i++)
         {
             JSONObject obj = new JSONObject();
@@ -563,8 +552,6 @@ public class ConversionViewController implements Initializable
 
             mainjsonArray.put(obj);
 
-            //for measuring progress
-//            progress = progress + progress;
         }
         System.out.println(mainjsonArray);
         return mainjsonArray;
