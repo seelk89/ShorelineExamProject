@@ -14,12 +14,9 @@ import java.util.List;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
-<<<<<<< HEAD
 import shorelineexamproject.dal.DAOCSVReader;
-=======
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.be.TraceLog;
->>>>>>> 8538cbc52d3862e3376f84288da7cb2e50fc0ff2
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.dal.DAOJSONWriter;
 import shorelineexamproject.dal.DAOLogIn;
@@ -56,6 +53,12 @@ public class BLL
             String header, ArrayList<String> headerList)
     {
         daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
+    }
+    
+    public void getCSVHeaderValues(String filepath,
+            String header, ArrayList<String> headerList)
+    {
+        daoCSVReader.getCSVHeaderValues(filepath, header, headerList);
     }
     
     public List<ListViewObject>readCSVHeaders(String filepath)

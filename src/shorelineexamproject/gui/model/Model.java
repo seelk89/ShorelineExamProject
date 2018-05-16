@@ -67,6 +67,12 @@ public class Model
     {
         bll.getXLSXHeaderValues(filepath, header, headerList);
     }
+    
+    public void getCSVHeaderValues(String filepath,
+            String header, ArrayList<String> headerList)
+    {
+        bll.getCSVHeaderValues(filepath, header, headerList);
+    }
 
     public String getDate()
     {
