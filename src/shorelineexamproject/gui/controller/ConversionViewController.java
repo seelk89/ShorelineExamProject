@@ -36,12 +36,9 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -317,9 +314,11 @@ public class ConversionViewController implements Initializable
         stopped = false;
         paused = false;
 
+        //Binds the progress bar to the task
         prgConversion.progressProperty().unbind();
         prgConversion.progressProperty().bind(task.progressProperty());
 
+        //Gets a message from the task
         task.messageProperty().addListener(new ChangeListener<String>()
         {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
@@ -333,9 +332,10 @@ public class ConversionViewController implements Initializable
             thread = new Thread(task);
         }
 
+        //Daemon, stops the task if the main thread is stopped
         thread.setDaemon(true);
+        
         thread.start();
-
     }
 
     /**
@@ -392,7 +392,6 @@ public class ConversionViewController implements Initializable
         return suspend.get();
     }
 
-    //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
     {
@@ -410,8 +409,7 @@ public class ConversionViewController implements Initializable
             System.out.println("stopped");
         }
     }
-
-    //Placeholder pause/resume button
+    
     //jeppes stuff
     @FXML
     private void clickPauseTask(ActionEvent event) throws InterruptedException
@@ -452,12 +450,16 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickGet(ActionEvent event)
     {
+        lstAbsolutePaths.clear();
+        
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
 
-        //Adds a file filter that will only allow xlsx files (excel output files)
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
-        fileChooser.getExtensionFilters().add(extFilter);
+        //Adds a file filter that will only allow xlsx or csv files
+        FileChooser.ExtensionFilter xlsxFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
+        FileChooser.ExtensionFilter csvFilter = new FileChooser.ExtensionFilter("(*.csv)", "*.csv");
+        fileChooser.getExtensionFilters().add(xlsxFilter);
+        fileChooser.getExtensionFilters().add(csvFilter);
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
@@ -471,7 +473,13 @@ public class ConversionViewController implements Initializable
 
         //Clears the ListView and adds headers from xlsx file
         lstHeaders.getItems().clear();
-        readXLSXHeaders(lstAbsolutePaths.get(0));
+        if(lstAbsolutePaths.get(0).endsWith(".xlsx"))
+        {
+            lstHeaders.getItems().addAll(model.readXLSXHeaders(lstAbsolutePaths.get(0)));
+        } else if (lstAbsolutePaths.get(0).endsWith(".csv"))
+        {
+             lstHeaders.getItems().addAll(model.readCSVHeaders(lstAbsolutePaths.get(0)));
+        }
     }
 
     /**

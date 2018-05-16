@@ -35,6 +35,7 @@ public class Model
 //    private Model()
 //    {
 //    }
+    
     //not sure if method below is needed
     public ObservableList<Customization> cList = FXCollections.observableArrayList();
 
@@ -53,6 +54,11 @@ public class Model
         return bll.readXLSXHeaders(filepath);
     }
 
+    public List<ListViewObject> readCSVHeaders(String filepath)
+    {
+        return bll.readCSVHeaders(filepath);
+    }
+    
     public void getXLSXHeaderValues(String filepath,
             String header, ArrayList<String> headerList)
     {

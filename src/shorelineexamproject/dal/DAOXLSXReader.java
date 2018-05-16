@@ -148,6 +148,7 @@ public class DAOXLSXReader
                 headerWithoutNumeration = header.substring(0, header.lastIndexOf(" "));
             }
 
+            
             //Get the workbook instance for xlsx file 
             XSSFWorkbook workbook = new XSSFWorkbook(file);
 
@@ -187,7 +188,6 @@ public class DAOXLSXReader
                                     {
                                         headerList.add(r.getCell(colIndex).toString());
                                     }
-
                                 }
                             }
                         }

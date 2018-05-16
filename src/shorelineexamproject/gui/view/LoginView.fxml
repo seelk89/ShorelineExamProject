@@ -11,7 +11,7 @@
    <children>
       <ImageView fx:id="imgLogo" fitHeight="53.0" fitWidth="54.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
          <image>
-            <Image url="@../../../../images/SLLogo.PNG" />
+            <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
       <JFXTextField fx:id="txtUser" focusColor="#0c8bb8" layoutX="68.0" layoutY="51.0" promptText="User" unFocusColor="#0b6074" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="51.0" />
