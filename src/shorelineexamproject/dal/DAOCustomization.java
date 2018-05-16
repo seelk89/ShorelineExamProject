@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import shorelineexamproject.dal.database.connection.DBConnector;
 import shorelineexamproject.be.Customization;
+import shorelineexamproject.dal.database.connection.ConnectionPool;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -25,11 +27,13 @@ import shorelineexamproject.be.Customization;
 public class DAOCustomization
 {
 
+    private final ConnectionPool conPool;
     private final DBConnector cm;
 
-    public DAOCustomization() throws IOException
+    public DAOCustomization() throws IOException, DalException
     {
         this.cm = new DBConnector();
+        this.conPool = new ConnectionPool();
     }
 
     /**
@@ -37,13 +41,13 @@ public class DAOCustomization
      *
      * @return
      */
-    public List<Customization> getAllCustomizations()
+    public List<Customization> getAllCustomizations() throws DalException
     {
         System.out.println("Getting all Customizations.");
 
         List<Customization> allCustomizations = new ArrayList();
-//might be this we need to change in order to make a connectionpool
-        try (Connection con = cm.getConnection())
+Connection con = conPool.checkOut(); //added this
+        try 
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM Customization");
             ResultSet rs = stmt.executeQuery();
@@ -75,6 +79,10 @@ public class DAOCustomization
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
+        finally
+        {
+            conPool.checkIn(con); //and this
+        }
         return allCustomizations;
     }
 
@@ -83,9 +91,10 @@ public class DAOCustomization
      *
      * @param c
      */
-    public void addCustomizationToDB(Customization c)
+    public void addCustomizationToDB(Customization c) throws DalException
     {
-        try (Connection con = cm.getConnection())
+        Connection con = conPool.checkOut(); //added this
+        try 
         {
             String sql
                     = "INSERT INTO Customization"
@@ -127,6 +136,10 @@ public class DAOCustomization
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
+        finally
+        {
+            conPool.checkIn(con); //and this
+        }
     }
 
     /**
@@ -134,9 +147,9 @@ public class DAOCustomization
      *
      * @param selectedCustomization
      */
-    public void removeCustomizationFromDb(Customization selectedCustomization)
-    {
-        try (Connection con = cm.getConnection())
+    public void removeCustomizationFromDb(Customization selectedCustomization) throws DalException
+    {Connection con = conPool.checkOut(); //added this
+        try 
         {
             String sql
                     = "DELETE FROM Customization WHERE nameOfCustomization=? ";
@@ -149,6 +162,10 @@ public class DAOCustomization
         {
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
+        }
+        finally
+        {
+            conPool.checkIn(con); //and this
         }
     }
 

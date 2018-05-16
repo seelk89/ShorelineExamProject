@@ -51,6 +51,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.TraceLog;
+import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -162,12 +163,10 @@ public class ConversionViewController implements Initializable
     private LoginViewController parent;
 
     private Model model;
-    @FXML
-    private JFXButton btnSaveTraceLog;
 
-    public ConversionViewController() throws IOException
+    public ConversionViewController() throws IOException, DalException
     {
-        this.model = new Model();
+        this.model = Model.getInstance();
     }
 
     /**
@@ -177,7 +176,13 @@ public class ConversionViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         tooltiplist();
-        cbxCustomizationInitialize();
+        try
+        {
+            cbxCustomizationInitialize();
+        } catch (DalException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         lstHeadersInitialize();
     }
 
@@ -226,9 +231,9 @@ public class ConversionViewController implements Initializable
         });
     }
 
-    private void cbxCustomizationInitialize()
+    private void cbxCustomizationInitialize() throws DalException
     {
-        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations()));
+        cbxCustomization.setItems(model.getAllCustomizations());
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
         {
@@ -302,6 +307,7 @@ public class ConversionViewController implements Initializable
                     lstVarDescription2.clear();
                 }
 
+                SaveTraceLog();
                 stopped = true;
                 stop();
 
@@ -466,17 +472,17 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files.size() > 0)
+        if (files != null && files.size() > 0)
         {
             files.forEach((File file) ->
             {
                 lstAbsolutePaths.add(file.getAbsolutePath());
             });
+            //Clears the ListView and adds headers from xlsx file
+            lstHeaders.getItems().clear();
+            readXLSXHeaders(lstAbsolutePaths.get(0));
         }
 
-        //Clears the ListView and adds headers from xlsx file
-        lstHeaders.getItems().clear();
-        readXLSXHeaders(lstAbsolutePaths.get(0));
     }
 
     /**
@@ -786,7 +792,7 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void clickSaveCustomization(ActionEvent event)
+    private void clickSaveCustomization(ActionEvent event) throws DalException
     {
         Customization c = new Customization();
 
@@ -808,7 +814,7 @@ public class ConversionViewController implements Initializable
 
         model.addCustomizationToDB(c);
         System.out.println("Conversion saved");
-        cbxCustomizationInitialize(); //get a nullpointer but it works?
+
     }
 
     public Customization getSelectedCustomization()
@@ -817,11 +823,11 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void clickDeleteCustomization(ActionEvent event)
+    private void clickDeleteCustomization(ActionEvent event) throws DalException
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
         System.out.println("Customization deleted");
-        cbxCustomizationInitialize(); //get a nullpointer but it works?
+      
     }
 
     /**
@@ -854,8 +860,7 @@ public class ConversionViewController implements Initializable
         Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
     }
 
-    @FXML
-    private void clickSaveTraceLog(ActionEvent event)
+    private void SaveTraceLog() throws DalException
     {
         TraceLog t = new TraceLog();
 
