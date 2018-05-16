@@ -54,7 +54,6 @@ public class DAOTraceLog
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM TraceLog");
             ResultSet rs = stmt.executeQuery();
 
-            System.out.println(con); //how many connections are there even?
             while (rs.next())
             {
                 TraceLog t = new TraceLog();

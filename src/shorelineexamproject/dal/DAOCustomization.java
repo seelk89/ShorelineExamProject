@@ -46,8 +46,8 @@ public class DAOCustomization
         System.out.println("Getting all Customizations.");
 
         List<Customization> allCustomizations = new ArrayList();
-Connection con = conPool.checkOut(); //added this
-        try 
+        Connection con = conPool.checkOut(); //added this
+        try
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM Customization");
             ResultSet rs = stmt.executeQuery();
@@ -78,8 +78,7 @@ Connection con = conPool.checkOut(); //added this
         {
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
-        }
-        finally
+        } finally
         {
             conPool.checkIn(con); //and this
         }
@@ -94,7 +93,7 @@ Connection con = conPool.checkOut(); //added this
     public void addCustomizationToDB(Customization c) throws DalException
     {
         Connection con = conPool.checkOut(); //added this
-        try 
+        try
         {
             String sql
                     = "INSERT INTO Customization"
@@ -135,8 +134,7 @@ Connection con = conPool.checkOut(); //added this
         {
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
-        }
-        finally
+        } finally
         {
             conPool.checkIn(con); //and this
         }
@@ -148,8 +146,9 @@ Connection con = conPool.checkOut(); //added this
      * @param selectedCustomization
      */
     public void removeCustomizationFromDb(Customization selectedCustomization) throws DalException
-    {Connection con = conPool.checkOut(); //added this
-        try 
+    {
+        Connection con = conPool.checkOut(); //added this
+        try
         {
             String sql
                     = "DELETE FROM Customization WHERE nameOfCustomization=? ";
@@ -162,8 +161,7 @@ Connection con = conPool.checkOut(); //added this
         {
             Logger.getLogger(DAOCustomization.class.getName()).log(
                     Level.SEVERE, null, ex);
-        }
-        finally
+        } finally
         {
             conPool.checkIn(con); //and this
         }
