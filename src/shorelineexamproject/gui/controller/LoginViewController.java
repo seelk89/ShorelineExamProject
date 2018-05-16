@@ -6,6 +6,7 @@
 package shorelineexamproject.gui.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
@@ -18,8 +19,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import shorelineexamproject.be.LogIn;
+import shorelineexamproject.gui.model.Model;
 
 /**
  *
@@ -33,13 +37,21 @@ public class LoginViewController implements Initializable
     @FXML
     private JFXTextField txtUser;
     @FXML
-    private JFXTextField txtPassword;
+    private JFXPasswordField txtPassword;
     @FXML
     private JFXButton btnLogin;
     @FXML
     private JFXButton btnCreateUser;
     @FXML
     private Label lblErrorMessage;
+    @FXML
+    private Label lblError;
+    private Model model;
+
+    public LoginViewController() throws IOException
+    {
+        this.model = new Model();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -50,6 +62,12 @@ public class LoginViewController implements Initializable
     @FXML
     private void clickLogin(ActionEvent event) throws IOException
     {
+        String userName = txtUser.getText();
+        String password = txtPassword.getText();
+
+//comment in the if statement if you want login to work, remember both {start and end bracket}
+//        if (model.UserLogin(userName, password) == true)
+//        {
         Stage stage = new Stage();
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/ConversionView.fxml"));
@@ -58,6 +76,7 @@ public class LoginViewController implements Initializable
 
         ConversionViewController controller = fxLoader.getController();
         controller.setParentWindowController(this);
+        controller.lblUser.setText(userName);
 
         Scene scene = new Scene(root);
         stage.setTitle("Conversion");
@@ -66,12 +85,29 @@ public class LoginViewController implements Initializable
 
         Stage window = (Stage) btnLogin.getScene().getWindow();
         window.close();
-
+//        }
+        //could make login button red and make a tooltip appear instead, cant make this look nice
+        lblError.setText("Wrong Username/password");
+        lblError.setTextFill(Color.web("#ff0000"));
     }
 
     @FXML
     private void clickCreateUser(ActionEvent event)
     {
+        String userName = txtUser.getText();
+        String password = txtPassword.getText();
+//        if (model.UserLogin(username, password) == true) //if db doesn't already contain this username, make it
+//        {
+
+        LogIn l = new LogIn();
+        l.setUserName(userName);
+        l.setPassword(password);
+
+        model.addUserToDB(l);
+
+        lblError.setText("User Created");
+        lblError.setTextFill(Color.web("#0b6074"));
+//        }
     }
 
 }

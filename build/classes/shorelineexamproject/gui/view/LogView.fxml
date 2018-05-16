@@ -7,21 +7,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="388.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.LogViewController">
+=======
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="506.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.LogViewController">
+>>>>>>> 8538cbc52d3862e3376f84288da7cb2e50fc0ff2
    <children>
       <ImageView fitHeight="76.0" fitWidth="90.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
-      <TableView layoutX="14.0" layoutY="85.0" prefHeight="302.0" prefWidth="360.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+      <TableView fx:id="tableLog" layoutX="14.0" layoutY="85.0" prefHeight="302.0" prefWidth="360.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="User" />
-            <TableColumn prefWidth="85.0" text="File name" />
-            <TableColumn prefWidth="124.0" text="Customization" />
-          <TableColumn prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="columnUser" prefWidth="75.0" text="User" />
+            <TableColumn fx:id="columnFileName" prefWidth="85.0" text="File name" />
+            <TableColumn fx:id="columnCustomization" prefWidth="116.79997253417969" text="Customization" />
+          <TableColumn fx:id="columnDate" minWidth="3.20001220703125" prefWidth="67.199951171875" text="Date" />
+            <TableColumn fx:id="columnError" prefWidth="132.800048828125" text="Error" />
         </columns>
       </TableView>
-      <JFXTextField layoutX="110.0" layoutY="46.0" prefHeight="25.0" prefWidth="80.0" promptText="Search" />
+      <JFXTextField fx:id="txtSearch" layoutX="110.0" layoutY="46.0" onKeyReleased="#txtSearchField" prefHeight="25.0" prefWidth="80.0" promptText="Search" />
    </children>
 </AnchorPane>

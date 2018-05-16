@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="ShorelineExamProject.jar" size="47344" download="eager" />
+=======
+    <jar href="ShorelineExamProject.jar" size="51954" download="eager" />
+>>>>>>> 8538cbc52d3862e3376f84288da7cb2e50fc0ff2
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\commons-csv-1.5-sources.jar" size="45201" download="eager" />
     <jar href="lib\commons-csv-1.5.jar" size="41586" download="eager" />

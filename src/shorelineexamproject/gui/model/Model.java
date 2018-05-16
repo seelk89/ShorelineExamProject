@@ -14,6 +14,8 @@ import javafx.collections.ObservableList;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
+import shorelineexamproject.be.LogIn;
+import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.bll.BLL;
 
 /**
@@ -38,6 +40,7 @@ public class Model
     
     //not sure if method below is needed
     public ObservableList<Customization> cList = FXCollections.observableArrayList();
+    private ObservableList<TraceLog> logList = FXCollections.observableArrayList();
 
     public synchronized static Model getInstance() throws IOException
     {
@@ -103,5 +106,34 @@ public class Model
     public void removeCustomizationFromDb(Customization selectedCustomization)
     {
         bll.removeCustomizationFromDb(selectedCustomization);
+    }
+
+    public boolean UserLogin(String userName, String password)
+    {
+        return bll.UserLogin(userName, password);
+    }
+
+    public void addUserToDB(LogIn l)
+    {
+        bll.addUserToDB(l);
+    }
+
+    public ObservableList<TraceLog> getTraceLogList()
+    {
+        return logList;
+    }
+
+//        public List<TraceLog> getAllTraceLogs()
+//    {
+//        return bll.getAllTraceLogs();
+//    }
+    public void loadTraceLog()
+    {
+        logList.setAll(bll.getAllTraceLogs());
+    }
+
+    public void addTraceLogToDB(TraceLog t)
+    {
+        bll.addTraceLogToDB(t);
     }
 }
