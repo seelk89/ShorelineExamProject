@@ -181,7 +181,10 @@ public class ConversionViewController implements Initializable
         lstHeadersInitialize();
         
         String desktopPath = System.getProperty("user.home") + "\\Desktop";
-        System.out.println(desktopPath);
+        directory = desktopPath;
+        
+        directoryTooltip.setText(directory);
+        btnFileLocation.setTooltip(directoryTooltip);
     }
 
     /**
@@ -623,11 +626,6 @@ public class ConversionViewController implements Initializable
 
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
-
-            directoryTooltip.setText(directory);
-            btnFileLocation.setTooltip(directoryTooltip);
-            
-            System.out.println(directory);
 
             directoryChosen = true;
         } else
