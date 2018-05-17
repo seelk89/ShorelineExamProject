@@ -15,26 +15,10 @@ import javax.activation.DataSource;
 
 /**
  *
- * @author ...
+ * @author pgn
  */
 public class DBConnector
 {
-//      private static final String CONFIG_FILE_NAME = "MechaChatDB.props";
-//    private final SQLServerDataSource ds;
-//
-//    public DBConnector() throws IOException
-//    {
-//        Properties props = new Properties();
-//        props.load(new FileReader(CONFIG_FILE_NAME));
-//
-//        ds = new SQLServerDataSource();
-//        ds.setServerName(props.getProperty("SERVER"));
-//        ds.setDatabaseName(props.getProperty("DATABASE"));
-//        ds.setPortNumber(Integer.parseInt(props.getProperty("PORT")));
-//        ds.setUser(props.getProperty("USER"));
-//        ds.setPassword(props.getProperty("PASSWORD"));
-//}
-    
     private final SQLServerDataSource ds;
 
     public DBConnector() throws IOException

@@ -8,13 +8,7 @@ package shorelineexamproject.dal;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import org.json.JSONArray;
-import org.json.JSONObject;
-import shorelineexamproject.dal.DAOXLSXReader;
-import shorelineexamproject.gui.model.Model;
 
 /**
  *

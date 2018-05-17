@@ -48,11 +48,8 @@
       <JFXButton fx:id="btnOpenTraceLogView" layoutX="490.0" layoutY="3.0" onAction="#clickOpenTraceLogViev" text="TraceLogView" />
 
       <Label fx:id="lblUser" layoutX="96.0" layoutY="31.0" text="User" />
-<<<<<<< HEAD
       <JFXButton fx:id="btnSaveTraceLog" layoutX="494.0" layoutY="26.0" onAction="#clickSaveTraceLog" text="Save TraceLog" />
-      <Label fx:id="lblError" layoutX="480.0" layoutY="150.0" text="Error" textFill="RED" />
-=======
->>>>>>> ecf251e4c60a621a73731f8205b6eec17d72b333
+      <Label fx:id="lblError" layoutX="502.0" layoutY="89.0" text="Error" textFill="RED" />
 
 
    </children>

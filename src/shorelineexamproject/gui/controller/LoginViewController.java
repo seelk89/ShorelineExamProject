@@ -23,7 +23,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import shorelineexamproject.be.LogIn;
-import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -37,27 +36,28 @@ public class LoginViewController implements Initializable
     private ImageView imgLogo;
     @FXML
     private JFXTextField txtUser;
-    @FXML
-    private JFXPasswordField txtPassword;
+    
     @FXML
     private JFXButton btnLogin;
+    @FXML
+    private JFXPasswordField txtPassword;
     @FXML
     private JFXButton btnCreateUser;
     @FXML
     private Label lblErrorMessage;
     @FXML
     private Label lblError;
+    
     private Model model;
 
-    public LoginViewController() throws IOException, DalException
+    public LoginViewController() throws IOException
     {
-        this.model = Model.getInstance();
+        this.model = new Model();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
     }
 
     @FXML
@@ -88,12 +88,12 @@ public class LoginViewController implements Initializable
         window.close();
 //        }
         //could make login button red and make a tooltip appear instead, cant make this look nice
-        lblError.setText("Wrong Username/password");
+        lblError.setText("Wrong Username/Password");
         lblError.setTextFill(Color.web("#ff0000"));
     }
 
     @FXML
-    private void clickCreateUser(ActionEvent event) throws DalException
+    private void clickCreateUser(ActionEvent event)
     {
         String userName = txtUser.getText();
         String password = txtPassword.getText();

@@ -36,12 +36,9 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.Tooltip;
@@ -51,7 +48,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.TraceLog;
-import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -168,9 +164,9 @@ public class ConversionViewController implements Initializable
 
     private Model model;
 
-    public ConversionViewController() throws IOException, DalException
+    public ConversionViewController() throws IOException
     {
-        this.model = Model.getInstance();
+        this.model = new Model();
     }
 
     /**
@@ -180,13 +176,7 @@ public class ConversionViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         tooltiplist();
-        try
-        {
-            cbxCustomizationInitialize();
-        } catch (DalException ex)
-        {
-            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        cbxCustomizationInitialize();
         lstHeadersInitialize();
     }
 
@@ -235,9 +225,9 @@ public class ConversionViewController implements Initializable
         });
     }
 
-    private void cbxCustomizationInitialize() throws DalException
+    private void cbxCustomizationInitialize()
     {
-        cbxCustomization.setItems(model.getAllCustomizations());
+        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations()));
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
         {
@@ -278,11 +268,6 @@ public class ConversionViewController implements Initializable
 
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
-                    if(stopped == true)
-                    {
-                        break;
-                    }
-                    
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
 
@@ -301,7 +286,6 @@ public class ConversionViewController implements Initializable
                     updateProgress(i + 1, lstAbsolutePaths.size());
                     updateMessage((i + 1) + " Files done");
 
-                    //Clearing lists
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
                     lstVarExternalWorkOrderId.clear();
@@ -316,19 +300,6 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
-<<<<<<< HEAD
-                
-=======
-
-                SaveTraceLog();
-                stopped = true;
-                stop();
-
->>>>>>> ecf251e4c60a621a73731f8205b6eec17d72b333
-//                if (btnTask.getText().equals("Stop"))
-//                {
-//                    btnTask.setText("Start");
-//                }
             }
             return null;
         }
@@ -339,19 +310,14 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
-        if(lstAbsolutePaths.size() > 0)
-        {
         stopped = false;
         paused = false;
 
+        //Binds the progress bar to the task
         prgConversion.progressProperty().unbind();
         prgConversion.progressProperty().bind(task.progressProperty());
-<<<<<<< HEAD
-        
-        //Gets a message from the task
-=======
 
->>>>>>> ecf251e4c60a621a73731f8205b6eec17d72b333
+        //Gets a message from the task
         task.messageProperty().addListener(new ChangeListener<String>()
         {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
@@ -365,16 +331,10 @@ public class ConversionViewController implements Initializable
             thread = new Thread(task);
         }
 
+        //Daemon, stops the task if the main thread is stopped
         thread.setDaemon(true);
-        thread.start();
-<<<<<<< HEAD
-        } else
-        {
-            lblError.setText("You need to get some files to convert");
-        }
-=======
 
->>>>>>> ecf251e4c60a621a73731f8205b6eec17d72b333
+        thread.start();
     }
 
     /**
@@ -383,20 +343,6 @@ public class ConversionViewController implements Initializable
     public void stop()
     {
         stopped = true;
-    }
-
-    /**
-     * Suspends task
-     */
-    private void suspendTask()
-    {
-        try
-        {
-            task.wait();
-        } catch (InterruptedException ex)
-        {
-            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     /**
@@ -431,7 +377,6 @@ public class ConversionViewController implements Initializable
         return suspend.get();
     }
 
-    //Placeholde start/stop button
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
     {
@@ -450,7 +395,6 @@ public class ConversionViewController implements Initializable
         }
     }
 
-    //Placeholder pause/resume button
     //jeppes stuff
     @FXML
     private void clickPauseTask(ActionEvent event) throws InterruptedException
@@ -472,18 +416,6 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * @param event
-     * @throws IOException Takes the String filepath of a xlsx file and finds
-     * the headers before putting them into a ListView Jesper
-     *
-     * @param filepath
-     */
-    private void readXLSXHeaders(String filepath)
-    {
-        lstHeaders.getItems().addAll(model.readXLSXHeaders(filepath));
-    }
-
-    /**
      * Opens a FileChooser that is only able to get xlsx files. Jesper
      *
      * @param event
@@ -491,45 +423,36 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickGet(ActionEvent event)
     {
+        lstAbsolutePaths.clear();
+
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");
 
-        //Adds a file filter that will only allow xlsx files (excel output files)
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
-        fileChooser.getExtensionFilters().add(extFilter);
+        //Adds a file filter that will only allow xlsx or csv files
+        FileChooser.ExtensionFilter xlsxFilter = new FileChooser.ExtensionFilter("(*.xlsx)", "*.xlsx");
+        FileChooser.ExtensionFilter csvFilter = new FileChooser.ExtensionFilter("(*.csv)", "*.csv");
+        fileChooser.getExtensionFilters().add(xlsxFilter);
+        fileChooser.getExtensionFilters().add(csvFilter);
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files != null && files.size() > 0)
+        if (files.size() > 0)
         {
             files.forEach((File file) ->
             {
                 lstAbsolutePaths.add(file.getAbsolutePath());
             });
-            //Clears the ListView and adds headers from xlsx file
-            lstHeaders.getItems().clear();
-            readXLSXHeaders(lstAbsolutePaths.get(0));
         }
 
-    }
-
-    /**
-     * Anni This method gets the name of the textfield and creates a new file
-     * with this name, and then it adds the obj to the file This method gets the
-     * name of the textfield and creates a new file with this name, and then it
-     * adds the obj to the file
-     *
-     * @param event
-     * @throws IOException
-     */
-    private void clickCreateJSONFile(ActionEvent event) throws IOException
-    {
-        //fillListsWithExcel();
-
-        String fileName = txtJSONName.getText() + ".json";
-
-        JSONArray jarray = CreateJsonObjects();
-        model.CreateJSONFile(directory, fileName, jarray);
+        //Clears the ListView and adds headers from xlsx file
+        lstHeaders.getItems().clear();
+        if (lstAbsolutePaths.get(0).endsWith(".xlsx"))
+        {
+            lstHeaders.getItems().addAll(model.readXLSXHeaders(lstAbsolutePaths.get(0)));
+        } else if (lstAbsolutePaths.get(0).endsWith(".csv"))
+        {
+            lstHeaders.getItems().addAll(model.readCSVHeaders(lstAbsolutePaths.get(0)));
+        }
     }
 
     /**
@@ -539,19 +462,37 @@ public class ConversionViewController implements Initializable
      */
     private void fillListsWithExcel(String absolutePath)
     {
-        model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
-        model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
-        model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
-        model.getXLSXHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
-        model.getXLSXHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
-        model.getXLSXHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
-        model.getXLSXHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
-        model.getXLSXHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
-        model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
-        model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
-        model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+        if (absolutePath.endsWith(".xlsx"))
+        {
+            model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
+            model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
+            model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
+            model.getXLSXHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
+            model.getXLSXHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
+            model.getXLSXHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
+            model.getXLSXHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
+            model.getXLSXHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
+            model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
+            model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
+            model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
 
-        model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
+            model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
+        } else if (absolutePath.endsWith(".csv"))
+        {
+            model.getCSVHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
+            model.getCSVHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
+            model.getCSVHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
+            model.getCSVHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
+            model.getCSVHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
+            model.getCSVHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
+            model.getCSVHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
+            model.getCSVHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
+            model.getCSVHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
+            model.getCSVHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
+            model.getCSVHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+
+            model.getCSVHeaderValues(absolutePath, "\"Description\" 2", lstVarDescription2);
+        }
     }
 
     /**
@@ -624,7 +565,11 @@ public class ConversionViewController implements Initializable
             File selectedDirectory = chooser.showDialog(stage);
 
             directory = selectedDirectory.getAbsolutePath();
+            System.out.println(directory);
             btnFileLocation.setText("File location");
+
+            directoryTooltip.setText(directory);
+            btnFileLocation.setTooltip(directoryTooltip);
 
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
@@ -816,7 +761,7 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void clickSaveCustomization(ActionEvent event) throws DalException
+    private void clickSaveCustomization(ActionEvent event)
     {
         Customization c = new Customization();
 
@@ -838,7 +783,7 @@ public class ConversionViewController implements Initializable
 
         model.addCustomizationToDB(c);
         System.out.println("Conversion saved");
-
+        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
 
     public Customization getSelectedCustomization()
@@ -847,11 +792,11 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void clickDeleteCustomization(ActionEvent event) throws DalException
+    private void clickDeleteCustomization(ActionEvent event)
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
         System.out.println("Customization deleted");
-      
+        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
 
     /**
@@ -884,7 +829,8 @@ public class ConversionViewController implements Initializable
         Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
     }
 
-    private void SaveTraceLog() throws DalException
+    @FXML
+    private void clickSaveTraceLog(ActionEvent event)
     {
         TraceLog t = new TraceLog();
 

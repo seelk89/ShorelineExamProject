@@ -13,7 +13,7 @@ import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
- * @author ...
+ * @author pgn
  */
 public class ConnectionPool extends ObjectPool<Connection>
 {
@@ -21,16 +21,10 @@ public class ConnectionPool extends ObjectPool<Connection>
     private Connection con;
     private DBConnector dbConnector;
 
-    public ConnectionPool() throws DalException
+    public ConnectionPool() throws DalException, IOException
     {
         super();
-        try
-        {
-            dbConnector = new DBConnector();
-        } catch (IOException ex)
-        {
-            throw new DalException("Error creating connection pool to database", ex);
-        }
+        dbConnector = new DBConnector();
 
     }
 

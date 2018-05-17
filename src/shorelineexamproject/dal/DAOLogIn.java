@@ -15,9 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.LogIn;
-import shorelineexamproject.dal.database.connection.ConnectionPool;
 import shorelineexamproject.dal.database.connection.DBConnector;
-import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -26,13 +24,11 @@ import shorelineexamproject.dal.exceptions.DalException;
 public class DAOLogIn
 {
 
-    private final ConnectionPool conPool;
     private final DBConnector cm;
 
-    public DAOLogIn() throws IOException, DalException
+    public DAOLogIn() throws IOException
     {
         this.cm = new DBConnector();
-        this.conPool = new ConnectionPool();
     }
 
     /**
@@ -43,10 +39,10 @@ public class DAOLogIn
      * @param password
      * @return
      */
-    public boolean UserLogin(String userName, String password) throws DalException
+    public boolean UserLogin(String userName, String password)
     {
-        Connection con = conPool.checkOut(); //added this
-        try
+
+        try (Connection con = cm.getConnection())
         {
             PreparedStatement stmt = con.prepareStatement("SELECT userName, password FROM [User] WHERE userName = ? AND password = ?");
             stmt.setString(1, userName);
@@ -61,10 +57,8 @@ public class DAOLogIn
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
-        } finally
-        {
-            conPool.checkIn(con); //and this
         }
+
         return false;
     }
 
@@ -74,10 +68,9 @@ public class DAOLogIn
      * @param userName
      * @param password
      */
-    public void addUserToDB(LogIn l) throws DalException
+    public void addUserToDB(LogIn l)
     {
-        Connection con = conPool.checkOut(); //added this
-        try
+        try (Connection con = cm.getConnection())
         {
             String sql
                     = "INSERT INTO [User]" //if [] are removed, error message says syntax near ","
@@ -104,9 +97,7 @@ public class DAOLogIn
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
-        } finally
-        {
-            conPool.checkIn(con); //and this
         }
+      
     }
 }
