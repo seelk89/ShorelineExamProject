@@ -33,16 +33,14 @@ public class DAOCustomization
     }
 
     /**
-     * This method gets all the movies on a list way.
+     * Gets all customizations in a list..
      *
      * @return
      */
     public List<Customization> getAllCustomizations()
     {
-        System.out.println("Getting all Customizations.");
-
         List<Customization> allCustomizations = new ArrayList();
-//might be this we need to change in order to make a connectionpool
+
         try (Connection con = cm.getConnection())
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM Customization");
@@ -130,7 +128,7 @@ public class DAOCustomization
     }
 
     /**
-     * Removes selected movie from Movie and CatMovie.
+     * Removes selected customization from the db table Customization
      *
      * @param selectedCustomization
      */

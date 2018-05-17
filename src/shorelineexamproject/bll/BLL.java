@@ -5,7 +5,6 @@
  */
 package shorelineexamproject.bll;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,7 +19,6 @@ import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.dal.DAOJSONWriter;
 import shorelineexamproject.dal.DAOLogIn;
-import shorelineexamproject.dal.DAOTraceLog;
 import shorelineexamproject.dal.DAOXLSXReader;
 import shorelineexamproject.dal.DAOTraceLog;
 
@@ -66,6 +64,10 @@ public class BLL
         return daoCSVReader.readCSVHeaders(filepath);
     }
 
+    /**
+     * Gets the current date and formats it the way it is needed.
+     * @return 
+     */
     public String getDate()
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -75,26 +77,9 @@ public class BLL
         return formattedDate;
     }
 
-    /**
-     *
-     * @param FileName
-     * @param objectilist
-     * @throws IOException
-     */
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         daoJSONWriter.CreateJSONFile(directory, fileName, jarray);
-    }
-
-    /**
-     *
-     * @param objectilist
-     * @return
-     */
-    public JSONArray CreateJsonObjects()
-    {
-        daoJSONWriter.CreateJsonObjects();
-        return null;
     }
 
     public List<Customization> getAllCustomizations()

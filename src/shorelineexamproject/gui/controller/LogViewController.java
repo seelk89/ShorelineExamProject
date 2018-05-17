@@ -5,7 +5,6 @@
  */
 package shorelineexamproject.gui.controller;
 
-import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.gui.model.Model;
 
@@ -39,8 +37,6 @@ public class LogViewController implements Initializable
     private TableColumn<TraceLog, String> columnDate;
     @FXML
     private TableColumn<TraceLog, String> columnError;
-    @FXML
-    private JFXTextField txtSearch;
     
     private Model model;
 
@@ -75,9 +71,4 @@ public class LogViewController implements Initializable
         this.parent = parent;
     }
 
-    @FXML
-    private void txtSearchField(KeyEvent event)
-    {
-        
-    }
 }

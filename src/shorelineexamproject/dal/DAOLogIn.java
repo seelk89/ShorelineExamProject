@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.dal.database.connection.DBConnector;
 
@@ -63,10 +62,9 @@ public class DAOLogIn
     }
 
     /**
-     * Adds an entry to login
+     * Adds a login entry to the db.
      *
-     * @param userName
-     * @param password
+     * @param l
      */
     public void addUserToDB(LogIn l)
     {
@@ -98,6 +96,6 @@ public class DAOLogIn
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
-      
+
     }
 }

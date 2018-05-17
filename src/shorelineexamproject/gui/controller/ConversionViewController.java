@@ -149,7 +149,7 @@ public class ConversionViewController implements Initializable
     //AbsolutePath for the file being read
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
-    //Variables for use with threads
+    //Variables for threads
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
 
@@ -157,9 +157,10 @@ public class ConversionViewController implements Initializable
     double progress = 1;
     AtomicInteger filesDone = new AtomicInteger();
 
-    //doing jeppes stuff
+    //task related instancefields
     private boolean stopped = false;
     private boolean paused = false;
+
     private LoginViewController parent;
 
     private Model model;
@@ -180,6 +181,9 @@ public class ConversionViewController implements Initializable
         lstHeadersInitialize();
     }
 
+    /**
+     * Initializes the tooltips
+     */
     private void tooltiplist()
     {
         //Tooltip setup
@@ -207,6 +211,9 @@ public class ConversionViewController implements Initializable
         txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
     }
 
+    /**
+     * Initializes the list of headers we get from the input file
+     */
     private void lstHeadersInitialize()
     {
         lstHeaders.setCellFactory((ListView<ListViewObject> param) -> new ListCell<ListViewObject>()
@@ -225,6 +232,10 @@ public class ConversionViewController implements Initializable
         });
     }
 
+    /**
+     * Initializes the cbxCustomizations by adding a listener that checks for a
+     * chosen customization and fills out the textfields if one is chosen
+     */
     private void cbxCustomizationInitialize()
     {
         cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations()));
@@ -246,7 +257,9 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * task w. jeppes help
+     * task for converting xlsx/csv to JSON. It runs while !stopped !paused, it
+     * also updates the progressbar, and at the end it clears the txtfields so
+     * it can get ready for a new conversion
      */
     private final Task task = new Task()
     {
@@ -306,7 +319,7 @@ public class ConversionViewController implements Initializable
     };
 
     /**
-     * Starts a task
+     * Starts a task, and gets progressbar info.
      */
     public void start()
     {
@@ -377,6 +390,12 @@ public class ConversionViewController implements Initializable
         return suspend.get();
     }
 
+    /**
+     * if this button is clicked it starts/stops a task.
+     *
+     * @param event
+     * @throws InterruptedException
+     */
     @FXML
     private void clickTask(ActionEvent event) throws InterruptedException
     {
@@ -391,11 +410,15 @@ public class ConversionViewController implements Initializable
             thread = null;
 
             btnTask.setText("Start");
-            System.out.println("stopped");
         }
     }
 
-    //jeppes stuff
+    /**
+     * pauses or resumes a task
+     *
+     * @param event
+     * @throws InterruptedException
+     */
     @FXML
     private void clickPauseTask(ActionEvent event) throws InterruptedException
     {
@@ -405,7 +428,6 @@ public class ConversionViewController implements Initializable
             synchronized (task)
             {
                 task.notify();
-
             }
 
             btnPauseTask.setText("Pause");
@@ -416,7 +438,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Opens a FileChooser that is only able to get xlsx files. Jesper
+     * Opens a FileChooser that is only able to get xlsx and csv files.
      *
      * @param event
      */
@@ -496,10 +518,9 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Anni method below converts excel to json by looping through a list that
-     * adds objects to an array.
+     * Converts excel or csv to json by looping through a list that adds objects
+     * to an array that is then sent to the db.
      *
-     * @param objectilist
      * @return
      */
     public JSONArray CreateJsonObjects()
@@ -547,12 +568,14 @@ public class ConversionViewController implements Initializable
             obj.put("planning", obj2);
 
             mainjsonArray.put(obj);
-
         }
-        System.out.println(mainjsonArray);
         return mainjsonArray;
     }
 
+    /**
+     * Chooses where to save the converted file.
+     * @param event 
+     */
     @FXML
     private void clickFileLocation(ActionEvent event)
     {
@@ -565,7 +588,6 @@ public class ConversionViewController implements Initializable
             File selectedDirectory = chooser.showDialog(stage);
 
             directory = selectedDirectory.getAbsolutePath();
-            System.out.println(directory);
             btnFileLocation.setText("File location");
 
             directoryTooltip.setText(directory);
@@ -588,7 +610,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Gets the selected ListViewObject Jesper
+     * Gets the selected ListViewObject 
      *
      * @return
      */
@@ -617,6 +639,10 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+    /**
+     * allows dragging
+     * @param event 
+     */
     @FXML
     private void overTxtTest(DragEvent event)
     {
@@ -760,13 +786,17 @@ public class ConversionViewController implements Initializable
         event.consume();
     }
 
+    /**
+     * Saves a new customization to the db and updates the boxlist
+     * @param event 
+     */
     @FXML
     private void clickSaveCustomization(ActionEvent event)
     {
         Customization c = new Customization();
 
-        c.setUser("Sap"); //need to do login, get label
-        c.setDateOfCreation(model.getDate()); //get date object
+        c.setUser(lblUser.getText());
+        c.setDateOfCreation(model.getDate());
         c.setNameOfCustomization(txtJSONName.getText() + "Customization");
         c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
         c.setType(txtVarType.getText());
@@ -782,8 +812,6 @@ public class ConversionViewController implements Initializable
         c.setEstimatedTime(txtVarEstimatedTime.getText());
 
         model.addCustomizationToDB(c);
-        System.out.println("Conversion saved");
-        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
 
     public Customization getSelectedCustomization()
@@ -795,8 +823,6 @@ public class ConversionViewController implements Initializable
     private void clickDeleteCustomization(ActionEvent event)
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
-        System.out.println("Customization deleted");
-        cbxCustomizationInitialize(); //get a nullpointer but it works?
     }
 
     /**
@@ -809,6 +835,11 @@ public class ConversionViewController implements Initializable
         this.parent = parent;
     }
 
+    /**
+     * Opens the LogView so we can see a log of what has been done.
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void clickOpenTraceLogViev(ActionEvent event) throws IOException
     {
@@ -829,6 +860,10 @@ public class ConversionViewController implements Initializable
         Stage window = (Stage) btnOpenTraceLogView.getScene().getWindow();
     }
 
+    /**
+     * Saves a tracelog to the db.
+     * @param event 
+     */
     @FXML
     private void clickSaveTraceLog(ActionEvent event)
     {
@@ -841,7 +876,6 @@ public class ConversionViewController implements Initializable
         t.setError("Error message");
 
         model.addTraceLogToDB(t);
-        System.out.println("TraceLog saved");
     }
 
 }

@@ -32,39 +32,44 @@ public class DAOTraceLog
         this.cm = new DBConnector();
     }
 
-    
-        /**
-     * This method gets all tracelogs
+    /**
+     * This method gets all tracelogs from the db through a connectionpool
      *
      * @return
      */
-    public List<TraceLog> getAllTraceLogs() {
-        System.out.println("Getting all TraceLogs.");
+    public List<TraceLog> getAllTraceLogs()
+    {
 
         List<TraceLog> allTraceLogs = new ArrayList();
 
-        try (Connection con = cm.getConnection()) {
+        try (Connection con = cm.getConnection())
+        {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM TraceLog");
             ResultSet rs = stmt.executeQuery();
 
-            while (rs.next()) {
+            while (rs.next())
+            {
                 TraceLog t = new TraceLog();
                 t.setUser(rs.getString("user"));
                 t.setFileName(rs.getString("fileName"));
                 t.setCustomization(rs.getString("customization"));
                 t.setDate(rs.getString("date"));
                 t.setError(rs.getString("error"));
-              
+
                 allTraceLogs.add(t);
             }
-        } catch (SQLException ex) {
+        } catch (SQLException ex)
+        {
             Logger.getLogger(DAOTraceLog.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
         return allTraceLogs;
     }
-    
-    
+
+    /**
+     * Adds a tracelog to the db, so we are able to see who did what and when it happened.
+     * @param t
+     */
     public void addTraceLogToDB(TraceLog t)
     {
         try (Connection con = cm.getConnection())

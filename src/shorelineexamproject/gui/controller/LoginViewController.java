@@ -20,7 +20,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.gui.model.Model;
@@ -66,7 +65,6 @@ public class LoginViewController implements Initializable
         String userName = txtUser.getText();
         String password = txtPassword.getText();
 
-//comment in the if statement if you want login to work, remember both {start and end bracket}
 //        if (model.UserLogin(userName, password) == true)
 //        {
         Stage stage = new Stage();
@@ -87,8 +85,8 @@ public class LoginViewController implements Initializable
         Stage window = (Stage) btnLogin.getScene().getWindow();
         window.close();
 //        }
-        //could make login button red and make a tooltip appear instead, cant make this look nice
-        lblError.setText("Wrong Username/Password");
+       
+        lblError.setText("Wrong Login");
         lblError.setTextFill(Color.web("#ff0000"));
     }
 
@@ -97,8 +95,6 @@ public class LoginViewController implements Initializable
     {
         String userName = txtUser.getText();
         String password = txtPassword.getText();
-//        if (model.UserLogin(username, password) == true) //if db doesn't already contain this username, make it
-//        {
 
         LogIn l = new LogIn();
         l.setUserName(userName);
@@ -108,7 +104,6 @@ public class LoginViewController implements Initializable
 
         lblError.setText("User Created");
         lblError.setTextFill(Color.web("#0b6074"));
-//        }
     }
 
 }
