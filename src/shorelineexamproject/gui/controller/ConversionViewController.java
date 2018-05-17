@@ -180,10 +180,9 @@ public class ConversionViewController implements Initializable
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         cbxCustomizationInitialize();
         lstHeadersInitialize();
-
 
         //Tooltip creations
         Tooltip directoryTooltip = new Tooltip();
@@ -200,22 +199,6 @@ public class ConversionViewController implements Initializable
         Tooltip latestStartDateTooltip = new Tooltip();
         Tooltip estimatedTimeTooltip = new Tooltip();
 
-
-        
-        String desktopPath = System.getProperty("user.home") + "\\Desktop";
-        directory = desktopPath;
-        
-        directoryTooltip.setText(directory);
-        btnFileLocation.setTooltip(directoryTooltip);
-        tooltiplist();
-    }
-
-    /**
-     * Initializes the tooltips
-     */
-    private void tooltiplist()
-    {
-        //Tooltip setup
         assetSerialNumberTooltip.setText("Asset id");
         txtVarAssetSerialNumber.setTooltip(assetSerialNumberTooltip);
         typeTooltip.setText("Order type");
@@ -238,6 +221,13 @@ public class ConversionViewController implements Initializable
         txtVarLatestStartDate.setTooltip(latestStartDateTooltip);
         estimatedTimeTooltip.setText("EastimatedTime");
         txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
+
+        String desktopPath = System.getProperty("user.home") + "\\Desktop";
+        directory = desktopPath;
+
+        directoryTooltip.setText(directory);
+        btnFileLocation.setTooltip(directoryTooltip);
+
     }
 
     /**
