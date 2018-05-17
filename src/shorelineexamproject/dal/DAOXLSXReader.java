@@ -28,7 +28,7 @@ public class DAOXLSXReader
 
     /**
      * Takes the String filepath of a xlsx file and finds the headers before
-     * putting them into a ListView Jesper
+     * putting them into a ListView 
      *
      * @param filepath
      */
@@ -116,7 +116,7 @@ public class DAOXLSXReader
      * Takes a filepath as a String, a String representation of a header in the
      * currently selected xlsx file and gets values from the rows below the
      * selected header in the currently selected xlsx file and puts them in an
-     * assigned list. Jesper
+     * assigned list.
      *
      * @param filepath
      * @param header

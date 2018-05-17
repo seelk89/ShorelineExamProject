@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -23,6 +22,5 @@
             <TableColumn fx:id="columnError" prefWidth="132.800048828125" text="Error" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtSearch" layoutX="110.0" layoutY="46.0" onKeyReleased="#txtSearchField" prefHeight="25.0" prefWidth="80.0" promptText="Search" />
    </children>
 </AnchorPane>

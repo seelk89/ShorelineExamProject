@@ -5,7 +5,6 @@
  */
 package shorelineexamproject.gui.model;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,20 +23,16 @@ import shorelineexamproject.bll.BLL;
  */
 public class Model
 {
-
-    //start of singleton setup
-    private static Model firstInstance = null;
-    private BLL bll;
+ private BLL bll;
 
     public Model() throws IOException
     {
         this.bll = new BLL();
     }
-    
-    //not sure if method below is needed
-    public ObservableList<Customization> cList = FXCollections.observableArrayList();
-    private ObservableList<TraceLog> logList = FXCollections.observableArrayList();
 
+    //start of singleton setup
+    private static Model firstInstance = null;
+   
     public synchronized static Model getInstance() throws IOException
     {
         if (firstInstance == null)
@@ -48,6 +43,9 @@ public class Model
     }
     //end of singleton setup
 
+    public ObservableList<Customization> cList = FXCollections.observableArrayList();
+    private ObservableList<TraceLog> logList = FXCollections.observableArrayList();
+
     public List<ListViewObject> readXLSXHeaders(String filepath)
     {
         return bll.readXLSXHeaders(filepath);
@@ -57,13 +55,13 @@ public class Model
     {
         return bll.readCSVHeaders(filepath);
     }
-    
+
     public void getXLSXHeaderValues(String filepath,
             String header, ArrayList<String> headerList)
     {
         bll.getXLSXHeaderValues(filepath, header, headerList);
     }
-    
+
     public void getCSVHeaderValues(String filepath,
             String header, ArrayList<String> headerList)
     {
@@ -75,24 +73,9 @@ public class Model
         return bll.getDate();
     }
 
-    /**
-     *
-     * @param FileName
-     * @throws IOException
-     */
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         bll.CreateJSONFile(directory, fileName, jarray);
-    }
-
-    /**
-     *
-     * @return
-     */
-    public JSONArray CreateJsonObjects()
-    {
-        bll.CreateJsonObjects();
-        return null;
     }
 
     public List<Customization> getAllCustomizations()
@@ -125,11 +108,6 @@ public class Model
         return logList;
     }
 
-//        public List<TraceLog> getAllTraceLogs()
-//    {
-//        return bll.getAllTraceLogs();
-//    }
-    
     public void loadTraceLog()
     {
         logList.setAll(bll.getAllTraceLogs());
