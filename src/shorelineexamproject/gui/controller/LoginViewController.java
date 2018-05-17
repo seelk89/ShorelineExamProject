@@ -36,11 +36,10 @@ public class LoginViewController implements Initializable
     private ImageView imgLogo;
     @FXML
     private JFXTextField txtUser;
-    
-    @FXML
-    private JFXButton btnLogin;
     @FXML
     private JFXPasswordField txtPassword;
+    @FXML
+    private JFXButton btnLogin;
     @FXML
     private JFXButton btnCreateUser;
     @FXML

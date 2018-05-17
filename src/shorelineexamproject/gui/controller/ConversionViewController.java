@@ -153,10 +153,6 @@ public class ConversionViewController implements Initializable
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
 
-    //Indicates progress of a given task
-    double progress = 1;
-    AtomicInteger filesDone = new AtomicInteger();
-
     //doing jeppes stuff
     private boolean stopped = false;
     private boolean paused = false;
@@ -178,6 +174,9 @@ public class ConversionViewController implements Initializable
         tooltiplist();
         cbxCustomizationInitialize();
         lstHeadersInitialize();
+        
+        String desktopPath = System.getProperty("user.home") + "\\Desktop";
+        System.out.println(desktopPath);
     }
 
     private void tooltiplist()
@@ -310,31 +309,59 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
-        stopped = false;
-        paused = false;
-
-        //Binds the progress bar to the task
-        prgConversion.progressProperty().unbind();
-        prgConversion.progressProperty().bind(task.progressProperty());
-
-        //Gets a message from the task
-        task.messageProperty().addListener(new ChangeListener<String>()
+        if (lstAbsolutePaths.size() > 0)
         {
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+            if (!"".equals(txtVarAssetSerialNumber.getText())
+                    && !"".equals(txtVarType.getText())
+                    && !"".equals(txtVarExternalWorkOrderid.getText())
+                    && !"".equals(txtVarSystemStatus.getText())
+                    && !"".equals(txtVarUserStatus.getText())
+                    && !"".equals(txtVarName.getText())
+                    && !"".equals(txtVarPriority.getText())
+                    && !"".equals(txtVarLatestFinishDate.getText())
+                    && !"".equals(txtVarEarliestStartDate.getText())
+                    && !"".equals(txtVarLatestStartDate.getText())
+                    && !"".equals(txtVarEstimatedTime.getText()))
             {
-                lblConversionComplete.setText(newValue);
+                if (!"".equals(txtJSONName.getText()))
+                {
+                    stopped = false;
+                    paused = false;
+
+                    //Binds the progress bar to the task
+                    prgConversion.progressProperty().unbind();
+                    prgConversion.progressProperty().bind(task.progressProperty());
+
+                    //Gets a message from the task
+                    task.messageProperty().addListener(new ChangeListener<String>()
+                    {
+                        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+                        {
+                            lblConversionComplete.setText(newValue);
+                        }
+                    });
+
+                    if (thread == null)
+                    {
+                        thread = new Thread(task);
+                    }
+
+                    //Daemon, stops the task if the main thread is stopped
+                    thread.setDaemon(true);
+
+                    thread.start();
+                } else
+                {
+                    lblError.setText("Name your conversion");
+                }
+            } else
+            {
+                lblError.setText("Get headers from the files");
             }
-        });
-
-        if (thread == null)
+        } else
         {
-            thread = new Thread(task);
+            lblError.setText("Get files to read");
         }
-
-        //Daemon, stops the task if the main thread is stopped
-        thread.setDaemon(true);
-
-        thread.start();
     }
 
     /**
@@ -405,7 +432,6 @@ public class ConversionViewController implements Initializable
             synchronized (task)
             {
                 task.notify();
-
             }
 
             btnPauseTask.setText("Pause");
