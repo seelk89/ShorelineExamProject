@@ -17,6 +17,7 @@ import shorelineexamproject.be.ListViewObject;
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.bll.BLL;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Model
     private static Model firstInstance = null;
     private BLL bll;
 
-    public Model() throws IOException
+    private Model() throws IOException, DalException
     {
         this.bll = new BLL();
     }
@@ -37,12 +38,11 @@ public class Model
 //    private Model()
 //    {
 //    }
-    
     //not sure if method below is needed
-    public ObservableList<Customization> cList = FXCollections.observableArrayList();
+    private ObservableList<Customization> customizationList = FXCollections.observableArrayList();
     private ObservableList<TraceLog> logList = FXCollections.observableArrayList();
 
-    public synchronized static Model getInstance() throws IOException
+    public synchronized static Model getInstance() throws IOException, DalException
     {
         if (firstInstance == null)
         {
@@ -57,21 +57,10 @@ public class Model
         return bll.readXLSXHeaders(filepath);
     }
 
-    public List<ListViewObject> readCSVHeaders(String filepath)
-    {
-        return bll.readCSVHeaders(filepath);
-    }
-    
     public void getXLSXHeaderValues(String filepath,
             String header, ArrayList<String> headerList)
     {
         bll.getXLSXHeaderValues(filepath, header, headerList);
-    }
-    
-    public void getCSVHeaderValues(String filepath,
-            String header, ArrayList<String> headerList)
-    {
-        bll.getCSVHeaderValues(filepath, header, headerList);
     }
 
     public String getDate()
@@ -99,27 +88,29 @@ public class Model
         return null;
     }
 
-    public List<Customization> getAllCustomizations()
+    public ObservableList<Customization> getAllCustomizations() throws DalException
     {
-        return bll.getAllCustomizations();
+        customizationList.setAll(bll.getAllCustomizations());
+        return customizationList;
     }
 
-    public void addCustomizationToDB(Customization c)
+    public void addCustomizationToDB(Customization c) throws DalException
     {
         bll.addCustomizationToDB(c);
+        getAllCustomizations();
     }
 
-    public void removeCustomizationFromDb(Customization selectedCustomization)
+    public void removeCustomizationFromDb(Customization selectedCustomization) throws DalException
     {
         bll.removeCustomizationFromDb(selectedCustomization);
     }
 
-    public boolean UserLogin(String userName, String password)
+    public boolean UserLogin(String userName, String password) throws DalException
     {
         return bll.UserLogin(userName, password);
     }
 
-    public void addUserToDB(LogIn l)
+    public void addUserToDB(LogIn l) throws DalException
     {
         bll.addUserToDB(l);
     }
@@ -129,16 +120,12 @@ public class Model
         return logList;
     }
 
-//        public List<TraceLog> getAllTraceLogs()
-//    {
-//        return bll.getAllTraceLogs();
-//    }
-    public void loadTraceLog()
+    public void loadTraceLog() throws DalException
     {
         logList.setAll(bll.getAllTraceLogs());
     }
 
-    public void addTraceLogToDB(TraceLog t)
+    public void addTraceLogToDB(TraceLog t) throws DalException
     {
         bll.addTraceLogToDB(t);
     }

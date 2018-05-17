@@ -7,11 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<<<<<<< HEAD
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="388.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.LogViewController">
-=======
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="506.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.LogViewController">
->>>>>>> 8538cbc52d3862e3376f84288da7cb2e50fc0ff2
    <children>
       <ImageView fitHeight="76.0" fitWidth="90.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>

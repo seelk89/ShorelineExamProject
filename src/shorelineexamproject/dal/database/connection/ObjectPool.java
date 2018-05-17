@@ -11,7 +11,7 @@ import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
- * @author pgn
+ * @author ...
  */
 abstract class ObjectPool<T>
 {

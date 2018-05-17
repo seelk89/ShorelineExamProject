@@ -14,7 +14,6 @@ import java.util.List;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
-import shorelineexamproject.dal.DAOCSVReader;
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.dal.DAOCustomization;
@@ -23,6 +22,7 @@ import shorelineexamproject.dal.DAOLogIn;
 import shorelineexamproject.dal.DAOTraceLog;
 import shorelineexamproject.dal.DAOXLSXReader;
 import shorelineexamproject.dal.DAOTraceLog;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -31,13 +31,12 @@ import shorelineexamproject.dal.DAOTraceLog;
 public class BLL
 {
     private DAOXLSXReader daoXLSXReader = new DAOXLSXReader();
-    private DAOCSVReader daoCSVReader = new DAOCSVReader();
     private DAOJSONWriter daoJSONWriter = new DAOJSONWriter();
     private DAOCustomization daoCustomization;
     private DAOLogIn daoLogIn;
     private DAOTraceLog daoTraceLog;
 
-    public BLL() throws IOException
+    public BLL() throws IOException, DalException
     {
         this.daoCustomization = new DAOCustomization();
         this.daoLogIn = new DAOLogIn();
@@ -53,17 +52,6 @@ public class BLL
             String header, ArrayList<String> headerList)
     {
         daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
-    }
-    
-    public void getCSVHeaderValues(String filepath,
-            String header, ArrayList<String> headerList)
-    {
-        daoCSVReader.getCSVHeaderValues(filepath, header, headerList);
-    }
-    
-    public List<ListViewObject>readCSVHeaders(String filepath)
-    {
-        return daoCSVReader.readCSVHeaders(filepath);
     }
 
     public String getDate()
@@ -97,37 +85,37 @@ public class BLL
         return null;
     }
 
-    public List<Customization> getAllCustomizations()
+    public List<Customization> getAllCustomizations() throws DalException
     {
         return daoCustomization.getAllCustomizations();
     }
 
-    public void addCustomizationToDB(Customization c)
+    public void addCustomizationToDB(Customization c) throws DalException
     {
         daoCustomization.addCustomizationToDB(c);
     }
 
-    public void removeCustomizationFromDb(Customization selectedCustomization)
+    public void removeCustomizationFromDb(Customization selectedCustomization) throws DalException
     {
         daoCustomization.removeCustomizationFromDb(selectedCustomization);
     }
 
-    public boolean UserLogin(String userName, String password)
+    public boolean UserLogin(String userName, String password) throws DalException
     {
         return daoLogIn.UserLogin(userName, password);
     }
 
-    public void addUserToDB(LogIn l)
+    public void addUserToDB(LogIn l) throws DalException
     {
         daoLogIn.addUserToDB(l);
     }
 
-    public List<TraceLog> getAllTraceLogs()
+    public List<TraceLog> getAllTraceLogs() throws DalException
     {
         return daoTraceLog.getAllTraceLogs();
     }
     
-     public void addTraceLogToDB(TraceLog t)
+     public void addTraceLogToDB(TraceLog t) throws DalException
     {
         daoTraceLog.addTraceLogToDB(t);
     }
