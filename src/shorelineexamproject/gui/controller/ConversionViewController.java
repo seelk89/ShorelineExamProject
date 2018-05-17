@@ -28,6 +28,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -112,19 +114,19 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
-    private Tooltip directoryTooltip = new Tooltip();
+    private Tooltip directoryTooltip;
 
-    private Tooltip assetSerialNumberTooltip = new Tooltip();
-    private Tooltip typeTooltip = new Tooltip();
-    private Tooltip externalWorkOrderIdTooltip = new Tooltip();
-    private Tooltip systemStatusTooltip = new Tooltip();
-    private Tooltip userStatusTooltip = new Tooltip();
-    private Tooltip nameTooltip = new Tooltip();
-    private Tooltip priorityTooltip = new Tooltip();
-    private Tooltip latestFinishDateTooltip = new Tooltip();
-    private Tooltip earliestStartDateTooltip = new Tooltip();
-    private Tooltip latestStartDateTooltip = new Tooltip();
-    private Tooltip estimatedTimeTooltip = new Tooltip();
+    private Tooltip assetSerialNumberTooltip;
+    private Tooltip typeTooltip;
+    private Tooltip externalWorkOrderIdTooltip;
+    private Tooltip systemStatusTooltip;
+    private Tooltip userStatusTooltip;
+    private Tooltip nameTooltip;
+    private Tooltip priorityTooltip;
+    private Tooltip latestFinishDateTooltip;
+    private Tooltip earliestStartDateTooltip;
+    private Tooltip latestStartDateTooltip;
+    private Tooltip estimatedTimeTooltip;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -165,20 +167,37 @@ public class ConversionViewController implements Initializable
 
     private Model model;
 
-    public ConversionViewController() throws IOException
-    {
-        this.model = new Model();
-    }
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        try
+        {
+            this.model = new Model();
+        } catch (IOException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         tooltiplist();
         cbxCustomizationInitialize();
         lstHeadersInitialize();
+
+        //Tooltip creations
+        Tooltip directoryTooltip = new Tooltip();
+
+        Tooltip assetSerialNumberTooltip = new Tooltip();
+        Tooltip typeTooltip = new Tooltip();
+        Tooltip externalWorkOrderIdTooltip = new Tooltip();
+        Tooltip systemStatusTooltip = new Tooltip();
+        Tooltip userStatusTooltip = new Tooltip();
+        Tooltip nameTooltip = new Tooltip();
+        Tooltip priorityTooltip = new Tooltip();
+        Tooltip latestFinishDateTooltip = new Tooltip();
+        Tooltip earliestStartDateTooltip = new Tooltip();
+        Tooltip latestStartDateTooltip = new Tooltip();
+        Tooltip estimatedTimeTooltip = new Tooltip();
     }
 
     /**
@@ -517,53 +536,88 @@ public class ConversionViewController implements Initializable
         }
     }
 
+    private String getDate()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDateTime dateTime = LocalDateTime.now();
+        String formattedDate = dateTime.format(formatter);
+
+        return formattedDate;
+    }
+
+    public JSONArray CreateJsonObjects()
+    {
+
+        return CreateJsonObjects(
+                lstVarAssetSerialNumber, lstVarType,
+                lstVarExternalWorkOrderId, lstVarSystemStatus,
+                lstVarUserStatus, lstVarName, lstVarDescription2,
+                lstVarPriority, lstVarLatestFinishDate,
+                lstVarEarliestStartDate, lstVarLatestStartDate,
+                lstVarEstimatedTime
+        );
+    }
+
     /**
      * Converts excel or csv to json by looping through a list that adds objects
      * to an array that is then sent to the db.
      *
      * @return
      */
-    public JSONArray CreateJsonObjects()
+    public JSONArray CreateJsonObjects(
+            List<String> lstVarAssetSerialNumber1,
+            List<String> lstVarType1,
+            List<String> lstVarExternalWorkOrderId1,
+            List<String> lstVarSystemStatus1,
+            List<String> lstVarUserStatus1,
+            List<String> lstVarName1,
+            List<String> lstVarDescription21,
+            List<String> lstVarPriority1,
+            List<String> lstVarLatestFinishDate1,
+            List<String> lstVarEarliestStartDate1,
+            List<String> lstVarLatestStartDate1,
+            List<String> lstVarEstimatedTime1
+    )
     {
         JSONArray mainjsonArray = new JSONArray();
 
-        for (int i = 0; i < lstVarType.size(); i++)
+        for (int i = 0; i < lstVarType1.size(); i++)
         {
             JSONObject obj = new JSONObject();
 
-            obj.put("siteName", ""); //get from middle of description if possible
-            obj.put("assetSerialNumber", lstVarAssetSerialNumber.get(i));
-            obj.put("type", lstVarType.get(i));
-            obj.put("externalWorkOrderId", lstVarExternalWorkOrderId.get(i));
-            obj.put("systemStatus", lstVarSystemStatus.get(i));
-            obj.put("userStatus", lstVarUserStatus.get(i));
-            obj.put("createdOn", model.getDate());
-            obj.put("createdBy", "SAP"); //get sap (or login, ask po)
+            obj.put("siteName", "");
+            obj.put("assetSerialNumber", lstVarAssetSerialNumber1.get(i));
+            obj.put("type", lstVarType1.get(i));
+            obj.put("externalWorkOrderId", lstVarExternalWorkOrderId1.get(i));
+            obj.put("systemStatus", lstVarSystemStatus1.get(i));
+            obj.put("userStatus", lstVarUserStatus1.get(i));
+            obj.put("createdOn", getDate());
+            obj.put("createdBy", "SAP");
 
-            if ("".equals(lstVarName.get(i)))
+            if ("".equals(lstVarName1.get(i)))
             {
-                obj.put("name", lstVarDescription2.get(i));  //2 different ones
+                obj.put("name", lstVarDescription21.get(i));
             } else
             {
-                obj.put("name", lstVarName.get(i));
+                obj.put("name", lstVarName1.get(i));
             }
 
-            if ("".equals(lstVarPriority.get(i)))
+            if ("".equals(lstVarPriority1.get(i)))
             {
                 String priority = "Low";
-                obj.put("priority", priority); //priority, if empty set low
+                obj.put("priority", priority);
             } else
             {
-                obj.put("priority", lstVarPriority.get(i));
+                obj.put("priority", lstVarPriority1.get(i));
             }
 
-            obj.put("status", "NEW"); //weird thing
+            obj.put("status", "NEW");
 
             JSONObject obj2 = new JSONObject();
-            obj2.put("latestFinishDate", lstVarLatestFinishDate.get(i));
-            obj2.put("earliestStartDate", lstVarEarliestStartDate.get(i));
-            obj2.put("latestStartDate", lstVarLatestStartDate.get(i));
-            obj2.put("estimatedTime", lstVarEstimatedTime.get(i));
+            obj2.put("latestFinishDate", lstVarLatestFinishDate1.get(i));
+            obj2.put("earliestStartDate", lstVarEarliestStartDate1.get(i));
+            obj2.put("latestStartDate", lstVarLatestStartDate1.get(i));
+            obj2.put("estimatedTime", lstVarEstimatedTime1.get(i));
 
             obj.put("planning", obj2);
 
@@ -574,7 +628,8 @@ public class ConversionViewController implements Initializable
 
     /**
      * Chooses where to save the converted file.
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void clickFileLocation(ActionEvent event)
@@ -610,7 +665,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Gets the selected ListViewObject 
+     * Gets the selected ListViewObject
      *
      * @return
      */
@@ -641,7 +696,8 @@ public class ConversionViewController implements Initializable
 
     /**
      * allows dragging
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void overTxtTest(DragEvent event)
@@ -788,7 +844,8 @@ public class ConversionViewController implements Initializable
 
     /**
      * Saves a new customization to the db and updates the boxlist
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void clickSaveCustomization(ActionEvent event)
@@ -837,8 +894,9 @@ public class ConversionViewController implements Initializable
 
     /**
      * Opens the LogView so we can see a log of what has been done.
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void clickOpenTraceLogViev(ActionEvent event) throws IOException
@@ -862,7 +920,8 @@ public class ConversionViewController implements Initializable
 
     /**
      * Saves a tracelog to the db.
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void clickSaveTraceLog(ActionEvent event)
