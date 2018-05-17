@@ -106,6 +106,10 @@ public class ConversionViewController implements Initializable
     protected Label lblUser;
     @FXML
     private JFXButton btnOpenTraceLogView;
+    @FXML
+    private JFXButton btnSaveTraceLog;
+    @FXML
+    private Label lblError;
 
     //Tooltip creations
     private Tooltip directoryTooltip = new Tooltip();
@@ -159,8 +163,6 @@ public class ConversionViewController implements Initializable
     private LoginViewController parent;
 
     private Model model;
-    @FXML
-    private JFXButton btnSaveTraceLog;
 
     public ConversionViewController() throws IOException
     {
@@ -266,6 +268,11 @@ public class ConversionViewController implements Initializable
 
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
+                    if(stopped == true)
+                    {
+                        break;
+                    }
+                    
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
 
@@ -284,6 +291,7 @@ public class ConversionViewController implements Initializable
                     updateProgress(i + 1, lstAbsolutePaths.size());
                     updateMessage((i + 1) + " Files done");
 
+                    //Clearing lists
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
                     lstVarExternalWorkOrderId.clear();
@@ -298,10 +306,7 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
-
-                stopped = true;
-                stop();
-
+                
 //                if (btnTask.getText().equals("Stop"))
 //                {
 //                    btnTask.setText("Start");
@@ -316,13 +321,15 @@ public class ConversionViewController implements Initializable
      */
     public void start()
     {
+        if(lstAbsolutePaths.size() > 0)
+        {
         stopped = false;
         paused = false;
 
         //Binds the progress bar to the task
         prgConversion.progressProperty().unbind();
         prgConversion.progressProperty().bind(task.progressProperty());
-
+        
         //Gets a message from the task
         task.messageProperty().addListener(new ChangeListener<String>()
         {
@@ -341,6 +348,10 @@ public class ConversionViewController implements Initializable
         thread.setDaemon(true);
 
         thread.start();
+        } else
+        {
+            lblError.setText("You need to get some files to convert");
+        }
     }
 
     /**
@@ -616,11 +627,7 @@ public class ConversionViewController implements Initializable
             File selectedDirectory = chooser.showDialog(stage);
 
             directory = selectedDirectory.getAbsolutePath();
-            System.out.println(directory);
             btnFileLocation.setText("File location");
-
-            directoryTooltip.setText(directory);
-            btnFileLocation.setTooltip(directoryTooltip);
 
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);

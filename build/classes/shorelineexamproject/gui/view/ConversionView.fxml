@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="625.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="727.0" prefWidth="625.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnGet" layoutX="224.0" layoutY="88.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get" AnchorPane.leftAnchor="224.0" AnchorPane.topAnchor="85.0" />
       <JFXTextField fx:id="txtJSONName" focusColor="#0c8bb8" layoutX="438.0" layoutY="10.0" promptText="JSON name" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="173.0" />
@@ -49,6 +49,7 @@
 
       <Label fx:id="lblUser" layoutX="96.0" layoutY="31.0" text="User" />
       <JFXButton fx:id="btnSaveTraceLog" layoutX="494.0" layoutY="26.0" onAction="#clickSaveTraceLog" text="Save TraceLog" />
+      <Label fx:id="lblError" layoutX="480.0" layoutY="150.0" text="Error" textFill="RED" />
 
 
    </children>
