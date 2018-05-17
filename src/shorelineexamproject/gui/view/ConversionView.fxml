@@ -38,7 +38,7 @@
             <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="96.0" layoutY="51.0" prefHeight="25.0" prefWidth="118.0" promptText="Customization" unFocusColor="#0b6074" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="51.0" />
+      <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="99.0" layoutY="51.0" prefHeight="25.0" prefWidth="118.0" promptText="Customization" unFocusColor="#0b6074" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="51.0" />
       <ProgressIndicator fx:id="prgConversion" layoutX="269.0" layoutY="660.0" progress="0.0" stylesheets="@../css/CSS.css" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="660.0" />
       <Label fx:id="lblConversionComplete" layoutX="315.0" layoutY="662.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="662.0" />
       <JFXButton fx:id="btnFileLocation" layoutX="263.0" layoutY="110.0" onAction="#clickFileLocation" ripplerFill="#0c8bb8" text="Choose file location" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="110.0" />
@@ -47,7 +47,7 @@
       <JFXButton fx:id="btnDeleteCustomization" layoutX="18.0" layoutY="667.0" onAction="#clickDeleteCustomization" text="Delete Customization" AnchorPane.leftAnchor="18.0" />
       <JFXButton fx:id="btnOpenTraceLogView" layoutX="340.0" layoutY="706.0" onAction="#clickOpenTraceLogViev" text="Tracelog" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
 
-      <Label fx:id="lblUser" layoutX="96.0" layoutY="31.0" text="User" AnchorPane.leftAnchor="96.0" AnchorPane.topAnchor="31.0" />
+      <Label fx:id="lblUser" layoutX="99.0" layoutY="31.0" text="User" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="31.0" />
       <Label fx:id="lblError" layoutX="28.0" layoutY="709.0" textFill="RED" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="28.0" />
 
 

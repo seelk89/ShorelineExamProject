@@ -153,15 +153,11 @@ public class ConversionViewController implements Initializable
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
 
-<<<<<<< HEAD
-    //doing jeppes stuff
-=======
     //Indicates progress of a given task
     double progress = 1;
     AtomicInteger filesDone = new AtomicInteger();
 
     //task related instancefields
->>>>>>> b6f32b094b4617bd377ab6e65b64596a17b917a5
     private boolean stopped = false;
     private boolean paused = false;
 
@@ -630,6 +626,8 @@ public class ConversionViewController implements Initializable
 
             directoryTooltip.setText(directory);
             btnFileLocation.setTooltip(directoryTooltip);
+            
+            System.out.println(directory);
 
             directoryChosen = true;
         } else
