@@ -8,12 +8,15 @@ package shorelineexamproject.gui.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import shorelineexamproject.be.TraceLog;
+import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -36,12 +39,11 @@ public class LogViewController implements Initializable
     @FXML
     private TableColumn<TraceLog, String> columnDate;
 
-    
     private Model model;
 
-    public LogViewController() throws IOException
+    public LogViewController() throws IOException, DalException
     {
-        this.model = new Model();
+        this.model = Model.getInstance();
     }
 
     /**
@@ -58,9 +60,15 @@ public class LogViewController implements Initializable
                 new PropertyValueFactory("customization"));
         columnDate.setCellValueFactory(
                 new PropertyValueFactory("date"));
-        
+
         tableLog.setItems(model.getTraceLogList());
-        model.loadTraceLog();
+        try
+        {
+            model.loadTraceLog();
+        } catch (DalException ex)
+        {
+            Logger.getLogger(LogViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void setParentWindowController(LoginViewController parent)

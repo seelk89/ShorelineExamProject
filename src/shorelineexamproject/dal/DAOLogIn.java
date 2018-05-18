@@ -14,7 +14,9 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import shorelineexamproject.be.LogIn;
+import shorelineexamproject.dal.database.connection.ConnectionPool;
 import shorelineexamproject.dal.database.connection.DBConnector;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -23,11 +25,13 @@ import shorelineexamproject.dal.database.connection.DBConnector;
 public class DAOLogIn
 {
 
+    private final ConnectionPool conPool;
     private final DBConnector cm;
 
-    public DAOLogIn() throws IOException
+    public DAOLogIn() throws IOException, DalException
     {
         this.cm = new DBConnector();
+        this.conPool = new ConnectionPool();
     }
 
     /**
@@ -38,10 +42,10 @@ public class DAOLogIn
      * @param password
      * @return
      */
-    public boolean UserLogin(String userName, String password)
+    public boolean UserLogin(String userName, String password) throws DalException
     {
-
-        try (Connection con = cm.getConnection())
+        Connection con = conPool.checkOut();
+        try
         {
             PreparedStatement stmt = con.prepareStatement("SELECT userName, password FROM [User] WHERE userName = ? AND password = ?");
             stmt.setString(1, userName);
@@ -56,8 +60,10 @@ public class DAOLogIn
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
+        } finally
+        {
+            conPool.checkIn(con);
         }
-
         return false;
     }
 
@@ -66,9 +72,10 @@ public class DAOLogIn
      *
      * @param l
      */
-    public void addUserToDB(LogIn l)
+    public void addUserToDB(LogIn l) throws DalException
     {
-        try (Connection con = cm.getConnection())
+        Connection con = conPool.checkOut();
+        try
         {
             String sql
                     = "INSERT INTO [User]" //if [] are removed, error message says syntax near ","
@@ -95,7 +102,9 @@ public class DAOLogIn
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
+        } finally
+        {
+            conPool.checkIn(con);
         }
-
     }
 }

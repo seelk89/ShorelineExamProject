@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import shorelineexamproject.dal.database.connection.DBConnector;
 import shorelineexamproject.be.TraceLog;
+import shorelineexamproject.dal.database.connection.ConnectionPool;
+import shorelineexamproject.dal.exceptions.DalException;
 
 /**
  *
@@ -25,11 +27,13 @@ import shorelineexamproject.be.TraceLog;
 public class DAOTraceLog
 {
 
+    private final ConnectionPool conPool;
     private final DBConnector cm;
 
-    public DAOTraceLog() throws IOException
+    public DAOTraceLog() throws IOException, DalException
     {
         this.cm = new DBConnector();
+        this.conPool = new ConnectionPool();
     }
 
     /**
@@ -37,12 +41,12 @@ public class DAOTraceLog
      *
      * @return
      */
-    public List<TraceLog> getAllTraceLogs()
+    public List<TraceLog> getAllTraceLogs() throws DalException
     {
 
         List<TraceLog> allTraceLogs = new ArrayList();
-
-        try (Connection con = cm.getConnection())
+        Connection con = conPool.checkOut();
+        try
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM TraceLog");
             ResultSet rs = stmt.executeQuery();
@@ -61,17 +65,24 @@ public class DAOTraceLog
         {
             Logger.getLogger(DAOTraceLog.class.getName()).log(
                     Level.SEVERE, null, ex);
+        } finally
+        {
+            conPool.checkIn(con);
         }
+        System.out.println(con);
         return allTraceLogs;
     }
 
     /**
-     * Adds a tracelog to the db, so we are able to see who did what and when it happened.
+     * Adds a tracelog to the db, so we are able to see who did what and when it
+     * happened.
+     *
      * @param t
      */
-    public void addTraceLogToDB(TraceLog t)
+    public void addTraceLogToDB(TraceLog t) throws DalException
     {
-        try (Connection con = cm.getConnection())
+        Connection con = conPool.checkOut();
+        try
         {
             String sql
                     = "INSERT INTO TraceLog" //if [] are removed, error message says syntax near ","
@@ -95,7 +106,9 @@ public class DAOTraceLog
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
+        } finally
+        {
+            conPool.checkIn(con);
         }
-        System.out.println("User added");
     }
 }
