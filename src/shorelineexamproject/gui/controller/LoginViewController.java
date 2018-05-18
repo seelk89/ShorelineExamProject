@@ -60,13 +60,13 @@ public class LoginViewController implements Initializable
     }
 
     @FXML
-    private void clickLogin(ActionEvent event) throws IOException
+    private void clickLogin(ActionEvent event) throws IOException, DalException
     {
         String userName = txtUser.getText();
         String password = txtPassword.getText();
 
-//        if (model.UserLogin(userName, password) == true)
-//        {
+        if (model.UserLogin(userName, password) == true)
+        {
         Stage stage = new Stage();
 
         FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/ConversionView.fxml"));
@@ -84,7 +84,7 @@ public class LoginViewController implements Initializable
 
         Stage window = (Stage) btnLogin.getScene().getWindow();
         window.close();
-//        }
+        }
        
         lblError.setText("Wrong Login");
         lblError.setTextFill(Color.web("#ff0000"));

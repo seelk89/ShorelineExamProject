@@ -115,19 +115,19 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
-    private Tooltip directoryTooltip;
+    private Tooltip directoryTooltip = new Tooltip();
 
-    private Tooltip assetSerialNumberTooltip;
-    private Tooltip typeTooltip;
-    private Tooltip externalWorkOrderIdTooltip;
-    private Tooltip systemStatusTooltip;
-    private Tooltip userStatusTooltip;
-    private Tooltip nameTooltip;
-    private Tooltip priorityTooltip;
-    private Tooltip latestFinishDateTooltip;
-    private Tooltip earliestStartDateTooltip;
-    private Tooltip latestStartDateTooltip;
-    private Tooltip estimatedTimeTooltip;
+    private Tooltip assetSerialNumberTooltip = new Tooltip();
+    private Tooltip typeTooltip = new Tooltip();
+    private Tooltip externalWorkOrderIdTooltip = new Tooltip();
+    private Tooltip systemStatusTooltip = new Tooltip();
+    private Tooltip userStatusTooltip = new Tooltip();
+    private Tooltip nameTooltip = new Tooltip();
+    private Tooltip priorityTooltip = new Tooltip();
+    private Tooltip latestFinishDateTooltip = new Tooltip();
+    private Tooltip earliestStartDateTooltip = new Tooltip();
+    private Tooltip latestStartDateTooltip = new Tooltip();
+    private Tooltip estimatedTimeTooltip = new Tooltip();
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -238,6 +238,8 @@ public class ConversionViewController implements Initializable
         directoryTooltip.setText(directory);
         btnFileLocation.setTooltip(directoryTooltip);
 
+        btnPauseTask.setDisable(true);
+        prgConversion.setVisible(false);
     }
 
     /**
@@ -267,6 +269,7 @@ public class ConversionViewController implements Initializable
      */
     private void cbxCustomizationInitialize() throws DalException
     {
+
         cbxCustomization.setItems(model.getAllCustomizations());
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
@@ -342,6 +345,7 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
+                this.succeeded();
             }
             return null;
         }
@@ -370,6 +374,9 @@ public class ConversionViewController implements Initializable
                 {
                     stopped = false;
                     paused = false;
+
+                    btnPauseTask.setDisable(false);
+                    prgConversion.setVisible(true);
 
                     //Binds the progress bar to the task
                     prgConversion.progressProperty().unbind();
@@ -884,12 +891,12 @@ public class ConversionViewController implements Initializable
      * @param event
      */
     @FXML
-    private void clickSaveCustomization(ActionEvent event) 
+    private void clickSaveCustomization(ActionEvent event)
     {
         try
         {
             Customization c = new Customization();
-            
+
             c.setUser(lblUser.getText());
             c.setDateOfCreation(model.getDate());
             c.setNameOfCustomization(txtJSONName.getText() + "Customization");
@@ -905,12 +912,13 @@ public class ConversionViewController implements Initializable
             c.setEarliestStartDate(txtVarEarliestStartDate.getText());
             c.setLatestStartDate(txtVarLatestStartDate.getText());
             c.setEstimatedTime(txtVarEstimatedTime.getText());
-            
+
             model.addCustomizationToDB(c);
         } catch (DalException ex)
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     public Customization getSelectedCustomization()
@@ -969,20 +977,22 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickSaveTraceLog(ActionEvent event)
     {
+
         try
         {
             TraceLog t = new TraceLog();
-            
-            t.setUser(lblUser.getText()); //need to do login, get label
+
+            t.setUser(lblUser.getText());
             t.setFileName(txtJSONName.getText() + ".json");
-            t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
+            t.setCustomization(txtJSONName.getText() + "Customization");
             t.setDate(model.getDate());
-            
+
             model.addTraceLogToDB(t);
         } catch (DalException ex)
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
 }

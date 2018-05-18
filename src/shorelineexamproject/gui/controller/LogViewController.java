@@ -39,12 +39,11 @@ public class LogViewController implements Initializable
     @FXML
     private TableColumn<TraceLog, String> columnDate;
 
-    
     private Model model;
 
     public LogViewController() throws IOException, DalException
     {
-       this.model = Model.getInstance();
+        this.model = Model.getInstance();
     }
 
     /**
@@ -61,7 +60,7 @@ public class LogViewController implements Initializable
                 new PropertyValueFactory("customization"));
         columnDate.setCellValueFactory(
                 new PropertyValueFactory("date"));
-        
+
         tableLog.setItems(model.getTraceLogList());
         try
         {

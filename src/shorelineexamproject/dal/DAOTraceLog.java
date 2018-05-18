@@ -45,8 +45,8 @@ public class DAOTraceLog
     {
 
         List<TraceLog> allTraceLogs = new ArrayList();
-Connection con = conPool.checkOut();
-        try 
+        Connection con = conPool.checkOut();
+        try
         {
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM TraceLog");
             ResultSet rs = stmt.executeQuery();
@@ -65,8 +65,7 @@ Connection con = conPool.checkOut();
         {
             Logger.getLogger(DAOTraceLog.class.getName()).log(
                     Level.SEVERE, null, ex);
-        }
-        finally
+        } finally
         {
             conPool.checkIn(con);
         }
@@ -81,8 +80,9 @@ Connection con = conPool.checkOut();
      * @param t
      */
     public void addTraceLogToDB(TraceLog t) throws DalException
-    {Connection con = conPool.checkOut();
-        try 
+    {
+        Connection con = conPool.checkOut();
+        try
         {
             String sql
                     = "INSERT INTO TraceLog" //if [] are removed, error message says syntax near ","
@@ -106,8 +106,7 @@ Connection con = conPool.checkOut();
         {
             Logger.getLogger(DAOLogIn.class.getName()).log(
                     Level.SEVERE, null, ex);
-        }
-       finally
+        } finally
         {
             conPool.checkIn(con);
         }
