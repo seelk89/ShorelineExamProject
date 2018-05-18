@@ -22,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import shorelineexamproject.be.LogIn;
+import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -48,9 +49,9 @@ public class LoginViewController implements Initializable
     
     private Model model;
 
-    public LoginViewController() throws IOException
+    public LoginViewController() throws IOException, DalException
     {
-        this.model = new Model();
+        this.model = Model.getInstance();
     }
 
     @Override
@@ -90,7 +91,7 @@ public class LoginViewController implements Initializable
     }
 
     @FXML
-    private void clickCreateUser(ActionEvent event)
+    private void clickCreateUser(ActionEvent event) throws DalException
     {
         String userName = txtUser.getText();
         String password = txtPassword.getText();

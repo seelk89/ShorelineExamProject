@@ -50,6 +50,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.TraceLog;
+import shorelineexamproject.dal.exceptions.DalException;
 import shorelineexamproject.gui.model.Model;
 
 /**
@@ -179,9 +180,18 @@ public class ConversionViewController implements Initializable
         } catch (IOException ex)
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DalException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        cbxCustomizationInitialize();
+        try
+        {
+            cbxCustomizationInitialize();
+        } catch (DalException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         lstHeadersInitialize();
 
         //Tooltip creations
@@ -255,9 +265,9 @@ public class ConversionViewController implements Initializable
      * Initializes the cbxCustomizations by adding a listener that checks for a
      * chosen customization and fills out the textfields if one is chosen
      */
-    private void cbxCustomizationInitialize()
+    private void cbxCustomizationInitialize() throws DalException
     {
-        cbxCustomization.setItems(FXCollections.observableArrayList(model.getAllCustomizations()));
+        cbxCustomization.setItems(model.getAllCustomizations());
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
         {
@@ -505,23 +515,24 @@ public class ConversionViewController implements Initializable
 
         //Opens a window based on settings set above
         List<File> files = fileChooser.showOpenMultipleDialog(new Stage());
-        if (files.size() > 0)
+        if (files != null && files.size() > 0)
         {
             files.forEach((File file) ->
             {
                 lstAbsolutePaths.add(file.getAbsolutePath());
             });
+
+            //Clears the ListView and adds headers from xlsx file
+            lstHeaders.getItems().clear();
+            if (lstAbsolutePaths.get(0).endsWith(".xlsx"))
+            {
+                lstHeaders.getItems().addAll(model.readXLSXHeaders(lstAbsolutePaths.get(0)));
+            } else if (lstAbsolutePaths.get(0).endsWith(".csv"))
+            {
+                lstHeaders.getItems().addAll(model.readCSVHeaders(lstAbsolutePaths.get(0)));
+            }
         }
 
-        //Clears the ListView and adds headers from xlsx file
-        lstHeaders.getItems().clear();
-        if (lstAbsolutePaths.get(0).endsWith(".xlsx"))
-        {
-            lstHeaders.getItems().addAll(model.readXLSXHeaders(lstAbsolutePaths.get(0)));
-        } else if (lstAbsolutePaths.get(0).endsWith(".csv"))
-        {
-            lstHeaders.getItems().addAll(model.readCSVHeaders(lstAbsolutePaths.get(0)));
-        }
     }
 
     /**
@@ -873,27 +884,33 @@ public class ConversionViewController implements Initializable
      * @param event
      */
     @FXML
-    private void clickSaveCustomization(ActionEvent event)
+    private void clickSaveCustomization(ActionEvent event) 
     {
-        Customization c = new Customization();
-
-        c.setUser(lblUser.getText());
-        c.setDateOfCreation(model.getDate());
-        c.setNameOfCustomization(txtJSONName.getText() + "Customization");
-        c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
-        c.setType(txtVarType.getText());
-        c.setExternalWorkOrderId(txtVarExternalWorkOrderid.getText());
-        c.setSystemStatus(txtVarSystemStatus.getText());
-        c.setUserStatus(txtVarUserStatus.getText());
-        c.setName(txtVarName.getText());
-        c.setPriority(txtVarPriority.getText());
-        c.setStatus(txtVarSystemStatus.getText());
-        c.setLatestFinishDate(txtVarLatestFinishDate.getText());
-        c.setEarliestStartDate(txtVarEarliestStartDate.getText());
-        c.setLatestStartDate(txtVarLatestStartDate.getText());
-        c.setEstimatedTime(txtVarEstimatedTime.getText());
-
-        model.addCustomizationToDB(c);
+        try
+        {
+            Customization c = new Customization();
+            
+            c.setUser(lblUser.getText());
+            c.setDateOfCreation(model.getDate());
+            c.setNameOfCustomization(txtJSONName.getText() + "Customization");
+            c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
+            c.setType(txtVarType.getText());
+            c.setExternalWorkOrderId(txtVarExternalWorkOrderid.getText());
+            c.setSystemStatus(txtVarSystemStatus.getText());
+            c.setUserStatus(txtVarUserStatus.getText());
+            c.setName(txtVarName.getText());
+            c.setPriority(txtVarPriority.getText());
+            c.setStatus(txtVarSystemStatus.getText());
+            c.setLatestFinishDate(txtVarLatestFinishDate.getText());
+            c.setEarliestStartDate(txtVarEarliestStartDate.getText());
+            c.setLatestStartDate(txtVarLatestStartDate.getText());
+            c.setEstimatedTime(txtVarEstimatedTime.getText());
+            
+            model.addCustomizationToDB(c);
+        } catch (DalException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public Customization getSelectedCustomization()
@@ -902,9 +919,10 @@ public class ConversionViewController implements Initializable
     }
 
     @FXML
-    private void clickDeleteCustomization(ActionEvent event)
+    private void clickDeleteCustomization(ActionEvent event) throws DalException
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
+
     }
 
     /**
@@ -951,14 +969,20 @@ public class ConversionViewController implements Initializable
     @FXML
     private void clickSaveTraceLog(ActionEvent event)
     {
-        TraceLog t = new TraceLog();
-
-        t.setUser(lblUser.getText()); //need to do login, get label
-        t.setFileName(txtJSONName.getText() + ".json");
-        t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
-        t.setDate(model.getDate());
-
-        model.addTraceLogToDB(t);
+        try
+        {
+            TraceLog t = new TraceLog();
+            
+            t.setUser(lblUser.getText()); //need to do login, get label
+            t.setFileName(txtJSONName.getText() + ".json");
+            t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
+            t.setDate(model.getDate());
+            
+            model.addTraceLogToDB(t);
+        } catch (DalException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
