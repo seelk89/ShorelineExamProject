@@ -28,6 +28,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Window;
 import shorelineexamproject.be.ListViewObject;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -112,6 +114,7 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
+<<<<<<< HEAD
     private Tooltip directoryTooltip = new Tooltip();
     
     private Tooltip assetSerialNumberTooltip = new Tooltip();
@@ -126,6 +129,22 @@ public class ConversionViewController implements Initializable
     private Tooltip latestStartDateTooltip = new Tooltip();
     private Tooltip estimatedTimeTooltip = new Tooltip();
     
+=======
+    private Tooltip directoryTooltip;
+
+    private Tooltip assetSerialNumberTooltip;
+    private Tooltip typeTooltip;
+    private Tooltip externalWorkOrderIdTooltip;
+    private Tooltip systemStatusTooltip;
+    private Tooltip userStatusTooltip;
+    private Tooltip nameTooltip;
+    private Tooltip priorityTooltip;
+    private Tooltip latestFinishDateTooltip;
+    private Tooltip earliestStartDateTooltip;
+    private Tooltip latestStartDateTooltip;
+    private Tooltip estimatedTimeTooltip;
+
+>>>>>>> 4a6692d012d1492e277d641d1c788405dba3dae6
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
     private ArrayList<String> lstVarExternalWorkOrderId = new ArrayList<String>();
@@ -164,11 +183,14 @@ public class ConversionViewController implements Initializable
     private LoginViewController parent;
     
     private Model model;
+<<<<<<< HEAD
     
     public ConversionViewController() throws IOException
     {
         this.model = new Model();
     }
+=======
+>>>>>>> 4a6692d012d1492e277d641d1c788405dba3dae6
 
     /**
      * Initializes the controller class.
@@ -176,23 +198,32 @@ public class ConversionViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        tooltiplist();
+        try
+        {
+            this.model = new Model();
+        } catch (IOException ex)
+        {
+            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         cbxCustomizationInitialize();
         lstHeadersInitialize();
-        
-        String desktopPath = System.getProperty("user.home") + "\\Desktop";
-        directory = desktopPath;
-        
-        directoryTooltip.setText(directory);
-        btnFileLocation.setTooltip(directoryTooltip);
-    }
 
-    /**
-     * Initializes the tooltips
-     */
-    private void tooltiplist()
-    {
-        //Tooltip setup
+        //Tooltip creations
+        Tooltip directoryTooltip = new Tooltip();
+
+        Tooltip assetSerialNumberTooltip = new Tooltip();
+        Tooltip typeTooltip = new Tooltip();
+        Tooltip externalWorkOrderIdTooltip = new Tooltip();
+        Tooltip systemStatusTooltip = new Tooltip();
+        Tooltip userStatusTooltip = new Tooltip();
+        Tooltip nameTooltip = new Tooltip();
+        Tooltip priorityTooltip = new Tooltip();
+        Tooltip latestFinishDateTooltip = new Tooltip();
+        Tooltip earliestStartDateTooltip = new Tooltip();
+        Tooltip latestStartDateTooltip = new Tooltip();
+        Tooltip estimatedTimeTooltip = new Tooltip();
+
         assetSerialNumberTooltip.setText("Asset id");
         txtVarAssetSerialNumber.setTooltip(assetSerialNumberTooltip);
         typeTooltip.setText("Order type");
@@ -215,6 +246,13 @@ public class ConversionViewController implements Initializable
         txtVarLatestStartDate.setTooltip(latestStartDateTooltip);
         estimatedTimeTooltip.setText("EastimatedTime");
         txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
+
+        String desktopPath = System.getProperty("user.home") + "\\Desktop";
+        directory = desktopPath;
+
+        directoryTooltip.setText(directory);
+        btnFileLocation.setTooltip(directoryTooltip);
+
     }
 
     /**
@@ -554,15 +592,51 @@ public class ConversionViewController implements Initializable
         }
     }
 
+    private String getDate()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDateTime dateTime = LocalDateTime.now();
+        String formattedDate = dateTime.format(formatter);
+
+        return formattedDate;
+    }
+
+    public JSONArray CreateJsonObjects()
+    {
+
+        return CreateJsonObjects(
+                lstVarAssetSerialNumber, lstVarType,
+                lstVarExternalWorkOrderId, lstVarSystemStatus,
+                lstVarUserStatus, lstVarName, lstVarDescription2,
+                lstVarPriority, lstVarLatestFinishDate,
+                lstVarEarliestStartDate, lstVarLatestStartDate,
+                lstVarEstimatedTime
+        );
+    }
+
     /**
      * Converts excel or csv to json by looping through a list that adds objects
      * to an array that is then sent to the db.
      *
      * @return
      */
-    public JSONArray CreateJsonObjects()
+    public JSONArray CreateJsonObjects(
+            List<String> lstVarAssetSerialNumber1,
+            List<String> lstVarType1,
+            List<String> lstVarExternalWorkOrderId1,
+            List<String> lstVarSystemStatus1,
+            List<String> lstVarUserStatus1,
+            List<String> lstVarName1,
+            List<String> lstVarDescription21,
+            List<String> lstVarPriority1,
+            List<String> lstVarLatestFinishDate1,
+            List<String> lstVarEarliestStartDate1,
+            List<String> lstVarLatestStartDate1,
+            List<String> lstVarEstimatedTime1
+    )
     {
         JSONArray mainjsonArray = new JSONArray();
+<<<<<<< HEAD
         
         for (int i = 0; i < lstVarType.size(); i++)
         {
@@ -576,23 +650,44 @@ public class ConversionViewController implements Initializable
             obj.put("userStatus", lstVarUserStatus.get(i));
             obj.put("createdOn", model.getDate());
             obj.put("createdBy", "SAP"); //get sap (or login, ask po)
+=======
 
-            if ("".equals(lstVarName.get(i)))
+        for (int i = 0; i < lstVarType1.size(); i++)
+        {
+            JSONObject obj = new JSONObject();
+
+            obj.put("siteName", "");
+            obj.put("assetSerialNumber", lstVarAssetSerialNumber1.get(i));
+            obj.put("type", lstVarType1.get(i));
+            obj.put("externalWorkOrderId", lstVarExternalWorkOrderId1.get(i));
+            obj.put("systemStatus", lstVarSystemStatus1.get(i));
+            obj.put("userStatus", lstVarUserStatus1.get(i));
+            obj.put("createdOn", getDate());
+            obj.put("createdBy", "SAP");
+>>>>>>> 4a6692d012d1492e277d641d1c788405dba3dae6
+
+            if ("".equals(lstVarName1.get(i)))
             {
-                obj.put("name", lstVarDescription2.get(i));  //2 different ones
+                obj.put("name", lstVarDescription21.get(i));
             } else
             {
-                obj.put("name", lstVarName.get(i));
+                obj.put("name", lstVarName1.get(i));
             }
+<<<<<<< HEAD
             
             if ("".equals(lstVarPriority.get(i)))
+=======
+
+            if ("".equals(lstVarPriority1.get(i)))
+>>>>>>> 4a6692d012d1492e277d641d1c788405dba3dae6
             {
                 String priority = "Low";
-                obj.put("priority", priority); //priority, if empty set low
+                obj.put("priority", priority);
             } else
             {
-                obj.put("priority", lstVarPriority.get(i));
+                obj.put("priority", lstVarPriority1.get(i));
             }
+<<<<<<< HEAD
             
             obj.put("status", "NEW"); //weird thing
 
@@ -602,6 +697,17 @@ public class ConversionViewController implements Initializable
             obj2.put("latestStartDate", lstVarLatestStartDate.get(i));
             obj2.put("estimatedTime", lstVarEstimatedTime.get(i));
             
+=======
+
+            obj.put("status", "NEW");
+
+            JSONObject obj2 = new JSONObject();
+            obj2.put("latestFinishDate", lstVarLatestFinishDate1.get(i));
+            obj2.put("earliestStartDate", lstVarEarliestStartDate1.get(i));
+            obj2.put("latestStartDate", lstVarLatestStartDate1.get(i));
+            obj2.put("estimatedTime", lstVarEstimatedTime1.get(i));
+
+>>>>>>> 4a6692d012d1492e277d641d1c788405dba3dae6
             obj.put("planning", obj2);
             
             mainjsonArray.put(obj);
