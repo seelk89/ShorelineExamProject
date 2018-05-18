@@ -16,10 +16,9 @@
       <TableView fx:id="tableLog" layoutX="14.0" layoutY="85.0" prefHeight="302.0" prefWidth="360.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
         <columns>
           <TableColumn fx:id="columnUser" prefWidth="75.0" text="User" />
-            <TableColumn fx:id="columnFileName" prefWidth="85.0" text="File name" />
-            <TableColumn fx:id="columnCustomization" prefWidth="116.79997253417969" text="Customization" />
-          <TableColumn fx:id="columnDate" minWidth="3.20001220703125" prefWidth="67.199951171875" text="Date" />
-            <TableColumn fx:id="columnError" prefWidth="132.800048828125" text="Error" />
+            <TableColumn fx:id="columnFileName" prefWidth="132.79998779296875" text="File name" />
+            <TableColumn fx:id="columnCustomization" prefWidth="176.7999725341797" text="Customization" />
+          <TableColumn fx:id="columnDate" minWidth="3.20001220703125" prefWidth="92.79998779296875" text="Date" />
         </columns>
       </TableView>
    </children>

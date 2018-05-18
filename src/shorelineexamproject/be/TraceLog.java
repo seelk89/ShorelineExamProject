@@ -18,22 +18,6 @@ public class TraceLog
     private final StringProperty fileName = new SimpleStringProperty();
     private final StringProperty customization = new SimpleStringProperty();
     private final StringProperty date = new SimpleStringProperty();
-    private final StringProperty error = new SimpleStringProperty();
-
-    public String getError()
-    {
-        return error.get();
-    }
-
-    public void setError(String value)
-    {
-        error.set(value);
-    }
-
-    public StringProperty errorProperty()
-    {
-        return error;
-    }
 
     public String getDate()
     {

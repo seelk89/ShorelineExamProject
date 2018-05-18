@@ -54,7 +54,6 @@ public class DAOTraceLog
                 t.setFileName(rs.getString("fileName"));
                 t.setCustomization(rs.getString("customization"));
                 t.setDate(rs.getString("date"));
-                t.setError(rs.getString("error"));
 
                 allTraceLogs.add(t);
             }
@@ -76,8 +75,8 @@ public class DAOTraceLog
         {
             String sql
                     = "INSERT INTO TraceLog" //if [] are removed, error message says syntax near ","
-                    + "([user], fileName, customization, date, error)"
-                    + "VALUES(?,?,?,?,?)";
+                    + "([user], fileName, customization, date)"
+                    + "VALUES(?,?,?,?)";
 
             PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -85,7 +84,6 @@ public class DAOTraceLog
             pstmt.setString(2, t.getFileName());
             pstmt.setString(3, t.getCustomization());
             pstmt.setString(4, t.getDate());
-            pstmt.setString(5, t.getError());
 
             int affected = pstmt.executeUpdate();
             if (affected < 1)

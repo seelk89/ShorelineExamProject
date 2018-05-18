@@ -227,6 +227,9 @@ public class ConversionViewController implements Initializable
 
         directoryTooltip.setText(directory);
         btnFileLocation.setTooltip(directoryTooltip);
+        
+        btnPauseTask.setDisable(true);
+        prgConversion.setVisible(false);
     }
 
     /**
@@ -362,6 +365,9 @@ public class ConversionViewController implements Initializable
                 {
                     stopped = false;
                     paused = false;
+                    
+                    btnPauseTask.setDisable(false);
+                    prgConversion.setVisible(true);
 
                     //Binds the progress bar to the task
                     prgConversion.progressProperty().unbind();
@@ -375,8 +381,6 @@ public class ConversionViewController implements Initializable
                             lblConversionComplete.setText(newValue);
                         }
                     });
-                    
-                    task.setOnSucceeded(e -> System.out.println("Hey"));
                     
                     if (thread == null)
                     {
@@ -961,8 +965,7 @@ public class ConversionViewController implements Initializable
         t.setFileName(txtJSONName.getText() + ".json");
         t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
         t.setDate(model.getDate());
-        t.setError("Error message");
-        
+
         model.addTraceLogToDB(t);
     }
     
