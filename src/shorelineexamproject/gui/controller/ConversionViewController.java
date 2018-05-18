@@ -115,6 +115,7 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
+
     private Tooltip directoryTooltip;
 
     private Tooltip assetSerialNumberTooltip;
@@ -155,10 +156,6 @@ public class ConversionViewController implements Initializable
     //Variables for threads
     private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
-
-    //Indicates progress of a given task
-    double progress = 1;
-    AtomicInteger filesDone = new AtomicInteger();
 
     //task related instancefields
     private boolean stopped = false;
@@ -297,7 +294,7 @@ public class ConversionViewController implements Initializable
         {
 
             while (!stopped)
-            {
+            {       
                 synchronized (this)
                 {
                     while (paused)
@@ -328,10 +325,6 @@ public class ConversionViewController implements Initializable
                     updateProgress(i + 1, lstAbsolutePaths.size());
                     updateMessage((i + 1) + " Files done");
 
-                    
-                    updateValue(i);
-                    
-
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
                     lstVarExternalWorkOrderId.clear();
@@ -346,16 +339,9 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
-                
-         
-            }
-            
+            }   
             return null;
-        }
-        @Override protected void succeeded() {
-             super.succeeded();
-             updateMessage("Done!");
-         }
+        }  
     };
 
     /**
@@ -387,6 +373,7 @@ public class ConversionViewController implements Initializable
 
                     //Binds the progress bar to the task
                     prgConversion.progressProperty().unbind();
+                    prgConversion.setProgress(0);
                     prgConversion.progressProperty().bind(task.progressProperty());
 
                     //Gets a message from the task
@@ -395,6 +382,15 @@ public class ConversionViewController implements Initializable
                         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
                         {
                             lblConversionComplete.setText(newValue);
+                            if(prgConversion.getProgress() == 1)
+                            {
+                                btnTask.setText("Start");
+                                btnPauseTask.setText("Pause");
+                                btnPauseTask.setDisable(true);
+                                
+                                stopped = true;
+                                thread = null;
+                            }      
                         }
                     });
 
