@@ -957,7 +957,6 @@ public class ConversionViewController implements Initializable
         t.setFileName(txtJSONName.getText() + ".json");
         t.setCustomization("some customization"); //if old conversion, get name of that, else get new name
         t.setDate(model.getDate());
-        t.setError("Error message");
 
         model.addTraceLogToDB(t);
     }

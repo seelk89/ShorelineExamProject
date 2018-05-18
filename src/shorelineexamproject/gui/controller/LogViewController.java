@@ -35,8 +35,7 @@ public class LogViewController implements Initializable
     private TableColumn<TraceLog, String> columnCustomization;
     @FXML
     private TableColumn<TraceLog, String> columnDate;
-    @FXML
-    private TableColumn<TraceLog, String> columnError;
+
     
     private Model model;
 
@@ -59,8 +58,6 @@ public class LogViewController implements Initializable
                 new PropertyValueFactory("customization"));
         columnDate.setCellValueFactory(
                 new PropertyValueFactory("date"));
-        columnError.setCellValueFactory(
-                new PropertyValueFactory("error"));
         
         tableLog.setItems(model.getTraceLogList());
         model.loadTraceLog();
