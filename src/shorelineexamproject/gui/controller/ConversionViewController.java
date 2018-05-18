@@ -320,7 +320,7 @@ public class ConversionViewController implements Initializable
                     updateProgress(i + 1, lstAbsolutePaths.size());
                     updateMessage((i + 1) + " Files done");
                     
-                    
+                    updateValue(i);
                     
                     lstVarAssetSerialNumber.clear();
                     lstVarType.clear();
@@ -336,10 +336,16 @@ public class ConversionViewController implements Initializable
                     
                     lstVarDescription2.clear();
                 }
-                this.succeeded();
+                
+         
             }
+            
             return null;
         }
+        @Override protected void succeeded() {
+             super.succeeded();
+             updateMessage("Done!");
+         }
     };
 
     /**
@@ -381,6 +387,8 @@ public class ConversionViewController implements Initializable
                             lblConversionComplete.setText(newValue);
                         }
                     });
+                    
+                    
                     
                     if (thread == null)
                     {
