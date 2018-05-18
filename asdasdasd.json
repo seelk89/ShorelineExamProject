@@ -1,0 +1,933 @@
+[
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "10-okt.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345678",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT29 (3601210)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "14-jun.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345679",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT56 (3601237)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "14-jun.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345680",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT35 (3601216)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "03-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345681",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB18 (4000349)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "07-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345682",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB64 (4000393)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345683",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB80 (4000403)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345684",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB77 (4000400)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "21-jul.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345685",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB58 (4000387)",
+        "type": "012345678914",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "25-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345686",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB56 (4000385)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "31-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345687",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB77 (4000400)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "30-maj-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345688",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB44 (4000374)",
+        "type": "012345678913",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "14-jul.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345689",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB79 (4000402)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "15-aug.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345690",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB15 (4000346)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "24-aug.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345691",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB39 (4000369)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345692",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT11 (3601192)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "28-jun.-2017",
+            "latestFinishDate": "1",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "High",
+        "createdBy": "SAP",
+        "systemStatus": "1",
+        "name": "12345693",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB62 (4000391)",
+        "type": "012345678914",
+        "priority": "High",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "29-aug.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345694",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB01 (4000332)",
+        "type": "012345678911",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "30-jun.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345695",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB22 (4000353)",
+        "type": "012345678912",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "30-jun.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345696",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB61 (4000390)",
+        "type": "012345678913",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "29-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345697",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT78 (3601259)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "29-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345698",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT78 (3601259)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "04-sep.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345699",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "04-sep.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345700",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "04-sep.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345701",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "04-sep.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345702",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT40 (3601221)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345703",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT07 (3601188)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345704",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT07 (3601188)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "24-jul.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345705",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB61 (4000390)",
+        "type": "012345678914",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "28-jul.-2017",
+            "latestFinishDate": "3",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "3",
+        "name": "12345706",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB27 (4000358)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345707",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB29 (4000360)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345708",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB63 (4000392)",
+        "type": "012345678913",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "01-sep.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345709",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB68 (4000397)",
+        "type": "012345678914",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "04-sep.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345710",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB23 (4000354)",
+        "type": "012345678911",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345711",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT75 (3601256)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "19-sep.-2017",
+            "latestFinishDate": "3",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "3",
+        "name": "12345712",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB63 (4000392)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "08-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345713",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "08-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345714",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "08-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345715",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "08-maj-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345716",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT64 (3601245)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "02-okt.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345717",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT20 (3601201)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "02-okt.-2016",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345718",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT20 (3601201)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345719",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT12 (3601193)",
+        "type": "012345678912",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "10-nov.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345720",
+        "siteName": "",
+        "externalWorkOrderId": "WT Dan Tysk ,DT12 (3601193)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "17-jul.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345721",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB32 (4000362)",
+        "type": "012345678914",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "29-aug.-2017",
+            "latestFinishDate": "3",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "3",
+        "name": "12345722",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB26 (4000357)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678912",
+        "planning": {
+            "estimatedTime": "29-aug.-2017",
+            "latestFinishDate": "2",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Normal",
+        "createdBy": "SAP",
+        "systemStatus": "2",
+        "name": "12345723",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB67 (4000396)",
+        "type": "012345678912",
+        "priority": "Normal",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678913",
+        "planning": {
+            "estimatedTime": "21-mar.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345724",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB76 (4000399)",
+        "type": "012345678913",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678914",
+        "planning": {
+            "estimatedTime": "21-mar.-2017",
+            "latestFinishDate": "",
+            "earliestStartDate": "1",
+            "latestStartDate": "1"
+        },
+        "userStatus": "",
+        "createdBy": "SAP",
+        "systemStatus": "",
+        "name": "12345725",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB76 (4000399)",
+        "type": "012345678914",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    },
+    {
+        "assetSerialNumber": "012345678911",
+        "planning": {
+            "estimatedTime": "06-sep.-2017",
+            "latestFinishDate": "3",
+            "earliestStartDate": "",
+            "latestStartDate": ""
+        },
+        "userStatus": "Low",
+        "createdBy": "SAP",
+        "systemStatus": "3",
+        "name": "12345726",
+        "siteName": "",
+        "externalWorkOrderId": "WT Sandbank ,SB22 (4000353)",
+        "type": "012345678911",
+        "priority": "Low",
+        "createdOn": "18-05-2018",
+        "status": "NEW"
+    }
+]

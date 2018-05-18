@@ -5,21 +5,10 @@
  */
 package shorelineexamproject.gui.controller;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.JSONArray;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import shorelineexamproject.be.Customization;
 
 /**
  *
@@ -62,7 +51,7 @@ public class ConversionViewControllerTest
         
         ConversionViewController instance = new ConversionViewController();
  
-        String s = "[{\"assetSerialNumber\":\"1\",\"planning\":{\"estimatedTime\":\"11\",\"latestFinishDate\":\"8\",\"earliestStartDate\":\"9\",\"latestStartDate\":\"10\"},\"userStatus\":\"5\",\"createdBy\":\"SAP\",\"systemStatus\":\"4\",\"name\":\"6\",\"siteName\":\"\",\"externalWorkOrderId\":\"3\",\"type\":\"2\",\"priority\":\"7\",\"createdOn\":\"17-05-2018\",\"status\":\"NEW\"}]";
+        String s = "[{\"assetSerialNumber\":\"1\",\"planning\":{\"estimatedTime\":\"11\",\"latestFinishDate\":\"8\",\"earliestStartDate\":\"9\",\"latestStartDate\":\"10\"},\"userStatus\":\"5\",\"createdBy\":\"SAP\",\"systemStatus\":\"4\",\"name\":\"6\",\"siteName\":\"\",\"externalWorkOrderId\":\"3\",\"type\":\"2\",\"priority\":\"7\",\"createdOn\":\"18-05-2018\",\"status\":\"NEW\"}]";
         JSONArray result = instance.CreateJsonObjects(lstVarAssetSerialNumber1,
                 lstVarType1, lstVarExternalWorkOrderId1, lstVarSystemStatus1,
                 lstVarUserStatus1, lstVarName1, lstVarDescription21, lstVarPriority1,

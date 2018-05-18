@@ -115,19 +115,19 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
-    private Tooltip directoryTooltip = new Tooltip();
+    private Tooltip directoryTooltip;
 
-    private Tooltip assetSerialNumberTooltip = new Tooltip();
-    private Tooltip typeTooltip = new Tooltip();
-    private Tooltip externalWorkOrderIdTooltip = new Tooltip();
-    private Tooltip systemStatusTooltip = new Tooltip();
-    private Tooltip userStatusTooltip = new Tooltip();
-    private Tooltip nameTooltip = new Tooltip();
-    private Tooltip priorityTooltip = new Tooltip();
-    private Tooltip latestFinishDateTooltip = new Tooltip();
-    private Tooltip earliestStartDateTooltip = new Tooltip();
-    private Tooltip latestStartDateTooltip = new Tooltip();
-    private Tooltip estimatedTimeTooltip = new Tooltip();
+    private Tooltip assetSerialNumberTooltip;
+    private Tooltip typeTooltip;
+    private Tooltip externalWorkOrderIdTooltip;
+    private Tooltip systemStatusTooltip;
+    private Tooltip userStatusTooltip;
+    private Tooltip nameTooltip;
+    private Tooltip priorityTooltip;
+    private Tooltip latestFinishDateTooltip;
+    private Tooltip earliestStartDateTooltip;
+    private Tooltip latestStartDateTooltip;
+    private Tooltip estimatedTimeTooltip;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -177,10 +177,7 @@ public class ConversionViewController implements Initializable
         try
         {
             this.model = new Model();
-        } catch (IOException ex)
-        {
-            Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (DalException ex)
+        } catch (IOException | DalException ex)
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -362,7 +359,7 @@ public class ConversionViewController implements Initializable
     };
 
     /**
-     * Starts a task, and gets progressbar info.
+     * Starts a task, gets progressbar info and saves a task
      */
     public void start()
     {
@@ -410,6 +407,7 @@ public class ConversionViewController implements Initializable
                     thread.setDaemon(true);
 
                     thread.start();
+                    SaveTraceLog();
                 } else
                 {
                     lblError.setText("Name your conversion");
@@ -984,8 +982,7 @@ public class ConversionViewController implements Initializable
      *
      * @param event
      */
-    @FXML
-    private void clickSaveTraceLog(ActionEvent event)
+    private void SaveTraceLog()
     {
 
         try

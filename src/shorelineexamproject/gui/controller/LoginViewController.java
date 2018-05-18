@@ -46,7 +46,7 @@ public class LoginViewController implements Initializable
     private Label lblErrorMessage;
     @FXML
     private Label lblError;
-    
+
     private Model model;
 
     public LoginViewController() throws IOException, DalException
@@ -65,27 +65,27 @@ public class LoginViewController implements Initializable
         String userName = txtUser.getText();
         String password = txtPassword.getText();
 
-        if (model.UserLogin(userName, password) == true)
+        if (userName != "" && password != "" && model.UserLogin(userName, password) == true)
         {
-        Stage stage = new Stage();
+            Stage stage = new Stage();
 
-        FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/ConversionView.fxml"));
+            FXMLLoader fxLoader = new FXMLLoader(getClass().getResource("/shorelineexamproject/gui/view/ConversionView.fxml"));
 
-        Parent root = fxLoader.load();
+            Parent root = fxLoader.load();
 
-        ConversionViewController controller = fxLoader.getController();
-        controller.setParentWindowController(this);
-        controller.lblUser.setText(userName);
+            ConversionViewController controller = fxLoader.getController();
+            controller.setParentWindowController(this);
+            controller.lblUser.setText(userName);
 
-        Scene scene = new Scene(root);
-        stage.setTitle("Conversion");
-        stage.setScene(scene);
-        stage.show();
+            Scene scene = new Scene(root);
+            stage.setTitle("Conversion");
+            stage.setScene(scene);
+            stage.show();
 
-        Stage window = (Stage) btnLogin.getScene().getWindow();
-        window.close();
+            Stage window = (Stage) btnLogin.getScene().getWindow();
+            window.close();
         }
-       
+
         lblError.setText("Wrong Login");
         lblError.setTextFill(Color.web("#ff0000"));
     }
@@ -93,17 +93,27 @@ public class LoginViewController implements Initializable
     @FXML
     private void clickCreateUser(ActionEvent event) throws DalException
     {
+        // String password = "";
         String userName = txtUser.getText();
         String password = txtPassword.getText();
+        lblError.setText("");
+        if (!txtUser.getText().isEmpty() && !txtPassword.getText().isEmpty())
+        {
+            LogIn l = new LogIn();
+            l.setUserName(userName);
+            l.setPassword(password);
 
-        LogIn l = new LogIn();
-        l.setUserName(userName);
-        l.setPassword(password);
+            model.addUserToDB(l);
 
-        model.addUserToDB(l);
+            lblError.setText("User Created");
+            lblError.setTextFill(Color.web("#0b6074"));
+        } else
+        {
+            lblError.setText("You forgot something");
+            lblError.setTextFill(Color.web("#ff0000"));
+        }
+        
 
-        lblError.setText("User Created");
-        lblError.setTextFill(Color.web("#0b6074"));
     }
 
 }
