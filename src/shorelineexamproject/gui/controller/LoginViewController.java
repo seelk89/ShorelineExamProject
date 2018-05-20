@@ -43,8 +43,6 @@ public class LoginViewController implements Initializable
     @FXML
     private JFXButton btnCreateUser;
     @FXML
-    private Label lblErrorMessage;
-    @FXML
     private Label lblError;
 
     private Model model;

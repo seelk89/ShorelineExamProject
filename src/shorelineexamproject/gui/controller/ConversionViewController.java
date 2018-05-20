@@ -115,7 +115,6 @@ public class ConversionViewController implements Initializable
     private Label lblError;
 
     //Tooltip creations
-
     private Tooltip directoryTooltip;
 
     private Tooltip assetSerialNumberTooltip;
@@ -154,7 +153,7 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
     //Variables for threads
-    private Thread thread = null;
+    //private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
 
     //task related instancefields
@@ -292,21 +291,30 @@ public class ConversionViewController implements Initializable
         @Override
         protected Object call() throws Exception
         {
-
             while (!stopped)
-            {       
-                synchronized (this)
-                {
-                    while (paused)
-                    {
-                        wait();
-                    }
-                }
-
+            {
                 String fileName = null;
 
                 for (int i = 0; i < lstAbsolutePaths.size(); i++)
                 {
+                    synchronized (this)
+                    {
+                        while (paused)
+                        {
+                            wait();
+                        }
+                    }
+
+                    synchronized (this)
+                    {
+                        if (isCancelled())
+                        {
+                            break;
+                        }
+                    }
+
+                    System.out.println(i);
+
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
 
@@ -339,9 +347,11 @@ public class ConversionViewController implements Initializable
 
                     lstVarDescription2.clear();
                 }
-            }   
+
+                break;
+            }
             return null;
-        }  
+        }
     };
 
     /**
@@ -382,24 +392,26 @@ public class ConversionViewController implements Initializable
                         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
                         {
                             lblConversionComplete.setText(newValue);
-                            if(prgConversion.getProgress() == 1)
+                            if (prgConversion.getProgress() == 1)
                             {
                                 btnTask.setText("Start");
                                 btnPauseTask.setText("Pause");
                                 btnPauseTask.setDisable(true);
-                                
+
                                 stopped = true;
-                                thread = null;
-                            }      
+                                //thread = null;
+                            }
                         }
                     });
 
-                    if (thread == null)
-                    {
-                        thread = new Thread(task);
-                    }
-
+                    Thread thread = new Thread(task);
+         
+//                    if (thread == null)
+//                    {
+//                        thread = new Thread(task);
+//                    }
                     //Daemon, stops the task if the main thread is stopped
+                    
                     thread.setDaemon(true);
 
                     thread.start();
@@ -424,6 +436,7 @@ public class ConversionViewController implements Initializable
     public void stop()
     {
         stopped = true;
+        task.cancel();
     }
 
     /**
@@ -442,10 +455,10 @@ public class ConversionViewController implements Initializable
     public void resume()
     {
         suspend.set(false);
-        synchronized (thread)
-        {
-            thread.notifyAll();
-        }
+//        synchronized (thread)
+//        {
+//            thread.notifyAll();
+//        }
     }
 
     /**
@@ -475,7 +488,7 @@ public class ConversionViewController implements Initializable
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
-            thread = null;
+            //thread = null;
 
             btnTask.setText("Start");
         }
@@ -514,6 +527,9 @@ public class ConversionViewController implements Initializable
     private void clickGet(ActionEvent event)
     {
         lstAbsolutePaths.clear();
+
+        prgConversion.progressProperty().unbind();
+        prgConversion.setProgress(0);
 
         final FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose a file");

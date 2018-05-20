@@ -147,7 +147,6 @@ public class DAOCSVReader
         {
             Logger.getLogger(DAOCSVReader.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     /**
