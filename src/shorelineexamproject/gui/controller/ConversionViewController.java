@@ -32,6 +32,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import javafx.beans.value.ChangeListener;
@@ -153,7 +156,7 @@ public class ConversionViewController implements Initializable
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
     //Variables for threads
-    //private Thread thread = null;
+    private Thread thread = null;
     private final AtomicBoolean suspend = new AtomicBoolean(false);
 
     //task related instancefields
@@ -286,6 +289,8 @@ public class ConversionViewController implements Initializable
      * also updates the progressbar, and at the end it clears the txtfields so
      * it can get ready for a new conversion
      */
+    class TaskClass
+    {
     private final Task task = new Task()
     {
         @Override
@@ -312,8 +317,6 @@ public class ConversionViewController implements Initializable
                             break;
                         }
                     }
-
-                    System.out.println(i);
 
                     //Fills the list with the values below the headers in a given file
                     fillListsWithExcel(lstAbsolutePaths.get(i));
@@ -353,6 +356,7 @@ public class ConversionViewController implements Initializable
             return null;
         }
     };
+    }
 
     /**
      * Starts a task, gets progressbar info and saves a task
@@ -375,6 +379,8 @@ public class ConversionViewController implements Initializable
             {
                 if (!"".equals(txtJSONName.getText()))
                 {
+                    TaskClass task = new TaskClass();
+                    
                     stopped = false;
                     paused = false;
 
@@ -384,10 +390,10 @@ public class ConversionViewController implements Initializable
                     //Binds the progress bar to the task
                     prgConversion.progressProperty().unbind();
                     prgConversion.setProgress(0);
-                    prgConversion.progressProperty().bind(task.progressProperty());
+                    prgConversion.progressProperty().bind(task.task.progressProperty());
 
                     //Gets a message from the task
-                    task.messageProperty().addListener(new ChangeListener<String>()
+                    task.task.messageProperty().addListener(new ChangeListener<String>()
                     {
                         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
                         {
@@ -399,22 +405,21 @@ public class ConversionViewController implements Initializable
                                 btnPauseTask.setDisable(true);
 
                                 stopped = true;
-                                //thread = null;
+                                thread = null;
                             }
                         }
                     });
 
-                    Thread thread = new Thread(task);
-         
-//                    if (thread == null)
-//                    {
-//                        thread = new Thread(task);
-//                    }
-                    //Daemon, stops the task if the main thread is stopped
-                    
-                    thread.setDaemon(true);
+                    if (thread == null)
+                    {
+                        thread = new Thread(task.task);
 
-                    thread.start();
+                        //Daemon, stops the task if the main thread is stopped
+                        thread.setDaemon(true);
+
+                        thread.start();
+                    }
+
                     SaveTraceLog();
                 } else
                 {
@@ -436,7 +441,8 @@ public class ConversionViewController implements Initializable
     public void stop()
     {
         stopped = true;
-        task.cancel();
+        //task.cancel();
+        thread = null;
     }
 
     /**
@@ -455,10 +461,10 @@ public class ConversionViewController implements Initializable
     public void resume()
     {
         suspend.set(false);
-//        synchronized (thread)
-//        {
-//            thread.notifyAll();
-//        }
+        synchronized (thread)
+        {
+            thread.notifyAll();
+        }
     }
 
     /**
@@ -488,7 +494,7 @@ public class ConversionViewController implements Initializable
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
-            //thread = null;
+            thread = null;
 
             btnTask.setText("Start");
         }
@@ -506,9 +512,9 @@ public class ConversionViewController implements Initializable
         paused = !paused;
         if (!paused)
         {
-            synchronized (task)
+            //synchronized (task)
             {
-                task.notify();
+                //task.notify();
             }
 
             btnPauseTask.setText("Pause");
