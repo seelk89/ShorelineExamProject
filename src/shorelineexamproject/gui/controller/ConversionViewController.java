@@ -284,6 +284,8 @@ public class ConversionViewController implements Initializable
         });
     }
 
+    TaskClass task = null;
+    
     /**
      * task for converting xlsx/csv to JSON. It runs while !stopped !paused, it
      * also updates the progressbar, and at the end it clears the txtfields so
@@ -291,71 +293,72 @@ public class ConversionViewController implements Initializable
      */
     class TaskClass
     {
-    private final Task task = new Task()
-    {
-        @Override
-        protected Object call() throws Exception
+
+        private final Task task = new Task()
         {
-            while (!stopped)
+            @Override
+            protected Object call() throws Exception
             {
-                String fileName = null;
-
-                for (int i = 0; i < lstAbsolutePaths.size(); i++)
+                while (!stopped)
                 {
-                    synchronized (this)
+                    String fileName = null;
+
+                    for (int i = 0; i < lstAbsolutePaths.size(); i++)
                     {
-                        while (paused)
+                        synchronized (this)
                         {
-                            wait();
+                            while (paused)
+                            {
+                                wait();
+                            }
                         }
-                    }
 
-                    synchronized (this)
-                    {
-                        if (isCancelled())
+                        synchronized (this)
                         {
-                            break;
+                            if (isCancelled())
+                            {
+                                break;
+                            }
                         }
+
+                        //Fills the list with the values below the headers in a given file
+                        fillListsWithExcel(lstAbsolutePaths.get(i));
+
+                        if (i > 0)
+                        {
+                            fileName = txtJSONName.getText() + "_" + (i + 1) + ".json";
+                        } else
+                        {
+                            fileName = txtJSONName.getText() + ".json";
+                        }
+
+                        JSONArray jarray = CreateJsonObjects();
+                        model.CreateJSONFile(directory, fileName, jarray);
+
+                        //For progress
+                        updateProgress(i + 1, lstAbsolutePaths.size());
+                        updateMessage((i + 1) + " Files done");
+
+                        lstVarAssetSerialNumber.clear();
+                        lstVarType.clear();
+                        lstVarExternalWorkOrderId.clear();
+                        lstVarSystemStatus.clear();
+                        lstVarUserStatus.clear();
+                        lstVarName.clear();
+                        lstVarPriority.clear();
+                        lstVarLatestFinishDate.clear();
+                        lstVarEarliestStartDate.clear();
+                        lstVarLatestStartDate.clear();
+                        lstVarEstimatedTime.clear();
+
+                        lstVarDescription2.clear();
                     }
 
-                    //Fills the list with the values below the headers in a given file
-                    fillListsWithExcel(lstAbsolutePaths.get(i));
-
-                    if (i > 0)
-                    {
-                        fileName = txtJSONName.getText() + "_" + (i + 1) + ".json";
-                    } else
-                    {
-                        fileName = txtJSONName.getText() + ".json";
-                    }
-
-                    JSONArray jarray = CreateJsonObjects();
-                    model.CreateJSONFile(directory, fileName, jarray);
-
-                    //For progress
-                    updateProgress(i + 1, lstAbsolutePaths.size());
-                    updateMessage((i + 1) + " Files done");
-
-                    lstVarAssetSerialNumber.clear();
-                    lstVarType.clear();
-                    lstVarExternalWorkOrderId.clear();
-                    lstVarSystemStatus.clear();
-                    lstVarUserStatus.clear();
-                    lstVarName.clear();
-                    lstVarPriority.clear();
-                    lstVarLatestFinishDate.clear();
-                    lstVarEarliestStartDate.clear();
-                    lstVarLatestStartDate.clear();
-                    lstVarEstimatedTime.clear();
-
-                    lstVarDescription2.clear();
+                    break;
                 }
-
-                break;
+                return null;
             }
-            return null;
-        }
-    };
+        };
     }
 
     /**
@@ -379,8 +382,8 @@ public class ConversionViewController implements Initializable
             {
                 if (!"".equals(txtJSONName.getText()))
                 {
-                    TaskClass task = new TaskClass();
-                    
+                    task = new TaskClass();
+
                     stopped = false;
                     paused = false;
 
