@@ -31,7 +31,7 @@ public class DAOJSONWriter
 
         FileWriter fw = new FileWriter(file.getAbsoluteFile());
         fw.write(jarray.toString(4));
-        fw.flush();
+        fw.close();
     }
 
 

@@ -714,10 +714,10 @@ public class ConversionViewController implements Initializable
             chooser.setInitialDirectory(defaultDirectory);
             File selectedDirectory = chooser.showDialog(stage);
 
-            directory = selectedDirectory.getAbsolutePath();
+            directory = selectedDirectory.getAbsolutePath(); //null
             btnFileLocation.setText("File location");
 
-            directoryTooltip.setText(directory);
+            directoryTooltip.setText(directory); //null
             btnFileLocation.setTooltip(directoryTooltip);
 
             directoryChosen = true;
