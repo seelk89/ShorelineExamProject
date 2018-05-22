@@ -58,28 +58,6 @@ public class BLL
         strat.valuesInHeaderColumn(filepath, header, headerList);
     }
     
-//    public List<ListViewObject> readXLSXHeaders(String filepath)
-//    {
-//        return daoXLSXReader.readXLSXHeaders(filepath);
-//    }
-//
-//    public void getXLSXHeaderValues(String filepath,
-//            String header, ArrayList<String> headerList)
-//    {
-//        daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
-//    }
-//    
-//    public List<ListViewObject>readCSVHeaders(String filepath)
-//    {
-//        return daoCSVReader.readCSVHeaders(filepath);
-//    }
-//    
-//    public void getCSVHeaderValues(String filepath,
-//            String header, ArrayList<String> headerList)
-//    {
-//        daoCSVReader.getCSVHeaderValues(filepath, header, headerList);
-//    }
-
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         daoJSONWriter.CreateJSONFile(directory, fileName, jarray);

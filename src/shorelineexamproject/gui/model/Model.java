@@ -58,28 +58,6 @@ public class Model
     {
         bll.valuesInHeaderColumn(filepath, header, headerList);
     }
-    
-//    public List<ListViewObject> readXLSXHeaders(String filepath)
-//    {
-//        return bll.readXLSXHeaders(filepath);
-//    }
-//
-//    public List<ListViewObject> readCSVHeaders(String filepath)
-//    {
-//        return bll.readCSVHeaders(filepath);
-//    }
-//
-//    public void getXLSXHeaderValues(String filepath,
-//            String header, ArrayList<String> headerList)
-//    {
-//        bll.getXLSXHeaderValues(filepath, header, headerList);
-//    }
-//
-//    public void getCSVHeaderValues(String filepath,
-//            String header, ArrayList<String> headerList)
-//    {
-//        bll.getCSVHeaderValues(filepath, header, headerList);
-//    }
 
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
