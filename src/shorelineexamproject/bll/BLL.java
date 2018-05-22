@@ -22,6 +22,7 @@ import shorelineexamproject.dal.DAOLogIn;
 import shorelineexamproject.dal.DAOXLSXReader;
 import shorelineexamproject.dal.DAOTraceLog;
 import shorelineexamproject.dal.StrategyConversion;
+import shorelineexamproject.dal.StrategyConversionFactory;
 import shorelineexamproject.dal.exceptions.DalException;
 
 /**
@@ -36,7 +37,6 @@ public class BLL
     private DAOCustomization daoCustomization;
     private DAOLogIn daoLogIn;
     private DAOTraceLog daoTraceLog;
-    private StrategyConversion strategyConversion;
 
     public BLL() throws IOException, DalException
     {
@@ -45,39 +45,19 @@ public class BLL
         this.daoTraceLog = new DAOTraceLog();
     }
 
-//    public List<ListViewObject> headers(String filepath)
-//    {
-//        return strategyConversion.headers(filepath);
-//    }
-//
-//    public void valuesInHeaderColumn(String filepath,
-//            String header, ArrayList<String> headerList)
-//    {
-//        strategyConversion.valuesInHeaderColumn(filepath, header, headerList);
-//    }
-    
-    public List<ListViewObject> readXLSXHeaders(String filepath)
+    public List<ListViewObject> headers(String filepath)
     {
-        return daoXLSXReader.readXLSXHeaders(filepath);
+        StrategyConversion strat = StrategyConversionFactory.getStrategy(filepath);
+        return strat.headers(filepath);
     }
 
-    public void getXLSXHeaderValues(String filepath,
+    public void valuesInHeaderColumn(String filepath,
             String header, ArrayList<String> headerList)
     {
-        daoXLSXReader.getXLSXHeaderValues(filepath, header, headerList);
+        StrategyConversion strat = StrategyConversionFactory.getStrategy(filepath);
+        strat.valuesInHeaderColumn(filepath, header, headerList);
     }
     
-    public List<ListViewObject>readCSVHeaders(String filepath)
-    {
-        return daoCSVReader.readCSVHeaders(filepath);
-    }
-    
-    public void getCSVHeaderValues(String filepath,
-            String header, ArrayList<String> headerList)
-    {
-        daoCSVReader.getCSVHeaderValues(filepath, header, headerList);
-    }
-
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         daoJSONWriter.CreateJSONFile(directory, fileName, jarray);

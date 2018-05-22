@@ -143,7 +143,6 @@ public class ConversionViewController implements Initializable
     private volatile boolean paused = false;
 
     private LoginViewController parent;
-    private TaskClass task = null;
 
     private Model model;
     TaskClass taskClass = null;
@@ -233,7 +232,7 @@ public class ConversionViewController implements Initializable
      * !paused, it also updates the progressbar, and at the end it clears the
      * txtfields so it can get ready for a new conversion
      */
-    class TaskClass
+    public class TaskClass
     {
 
         public final Task task = new Task()
@@ -249,7 +248,7 @@ public class ConversionViewController implements Initializable
                     {
                         while (paused)
                         {
-                            Thread.sleep(1000);
+                            Thread.sleep(750);
                         }
 
                         if (isCancelled())
@@ -267,6 +266,8 @@ public class ConversionViewController implements Initializable
                         {
                             fileName = txtJSONName.getText() + ".json";
                         }
+
+                        System.out.println(i);
 
                         JSONArray jarray = CreateJsonObjects();
                         model.CreateJSONFile(directory, fileName, jarray);
@@ -293,16 +294,6 @@ public class ConversionViewController implements Initializable
                 return null;
             }
         };
-
-        /**
-         * Stops a taskClass
-         */
-        public void stop()
-        {
-            stopped = true;
-            task.cancel();
-            thread = null;
-        }
     }
 
     /**
@@ -386,17 +377,17 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * if this button is clicked it starts/stops a taskClass. Stops a task
+     * If this button is clicked it starts/stops a taskClass. Stops a task
      */
     public synchronized void stop()
     {
         stopped = true;
-        task.task.cancel();
+        taskClass.task.cancel();
         thread = null;
     }
 
     /**
-     * if this button is clicked it starts/stops a task.
+     * If this button is clicked it starts/stops a task.
      *
      * @param event
      * @throws InterruptedException
@@ -408,13 +399,13 @@ public class ConversionViewController implements Initializable
         {
 //            if (start() == true)
 //            {
-            start();
+                start();
 
-            btnTask.setText("Stop");
+                btnTask.setText("Stop");
 //            }
         } else if ("Stop".equals(btnTask.getText()))
         {
-            taskClass.stop();
+            stop();
             thread = null;
 
             btnTask.setText("Start");
@@ -430,11 +421,9 @@ public class ConversionViewController implements Initializable
     @FXML
     private synchronized void clickPauseTask(ActionEvent event) throws InterruptedException
     {
-
         paused = !paused;
         if (!paused)
         {
-
             btnPauseTask.setText("Pause");
         } else
         {
@@ -475,13 +464,7 @@ public class ConversionViewController implements Initializable
 
             //Clears the ListView and adds headers from xlsx file
             lstHeaders.getItems().clear();
-            if (lstAbsolutePaths.get(0).endsWith(".xlsx"))
-            {
-                lstHeaders.getItems().addAll(model.readXLSXHeaders(lstAbsolutePaths.get(0)));
-            } else if (lstAbsolutePaths.get(0).endsWith(".csv"))
-            {
-                lstHeaders.getItems().addAll(model.readCSVHeaders(lstAbsolutePaths.get(0)));
-            }
+            lstHeaders.getItems().addAll(model.headers(lstAbsolutePaths.get(0)));
         }
     }
 
@@ -492,40 +475,41 @@ public class ConversionViewController implements Initializable
      */
     private void fillListsWithExcel(String absolutePath)
     {
+
         if (absolutePath.endsWith(".xlsx"))
         {
-            model.getXLSXHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
-            model.getXLSXHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
-            model.getXLSXHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
-            model.getXLSXHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
-            model.getXLSXHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
-            model.getXLSXHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
-            model.getXLSXHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
-            model.getXLSXHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
-            model.getXLSXHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
-            model.getXLSXHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
-            model.getXLSXHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+            model.valuesInHeaderColumn(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
+            model.valuesInHeaderColumn(absolutePath, txtVarType.getText(), lstVarType);
+            model.valuesInHeaderColumn(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
+            model.valuesInHeaderColumn(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
+            model.valuesInHeaderColumn(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
+            model.valuesInHeaderColumn(absolutePath, txtVarName.getText(), lstVarName);
+            model.valuesInHeaderColumn(absolutePath, txtVarPriority.getText(), lstVarPriority);
+            model.valuesInHeaderColumn(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
 
-            model.getXLSXHeaderValues(absolutePath, "Description 2", lstVarDescription2);
+            model.valuesInHeaderColumn(absolutePath, "Description 2", lstVarDescription2);
         } else if (absolutePath.endsWith(".csv"))
         {
-            model.getCSVHeaderValues(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
-            model.getCSVHeaderValues(absolutePath, txtVarType.getText(), lstVarType);
-            model.getCSVHeaderValues(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
-            model.getCSVHeaderValues(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
-            model.getCSVHeaderValues(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
-            model.getCSVHeaderValues(absolutePath, txtVarName.getText(), lstVarName);
-            model.getCSVHeaderValues(absolutePath, txtVarPriority.getText(), lstVarPriority);
-            model.getCSVHeaderValues(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
-            model.getCSVHeaderValues(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
-            model.getCSVHeaderValues(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
-            model.getCSVHeaderValues(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
+            model.valuesInHeaderColumn(absolutePath, txtVarAssetSerialNumber.getText(), lstVarAssetSerialNumber);
+            model.valuesInHeaderColumn(absolutePath, txtVarType.getText(), lstVarType);
+            model.valuesInHeaderColumn(absolutePath, txtVarExternalWorkOrderid.getText(), lstVarExternalWorkOrderId);
+            model.valuesInHeaderColumn(absolutePath, txtVarSystemStatus.getText(), lstVarSystemStatus);
+            model.valuesInHeaderColumn(absolutePath, txtVarUserStatus.getText(), lstVarUserStatus);
+            model.valuesInHeaderColumn(absolutePath, txtVarName.getText(), lstVarName);
+            model.valuesInHeaderColumn(absolutePath, txtVarPriority.getText(), lstVarPriority);
+            model.valuesInHeaderColumn(absolutePath, txtVarLatestFinishDate.getText(), lstVarLatestFinishDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarEarliestStartDate.getText(), lstVarEarliestStartDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarLatestStartDate.getText(), lstVarLatestStartDate);
+            model.valuesInHeaderColumn(absolutePath, txtVarEstimatedTime.getText(), lstVarEstimatedTime);
 
-            model.getCSVHeaderValues(absolutePath, "\"Description\" 2", lstVarDescription2);
+            model.valuesInHeaderColumn(absolutePath, "\"Description\" 2", lstVarDescription2);
         }
     }
 
-    //slettet fra bll
+
     private String getDate()
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");

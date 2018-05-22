@@ -48,26 +48,15 @@ public class Model
     public ObservableList<Customization> customizationList = FXCollections.observableArrayList();
     private ObservableList<TraceLog> logList = FXCollections.observableArrayList();
 
-    public List<ListViewObject> readXLSXHeaders(String filepath)
+    public List<ListViewObject> headers(String filepath)
     {
-        return bll.readXLSXHeaders(filepath);
+        return bll.headers(filepath);
     }
-
-    public List<ListViewObject> readCSVHeaders(String filepath)
-    {
-        return bll.readCSVHeaders(filepath);
-    }
-
-    public void getXLSXHeaderValues(String filepath,
+    
+          public void valuesInHeaderColumn(String filepath,
             String header, ArrayList<String> headerList)
     {
-        bll.getXLSXHeaderValues(filepath, header, headerList);
-    }
-
-    public void getCSVHeaderValues(String filepath,
-            String header, ArrayList<String> headerList)
-    {
-        bll.getCSVHeaderValues(filepath, header, headerList);
+        bll.valuesInHeaderColumn(filepath, header, headerList);
     }
 
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
