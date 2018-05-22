@@ -150,20 +150,20 @@ public class ConversionViewController implements Initializable
 
     //Variables for folder selection
     boolean directoryChosen = false;
-    String directory = null;
+    private String directory = null;
 
     //AbsolutePath for the file being read
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
     //Variables for threads
     private Thread thread = null;
-    private final AtomicBoolean suspend = new AtomicBoolean(false);
 
     //task related instancefields
     private boolean stopped = false;
     private boolean paused = false;
 
     private LoginViewController parent;
+    private TaskClass task = null;
 
     private Model model;
 
@@ -284,8 +284,6 @@ public class ConversionViewController implements Initializable
         });
     }
 
-    TaskClass task = null;
-    
     /**
      * task for converting xlsx/csv to JSON. It runs while !stopped !paused, it
      * also updates the progressbar, and at the end it clears the txtfields so
@@ -294,7 +292,7 @@ public class ConversionViewController implements Initializable
     class TaskClass
     {
 
-        private final Task task = new Task()
+        public final Task task = new Task()
         {
             @Override
             protected Object call() throws Exception
@@ -307,7 +305,7 @@ public class ConversionViewController implements Initializable
                     {
                         synchronized (this)
                         {
-                            while (paused)
+                            if (paused)
                             {
                                 wait();
                             }
@@ -364,7 +362,7 @@ public class ConversionViewController implements Initializable
     /**
      * Starts a task, gets progressbar info and saves a task
      */
-    public void start()
+    private boolean start()
     {
         if (lstAbsolutePaths.size() > 0)
         {
@@ -424,6 +422,8 @@ public class ConversionViewController implements Initializable
                     }
 
                     SaveTraceLog();
+
+                    return true;
                 } else
                 {
                     lblError.setText("Name your conversion");
@@ -436,48 +436,28 @@ public class ConversionViewController implements Initializable
         {
             lblError.setText("Get files to read");
         }
+
+        return false;
     }
 
     /**
      * Stops a task
      */
-    public void stop()
+    public synchronized void stop()
     {
         stopped = true;
-        //task.cancel();
+        task.task.cancel();
         thread = null;
-    }
-
-    /**
-     * Pauses the task
-     *
-     * @throws java.lang.InterruptedException
-     */
-    public synchronized void pause() throws InterruptedException
-    {
-        suspend.set(true);
     }
 
     /**
      * Resumes a paused task
      */
-    public void resume()
+    public synchronized void resume()
     {
-        suspend.set(false);
-        synchronized (thread)
-        {
-            thread.notifyAll();
-        }
-    }
+        notifyAll();
 
-    /**
-     * Checks if the task has been suspended
-     *
-     * @return
-     */
-    boolean isSuspended()
-    {
-        return suspend.get();
+        System.out.println("Hello");
     }
 
     /**
@@ -491,9 +471,12 @@ public class ConversionViewController implements Initializable
     {
         if ("Start".equals(btnTask.getText()))
         {
+//            if (start() == true)
+//            {
             start();
 
             btnTask.setText("Stop");
+//            }
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
@@ -510,15 +493,12 @@ public class ConversionViewController implements Initializable
      * @throws InterruptedException
      */
     @FXML
-    private void clickPauseTask(ActionEvent event) throws InterruptedException
+    private synchronized void clickPauseTask(ActionEvent event) throws InterruptedException
     {
         paused = !paused;
         if (!paused)
         {
-            //synchronized (task)
-            {
-                //task.notify();
-            }
+            resume();
 
             btnPauseTask.setText("Pause");
         } else
