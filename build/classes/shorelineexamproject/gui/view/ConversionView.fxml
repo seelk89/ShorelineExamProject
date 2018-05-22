@@ -10,44 +10,44 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="467.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="516.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
-      <JFXButton fx:id="btnGet" layoutX="276.0" layoutY="85.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get files" AnchorPane.leftAnchor="283.0" AnchorPane.topAnchor="85.0" />
-      <JFXTextField fx:id="txtJSONName" focusColor="#0c8bb8" layoutX="344.0" layoutY="568.0" prefHeight="25.0" prefWidth="158.0" promptText="JSON name" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="592.0" />
+      <JFXButton fx:id="btnGet" layoutX="306.0" layoutY="85.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get files" AnchorPane.leftAnchor="307.0" AnchorPane.topAnchor="85.0" />
+      <JFXTextField fx:id="txtJSONName" focusColor="#0c8bb8" layoutX="344.0" layoutY="568.0" prefHeight="25.0" prefWidth="158.0" promptText="JSON name" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="592.0" />
 
-           <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="534.0" prefWidth="252.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="85.0" />
+           <ListView fx:id="lstHeaders" layoutX="14.0" layoutY="10.0" onDragDetected="#dragLstHeaders" prefHeight="534.0" prefWidth="252.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="235.0" AnchorPane.topAnchor="85.0" />
 
 
-      <JFXButton fx:id="btnTask" layoutX="285.0" layoutY="633.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="633.0" />
-      <JFXButton fx:id="btnPauseTask" layoutX="335.0" layoutY="633.0" onAction="#clickPauseTask" prefHeight="25.0" prefWidth="54.0" ripplerFill="#0c8bb8" text="Pause" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="633.0" />
-      <JFXTextField fx:id="txtVarType" focusColor="#0c8bb8" layoutX="233.0" layoutY="199.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="199.0" />
-      <JFXTextField fx:id="txtVarUserStatus" focusColor="#0c8bb8" layoutX="233.0" layoutY="298.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="298.0" />
-      <JFXTextField fx:id="txtVarSystemStatus" focusColor="#0c8bb8" layoutX="233.0" layoutY="265.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="265.0" />
-      <JFXTextField fx:id="txtVarExternalWorkOrderid" focusColor="#0c8bb8" layoutX="233.0" layoutY="232.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="232.0" />
-      <JFXTextField fx:id="txtVarAssetSerialNumber" focusColor="#0c8bb8" layoutX="233.0" layoutY="166.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="166.0" />
-      <JFXTextField fx:id="txtVarName" focusColor="#0c8bb8" layoutX="233.0" layoutY="331.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="331.0" />
-      <JFXTextField fx:id="txtVarPriority" focusColor="#0c8bb8" layoutX="233.0" layoutY="364.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="364.0" />
-      <JFXTextField fx:id="txtVarEstimatedTime" focusColor="#0c8bb8" layoutX="233.0" layoutY="526.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="526.0" />
-      <JFXTextField fx:id="txtVarLatestFinishDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="427.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="427.0" />
-      <JFXTextField fx:id="txtVarEarliestStartDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="460.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="460.0" />
-      <JFXTextField fx:id="txtVarLatestStartDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="493.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" unFocusColor="#0b6074" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="493.0" />
-      <Label layoutX="285.0" layoutY="143.0" prefHeight="17.0" prefWidth="54.0" text="Values:" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="143.0" />
-      <Label layoutX="285.0" layoutY="404.0" text="Planning:" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="404.0" />
-      <ImageView fitHeight="66.0" fitWidth="73.0" layoutX="14.0" layoutY="29.508346557617188" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="647.3296432495117" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="29.508346557617188">
+      <JFXButton fx:id="btnTask" layoutX="285.0" layoutY="633.0" onAction="#clickTask" ripplerFill="#0c8bb8" text="Start" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="633.0" />
+      <JFXButton fx:id="btnPauseTask" layoutX="356.0" layoutY="633.0" onAction="#clickPauseTask" prefHeight="25.0" prefWidth="54.0" ripplerFill="#0c8bb8" text="Pause" AnchorPane.leftAnchor="356.0" AnchorPane.topAnchor="633.0" />
+      <JFXTextField fx:id="txtVarType" focusColor="#0c8bb8" layoutX="233.0" layoutY="199.0" onDragDropped="#dropTxtVarType" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="type" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="199.0" />
+      <JFXTextField fx:id="txtVarUserStatus" focusColor="#0c8bb8" layoutX="233.0" layoutY="298.0" onDragDropped="#dropTxtVarUserStatus" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="userStatus" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="298.0" />
+      <JFXTextField fx:id="txtVarSystemStatus" focusColor="#0c8bb8" layoutX="233.0" layoutY="265.0" onDragDropped="#dropTxtVarSystemStatus" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="systemStatus" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtVarExternalWorkOrderid" focusColor="#0c8bb8" layoutX="233.0" layoutY="232.0" onDragDropped="#dropTxtVarExternalWorkOrderid" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="externalWorkOrderId" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="232.0" />
+      <JFXTextField fx:id="txtVarAssetSerialNumber" focusColor="#0c8bb8" layoutX="328.0" layoutY="167.0" onDragDropped="#dropTxtVarAssetSerialNumber" onDragOver="#overTxtTest" prefHeight="26.0" prefWidth="171.0" promptText="assetSerialNumber" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="167.0" />
+      <JFXTextField fx:id="txtVarName" focusColor="#0c8bb8" layoutX="233.0" layoutY="331.0" onDragDropped="#dropTxtVarName" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="name" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="331.0" />
+      <JFXTextField fx:id="txtVarPriority" focusColor="#0c8bb8" layoutX="233.0" layoutY="364.0" onDragDropped="#dropTxtVarPriority" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="priority" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="364.0" />
+      <JFXTextField fx:id="txtVarEstimatedTime" focusColor="#0c8bb8" layoutX="233.0" layoutY="526.0" onDragDropped="#dropTxtVarEstimatedTime" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="estimatedTime" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="526.0" />
+      <JFXTextField fx:id="txtVarLatestFinishDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="427.0" onDragDropped="#dropTxtVarLatestFinishDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="latestFinishDate" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="427.0" />
+      <JFXTextField fx:id="txtVarEarliestStartDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="460.0" onDragDropped="#dropTxtVarEarliestStartDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="earliestStartDate" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="460.0" />
+      <JFXTextField fx:id="txtVarLatestStartDate" focusColor="#0c8bb8" layoutX="233.0" layoutY="493.0" onDragDropped="#dropTxtVarLatestStartDate" onDragOver="#overTxtTest" prefHeight="25.0" prefWidth="158.0" promptText="latestStartDate" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="493.0" />
+      <Label layoutX="314.0" layoutY="149.0" prefHeight="17.0" prefWidth="54.0" text="Values:" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="133.60000000000002" AnchorPane.topAnchor="149.0" />
+      <Label layoutX="315.0" layoutY="409.0" text="Planning:" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="133.39999999999998" AnchorPane.topAnchor="407.0" />
+      <ImageView fitHeight="66.0" fitWidth="73.0" layoutX="14.0" layoutY="29.508346557617188" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="647.3296432495117" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="29.508346557617188">
          <image>
             <Image url="@SLLogo.PNG" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="99.0" layoutY="51.0" prefHeight="25.0" prefWidth="171.0" promptText="Customization" unFocusColor="#0b6074" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="51.0" />
-      <ProgressIndicator fx:id="prgConversion" layoutX="293.0" layoutY="660.0" progress="0.0" stylesheets="@../css/CSS.css" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="660.0" />
-      <Label fx:id="lblConversionComplete" layoutX="346.0" layoutY="662.0" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="662.0" />
-      <JFXButton fx:id="btnFileLocation" layoutX="276.0" layoutY="112.0" onAction="#clickFileLocation" ripplerFill="#0c8bb8" text="Choose file location" AnchorPane.leftAnchor="283.0" AnchorPane.topAnchor="112.0" />
+      <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="109.0" layoutY="51.0" prefHeight="26.0" prefWidth="161.0" promptText="Customization" unFocusColor="#0b6074" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="51.0" />
+      <ProgressIndicator fx:id="prgConversion" layoutX="322.0" layoutY="658.0" progress="0.0" stylesheets="@../css/CSS.css" AnchorPane.rightAnchor="165.2" AnchorPane.topAnchor="658.0" />
+      <Label fx:id="lblConversionComplete" layoutX="362.0" layoutY="658.0" prefHeight="18.0" prefWidth="13.0" AnchorPane.rightAnchor="135.0" AnchorPane.topAnchor="662.0" />
+      <JFXButton fx:id="btnFileLocation" layoutX="299.0" layoutY="111.0" onAction="#clickFileLocation" prefHeight="26.0" prefWidth="138.0" ripplerFill="#0c8bb8" text="Choose file location" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="111.0" />
 
-      <JFXButton fx:id="btnSaveCustomization" layoutX="20.0" layoutY="637.0" onAction="#clickSaveCustomization" ripplerFill="#0c8bb8" text="Save Customization" AnchorPane.leftAnchor="18.0" />
-      <JFXButton fx:id="btnDeleteCustomization" layoutX="18.0" layoutY="667.0" onAction="#clickDeleteCustomization" text="Delete Customization" AnchorPane.leftAnchor="18.0" />
-      <JFXButton fx:id="btnOpenTraceLogView" layoutX="340.0" layoutY="706.0" onAction="#clickOpenTraceLogViev" text="Tracelog" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="18.0" />
+      <JFXButton fx:id="btnSaveCustomization" layoutX="20.0" layoutY="637.0" onAction="#clickSaveCustomization" ripplerFill="#0c8bb8" text="Save Customization" AnchorPane.leftAnchor="25.0" />
+      <JFXButton fx:id="btnDeleteCustomization" layoutX="18.0" layoutY="667.0" onAction="#clickDeleteCustomization" text="Delete Customization" AnchorPane.leftAnchor="25.0" />
+      <JFXButton fx:id="btnOpenTraceLogView" layoutX="340.0" layoutY="706.0" onAction="#clickOpenTraceLogViev" text="Tracelog" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0" />
 
-      <Label fx:id="lblUser" layoutX="99.0" layoutY="31.0" text="User" AnchorPane.leftAnchor="99.0" AnchorPane.topAnchor="31.0" />
+      <Label fx:id="lblUser" layoutX="109.0" layoutY="30.0" text="User" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="30.0" />
       <Label fx:id="lblError" layoutX="28.0" layoutY="709.0" textFill="RED" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="28.0" />
 
 

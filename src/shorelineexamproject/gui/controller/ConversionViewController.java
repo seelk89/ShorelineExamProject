@@ -113,24 +113,10 @@ public class ConversionViewController implements Initializable
     @FXML
     private JFXButton btnOpenTraceLogView;
     @FXML
-    private JFXButton btnSaveTraceLog;
-    @FXML
     private Label lblError;
 
     //Tooltip creations
     private Tooltip directoryTooltip;
-
-    private Tooltip assetSerialNumberTooltip;
-    private Tooltip typeTooltip;
-    private Tooltip externalWorkOrderIdTooltip;
-    private Tooltip systemStatusTooltip;
-    private Tooltip userStatusTooltip;
-    private Tooltip nameTooltip;
-    private Tooltip priorityTooltip;
-    private Tooltip latestFinishDateTooltip;
-    private Tooltip earliestStartDateTooltip;
-    private Tooltip latestStartDateTooltip;
-    private Tooltip estimatedTimeTooltip;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
     private ArrayList<String> lstVarType = new ArrayList<String>();
@@ -193,40 +179,9 @@ public class ConversionViewController implements Initializable
         //Tooltip creations
         Tooltip directoryTooltip = new Tooltip();
 
-        Tooltip assetSerialNumberTooltip = new Tooltip();
-        Tooltip typeTooltip = new Tooltip();
-        Tooltip externalWorkOrderIdTooltip = new Tooltip();
-        Tooltip systemStatusTooltip = new Tooltip();
-        Tooltip userStatusTooltip = new Tooltip();
-        Tooltip nameTooltip = new Tooltip();
-        Tooltip priorityTooltip = new Tooltip();
-        Tooltip latestFinishDateTooltip = new Tooltip();
-        Tooltip earliestStartDateTooltip = new Tooltip();
-        Tooltip latestStartDateTooltip = new Tooltip();
-        Tooltip estimatedTimeTooltip = new Tooltip();
 
-        assetSerialNumberTooltip.setText("Asset id");
-        txtVarAssetSerialNumber.setTooltip(assetSerialNumberTooltip);
-        typeTooltip.setText("Order type");
-        txtVarType.setTooltip(typeTooltip);
-        externalWorkOrderIdTooltip.setText("Order");
-        txtVarExternalWorkOrderid.setTooltip(externalWorkOrderIdTooltip);
-        systemStatusTooltip.setText("System status");
-        txtVarSystemStatus.setTooltip(systemStatusTooltip);
-        userStatusTooltip.setText("User status");
-        txtVarUserStatus.setTooltip(userStatusTooltip);
-        nameTooltip.setText("Opr. short text, if it is empty then it will be set to Description 2");
-        txtVarName.setTooltip(nameTooltip);
-        priorityTooltip.setText("Priority, will be set to Low if there is no value to get");
-        txtVarPriority.setTooltip(priorityTooltip);
-        latestFinishDateTooltip.setText("LatestFinishDate");
-        txtVarLatestFinishDate.setTooltip(latestFinishDateTooltip);
-        earliestStartDateTooltip.setText("EarliestStartDate");
-        txtVarEarliestStartDate.setTooltip(earliestStartDateTooltip);
-        latestStartDateTooltip.setText("LatestStartDate");
-        txtVarLatestStartDate.setTooltip(latestStartDateTooltip);
-        estimatedTimeTooltip.setText("EastimatedTime");
-        txtVarEstimatedTime.setTooltip(estimatedTimeTooltip);
+
+        
 
         String desktopPath = System.getProperty("user.home") + "\\Desktop";
         directory = desktopPath;
@@ -284,12 +239,12 @@ public class ConversionViewController implements Initializable
         });
     }
 
-    TaskClass task = null;
-    
+    TaskClass taskClass = null;
+
     /**
-     * task for converting xlsx/csv to JSON. It runs while !stopped !paused, it
-     * also updates the progressbar, and at the end it clears the txtfields so
-     * it can get ready for a new conversion
+     * taskClass for converting xlsx/csv to JSON. It runs while !stopped
+     * !paused, it also updates the progressbar, and at the end it clears the
+     * txtfields so it can get ready for a new conversion
      */
     class TaskClass
     {
@@ -359,13 +314,58 @@ public class ConversionViewController implements Initializable
                 return null;
             }
         };
+
+        /**
+         * Stops a taskClass
+         */
+        public void stop()
+        {
+            stopped = true;
+            task.cancel();
+            thread = null;
+        }
+
+        /**
+         * Pauses the taskClass
+         *
+         * @throws java.lang.InterruptedException
+         */
+        public synchronized void pause() throws InterruptedException
+        {
+            suspend.set(true);
+            System.out.println("paused");
+        }
+
+        /**
+         * Resumes a paused taskClass
+         */
+        public void resume()
+        {
+            suspend.set(false);
+            synchronized (thread)
+            {
+                thread.notifyAll();
+                System.out.println("resumed");
+            }
+        }
+
+        /**
+         * Checks if the taskClass has been suspended
+         *
+         * @return
+         */
+        boolean isSuspended()
+        {
+            return suspend.get();
+        }
     }
 
     /**
-     * Starts a task, gets progressbar info and saves a task
+     * Starts a taskClass, gets progressbar info and saves a taskClass
      */
     public void start()
     {
+
         if (lstAbsolutePaths.size() > 0)
         {
             if (!"".equals(txtVarAssetSerialNumber.getText())
@@ -382,7 +382,7 @@ public class ConversionViewController implements Initializable
             {
                 if (!"".equals(txtJSONName.getText()))
                 {
-                    task = new TaskClass();
+                    taskClass = new TaskClass();
 
                     stopped = false;
                     paused = false;
@@ -390,13 +390,13 @@ public class ConversionViewController implements Initializable
                     btnPauseTask.setDisable(false);
                     prgConversion.setVisible(true);
 
-                    //Binds the progress bar to the task
+                    //Binds the progress bar to the taskClass
                     prgConversion.progressProperty().unbind();
                     prgConversion.setProgress(0);
-                    prgConversion.progressProperty().bind(task.task.progressProperty());
+                    prgConversion.progressProperty().bind(taskClass.task.progressProperty());
 
-                    //Gets a message from the task
-                    task.task.messageProperty().addListener(new ChangeListener<String>()
+                    //Gets a message from the taskClass
+                    taskClass.task.messageProperty().addListener(new ChangeListener<String>()
                     {
                         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
                         {
@@ -415,9 +415,9 @@ public class ConversionViewController implements Initializable
 
                     if (thread == null)
                     {
-                        thread = new Thread(task.task);
+                        thread = new Thread(taskClass.task);
 
-                        //Daemon, stops the task if the main thread is stopped
+                        //Daemon, stops the taskClass if the main thread is stopped
                         thread.setDaemon(true);
 
                         thread.start();
@@ -439,49 +439,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * Stops a task
-     */
-    public void stop()
-    {
-        stopped = true;
-        //task.cancel();
-        thread = null;
-    }
-
-    /**
-     * Pauses the task
-     *
-     * @throws java.lang.InterruptedException
-     */
-    public synchronized void pause() throws InterruptedException
-    {
-        suspend.set(true);
-    }
-
-    /**
-     * Resumes a paused task
-     */
-    public void resume()
-    {
-        suspend.set(false);
-        synchronized (thread)
-        {
-            thread.notifyAll();
-        }
-    }
-
-    /**
-     * Checks if the task has been suspended
-     *
-     * @return
-     */
-    boolean isSuspended()
-    {
-        return suspend.get();
-    }
-
-    /**
-     * if this button is clicked it starts/stops a task.
+     * if this button is clicked it starts/stops a taskClass.
      *
      * @param event
      * @throws InterruptedException
@@ -496,7 +454,7 @@ public class ConversionViewController implements Initializable
             btnTask.setText("Stop");
         } else if ("Stop".equals(btnTask.getText()))
         {
-            stop();
+            taskClass.stop();
             thread = null;
 
             btnTask.setText("Start");
@@ -504,7 +462,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
-     * pauses or resumes a task
+     * pauses or resumes a taskClass
      *
      * @param event
      * @throws InterruptedException
@@ -514,10 +472,10 @@ public class ConversionViewController implements Initializable
     {
         paused = !paused;
         if (!paused)
-        {
-            //synchronized (task)
+        {//???
+            synchronized (taskClass)
             {
-                //task.notify();
+                taskClass.task.notify();
             }
 
             btnPauseTask.setText("Pause");
@@ -717,7 +675,7 @@ public class ConversionViewController implements Initializable
             chooser.setInitialDirectory(defaultDirectory);
             File selectedDirectory = chooser.showDialog(stage);
 
-            directory = selectedDirectory.getAbsolutePath(); //null
+            directory = selectedDirectory.getAbsolutePath(); //null(not anymore?)
             btnFileLocation.setText("File location");
 
             directoryTooltip.setText(directory); //null

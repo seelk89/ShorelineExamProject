@@ -51,7 +51,7 @@ public class ConversionViewControllerTest
         
         ConversionViewController instance = new ConversionViewController();
  
-        String s = "[{\"assetSerialNumber\":\"1\",\"planning\":{\"estimatedTime\":\"11\",\"latestFinishDate\":\"8\",\"earliestStartDate\":\"9\",\"latestStartDate\":\"10\"},\"userStatus\":\"5\",\"createdBy\":\"SAP\",\"systemStatus\":\"4\",\"name\":\"6\",\"siteName\":\"\",\"externalWorkOrderId\":\"3\",\"type\":\"2\",\"priority\":\"7\",\"createdOn\":\"21-05-2018\",\"status\":\"NEW\"}]";
+        String s = "[{\"assetSerialNumber\":\"1\",\"planning\":{\"estimatedTime\":\"11\",\"latestFinishDate\":\"8\",\"earliestStartDate\":\"9\",\"latestStartDate\":\"10\"},\"userStatus\":\"5\",\"createdBy\":\"SAP\",\"systemStatus\":\"4\",\"name\":\"6\",\"siteName\":\"\",\"externalWorkOrderId\":\"3\",\"type\":\"2\",\"priority\":\"7\",\"createdOn\":\"22-05-2018\",\"status\":\"NEW\"}]";
         JSONArray result = instance.CreateJsonObjects(lstVarAssetSerialNumber1,
                 lstVarType1, lstVarExternalWorkOrderId1, lstVarSystemStatus1,
                 lstVarUserStatus1, lstVarName1, lstVarDescription21, lstVarPriority1,

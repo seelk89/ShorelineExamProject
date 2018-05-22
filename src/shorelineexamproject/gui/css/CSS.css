@@ -27,3 +27,8 @@ and open the template in the editor.
 {
     -fx-background-color: #0B6074;
 }
+
+.text-field
+{
+    -fx-prompt-text-fill:#cccccc;
+}
