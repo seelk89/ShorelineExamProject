@@ -136,20 +136,20 @@ public class ConversionViewController implements Initializable
 
     //Variables for folder selection
     boolean directoryChosen = false;
-    String directory = null;
+    private String directory = null;
 
     //AbsolutePath for the file being read
     private ArrayList<String> lstAbsolutePaths = new ArrayList<String>();
 
     //Variables for threads
     private Thread thread = null;
-    private final AtomicBoolean suspend = new AtomicBoolean(false);
 
     //task related instancefields
     private boolean stopped = false;
     private boolean paused = false;
 
     private LoginViewController parent;
+    private TaskClass task = null;
 
     private Model model;
 
@@ -178,10 +178,6 @@ public class ConversionViewController implements Initializable
 
         //Tooltip creations
         Tooltip directoryTooltip = new Tooltip();
-
-
-
-        
 
         String desktopPath = System.getProperty("user.home") + "\\Desktop";
         directory = desktopPath;
@@ -249,7 +245,7 @@ public class ConversionViewController implements Initializable
     class TaskClass
     {
 
-        private final Task task = new Task()
+        public final Task task = new Task()
         {
             @Override
             protected Object call() throws Exception
@@ -262,7 +258,7 @@ public class ConversionViewController implements Initializable
                     {
                         synchronized (this)
                         {
-                            while (paused)
+                            if (paused)
                             {
                                 wait();
                             }
@@ -332,7 +328,7 @@ public class ConversionViewController implements Initializable
          */
         public synchronized void pause() throws InterruptedException
         {
-            suspend.set(true);
+
             System.out.println("paused");
         }
 
@@ -341,7 +337,7 @@ public class ConversionViewController implements Initializable
          */
         public void resume()
         {
-            suspend.set(false);
+
             synchronized (thread)
             {
                 thread.notifyAll();
@@ -349,21 +345,12 @@ public class ConversionViewController implements Initializable
             }
         }
 
-        /**
-         * Checks if the taskClass has been suspended
-         *
-         * @return
-         */
-        boolean isSuspended()
-        {
-            return suspend.get();
-        }
     }
 
     /**
      * Starts a taskClass, gets progressbar info and saves a taskClass
      */
-    public void start()
+    private boolean start()
     {
 
         if (lstAbsolutePaths.size() > 0)
@@ -424,6 +411,8 @@ public class ConversionViewController implements Initializable
                     }
 
                     SaveTraceLog();
+
+                    return true;
                 } else
                 {
                     lblError.setText("Name your conversion");
@@ -436,10 +425,34 @@ public class ConversionViewController implements Initializable
         {
             lblError.setText("Get files to read");
         }
+
+        return false;
     }
 
     /**
-     * if this button is clicked it starts/stops a taskClass.
+     * <<<<<<< HEAD if this button is clicked it starts/stops a taskClass.
+     * ======= Stops a task
+     */
+    public synchronized void stop()
+    {
+        stopped = true;
+        task.task.cancel();
+        thread = null;
+    }
+
+    /**
+     * Resumes a paused task
+     */
+    public synchronized void resume()
+    {
+        notifyAll();
+
+        System.out.println("Hello");
+    }
+
+    /**
+     * if this button is clicked it starts/stops a task. >>>>>>>
+     * 03695542929a756a830ce7e658af572c7461b38c
      *
      * @param event
      * @throws InterruptedException
@@ -449,9 +462,12 @@ public class ConversionViewController implements Initializable
     {
         if ("Start".equals(btnTask.getText()))
         {
+//            if (start() == true)
+//            {
             start();
 
             btnTask.setText("Stop");
+//            }
         } else if ("Stop".equals(btnTask.getText()))
         {
             taskClass.stop();
@@ -468,15 +484,12 @@ public class ConversionViewController implements Initializable
      * @throws InterruptedException
      */
     @FXML
-    private void clickPauseTask(ActionEvent event) throws InterruptedException
+    private synchronized void clickPauseTask(ActionEvent event) throws InterruptedException
     {
         paused = !paused;
         if (!paused)
-        {//???
-            synchronized (taskClass)
-            {
-                taskClass.task.notify();
-            }
+        {
+            resume();
 
             btnPauseTask.setText("Pause");
         } else
@@ -491,7 +504,8 @@ public class ConversionViewController implements Initializable
      * @param event
      */
     @FXML
-    private void clickGet(ActionEvent event)
+    private void clickGet(ActionEvent event
+    )
     {
         lstAbsolutePaths.clear();
 
