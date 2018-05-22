@@ -81,11 +81,6 @@ public class Model
 //        bll.getCSVHeaderValues(filepath, header, headerList);
 //    }
 
-    public String getDate()
-    {
-        return bll.getDate();
-    }
-
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         bll.CreateJSONFile(directory, fileName, jarray);

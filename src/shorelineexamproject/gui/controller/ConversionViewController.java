@@ -146,7 +146,7 @@ public class ConversionViewController implements Initializable
 
     //task related instancefields
     private boolean stopped = false;
-    private boolean paused = false;
+    private volatile boolean paused = false;
 
     private LoginViewController parent;
     private TaskClass taskClass = null;
@@ -177,7 +177,7 @@ public class ConversionViewController implements Initializable
         lstHeadersInitialize();
 
         //Tooltip creations
-        Tooltip directoryTooltip = new Tooltip();
+        directoryTooltip = new Tooltip();
 
         String desktopPath = System.getProperty("user.home") + "\\Desktop";
         directory = desktopPath;
@@ -254,20 +254,15 @@ public class ConversionViewController implements Initializable
 
                     for (int i = 0; i < lstAbsolutePaths.size(); i++)
                     {
-                        synchronized (this)
+
+                        while (paused)
                         {
-                            if (paused)
-                            {
-                                wait();
-                            }
+                            Thread.sleep(1000);
                         }
 
-                        synchronized (this)
+                        if (isCancelled())
                         {
-                            if (isCancelled())
-                            {
-                                break;
-                            }
+                            break;
                         }
 
                         //Fills the list with the values below the headers in a given file
@@ -299,10 +294,8 @@ public class ConversionViewController implements Initializable
                         lstVarEarliestStartDate.clear();
                         lstVarLatestStartDate.clear();
                         lstVarEstimatedTime.clear();
-
                         lstVarDescription2.clear();
                     }
-
                     break;
                 }
                 return null;
@@ -310,6 +303,7 @@ public class ConversionViewController implements Initializable
         };
 
         /**
+<<<<<<< HEAD
          * Resumes a paused taskClass
          */
         public void resume()
@@ -321,6 +315,16 @@ public class ConversionViewController implements Initializable
             }
         }
 
+=======
+         * Stops a taskClass
+         */
+        public void stop()
+        {
+            stopped = true;
+            task.cancel();
+            thread = null;
+        }
+>>>>>>> a11efbc334e722d8a39b88301c4a5aca341b0c60
     }
 
     /**
@@ -406,7 +410,11 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+<<<<<<< HEAD
      * If this button is clicked it starts/stops a taskClass. Stops a task
+=======
+     * if this button is clicked it starts/stops a taskClass. Stops a task
+>>>>>>> a11efbc334e722d8a39b88301c4a5aca341b0c60
      */
     public synchronized void stop()
     {
@@ -416,6 +424,7 @@ public class ConversionViewController implements Initializable
     }
 
     /**
+<<<<<<< HEAD
      * Resumes a paused task
      */
     public synchronized void resume()
@@ -425,6 +434,9 @@ public class ConversionViewController implements Initializable
 
     /**
      * If this button is clicked it starts/stops a task.
+=======
+     * if this button is clicked it starts/stops a task.
+>>>>>>> a11efbc334e722d8a39b88301c4a5aca341b0c60
      *
      * @param event
      * @throws InterruptedException
@@ -458,10 +470,10 @@ public class ConversionViewController implements Initializable
     @FXML
     private synchronized void clickPauseTask(ActionEvent event) throws InterruptedException
     {
+
         paused = !paused;
         if (!paused)
         {
-            resume();
 
             btnPauseTask.setText("Pause");
         } else
@@ -571,6 +583,7 @@ public class ConversionViewController implements Initializable
 //        }
     }
 
+    //der er også en i bll
     private String getDate()
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -887,7 +900,7 @@ public class ConversionViewController implements Initializable
             Customization c = new Customization();
 
             c.setUser(lblUser.getText());
-            c.setDateOfCreation(model.getDate());
+            c.setDateOfCreation(getDate());
             c.setNameOfCustomization(txtJSONName.getText() + "Customization");
             c.setAssetSerialNumber(txtVarAssetSerialNumber.getText());
             c.setType(txtVarType.getText());
@@ -973,7 +986,7 @@ public class ConversionViewController implements Initializable
             t.setUser(lblUser.getText());
             t.setFileName(txtJSONName.getText() + ".json");
             t.setCustomization(txtJSONName.getText() + "Customization");
-            t.setDate(model.getDate());
+            t.setDate(getDate());
 
             model.addTraceLogToDB(t);
         } catch (DalException ex)
