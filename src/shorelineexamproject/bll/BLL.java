@@ -78,19 +78,6 @@ public class BLL
         daoCSVReader.getCSVHeaderValues(filepath, header, headerList);
     }
 
-    /**
-     * Gets the current date and formats it the way it is needed.
-     * @return 
-     */
-    public String getDate()
-    {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDateTime dateTime = LocalDateTime.now();
-        String formattedDate = dateTime.format(formatter);
-
-        return formattedDate;
-    }
-
     public void CreateJSONFile(String directory, String fileName, JSONArray jarray) throws IOException
     {
         daoJSONWriter.CreateJSONFile(directory, fileName, jarray);
