@@ -109,7 +109,7 @@ public class ConversionViewController implements Initializable
     @FXML
     private Label lblError;
 
-    //Tooltip creations
+    //Tooltip creation
     private Tooltip directoryTooltip;
 
     private ArrayList<String> lstVarAssetSerialNumber = new ArrayList<String>();
@@ -144,9 +144,9 @@ public class ConversionViewController implements Initializable
     private volatile boolean paused = false;
 
     private LoginViewController parent;
-    private TaskClass taskClass = null;
 
     private Model model;
+    TaskClass taskClass = null;
 
     /**
      * Initializes the controller class.
@@ -212,7 +212,6 @@ public class ConversionViewController implements Initializable
     private void cbxCustomizationInitialize() throws DalException
     {
         cbxCustomization.setItems(model.getAllCustomizations());
-
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
         {
             txtVarAssetSerialNumber.setText(cbxCustomization.getSelectionModel().getSelectedItem().getAssetSerialNumber());
@@ -248,7 +247,6 @@ public class ConversionViewController implements Initializable
 
                     for (int i = 0; i < lstAbsolutePaths.size(); i++)
                     {
-
                         while (paused)
                         {
                             Thread.sleep(750);
@@ -360,7 +358,6 @@ public class ConversionViewController implements Initializable
 
                         thread.start();
                     }
-
                     SaveTraceLog();
                 } else
                 {
@@ -438,8 +435,7 @@ public class ConversionViewController implements Initializable
      * @param event
      */
     @FXML
-    private void clickGet(ActionEvent event
-    )
+    private void clickGet(ActionEvent event)
     {
         lstAbsolutePaths.clear();
 
@@ -468,7 +464,6 @@ public class ConversionViewController implements Initializable
             lstHeaders.getItems().clear();
             lstHeaders.getItems().addAll(model.headers(lstAbsolutePaths.get(0)));
         }
-
     }
 
     /**
@@ -512,6 +507,7 @@ public class ConversionViewController implements Initializable
         }
     }
 
+
     private String getDate()
     {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -524,12 +520,9 @@ public class ConversionViewController implements Initializable
     public JSONArray CreateJsonObjects()
     {
         return CreateJsonObjects(
-                lstVarAssetSerialNumber, lstVarType,
-                lstVarExternalWorkOrderId, lstVarSystemStatus,
-                lstVarUserStatus, lstVarName, lstVarDescription2,
-                lstVarPriority, lstVarLatestFinishDate,
-                lstVarEarliestStartDate, lstVarLatestStartDate,
-                lstVarEstimatedTime
+                lstVarAssetSerialNumber, lstVarType, lstVarExternalWorkOrderId, lstVarSystemStatus,
+                lstVarUserStatus, lstVarName, lstVarDescription2, lstVarPriority,
+                lstVarLatestFinishDate, lstVarEarliestStartDate, lstVarLatestStartDate, lstVarEstimatedTime
         );
     }
 
@@ -678,7 +671,6 @@ public class ConversionViewController implements Initializable
         {
             event.acceptTransferModes(TransferMode.COPY);
         }
-
         event.consume();
     }
 
@@ -690,7 +682,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarAssetSerialNumber.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -702,7 +693,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarType.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -714,7 +704,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarUserStatus.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -726,7 +715,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarSystemStatus.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -738,7 +726,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarExternalWorkOrderid.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -750,7 +737,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarName.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -762,7 +748,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarPriority.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -774,7 +759,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarEstimatedTime.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -786,7 +770,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarLatestFinishDate.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -798,7 +781,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarEarliestStartDate.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -810,7 +792,6 @@ public class ConversionViewController implements Initializable
         {
             txtVarLatestStartDate.setText(dragBoard.getString());
         }
-
         event.consume();
     }
 
@@ -847,7 +828,6 @@ public class ConversionViewController implements Initializable
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public Customization getSelectedCustomization()
@@ -860,16 +840,6 @@ public class ConversionViewController implements Initializable
     {
         model.removeCustomizationFromDb(getSelectedCustomization());
 
-    }
-
-    /**
-     * It makes the mainwindow able to open the other windows.
-     *
-     * @param parent
-     */
-    public void setParentWindowController(LoginViewController parent)
-    {
-        this.parent = parent;
     }
 
     /**
@@ -905,7 +875,6 @@ public class ConversionViewController implements Initializable
      */
     private void SaveTraceLog()
     {
-
         try
         {
             TraceLog t = new TraceLog();
@@ -920,7 +889,15 @@ public class ConversionViewController implements Initializable
         {
             Logger.getLogger(ConversionViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
+    /**
+     * It makes the mainwindow able to open the other windows.
+     *
+     * @param parent
+     */
+    public void setParentWindowController(LoginViewController parent)
+    {
+        this.parent = parent;
+    }
 }

@@ -6,20 +6,16 @@
 package shorelineexamproject.bll;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
 import shorelineexamproject.be.Customization;
 import shorelineexamproject.be.ListViewObject;
-import shorelineexamproject.dal.DAOCSVReader;
 import shorelineexamproject.be.LogIn;
 import shorelineexamproject.be.TraceLog;
 import shorelineexamproject.dal.DAOCustomization;
 import shorelineexamproject.dal.DAOJSONWriter;
 import shorelineexamproject.dal.DAOLogIn;
-import shorelineexamproject.dal.DAOXLSXReader;
 import shorelineexamproject.dal.DAOTraceLog;
 import shorelineexamproject.dal.StrategyConversion;
 import shorelineexamproject.dal.StrategyConversionFactory;
@@ -31,8 +27,6 @@ import shorelineexamproject.dal.exceptions.DalException;
  */
 public class BLL
 {
-    private DAOXLSXReader daoXLSXReader = new DAOXLSXReader();
-    private DAOCSVReader daoCSVReader = new DAOCSVReader();
     private DAOJSONWriter daoJSONWriter = new DAOJSONWriter();
     private DAOCustomization daoCustomization;
     private DAOLogIn daoLogIn;
