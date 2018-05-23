@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="516.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
+<AnchorPane id="AnchorPane" prefHeight="748.0" prefWidth="510.0" stylesheets="@../css/CSS.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shorelineexamproject.gui.controller.ConversionViewController">
    <children>
       <JFXButton fx:id="btnGet" layoutX="305.0" layoutY="85.0" onAction="#clickGet" ripplerFill="#0c8bb8" text="Get files" AnchorPane.leftAnchor="305.0" AnchorPane.topAnchor="85.0" />
       <JFXTextField fx:id="txtJSONName" focusColor="#0c8bb8" layoutX="344.0" layoutY="568.0" prefHeight="25.0" prefWidth="158.0" promptText="JSON name" unFocusColor="#0b6074" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="592.0" />
@@ -39,13 +39,13 @@
          </image>
       </ImageView>
       <JFXComboBox fx:id="cbxCustomization" focusColor="#0c8bb8" layoutX="109.0" layoutY="51.0" prefHeight="26.0" prefWidth="170.0" promptText="Customization" unFocusColor="#0b6074" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="51.0" />
-      <ProgressIndicator fx:id="prgConversion" layoutX="316.8" layoutY="660.0" progress="0.0" stylesheets="@../css/CSS.css" AnchorPane.rightAnchor="170.2" AnchorPane.topAnchor="660.0" />
+      <ProgressIndicator fx:id="prgConversion" layoutX="316.8" layoutY="660.0" progress="0.0" stylesheets="@../css/CSS.css" AnchorPane.leftAnchor="316.8" AnchorPane.topAnchor="660.0" />
       <Label fx:id="lblConversionComplete" layoutX="370.0" layoutY="662.0" prefHeight="18.0" prefWidth="73.0" text="0 Files done" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="662.0" />
-      <JFXButton fx:id="btnFileLocation" layoutX="300.0" layoutY="111.0" minHeight="26.0" minWidth="138.0" onAction="#clickFileLocation" prefHeight="26.0" prefWidth="138.0" ripplerFill="#0c8bb8" text="Choose file location" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="111.0" />
+      <JFXButton fx:id="btnFileLocation" layoutX="305.0" layoutY="112.0" onAction="#clickFileLocation" ripplerFill="#0c8bb8" text="Choose file location" AnchorPane.leftAnchor="305.0" AnchorPane.topAnchor="112.0" />
 
       <JFXButton fx:id="btnSaveCustomization" layoutX="20.0" layoutY="637.0" onAction="#clickSaveCustomization" ripplerFill="#0c8bb8" text="Save Customization" AnchorPane.leftAnchor="25.0" />
       <JFXButton fx:id="btnDeleteCustomization" layoutX="18.0" layoutY="667.0" onAction="#clickDeleteCustomization" text="Delete Customization" AnchorPane.leftAnchor="25.0" />
-      <JFXButton fx:id="btnOpenTraceLogView" layoutX="340.0" layoutY="706.0" onAction="#clickOpenTraceLogViev" text="Tracelog" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+      <JFXButton fx:id="btnOpenTraceLogView" layoutX="340.0" layoutY="706.0" onAction="#clickOpenTraceLogViev" ripplerFill="#0c8bb8" text="Tracelog" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0" />
 
       <Label fx:id="lblUser" layoutX="109.0" layoutY="30.0" text="User" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="30.0" />
       <Label fx:id="lblError" layoutX="28.0" layoutY="709.0" textFill="RED" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="28.0" />

@@ -138,7 +138,8 @@ public class ConversionViewController implements Initializable
     //Variables for threads
     private Thread thread = null;
 
-    //task related instancefields
+    //Task related instancefields
+    private boolean btnPressed = false;
     private boolean stopped = false;
     private volatile boolean paused = false;
 
@@ -210,7 +211,6 @@ public class ConversionViewController implements Initializable
      */
     private void cbxCustomizationInitialize() throws DalException
     {
-
         cbxCustomization.setItems(model.getAllCustomizations());
 
         cbxCustomization.valueProperty().addListener((observable, oldValue, newValue) ->
@@ -270,8 +270,6 @@ public class ConversionViewController implements Initializable
                             fileName = txtJSONName.getText() + ".json";
                         }
 
-                        System.out.println(i);
-
                         JSONArray jarray = CreateJsonObjects();
                         model.CreateJSONFile(directory, fileName, jarray);
 
@@ -302,9 +300,8 @@ public class ConversionViewController implements Initializable
     /**
      * Starts a taskClass, gets progressbar info and saves a taskClass
      */
-    private boolean start()
+    private void start()
     {
-
         if (lstAbsolutePaths.size() > 0)
         {
             if (!"".equals(txtVarAssetSerialNumber.getText())
@@ -321,6 +318,8 @@ public class ConversionViewController implements Initializable
             {
                 if (!"".equals(txtJSONName.getText()))
                 {
+                    btnPressed = true;
+                    
                     taskClass = new TaskClass();
 
                     stopped = false;
@@ -363,8 +362,6 @@ public class ConversionViewController implements Initializable
                     }
 
                     SaveTraceLog();
-
-                    return true;
                 } else
                 {
                     lblError.setText("Name your conversion");
@@ -377,8 +374,6 @@ public class ConversionViewController implements Initializable
         {
             lblError.setText("Get files to read");
         }
-
-        return false;
     }
 
     /**
@@ -402,12 +397,13 @@ public class ConversionViewController implements Initializable
     {
         if ("Start".equals(btnTask.getText()))
         {
-//            if (start() == true)
-//            {
-                start();
-
+            start();
+            
+            if (btnPressed == true)
+            {
                 btnTask.setText("Stop");
-//            }
+                btnPressed = false;
+            }
         } else if ("Stop".equals(btnTask.getText()))
         {
             stop();
